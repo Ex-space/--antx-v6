@@ -1,7 +1,5 @@
 export const dataNode1 = {
-    id: "dataNode1",
     x: 246,
-    y: 254,
     width: 21,
     height: 9,
     shape: 'html',
@@ -12,9 +10,7 @@ export const dataNode1 = {
             `,
   };
 export const dataNode2 = {
-    id: "dataNode2",
     x: 576,
-    y: 354,
     width: 21,
     height: 9,
     shape: 'html',
@@ -25,9 +21,7 @@ export const dataNode2 = {
             `,
 };
 export const dataNode3 = {
-    id: "dataNode3",
     x: 1026,
-    y: 354,
     width: 21,
     height: 9,
     shape: 'html',
@@ -38,9 +32,7 @@ export const dataNode3 = {
             `,
 };
 export const dataNode4 = {
-    id: "dataNode4",
     x: 462,
-    y: 296,
     width: 21,
     height: 9,
     shape: 'html',

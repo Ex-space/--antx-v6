@@ -149,107 +149,1190 @@ onMounted(() => {
         y: 132,
         ...shadowRectNode1,
       },
+      // {
+      //   id: "shadowRectNodeB1",
+      //   y: 462,
+      //   ...shadowRectNode1,
+      // },
+      // {
+      //   id: "shadowRectNodeC1",
+      //   y: 792,
+      //   ...shadowRectNode1,
+      // },
+      /////////////////////////
+      // {
+      //   id: "shadowRectNodeA2",
+      //   y: 222,
+      //   ...shadowRectNode2,
+      // },
+      // {
+      //   id: "shadowRectNodeB2",
+      //   y: 552,
+      //   ...shadowRectNode2,
+      // },
+      // {
+      //   id: "shadowRectNodeC2",
+      //   y: 882,
+      //   ...shadowRectNode2,
+      // },
+      /////////////////////////
+      // {
+      //   id: "shadowRectNodeA5",
+      //   y: 143,
+      //   ...shadowRectNode5,
+      // },
+      // {
+      //   id: "shadowRectNodeB5",
+      //   y: 473,
+      //   ...shadowRectNode5,
+      // },
+      // {
+      //   id: "shadowRectNodeC5",
+      //   y: 803,
+      //   ...shadowRectNode5,
+      // },
+      /////////////////////////
+      // {
+      //   id: "shadowRectNodeA6",
+      //   y: 236,
+      //   ...shadowRectNode6,
+      // },
+      // {
+      //   id: "shadowRectNodeB6",
+      //   y: 566,
+      //   ...shadowRectNode6,
+      // },
+      // {
+      //   id: "shadowRectNodeC6",
+      //   y: 896,
+      //   ...shadowRectNode6,
+      // },
+      /////////////////////////
       {
-        id: "shadowRectNodeB1",
-        y: 432,
-        ...shadowRectNode1,
-      },
-      {
-        id: "shadowRectNodeC1",
-        y: 732,
-        ...shadowRectNode1,
-      },
-      // shadowRectNode2,
-      // shadowRectNode5,
-      // shadowRectNode6,
-      {
-        id: "shadowRectNode7",
+        id: "shadowRectNodeA7",
         y: 88.5,
         ...shadowRectNode7,
       },
+      // {
+      //   id: "shadowRectNodeB7",
+      //   y: 418.5,
+      //   ...shadowRectNode7,
+      // },
+      // {
+      //   id: "shadowRectNodeC7",
+      //   y: 748.5,
+      //   ...shadowRectNode7,
+      // },
+      /////////////////////////
+      // {
+      //   id: "shadowRectNodeA8",
+      //   y: 159,
+      //   ...shadowRectNode8,
+      // },
+      // {
+      //   id: "shadowRectNodeB8",
+      //   y: 489,
+      //   ...shadowRectNode8,
+      // },
+      // {
+      //   id: "shadowRectNodeC8",
+      //   y: 819,
+      //   ...shadowRectNode8,
+      // },
+      /////////////////////////
+      // {
+      //   id: "shadowRectNodeA9",
+      //   y: 246,
+      //   ...shadowRectNode9,
+      // },
+      // {
+      //   id: "shadowRectNodeB9",
+      //   y: 576,
+      //   ...shadowRectNode9,
+      // },
+      // {
+      //   id: "shadowRectNodeC9",
+      //   y: 906,
+      //   ...shadowRectNode10,
+      // },
+      /////////////////////////
       {
-        id: "shadowRectNodeB7",
-        y: 388.5,
-        ...shadowRectNode7,
+        id: "shadowRectNodeA10",
+        y: 308.5,
+        ...shadowRectNode10,
       },
+      // {
+      //   id: "shadowRectNodeB10",
+      //   y: 638.5,
+      //   ...shadowRectNode10,
+      // },
+      // {
+      //   id: "shadowRectNodeC10",
+      //   y: 968.5,
+      //   ...shadowRectNode10,
+      // },
+      /////////////////////////
       {
-        id: "shadowRectNodeC7",
-        y: 688.5,
-        ...shadowRectNode7,
+        id: "metalNodeA1",
+        y: 198,
+        ...metalNode1,
       },
-      // shadowRectNode8,
-      // shadowRectNode9,
-      shadowRectNode10,
-      metalNode1,
-      metalNode3,
-      metalNode4,
-      greenNode1,
-      // greenNode3,
-      // greenNode4,
-      // greenNode5,
-      greenNode6,
-      greenNode7,
-      greenNode8,
-      greenNode9,
-      greenNode10,
-      // greenNode11,
-      // transparentNode1,
-      // transparentNode3,
-      // transparentNode5,
-      // transparentNode7,
-      // transparentNode8,
-      // transparentNode11,
-      transparentNode13,
-      // transparentNode14,
-      // transparentNode15,
-      // transparentNode16,
-      // transparentNode17,
-      // transparentNode18,
-      // transparentNode19,
-      // transparentNode20,
-      // transparentNode21,
-      transparentNode22,
-      // transparentNode23,
-      // transparentNode24,
-      // transparentNode25,
-      // transparentNode26,
-      // transparentNode27,
+      // {
+      //   id: "metalNodeB1",
+      //   y: 528,
+      //   ...metalNode1,
+      // },
+      // {
+      //   id: "metalNodeC1",
+      //   y: 858,
+      //   ...metalNode1,
+      // },
+      /////////////////////////
+      {
+        id: "metalNodeA3",
+        y: 99,
+        ...metalNode3,
+      },
+      // {
+      //   id: "metalNodeB3",
+      //   y: 429,
+      //   ...metalNode3,
+      // },
+      // {
+      //   id: "metalNodeC3",
+      //   y: 759,
+      //   ...metalNode3,
+      // },
+      /////////////////////////
+      {
+        id: "metalNodeA4",
+        y: 319,
+        ...metalNode4,
+      },
+      // {
+      //   id: "metalNodeB4",
+      //   y: 649,
+      //   ...metalNode4,
+      // },
+      // {
+      //   id: "metalNodeC4",
+      //   y: 979,
+      //   ...metalNode4,
+      // },
+      /////////////////////////
+      {
+        id: "greenNodeA1",
+        y: 128,
+        ...greenNode1,
+      },
+      // {
+      //   id: "greenNodeB1",
+      //   y: 458,
+      //   ...greenNode1,
+      // },
+      // {
+      //   id: "greenNodeC1",
+      //   y: 788,
+      //   ...greenNode1,
+      // },
+      /////////////////////////
+      // {
+      //   id: "greenNodeA3",
+      //   y: 153,
+      //   ...greenNode3,
+      // },
+      // {
+      //   id: "greenNodeB3",
+      //   y: 483,
+      //   ...greenNode3,
+      // },
+      // {
+      //   id: "greenNodeC3",
+      //   y: 813,
+      //   ...greenNode3,
+      // },
+      /////////////////////////
+      // {
+      //   id: "greenNodeA4",
+      //   y: 227,
+      //   ...greenNode4,
+      // },
+      // {
+      //   id: "greenNodeB4",
+      //   y: 557,
+      //   ...greenNode4,
+      // },
+      // {
+      //   id: "greenNodeC4",
+      //   y: 887,
+      //   ...greenNode4,
+      // },
+      /////////////////////////
+      // {
+      //   id: "greenNodeA5",
+      //   y: 270,
+      //   ...greenNode5,
+      // },
+      // {
+      //   id: "greenNodeB5",
+      //   y: 600,
+      //   ...greenNode5,
+      // },
+      // {
+      //   id: "greenNodeC5",
+      //   y: 930,
+      //   ...greenNode5,
+      // },
+      /////////////////////////
+      {
+        id: "greenNodeA6",
+        y: 304,
+        ...greenNode6,
+      },
+      // {
+      //   id: "greenNodeB6",
+      //   y: 634,
+      //   ...greenNode6,
+      // },
+      // {
+      //   id: "greenNodeC6",
+      //   y: 964,
+      //   ...greenNode6,
+      // },
+      /////////////////////////
+      {
+        id: "greenNodeA7",
+        y: 327,
+        ...greenNode7,
+      },
+      // {
+      //   id: "greenNodeB7",
+      //   y: 657,
+      //   ...greenNode7,
+      // },
+      // {
+      //   id: "greenNodeC7",
+      //   y: 987,
+      //   ...greenNode7,
+      // },
+      /////////////////////////
+      {
+        id: "greenNodeA8",
+        y: 261,
+        ...greenNode8,
+      },
+      // {
+      //   id: "greenNodeB8",
+      //   y: 591,
+      //   ...greenNode8,
+      // },
+      // {
+      //   id: "greenNodeC8",
+      //   y: 921,
+      //   ...greenNode8,
+      // },
+      /////////////////////////
+      {
+        id: "greenNodeA9",
+        y: 350,
+        ...greenNode9,
+      },
+      // {
+      //   id: "greenNodeB9",
+      //   y: 680,
+      //   ...greenNode9,
+      // },
+      // {
+      //   id: "greenNodeC9",
+      //   y: 1010,
+      //   ...greenNode9,
+      // },
+      /////////////////////////
+      {
+        id: "greenNodeA10",
+        y: 292,
+        ...greenNode10,
+      },
+      // {
+      //   id: "greenNodeB10",
+      //   y: 622,
+      //   ...greenNode10,
+      // },
+      // {
+      //   id: "greenNodeC10",
+      //   y: 952,
+      //   ...greenNode10,
+      // },
+      /////////////////////////
+      // {
+      //   id: "greenNodeA11",
+      //   y: 150,
+      //   ...greenNode11,
+      // },
+      // {
+      //   id: "greenNodeB11",
+      //   y: 480,
+      //   ...greenNode11,
+      // },
+      // {
+      //   id: "greenNodeC11",
+      //   y: 810,
+      //   ...greenNode11,
+      // },
+      /////////////////////////
+      // {
+      //   id: "transparentNodeA1",
+      //   y: 345,
+      //   ...transparentNode1,
+      // },
+      // {
+      //   id: "transparentNodeB1",
+      //   y: 675,
+      //   ...transparentNode1,
+      // },
+      // {
+      //   id: "transparentNodeC1",
+      //   y: 1005,
+      //   ...transparentNode1,
+      // },
+      /////////////////////////
+      // {
+      //   id: "transparentNodeA3",
+      //   y: 345,
+      //   ...transparentNode3,
+      // },
+      // {
+      //   id: "transparentNodeB3",
+      //   y: 675,
+      //   ...transparentNode3,
+      // },
+      // {
+      //   id: "transparentNodeC3",
+      //   y: 1005,
+      //   ...transparentNode3,
+      // },
+      /////////////////////////
+      // {
+      //   id: "transparentNodeA5",
+      //   y: 273,
+      //   ...transparentNode5,
+      // },
+      // {
+      //   id: "transparentNodeB5",
+      //   y: 603,
+      //   ...transparentNode5,
+      // },
+      // {
+      //   id: "transparentNodeC5",
+      //   y: 933,
+      //   ...transparentNode5,
+      // },
+      /////////////////////////
+      // {
+      //   id: "transparentNodeA7",
+      //   y: 123,
+      //   ...transparentNode7,
+      // },
+      // {
+      //   id: "transparentNodeB7",
+      //   y: 453,
+      //   ...transparentNode7,
+      // },
+      // {
+      //   id: "transparentNodeC7",
+      //   y: 783,
+      //   ...transparentNode7,
+      // },
+      /////////////////////////
+      // {
+      //   id: "transparentNodeA8",
+      //   y: 216,
+      //   ...transparentNode8,
+      // },
+      // {
+      //   id: "transparentNodeB8",
+      //   y: 546,
+      //   ...transparentNode8,
+      // },
+      // {
+      //   id: "transparentNodeC8",
+      //   y: 876,
+      //   ...transparentNode8,
+      // },
+      /////////////////////////
+      // {
+      //   id: "transparentNodeA11",
+      //   y: 81,
+      //   ...transparentNode11,
+      // },
+      // {
+      //   id: "transparentNodeB11",
+      //   y: 411,
+      //   ...transparentNode11,
+      // },
+      // {
+      //   id: "transparentNodeC11",
+      //   y: 741,
+      //   ...transparentNode11,
+      // },
+      /////////////////////////
+      {
+        id: "transparentNodeA13",
+        y: 309,
+        ...transparentNode13,
+      },
+      // {
+      //   id: "transparentNodeB13",
+      //   y: 639,
+      //   ...transparentNode13,
+      // },
+      // {
+      //   id: "transparentNodeC13",
+      //   y: 969,
+      //   ...transparentNode13,
+      // },
+      /////////////////////////
+      // {
+      //   id: "transparentNodeA14",
+      //   y: 123,
+      //   ...transparentNode14,
+      // },
+      // {
+      //   id: "transparentNodeB14",
+      //   y: 453,
+      //   ...transparentNode14,
+      // },
+      // {
+      //   id: "transparentNodeC14",
+      //   y: 783,
+      //   ...transparentNode14,
+      // },
+      /////////////////////////
+      // {
+      //   id: "transparentNodeA15",
+      //   y: 246,
+      //   ...transparentNode15,
+      // },
+      // {
+      //   id: "transparentNodeB15",
+      //   y: 576,
+      //   ...transparentNode15,
+      // },
+      // {
+      //   id: "transparentNodeC15",
+      //   y: 906,
+      //   ...transparentNode15,
+      // },
+      /////////////////////////
+      // {
+      //   id: "transparentNodeA16",
+      //   y: 246,
+      //   ...transparentNode16,
+      // },
+      // {
+      //   id: "transparentNodeB16",
+      //   y: 576,
+      //   ...transparentNode16,
+      // },
+      // {
+      //   id: "transparentNodeC16",
+      //   y: 906,
+      //   ...transparentNode16,
+      // },
+      /////////////////////////
+      // {
+      //   id: "transparentNodeA17",
+      //   y: 246,
+      //   ...transparentNode17,
+      // },
+      // {
+      //   id: "transparentNodeB17",
+      //   y: 576,
+      //   ...transparentNode17,
+      // },
+      // {
+      //   id: "transparentNodeC17",
+      //   y: 906,
+      //   ...transparentNode17,
+      // },
+      /////////////////////////
+      // {
+      //   id: "transparentNodeA18",
+      //   y: 246,
+      //   ...transparentNode18,
+      // },
+      // {
+      //   id: "transparentNodeB18",
+      //   y: 576,
+      //   ...transparentNode18,
+      // },
+      // {
+      //   id: "transparentNodeC18",
+      //   y: 906,
+      //   ...transparentNode18,
+      // },
+      /////////////////////////
+      // {
+      //   id: "transparentNodeA19",
+      //   y: 246,
+      //   ...transparentNode19,
+      // },
+      // {
+      //   id: "transparentNodeB19",
+      //   y: 576,
+      //   ...transparentNode19,
+      // },
+      // {
+      //   id: "transparentNodeC19",
+      //   y: 906,
+      //   ...transparentNode19,
+      // },
+      /////////////////////////
+      // {
+      //   id: "transparentNodeA20",
+      //   y: 246,
+      //   ...transparentNode20,
+      // },
+      // {
+      //   id: "transparentNodeB20",
+      //   y: 576,
+      //   ...transparentNode20,
+      // },
+      // {
+      //   id: "transparentNodeC20",
+      //   y: 906,
+      //   ...transparentNode20,
+      // },
+      /////////////////////////
+      // {
+      //   id: "transparentNodeA21",
+      //   y: 360,
+      //   ...transparentNode21,
+      // },
+      // {
+      //   id: "transparentNodeB21",
+      //   y: 690,
+      //   ...transparentNode21,
+      // },
+      // {
+      //   id: "transparentNodeC21",
+      //   y: 1020,
+      //   ...transparentNode21,
+      // },
+      /////////////////////////
+      {
+        id: "transparentNodeA22",
+        y: 308.5,
+        ...transparentNode22,
+      },
+      // {
+      //   id: "transparentNodeB22",
+      //   y: 638.5,
+      //   ...transparentNode22,
+      // },
+      // {
+      //   id: "transparentNodeC22",
+      //   y: 968.5,
+      //   ...transparentNode22,
+      // },
+      /////////////////////////
+      // {
+      //   id: "transparentNodeA23",
+      //   y: 165,
+      //   ...transparentNode23,
+      // },
+      // {
+      //   id: "transparentNodeB23",
+      //   y: 495,
+      //   ...transparentNode23,
+      // },
+      // {
+      //   id: "transparentNodeC23",
+      //   y: 825,
+      //   ...transparentNode23,
+      // },
+      /////////////////////////
+      // {
+      //   id: "transparentNodeA24",
+      //   y: 165,
+      //   ...transparentNode24,
+      // },
+      // {
+      //   id: "transparentNodeB24",
+      //   y: 495,
+      //   ...transparentNode24,
+      // },
+      // {
+      //   id: "transparentNodeC24",
+      //   y: 825,
+      //   ...transparentNode24,
+      // },
+      /////////////////////////
+      // {
+      //   id: "transparentNodeA25",
+      //   y: 189,
+      //   ...transparentNode25,
+      // },
+      // {
+      //   id: "transparentNodeB25",
+      //   y: 519,
+      //   ...transparentNode25,
+      // },
+      // {
+      //   id: "transparentNodeC25",
+      //   y: 849,
+      //   ...transparentNode25,
+      // },
+      /////////////////////////
+      // {
+      //   id: "transparentNodeA26",
+      //   y: 189,
+      //   ...transparentNode26,
+      // },
+      // {
+      //   id: "transparentNodeB26",
+      //   y: 519,
+      //   ...transparentNode26,
+      // },
+      // {
+      //   id: "transparentNodeC26",
+      //   y: 849,
+      //   ...transparentNode26,
+      // },
+      /////////////////////////
+      // {
+      //   id: "transparentNodeA27",
+      //   y: 189,
+      //   ...transparentNode27,
+      // },
+      // {
+      //   id: "transparentNodeB27",
+      //   y: 519,
+      //   ...transparentNode27,
+      // },
+      // {
+      //   id: "transparentNodeC27",
+      //   y: 849,
+      //   ...transparentNode27,
+      // },
+      /////////////////////////
       // transparentNode28,
       // transparentNode29,
       // transparentNode30,
       // transparentNode31,
-      // greenCircleNode1,
-      greenCircleNode3,
-      emptyNode1,
-      emptyNode2,
-      // littleBlackNode1,
-      // textNode1,
-      // textNode3,
-      // textNode5,
-      // textNode6,
-      // textNode7,
-      // textNode8,
-      // textNode9,
-      // textNode10,
-      // textNode11,
-      textNode12,
-      textNode13,
-      // textNode14,
-      // textNode15,
-      // textNode16,
-      // textNode17,
-      // textNode18,
-      // textNode19,
-      // textNode20,
-      // textNode21,
-      // textNode22,
-      // textNode23,
-      // textNode24,
-      // textNode25,
-      // textNode26,
-      // textNode27,
-      // textNode28,
-      // textNode29,
+      /////////////////////////
+      // {
+      //   id: "greenCircleNodeA1",
+      //   y: 214,
+      //   ...greenCircleNode1,
+      // },
+      // {
+      //   id: "greenCircleNodeB1",
+      //   y: 544,
+      //   ...greenCircleNode1,
+      // },
+      // {
+      //   id: "greenCircleNodeC1",
+      //   y: 874,
+      //   ...greenCircleNode1,
+      // },
+      /////////////////////////
+      {
+        id: "greenCircleNodeA3",
+        y: 315,
+        ...greenCircleNode3,
+      },
+      // {
+      //   id: "greenCircleNodeB3",
+      //   y: 645,
+      //   ...greenCircleNode3,
+      // },
+      // {
+      //   id: "greenCircleNodeC3",
+      //   y: 975,
+      //   ...greenCircleNode3,
+      // },
+      /////////////////////////
+      {
+        id: "emptyNodeA1",
+        y: 316,
+        ...emptyNode1,
+      },
+      // {
+      //   id: "emptyNodeB1",
+      //   y: 646,
+      //   ...emptyNode1,
+      // },
+      // {
+      //   id: "emptyNodeC1",
+      //   y: 976,
+      //   ...emptyNode1,
+      // },
+      /////////////////////////
+      {
+        id: "emptyNodeA2",
+        y: 316,
+        ...emptyNode2,
+      },
+      // {
+      //   id: "emptyNodeB2",
+      //   y: 646,
+      //   ...emptyNode2,
+      // },
+      // {
+      //   id: "emptyNodeC2",
+      //   y: 976,
+      //   ...emptyNode2,
+      // },
+      /////////////////////////
+      // {
+      //   id: "littleBlackNodeA1",
+      //   y: 302,
+      //   ...littleBlackNode1,
+      // },
+      // {
+      //   id: "littleBlackNodeB1",
+      //   y: 632,
+      //   ...littleBlackNode1,
+      // },
+      // {
+      //   id: "littleBlackNodeC1",
+      //   y: 962,
+      //   ...littleBlackNode1,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA1",
+      //   y: 158,
+      //   ...textNode1,
+      // },
+      // {
+      //   id: "textNodeB1",
+      //   y: 488,
+      //   ...textNode1,
+      // },
+      // {
+      //   id: "textNodeC1",
+      //   y: 818,
+      //   ...textNode1,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA3",
+      //   y: 174,
+      //   ...textNode3,
+      // },
+      // {
+      //   id: "textNodeB3",
+      //   y: 504,
+      //   ...textNode3,
+      // },
+      // {
+      //   id: "textNodeC3",
+      //   y: 834,
+      //   ...textNode3,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA5",
+      //   y: 240,
+      //   ...textNode5,
+      // },
+      // {
+      //   id: "textNodeB5",
+      //   y: 570,
+      //   ...textNode5,
+      // },
+      // {
+      //   id: "textNodeC5",
+      //   y: 900,
+      //   ...textNode5,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA6",
+      //   y: 120,
+      //   ...textNode6,
+      // },
+      // {
+      //   id: "textNodeB6",
+      //   y: 450,
+      //   ...textNode6,
+      // },
+      // {
+      //   id: "textNodeC6",
+      //   y: 780,
+      //   ...textNode6,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA7",
+      //   y: 340,
+      //   ...textNode7,
+      // },
+      // {
+      //   id: "textNodeB7",
+      //   y: 670,
+      //   ...textNode7,
+      // },
+      // {
+      //   id: "textNodeC7",
+      //   y: 1000,
+      //   ...textNode7,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA8",
+      //   y: 355,
+      //   ...textNode8,
+      // },
+      // {
+      //   id: "textNodeB8",
+      //   y: 685,
+      //   ...textNode8,
+      // },
+      // {
+      //   id: "textNodeC8",
+      //   y: 1015,
+      //   ...textNode8,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA9",
+      //   y: 318,
+      //   ...textNode9,
+      // },
+      // {
+      //   id: "textNodeB9",
+      //   y: 648,
+      //   ...textNode9,
+      // },
+      // {
+      //   id: "textNodeC9",
+      //   y: 978,
+      //   ...textNode9,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA10",
+      //   y: 210,
+      //   ...textNode10,
+      // },
+      // {
+      //   id: "textNodeB10",
+      //   y: 540,
+      //   ...textNode10,
+      // },
+      // {
+      //   id: "textNodeC10",
+      //   y: 870,
+      //   ...textNode10,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA11",
+      //   y: 334,
+      //   ...textNode11,
+      // },
+      // {
+      //   id: "textNodeB11",
+      //   y: 664,
+      //   ...textNode11,
+      // },
+      // {
+      //   id: "textNodeC11",
+      //   y: 994,
+      //   ...textNode11,
+      // },
+      /////////////////////////
+      {
+        id: "textNodeA12",
+        y: 338,
+        ...textNode12,
+      },
+      // {
+      //   id: "textNodeB12",
+      //   y: 668,
+      //   ...textNode12,
+      // },
+      // {
+      //   id: "textNodeC12",
+      //   y: 998,
+      //   ...textNode12,
+      // },
+      /////////////////////////
+      {
+        id: "textNodeA13",
+        y: 338,
+        ...textNode13,
+      },
+      // {
+      //   id: "textNodeB13",
+      //   y: 668,
+      //   ...textNode13,
+      // },
+      // {
+      //   id: "textNodeC13",
+      //   y: 998,
+      //   ...textNode13,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA14",
+      //   y: 165,
+      //   ...textNode14,
+      // },
+      // {
+      //   id: "textNodeB14",
+      //   y: 495,
+      //   ...textNode14,
+      // },
+      // {
+      //   id: "textNodeC14",
+      //   y: 825,
+      //   ...textNode14,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA15",
+      //   y: 180,
+      //   ...textNode15,
+      // },
+      // {
+      //   id: "textNodeB15",
+      //   y: 510,
+      //   ...textNode15,
+      // },
+      // {
+      //   id: "textNodeC15",
+      //   y: 840,
+      //   ...textNode15,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA16",
+      //   y: 335,
+      //   ...textNode16,
+      // },
+      // {
+      //   id: "textNodeB16",
+      //   y: 665,
+      //   ...textNode16,
+      // },
+      // {
+      //   id: "textNodeC16",
+      //   y: 995,
+      //   ...textNode16,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA17",
+      //   y: 265,
+      //   ...textNode17,
+      // },
+      // {
+      //   id: "textNodeB17",
+      //   y: 595,
+      //   ...textNode17,
+      // },
+      // {
+      //   id: "textNodeC17",
+      //   y: 925,
+      //   ...textNode17,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA18",
+      //   y: 362,
+      //   ...textNode18,
+      // },
+      // {
+      //   id: "textNodeB18",
+      //   y: 692,
+      //   ...textNode18,
+      // },
+      // {
+      //   id: "textNodeC18",
+      //   y: 1022,
+      //   ...textNode18,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA19",
+      //   y: 298,
+      //   ...textNode19,
+      // },
+      // {
+      //   id: "textNodeB19",
+      //   y: 628,
+      //   ...textNode19,
+      // },
+      // {
+      //   id: "textNodeC19",
+      //   y: 958,
+      //   ...textNode19,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA20",
+      //   y: 256,
+      //   ...textNode20,
+      // },
+      // {
+      //   id: "textNodeB20",
+      //   y: 586,
+      //   ...textNode20,
+      // },
+      // {
+      //   id: "textNodeC20",
+      //   y: 916,
+      //   ...textNode20,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA21",
+      //   y: 184,
+      //   ...textNode21,
+      // },
+      // {
+      //   id: "textNodeB21",
+      //   y: 514,
+      //   ...textNode21,
+      // },
+      // {
+      //   id: "textNodeC21",
+      //   y: 844,
+      //   ...textNode21,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA22",
+      //   y: 310,
+      //   ...textNode22,
+      // },
+      // {
+      //   id: "textNodeB22",
+      //   y: 640,
+      //   ...textNode22,
+      // },
+      // {
+      //   id: "textNodeC22",
+      //   y: 970,
+      //   ...textNode22,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA23",
+      //   y: 270,
+      //   ...textNode23,
+      // },
+      // {
+      //   id: "textNodeB23",
+      //   y: 600,
+      //   ...textNode23,
+      // },
+      // {
+      //   id: "textNodeC23",
+      //   y: 930,
+      //   ...textNode23,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA24",
+      //   y: 198,
+      //   ...textNode24,
+      // },
+      // {
+      //   id: "textNodeB24",
+      //   y: 528,
+      //   ...textNode24,
+      // },
+      // {
+      //   id: "textNodeC24",
+      //   y: 858,
+      //   ...textNode24,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA25",
+      //   y: 346,
+      //   ...textNode25,
+      // },
+      // {
+      //   id: "textNodeB25",
+      //   y: 676,
+      //   ...textNode25,
+      // },
+      // {
+      //   id: "textNodeC25",
+      //   y: 1006,
+      //   ...textNode25,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA26",
+      //   y: 276,
+      //   ...textNode26,
+      // },
+      // {
+      //   id: "textNodeB26",
+      //   y: 606,
+      //   ...textNode26,
+      // },
+      // {
+      //   id: "textNodeC26",
+      //   y: 936,
+      //   ...textNode26,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA27",
+      //   y: 376,
+      //   ...textNode27,
+      // },
+      // {
+      //   id: "textNodeB27",
+      //   y: 706,
+      //   ...textNode27,
+      // },
+      // {
+      //   id: "textNodeC27",
+      //   y: 1036,
+      //   ...textNode27,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA28",
+      //   y: 152,
+      //   ...textNode28,
+      // },
+      // {
+      //   id: "textNodeB28",
+      //   y: 482,
+      //   ...textNode28,
+      // },
+      // {
+      //   id: "textNodeC28",
+      //   y: 812,
+      //   ...textNode28,
+      // },
+      /////////////////////////
+      // {
+      //   id: "textNodeA29",
+      //   y: 165,
+      //   ...textNode29,
+      // },
+      // {
+      //   id: "textNodeB29",
+      //   y: 495,
+      //   ...textNode20,
+      // },
+      // {
+      //   id: "textNodeC29",
+      //   y: 825,
+      //   ...textNode20,
+      // },
+      /////////////////////////
       // textNode30,
       // textNode31,
       // textNode32,
@@ -261,17 +1344,183 @@ onMounted(() => {
       // textNode38,
       // textNode39,
       // textNode40,
-      // dataNode1,
-      // dataNode2,
-      // dataNode3,
-      // dataNode4,
-      // signNode1,
-      // signNode2,
-      // signNode3,
-      // signNode4,
-      // signNode5,
-      // signNode6,
-      // signNode7,
+      /////////////////////////
+      // {
+      //   id: "dataNodeA1",
+      //   y: 254,
+      //   ...dataNode1,
+      // },
+      // {
+      //   id: "dataNodeB1",
+      //   y: 584,
+      //   ...dataNode1,
+      // },
+      // {
+      //   id: "dataNodeC1",
+      //   y: 914,
+      //   ...dataNode1,
+      // },
+      /////////////////////////
+      // {
+      //   id: "dataNodeA2",
+      //   y: 354,
+      //   ...dataNode2,
+      // },
+      // {
+      //   id: "dataNodeB2",
+      //   y: 684,
+      //   ...dataNode2,
+      // },
+      // {
+      //   id: "dataNodeC2",
+      //   y: 1014,
+      //   ...dataNode2,
+      // },
+      /////////////////////////
+      // {
+      //   id: "dataNodeA3",
+      //   y: 354,
+      //   ...dataNode3,
+      // },
+      // {
+      //   id: "dataNodeB3",
+      //   y: 684,
+      //   ...dataNode3,
+      // },
+      // {
+      //   id: "dataNodeC3",
+      //   y: 1014,
+      //   ...dataNode3,
+      // },
+      /////////////////////////
+      // {
+      //   id: "dataNodeA4",
+      //   y: 296,
+      //   ...dataNode4,
+      // },
+      // {
+      //   id: "dataNodeB4",
+      //   y: 626,
+      //   ...dataNode4,
+      // },
+      // {
+      //   id: "dataNodeC4",
+      //   y: 956,
+      //   ...dataNode4,
+      // },
+      /////////////////////////
+      // {
+      //   id: "signNodeA1",
+      //   y: 292,
+      //   ...signNode1,
+      // },
+      // {
+      //   id: "signNodeB1",
+      //   y: 622,
+      //   ...signNode1,
+      // },
+      // {
+      //   id: "signNodeC1",
+      //   y: 952,
+      //   ...signNode1,
+      // },
+      /////////////////////////
+      // {
+      //   id: "signNodeA2",
+      //   y: 348,
+      //   ...signNode2,
+      // },
+      // {
+      //   id: "signNodeB2",
+      //   y: 678,
+      //   ...signNode2,
+      // },
+      // {
+      //   id: "signNodeC2",
+      //   y: 1008,
+      //   ...signNode2,
+      // },
+      /////////////////////////
+      // {
+      //   id: "signNodeA3",
+      //   y: 290,
+      //   ...signNode3,
+      // },
+      // {
+      //   id: "signNodeB3",
+      //   y: 620,
+      //   ...signNode3,
+      // },
+      // {
+      //   id: "signNodeC3",
+      //   y: 950,
+      //   ...signNode3,
+      // },
+      /////////////////////////
+      // {
+      //   id: "signNodeA4",
+      //   y: 150,
+      //   ...signNode4,
+      // },
+      // {
+      //   id: "signNodeB4",
+      //   y: 480,
+      //   ...signNode4,
+      // },
+      // {
+      //   id: "signNodeC4",
+      //   y: 810,
+      //   ...signNode4,
+      // },
+      /////////////////////////
+      // {
+      //   id: "signNodeA5",
+      //   y: 264,
+      //   ...signNode5,
+      // },
+      // {
+      //   id: "signNodeB5",
+      //   y: 594,
+      //   ...signNode5,
+      // },
+      // {
+      //   id: "signNodeC5",
+      //   y: 924,
+      //   ...signNode5,
+      // },
+      /////////////////////////
+      // {
+      //   id: "signNodeA6",
+      //   y: 216,
+      //   ...signNode6,
+      // },
+      // {
+      //   id: "signNodeB6",
+      //   y: 546,
+      //   ...signNode6,
+      // },
+      // {
+      //   id: "signNodeC6",
+      //   y: 876,
+      //   ...signNode6,
+      // },
+      /////////////////////////
+      // {
+      //   id: "signNodeA7",
+      //   y: 140,
+      //   ...signNode7,
+      // },
+      // {
+      //   id: "signNodeB7",
+      //   y: 470,
+      //   ...signNode7,
+      // },
+      // {
+      //   id: "signNodeC7",
+      //   y: 800,
+      //   ...signNode7,
+      // },
+      /////////////////////////
       // bottomNode,
       // bottomNode1,
       // bottomNode2,
@@ -332,27 +1581,27 @@ onMounted(() => {
       },
       {
         id: "greenEdge3",
-        source: "transparentNode22",
+        source: "transparentNodeA22",
         target: [1311, 326.5],
         ...greenEdge,
       },
       {
         id: "greenEdge4",
-        source: "metalNode4",
+        source: "metalNodeA4",
         target: [1473, 326.5],
         ...greenEdge,
       },
       //黑色实线箭头组
       {
         id: "blackFillEdge1",
-        source: "metalNode3",
+        source: "metalNodeA3",
         target: [1311, 273],
         ...blackFillEdge,
       },
       //双向箭头(一绿一黑组)
       {
         id: "bidireGreenEdge1",
-        source: "metalNode1",
+        source: "metalNodeA1",
         target: [255, 150],
         vertices: [{ x: 350, y: 150 }],
         ...bidireGreenEdge,
@@ -387,15 +1636,15 @@ onMounted(() => {
       // {
       //   id: "YABEdge3",
       //   source: [1713, 291],
-      //   target: "metalNode4",
+      //   target: "metalNodeA4",
       //   ...YABEdge,
       // },
       // //无箭头虚线组
       // {
       //   id: "naDashEdge1",
-      //   source: "transparentNode5",
+      //   source: "transparentNodeA5",
       //   target: {
-      //     cell: "greenCircleNode1",
+      //     cell: "greenCircleNodeA1",
       //     anchor: {
       //       name: "bottom",
       //     },
@@ -413,7 +1662,7 @@ onMounted(() => {
       // {
       //   id: "naDashEdge4",
       //   source: {
-      //     cell: "transparentNode13",
+      //     cell: "transparentNodeA13",
       //     anchor: {
       //       name: "top",
       //       args: {
@@ -429,7 +1678,7 @@ onMounted(() => {
       // {
       //   id: "naDashEdge5",
       //   source: {
-      //     cell: "transparentNode13",
+      //     cell: "transparentNodeA13",
       //     anchor: {
       //       name: "top",
       //       args: {
@@ -437,20 +1686,20 @@ onMounted(() => {
       //       },
       //     },
       //   },
-      //   target: "transparentNode15",
+      //   target: "transparentNodeA15",
       //   vertices: [{ x: 711, y: 232 }],
       //   router: "manhattan",
       //   ...naDashEdge,
       // },
       // {
       //   id: "naDashEdge6",
-      //   source: "transparentNode14",
+      //   source: "transparentNodeA14",
       //   target: "shadowRectNode5",
       //   ...naDashEdge,
       // },
       // {
       //   id: "naDashEdge7",
-      //   source: "transparentNode21",
+      //   source: "transparentNodeA21",
       //   target: [903, 326.5],
       //   router: "er",
       //   ...naDashEdge,
@@ -458,21 +1707,21 @@ onMounted(() => {
       {
         id: "naDashEdge8",
         source: [861, 280],
-        target: "emptyNode1",
+        target: "emptyNodeA1",
         router: "er",
         ...naDashEdge,
       },
       {
         id: "naDashEdge9",
         source: [957, 280],
-        target: "emptyNode2",
+        target: "emptyNodeA2",
         router: "er",
         ...naDashEdge,
       },
       // {
       //   id: "naDashEdge10",
       //   source: {
-      //     cell: "transparentNode22",
+      //     cell: "transparentNodeA22",
       //     anchor: {
       //       name: "top",
       //       args: {
@@ -480,14 +1729,14 @@ onMounted(() => {
       //       },
       //     },
       //   },
-      //   target: "transparentNode18",
+      //   target: "transparentNodeA18",
       //   router: "manhattan",
       //   ...naDashEdge,
       // },
       // {
       //   id: "naDashEdge11",
       //   source: {
-      //     cell: "transparentNode22",
+      //     cell: "transparentNodeA22",
       //     anchor: {
       //       name: "top",
       //       args: {
@@ -495,14 +1744,14 @@ onMounted(() => {
       //       },
       //     },
       //   },
-      //   target: "transparentNode19",
+      //   target: "transparentNodeA19",
       //   router: "manhattan",
       //   ...naDashEdge,
       // },
       // {
       //   id: "naDashEdge12",
       //   source: {
-      //     cell: "transparentNode22",
+      //     cell: "transparentNodeA22",
       //     anchor: {
       //       name: "top",
       //       args: {
@@ -510,14 +1759,14 @@ onMounted(() => {
       //       },
       //     },
       //   },
-      //   target: "transparentNode20",
+      //   target: "transparentNodeA20",
       //   router: "manhattan",
       //   ...naDashEdge,
       // },
       // {
       //   id: "naDashEdge13",
       //   source: {
-      //     cell: "transparentNode26",
+      //     cell: "transparentNodeA26",
       //     anchor: {
       //       name: "top",
       //     },
@@ -529,7 +1778,7 @@ onMounted(() => {
       // {
       //   id: "naDashEdge14",
       //   source: {
-      //     cell: "transparentNode27",
+      //     cell: "transparentNodeA27",
       //     anchor: {
       //       name: "top",
       //     },
@@ -541,7 +1790,7 @@ onMounted(() => {
       // {
       //   id: "naDashEdge15",
       //   source: {
-      //     cell: "transparentNode3",
+      //     cell: "transparentNodeA3",
       //     anchor: {
       //       name: "bottom",
       //     },
@@ -554,14 +1803,14 @@ onMounted(() => {
       // {
       //   id: "smallDashEdge1",
       //   source: [465, 172],
-      //   target: "greenCircleNode1",
+      //   target: "greenCircleNodeA1",
       //   ...smallDashEdge,
       // },
       // {
       //   id: "smallDashEdge3",
       //   source: [465, 278],
       //   target: {
-      //     cell: "greenCircleNode3",
+      //     cell: "greenCircleNodeA3",
       //     anchor: {
       //       name: "right",
       //       args: {
@@ -574,9 +1823,9 @@ onMounted(() => {
       // },
       // {
       //   id: "smallDashEdge4",
-      //   source: "transparentNode13",
+      //   source: "transparentNodeA13",
       //   target: {
-      //     cell: "transparentNode14",
+      //     cell: "transparentNodeA14",
       //     anchor: {
       //       name: "bottom",
       //       args: {
@@ -589,7 +1838,7 @@ onMounted(() => {
       // {
       //   id: "smallDashEdge5",
       //   source: {
-      //     cell: "transparentNode24",
+      //     cell: "transparentNodeA24",
       //     anchor: {
       //       name: "right",
       //       args: {
@@ -598,7 +1847,7 @@ onMounted(() => {
       //     },
       //   },
       //   target: {
-      //     cell: "greenNode3",
+      //     cell: "greenNodeA3",
       //   },
       //   router: "manhattan",
       //   ...smallDashEdge,
@@ -612,7 +1861,7 @@ onMounted(() => {
       //     },
       //   },
       //   target: {
-      //     cell: "transparentNode24",
+      //     cell: "transparentNodeA24",
       //     anchor: {
       //       name: "top",
       //       args: {
@@ -625,13 +1874,13 @@ onMounted(() => {
       // {
       //   id: "smallDashEdge7",
       //   source: {
-      //     cell: "transparentNode17",
+      //     cell: "transparentNodeA17",
       //     anchor: {
       //       name: "top",
       //     },
       //   },
       //   target: {
-      //     cell: "transparentNode24",
+      //     cell: "transparentNodeA24",
       //     anchor: {
       //       name: "left",
       //       args: {
@@ -645,13 +1894,13 @@ onMounted(() => {
       //黑色镂空实线箭头组
       {
         id: "blackEdge1",
-        source: "transparentNode13",
+        source: "transparentNodeA13",
         target: [427.5, 327],
         ...blackEdge,
       },
       {
         id: "blackEdge2",
-        source: "metalNode1",
+        source: "metalNodeA1",
         target: [427.5, 327],
         ...blackEdge,
       },
@@ -659,48 +1908,48 @@ onMounted(() => {
       // {
       //   id: "smallBlackEdge1",
       //   source: "shadowRectNode5",
-      //   target: "transparentNode7",
+      //   target: "transparentNodeA7",
       //   router: "er",
       //   ...smallBlackEdge,
       // },
       // {
       //   id: "smallBlackEdge2",
       //   source: "shadowRectNode6",
-      //   target: "transparentNode8",
+      //   target: "transparentNodeA8",
       //   router: "er",
       //   ...smallBlackEdge,
       // },
       {
         id: "smallBlackEdge3",
-        source: "metalNode3",
-        target: "shadowRectNode7",
+        source: "metalNodeA3",
+        target: "shadowRectNodeA7",
         ...smallBlackEdge,
       },
       {
         id: "smallBlackEdge4",
-        source: "metalNode4",
-        target: "shadowRectNode10",
+        source: "metalNodeA4",
+        target: "shadowRectNodeA10",
         ...smallBlackEdge,
       },
       //无箭头实线组
       {
         id: "naEdge1",
-        source: "emptyNode1",
-        target: "transparentNode13",
+        source: "emptyNodeA1",
+        target: "transparentNodeA13",
         router: "er",
         ...naEdge,
       },
       {
         id: "naEdge2",
-        source: "emptyNode1",
-        target: "emptyNode2",
+        source: "emptyNodeA1",
+        target: "emptyNodeA2",
         router: "er",
         ...naEdge,
       },
       {
         id: "naEdge3",
-        source: "emptyNode2",
-        target: "transparentNode22",
+        source: "emptyNodeA2",
+        target: "transparentNodeA22",
         router: "er",
         ...naEdge,
       },
@@ -737,6 +1986,19 @@ onMounted(() => {
   border-left-color: #f2f2f2;
   background-color: #d4d0c8;
 }
+
+// .shadowRectNode {
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   font-size: 15px;
+//   background: repeating-linear-gradient(45deg,#fff 0px 2px,transparent 2px 4px);
+// }
+
+
+
 .shadowRectNode1 {
   width: 100%;
   height: 100%;
@@ -1260,5 +2522,30 @@ onMounted(() => {
   font-size: 14px;
   justify-content: center;
   align-items: center;
+}
+.emptyNode {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c0c0c0;
+}
+.emptyNodeWarn {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: repeating-linear-gradient(45deg,red 0px 1px,transparent 1px 2px);
+}
+.emptyNodeWarn div {
+  width: 24px;
+  height: 100%;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  background-color: #c0c0c0;
 }
 </style>

@@ -1,7 +1,5 @@
 export const greenCircleNode1 = {
-  id: "greenCircleNode1",
   x: 352,
-  y: 214,
   width: 22,
   height: 22,
   shape: 'html',
@@ -21,9 +19,7 @@ export const greenCircleNode1 = {
       },
 };
 export const greenCircleNode3 = {
-  id: "greenCircleNode3",
   x: 405,
-  y: 315,
   width: 22,
   height: 22,
   shape: 'html',
