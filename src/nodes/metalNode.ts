@@ -19,12 +19,14 @@ export const metalNode1 = {
 };
 export const metalNode3 = {
   x: 1578,
-  width: 78,
+  width: 94,
   height: 15,
   shape: 'html',
   html: `
-            <div class="metalNode2">
-              <span>X1711A</span>
+            <div class="outmetalNodeWarn">
+              <div class="metalNode2">
+                <span>X1711A</span>
+              </div>
             </div>
             `,
       attrs: {
@@ -38,12 +40,14 @@ export const metalNode3 = {
 };
 export const metalNode4 = {
   x: 1578,
-  width: 78,
+  width: 94,
   height: 15,
   shape: 'html',
   html: `
-            <div class="metalNode2">
-              <span>X1733A</span>
+            <div class="outmetalNode1">
+              <div class="metalNode2">
+                <span>X1733A</span>
+              </div>
             </div>
             `,
       attrs: {

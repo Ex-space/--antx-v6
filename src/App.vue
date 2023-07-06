@@ -137,6 +137,10 @@ import {
   bottomNode12,
   bottomNode13,
 } from "./nodes/bottomNode";
+import { 
+  anglevalveNode1,
+  anglevalveNode2,
+} from "./nodes/anglevalveNode"
 onMounted(() => {
   //定义画布
   const container = document.getElementById("container");
@@ -1535,6 +1539,8 @@ onMounted(() => {
       // bottomNode11,
       // bottomNode12,
       // bottomNode13,
+      anglevalveNode1,
+      anglevalveNode2,
     ],
     edges: [
       // //黑头黄身箭头组
@@ -2028,8 +2034,27 @@ onMounted(() => {
   -webkit-transform: rotate(270deg); /* Safari or Chrome */
   -o-transform: rotate(270deg); /* Opera */
 }
-.metalNode2 {
+.outmetalNode1 {
   width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+.outmetalNodeWarn {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  background: repeating-linear-gradient(45deg,red 0px 1px,transparent 1px 2px);
+}
+.metalNode2 {
+  width: 78px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -2526,16 +2551,23 @@ onMounted(() => {
 .emptyNode {
   width: 100%;
   height: 100%;
-  border: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #c0c0c0;
 }
+.emptyNode div {
+  width: 24px;
+  height: 100%;
+  border: 1px solid black;
+}
 .emptyNodeWarn {
   width: 100%;
   height: 100%;
-  border: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2544,8 +2576,13 @@ onMounted(() => {
 .emptyNodeWarn div {
   width: 24px;
   height: 100%;
+  border: 1px solid black;
+  background-color: #c0c0c0;
+}
+.anglevalveNode {
+  width: 100%;
+  height: 100%;
   border-left: 1px solid black;
   border-right: 1px solid black;
-  background-color: #c0c0c0;
 }
 </style>
