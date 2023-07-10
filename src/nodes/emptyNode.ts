@@ -1,26 +1,38 @@
 export const emptyNode1 = {
-  id: "emptyNode1",
-  x: 849,
-  y: 316,
-  width: 24,
+  x: 843,
+  width: 36,
   height: 21,
+  shape: 'html',
+  html: `
+          <div class="emptyNode">
+            <div></div>
+          </div>
+          `,
   attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
     body: {
-      fill: "#c0c0c0",
-      stroke: "#000",
-    },
+      stroke: 'transparent',
+      strokeWidth: 1, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
   },
 };
 export const emptyNode2 = {
-  id: "emptyNode2",
-  x: 945,
-  y: 316,
-  width: 24,
+  x: 939,
+  width: 36,
   height: 21,
+  shape: 'html',
+  html: `
+          <div class="emptyNodeWarn">
+            <div></div>
+          </div>
+          `,
   attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
     body: {
-      fill: "#c0c0c0",
-      stroke: "#000",
-    },
+      stroke: 'transparent',
+      strokeWidth: 1, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
   },
 };

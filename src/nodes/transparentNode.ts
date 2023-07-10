@@ -1,7 +1,5 @@
 export const transparentNode1 = {
-  id: "transparentNode1",
   x: 129,
-  y: 345,
   width: 87,
   height: 24,
   shape: 'html',
@@ -10,20 +8,18 @@ export const transparentNode1 = {
                 <div>0.854</div><div>w/w</div>
             </div>
             `,
-      attrs: {
-        // 一定要给边框宽度加上>0的值,否则节点将不能连线
-        body: {
-          stroke: '#909090',
-          strokeWidth: 2, // 边框的粗细
-          magnet: true, // 节点是否可以连线
-        }
-      },
+  attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
+    body: {
+      stroke: '#909090',
+      strokeWidth: 2, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
+  },
 };
 
 export const transparentNode3 = {
-  id: "transparentNode3",
   x: 309,
-  y: 345,
   width: 90,
   height: 33,
   shape: 'html',
@@ -35,20 +31,18 @@ export const transparentNode3 = {
               </span>
             </div>
             `,
-      attrs: {
-        // 一定要给边框宽度加上>0的值,否则节点将不能连线
-        body: {
-          stroke: '#909090',
-          strokeWidth: 2, // 边框的粗细
-          magnet: true, // 节点是否可以连线
-        }
-      },
+  attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
+    body: {
+      stroke: '#909090',
+      strokeWidth: 2, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
+  },
 };
 
 export const transparentNode5 = {
-  id: "transparentNode5",
   x: 252,
-  y: 273,
   width: 90,
   height: 33,
   shape: 'html',
@@ -60,19 +54,17 @@ export const transparentNode5 = {
               </span>
             </div>
             `,
-      attrs: {
-        // 一定要给边框宽度加上>0的值,否则节点将不能连线
-        body: {
-          stroke: '#909090',
-          strokeWidth: 2, // 边框的粗细
-          magnet: true, // 节点是否可以连线
-        }
-      },
+  attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
+    body: {
+      stroke: '#909090',
+      strokeWidth: 2, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
+  },
 };
 export const transparentNode7 = {
-  id: "transparentNode7",
   x: 465,
-  y: 123,
   width: 108,
   height: 66,
   shape: 'html',
@@ -93,19 +85,17 @@ export const transparentNode7 = {
               </span>
             </div>
             `,
-      attrs: {
-        // 一定要给边框宽度加上>0的值,否则节点将不能连线
-        body: {
-          stroke: '#909090',
-          strokeWidth: 2, // 边框的粗细
-          magnet: true, // 节点是否可以连线
-        }
-      },
+  attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
+    body: {
+      stroke: '#909090',
+      strokeWidth: 2, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
+  },
 };
 export const transparentNode8 = {
-  id: "transparentNode8",
   x: 465,
-  y: 216,
   width: 108,
   height: 66,
   shape: 'html',
@@ -126,19 +116,17 @@ export const transparentNode8 = {
               </span>
             </div>
             `,
-      attrs: {
-        // 一定要给边框宽度加上>0的值,否则节点将不能连线
-        body: {
-          stroke: '#909090',
-          strokeWidth: 2, // 边框的粗细
-          magnet: true, // 节点是否可以连线
-        }
-      },
+  attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
+    body: {
+      stroke: '#909090',
+      strokeWidth: 2, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
+  },
 };
 export const transparentNode11 = {
-  id: "transparentNode11",
   x: 474,
-  y: 81,
   width: 90,
   height: 36,
   shape: 'html',
@@ -152,19 +140,17 @@ export const transparentNode11 = {
               </span>
             </div>
             `,
-      attrs: {
-        // 一定要给边框宽度加上>0的值,否则节点将不能连线
-        body: {
-          stroke: '#909090',
-          strokeWidth: 2, // 边框的粗细
-          magnet: true, // 节点是否可以连线
-        }
-      },
+  attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
+    body: {
+      stroke: '#909090',
+      strokeWidth: 2, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
+  },
 };
 export const transparentNode13 = {
-  id: "transparentNode13",
   x: 654,
-  y: 309,
   width: 90,
   height: 36,
   shape: 'html',
@@ -173,19 +159,17 @@ export const transparentNode13 = {
               <div>Flowmeter</div><div>1201</div>
             </div>
             `,
-      attrs: {
-        // 一定要给边框宽度加上>0的值,否则节点将不能连线
-        body: {
-          stroke: 'black',
-          strokeWidth: 2, // 边框的粗细
-          magnet: true, // 节点是否可以连线
-        }
-      },
+  attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
+    body: {
+      stroke: 'black',
+      strokeWidth: 2, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
+  },
 };
 export const transparentNode14 = {
-  id: "transparentNode14",
   x: 681,
-  y: 123,
   width: 105,
   height: 69,
   shape: 'html',
@@ -206,19 +190,17 @@ export const transparentNode14 = {
               </span>
             </div>
             `,
-      attrs: {
-        // 一定要给边框宽度加上>0的值,否则节点将不能连线
-        body: {
-          stroke: '#909090',
-          strokeWidth: 2, // 边框的粗细
-          magnet: true, // 节点是否可以连线
-        }
-      },
+  attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
+    body: {
+      stroke: '#909090',
+      strokeWidth: 2, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
+  },
 };
 export const transparentNode15 = {
-  id: "transparentNode15",
   x: 720,
-  y: 246,
   width: 90,
   height: 36,
   shape: 'html',
@@ -230,19 +212,17 @@ export const transparentNode15 = {
               </span>
             </div>
             `,
-      attrs: {
-        // 一定要给边框宽度加上>0的值,否则节点将不能连线
-        body: {
-          stroke: '#909090',
-          strokeWidth: 2, // 边框的粗细
-          magnet: true, // 节点是否可以连线
-        }
-      },
+  attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
+    body: {
+      stroke: '#909090',
+      strokeWidth: 2, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
+  },
 };
 export const transparentNode16 = {
-  id: "transparentNode16",
   x: 816,
-  y: 246,
   width: 90,
   height: 36,
   shape: 'html',
@@ -254,19 +234,17 @@ export const transparentNode16 = {
               </span>
             </div>
             `,
-      attrs: {
-        // 一定要给边框宽度加上>0的值,否则节点将不能连线
-        body: {
-          stroke: '#909090',
-          strokeWidth: 2, // 边框的粗细
-          magnet: true, // 节点是否可以连线
-        }
-      },
+  attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
+    body: {
+      stroke: '#909090',
+      strokeWidth: 2, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
+  },
 };
 export const transparentNode17 = {
-  id: "transparentNode17",
   x: 912,
-  y: 246,
   width: 90,
   height: 36,
   shape: 'html',
@@ -278,19 +256,17 @@ export const transparentNode17 = {
               </span>
             </div>
             `,
-      attrs: {
-        // 一定要给边框宽度加上>0的值,否则节点将不能连线
-        body: {
-          stroke: '#909090',
-          strokeWidth: 2, // 边框的粗细
-          magnet: true, // 节点是否可以连线
-        }
-      },
+  attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
+    body: {
+      stroke: '#909090',
+      strokeWidth: 2, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
+  },
 };
 export const transparentNode18 = {
-  id: "transparentNode18",
   x: 1008,
-  y: 246,
   width: 90,
   height: 36,
   shape: 'html',
@@ -302,19 +278,17 @@ export const transparentNode18 = {
               </span>
             </div>
             `,
-      attrs: {
-        // 一定要给边框宽度加上>0的值,否则节点将不能连线
-        body: {
-          stroke: '#909090',
-          strokeWidth: 2, // 边框的粗细
-          magnet: true, // 节点是否可以连线
-        }
-      },
+  attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
+    body: {
+      stroke: '#909090',
+      strokeWidth: 2, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
+  },
 };
 export const transparentNode19 = {
-  id: "transparentNode19",
   x: 1104,
-  y: 246,
   width: 90,
   height: 36,
   shape: 'html',
@@ -326,19 +300,17 @@ export const transparentNode19 = {
               </span>
             </div>
             `,
-      attrs: {
-        // 一定要给边框宽度加上>0的值,否则节点将不能连线
-        body: {
-          stroke: '#909090',
-          strokeWidth: 2, // 边框的粗细
-          magnet: true, // 节点是否可以连线
-        }
-      },
+  attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
+    body: {
+      stroke: '#909090',
+      strokeWidth: 2, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
+  },
 };
 export const transparentNode20 = {
-  id: "transparentNode20",
   x: 1200,
-  y: 246,
   width: 90,
   height: 36,
   shape: 'html',
@@ -350,19 +322,17 @@ export const transparentNode20 = {
               </span>
             </div>
             `,
-      attrs: {
-        // 一定要给边框宽度加上>0的值,否则节点将不能连线
-        body: {
-          stroke: '#909090',
-          strokeWidth: 2, // 边框的粗细
-          magnet: true, // 节点是否可以连线
-        }
-      },
+  attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
+    body: {
+      stroke: '#909090',
+      strokeWidth: 2, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
+  },
 };
 export const transparentNode21 = {
-  id: "transparentNode21",
   x: 858,
-  y: 360,
   width: 90,
   height: 36,
   shape: 'html',
@@ -374,19 +344,17 @@ export const transparentNode21 = {
               </span>
             </div>
             `,
-      attrs: {
-        // 一定要给边框宽度加上>0的值,否则节点将不能连线
-        body: {
-          stroke: '#909090',
-          strokeWidth: 2, // 边框的粗细
-          magnet: true, // 节点是否可以连线
-        }
-      },
+  attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
+    body: {
+      stroke: '#909090',
+      strokeWidth: 2, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
+  },
 };
 export const transparentNode22 = {
-  id: "transparentNode22",
   x: 1101,
-  y: 308.5,
   width: 90,
   height: 36,
   shape: 'html',
@@ -395,19 +363,17 @@ export const transparentNode22 = {
               <div>Flowmeter</div><div>1205</div>
             </div>
             `,
-      attrs: {
-        // 一定要给边框宽度加上>0的值,否则节点将不能连线
-        body: {
-          stroke: 'black',
-          strokeWidth: 2, // 边框的粗细
-          magnet: true, // 节点是否可以连线
-        }
-      },
+  attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
+    body: {
+      stroke: 'black',
+      strokeWidth: 2, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
+  },
 };
 export const transparentNode23 = {
-  id: "transparentNode23",
   x: 984,
-  y: 165,
   width: 90,
   height: 36,
   shape: 'html',
@@ -419,19 +385,17 @@ export const transparentNode23 = {
               </span>
             </div>
             `,
-      attrs: {
-        // 一定要给边框宽度加上>0的值,否则节点将不能连线
-        body: {
-          stroke: '#909090',
-          strokeWidth: 2, // 边框的粗细
-          magnet: true, // 节点是否可以连线
-        }
-      },
+  attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
+    body: {
+      stroke: '#909090',
+      strokeWidth: 2, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
+  },
 };
 export const transparentNode24 = {
-  id: "transparentNode24",
   x: 1089,
-  y: 165,
   width: 108,
   height: 69,
   shape: 'html',
@@ -452,19 +416,17 @@ export const transparentNode24 = {
               </span>
             </div>
             `,
-      attrs: {
-        // 一定要给边框宽度加上>0的值,否则节点将不能连线
-        body: {
-          stroke: '#909090',
-          strokeWidth: 2, // 边框的粗细
-          magnet: true, // 节点是否可以连线
-        }
-      },
+  attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
+    body: {
+      stroke: '#909090',
+      strokeWidth: 2, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
+  },
 };
 export const transparentNode25 = {
-  id: "transparentNode25",
   x: 1732,
-  y: 189,
   width: 90,
   height: 36,
   shape: 'html',
@@ -478,19 +440,17 @@ export const transparentNode25 = {
               </span>
             </div>
             `,
-      attrs: {
-        // 一定要给边框宽度加上>0的值,否则节点将不能连线
-        body: {
-          stroke: '#909090',
-          strokeWidth: 2, // 边框的粗细
-          magnet: true, // 节点是否可以连线
-        }
-      },
+  attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
+    body: {
+      stroke: '#909090',
+      strokeWidth: 2, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
+  },
 };
 export const transparentNode26 = {
-  id: "transparentNode26",
   x: 1632,
-  y: 189,
   width: 90,
   height: 36,
   shape: 'html',
@@ -502,19 +462,17 @@ export const transparentNode26 = {
               </span>
             </div>
             `,
-      attrs: {
-        // 一定要给边框宽度加上>0的值,否则节点将不能连线
-        body: {
-          stroke: '#909090',
-          strokeWidth: 2, // 边框的粗细
-          magnet: true, // 节点是否可以连线
-        }
-      },
+  attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
+    body: {
+      stroke: '#909090',
+      strokeWidth: 2, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
+  },
 };
 export const transparentNode27 = {
-  id: "transparentNode27",
   x: 1390,
-  y: 189,
   width: 90,
   height: 36,
   shape: 'html',
@@ -526,19 +484,19 @@ export const transparentNode27 = {
               </span>
             </div>
             `,
-      attrs: {
-        // 一定要给边框宽度加上>0的值,否则节点将不能连线
-        body: {
-          stroke: '#909090',
-          strokeWidth: 2, // 边框的粗细
-          magnet: true, // 节点是否可以连线
-        }
-      },
+  attrs: {
+    // 一定要给边框宽度加上>0的值,否则节点将不能连线
+    body: {
+      stroke: '#909090',
+      strokeWidth: 2, // 边框的粗细
+      magnet: true, // 节点是否可以连线
+    }
+  },
 };
 export const transparentNode28 = {
   id: "transparentNode28",
-  x: 1435,
   y: 49.5,
+  x: 1435,
   width: 87,
   height: 24,
   shape: "html",
@@ -558,8 +516,8 @@ export const transparentNode28 = {
 };
 export const transparentNode29 = {
   id: "transparentNode29",
-  x: 1435,
   y: 22,
+  x: 1435,
   width: 87,
   height: 24,
   shape: "html",
@@ -578,9 +536,9 @@ export const transparentNode29 = {
   },
 };
 export const transparentNode30 = {
-  id: "transparentNode30",
-  x: 1718,
+  id: "transparentNodeA30",
   y: 22,
+  x: 1718,
   width: 87,
   height: 24,
   shape: "html",
@@ -599,9 +557,9 @@ export const transparentNode30 = {
   },
 };
 export const transparentNode31 = {
-  id: "transparentNode31",
-  x: 1718,
+  id: "transparentNodeA31",
   y: 49.5,
+  x: 1718,
   width: 87,
   height: 24,
   shape: "html",

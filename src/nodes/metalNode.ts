@@ -1,7 +1,5 @@
 export const metalNode1 = {
-  id: "metalNode1",
   x: 420,
-  y: 198,
   width: 15,
   height: 78,
   shape: 'html',
@@ -20,15 +18,15 @@ export const metalNode1 = {
       },
 };
 export const metalNode3 = {
-  id: "metalNode3",
   x: 1578,
-  y: 99,
-  width: 78,
+  width: 94,
   height: 15,
   shape: 'html',
   html: `
-            <div class="metalNode2">
-              <span>X1711A</span>
+            <div class="outmetalNodeWarn">
+              <div class="metalNode2">
+                <span>X1711A</span>
+              </div>
             </div>
             `,
       attrs: {
@@ -41,15 +39,15 @@ export const metalNode3 = {
       },
 };
 export const metalNode4 = {
-  id: "metalNode4",
   x: 1578,
-  y: 319,
-  width: 78,
+  width: 94,
   height: 15,
   shape: 'html',
   html: `
-            <div class="metalNode2">
-              <span>X1733A</span>
+            <div class="outmetalNode1">
+              <div class="metalNode2">
+                <span>X1733A</span>
+              </div>
             </div>
             `,
       attrs: {

@@ -1,7 +1,5 @@
 export const textNode1 = {
-  id: "textNode1",
   x: 226,
-  y: 158,
   width: 21,
   height: 9,
   shape: 'html',
@@ -12,9 +10,7 @@ export const textNode1 = {
           `,
 };
 export const textNode3 = {
-  id: "textNode3",
   x: 248,
-  y: 174,
   width: 21,
   height: 9,
   shape: 'html',
@@ -25,9 +21,7 @@ export const textNode3 = {
           `,
 };
 export const textNode5 = {
-  id: "textNode5",
   x: 270,
-  y: 240,
   width: 21,
   height: 9,
   shape: 'html',
@@ -38,9 +32,7 @@ export const textNode5 = {
           `,
 };
 export const textNode6 = {
-  id: "textNode6",
   x: 891,
-  y: 120,
   width: 105,
   height: 30,
   attrs: {
@@ -56,9 +48,7 @@ export const textNode6 = {
   },
 };
 export const textNode7 = {
-  id: "textNode7",
   x: 22,
-  y: 340,
   width: 90,
   height: 9,
   shape: 'html',
@@ -69,9 +59,7 @@ export const textNode7 = {
           `,
 };
 export const textNode8 = {
-  id: "textNode8",
   x: 18,
-  y: 355,
   width: 100,
   height: 9,
   shape: 'html',
@@ -82,9 +70,7 @@ export const textNode8 = {
           `,
 };
 export const textNode9 = {
-  id: "textNode9",
   x: 384,
-  y: 318,
   width: 21,
   height: 9,
   shape: 'html',
@@ -95,9 +81,7 @@ export const textNode9 = {
           `,
 };
 export const textNode10 = {
-  id: "textNode10",
   x: 334,
-  y: 210,
   width: 21,
   height: 9,
   shape: 'html',
@@ -108,9 +92,7 @@ export const textNode10 = {
           `,
 };
 export const textNode11 = {
-  id: "textNode11",
   x: 435,
-  y: 334,
   width: 21,
   height: 9,
   shape: 'html',
@@ -121,9 +103,7 @@ export const textNode11 = {
           `,
 };
 export const textNode12 = {
-  id: "textNode12",
   x: 840,
-  y: 338,
   width: 21,
   height: 9,
   shape: 'html',
@@ -134,9 +114,7 @@ export const textNode12 = {
           `,
 };
 export const textNode13 = {
-  id: "textNode13",
   x: 935,
-  y: 338,
   width: 21,
   height: 9,
   shape: 'html',
@@ -147,9 +125,7 @@ export const textNode13 = {
           `,
 };
 export const textNode14 = {
-  id: "textNode14",
   x: 880,
-  y: 165,
   width: 100,
   height: 9,
   shape: 'html',
@@ -160,9 +136,7 @@ export const textNode14 = {
           `,
 };
 export const textNode15 = {
-  id: "textNode15",
   x: 870,
-  y: 180,
   width: 120,  
   height: 9,
   shape: 'html',
@@ -173,9 +147,7 @@ export const textNode15 = {
           `,
 };
 export const textNode16 = {
-  id: "textNode16",
   x: 1444,
-  y: 335,
   width: 21,
   height: 9,
   shape: 'html',
@@ -186,9 +158,7 @@ export const textNode16 = {
           `,
 };
 export const textNode17 = {
-  id: "textNode17",
   x: 1338,
-  y: 265,
   width: 21,
   height: 9,
   shape: 'html',
@@ -199,9 +169,7 @@ export const textNode17 = {
           `,
 };
 export const textNode18 = {
-  id: "textNode18",
   x: 1282,
-  y: 362,
   width: 21,
   height: 9,
   shape: 'html',
@@ -212,9 +180,7 @@ export const textNode18 = {
           `,
 };
 export const textNode19 = {
-  id: "textNode19",
   x: 1685,
-  y: 298,
   width: 21,
   height: 9,
   shape: 'html',
@@ -225,9 +191,7 @@ export const textNode19 = {
           `,
 };
 export const textNode20 = {
-  id: "textNode20",
   x: 1535,
-  y: 256,
   width: 21,
   height: 9,
   shape: 'html',
@@ -238,9 +202,7 @@ export const textNode20 = {
           `,
 };
 export const textNode21 = {
-  id: "textNode21",
   x: 1535,
-  y: 184,
   width: 21,
   height: 9,
   shape: 'html',
@@ -251,9 +213,7 @@ export const textNode21 = {
           `,
 };
 export const textNode22 = {
-  id: "textNode22",
   x: 1706,
-  y: 310,
   width: 21,
   height: 9,
   shape: 'html',
@@ -264,9 +224,7 @@ export const textNode22 = {
           `,
 };
 export const textNode23 = {
-  id: "textNode23",
   x: 1556,
-  y: 270,
   width: 21,
   height: 9,
   shape: 'html',
@@ -277,9 +235,7 @@ export const textNode23 = {
           `,
 };
 export const textNode24 = {
-  id: "textNode24",
   x: 1556,
-  y: 198,
   width: 21,
   height: 9,
   shape: 'html',
@@ -290,9 +246,7 @@ export const textNode24 = {
           `,
 };
 export const textNode25 = {
-  id: "textNode25",
   x: 1466,
-  y: 346,
   width: 21,
   height: 9,
   shape: 'html',
@@ -303,9 +257,7 @@ export const textNode25 = {
           `,
 };
 export const textNode26 = {
-  id: "textNode26",
   x: 1360,
-  y: 276,
   width: 21,
   height: 9,
   shape: 'html',
@@ -316,9 +268,7 @@ export const textNode26 = {
           `,
 };
 export const textNode27 = {
-  id: "textNode27",
   x: 1305,
-  y: 376,
   width: 21,
   height: 9,
   shape: 'html',
@@ -329,9 +279,7 @@ export const textNode27 = {
           `,
 };
 export const textNode28 = {
-  id: "textNode28",
   x: 1614,
-  y: 152,
   width: 21,
   height: 9,
   attrs: {
@@ -347,9 +295,7 @@ export const textNode28 = {
   },
 };
 export const textNode29 = {
-  id: "textNode29",
   x: 1596,
-  y: 165,
   width: 21,
   height: 9,
   attrs: {

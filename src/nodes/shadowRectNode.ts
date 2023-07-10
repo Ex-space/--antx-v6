@@ -18,9 +18,7 @@ export const shadowRectNode1 = {
   },
 };
 export const shadowRectNode2 = {
-  id: "shadowRectNode2",
   x: 6,
-  y: 222,
   width: 117,
   height: 36,
   shape: "html",
@@ -39,9 +37,7 @@ export const shadowRectNode2 = {
   },
 };
 export const shadowRectNode5 = {
-  id: "shadowRectNode5",
   x: 594,
-  y: 143,
   width: 72,
   height: 26,
   shape: "html",
@@ -60,9 +56,7 @@ export const shadowRectNode5 = {
   },
 };
 export const shadowRectNode6 = {
-  id: "shadowRectNode6",
   x: 594,
-  y: 236,
   width: 72,
   height: 26,
   shape: "html",
@@ -100,9 +94,7 @@ export const shadowRectNode7 = {
   },
 };
 export const shadowRectNode8 = {
-  id: "shadowRectNode8",
   x: 1932,
-  y: 159,
   width: 117,
   height: 36,
   shape: "html",
@@ -121,9 +113,7 @@ export const shadowRectNode8 = {
   },
 };
 export const shadowRectNode9 = {
-  id: "shadowRectNode9",
   x: 1932,
-  y: 246,
   width: 117,
   height: 36,
   shape: "html",
@@ -142,9 +132,7 @@ export const shadowRectNode9 = {
   },
 };
 export const shadowRectNode10 = {
-  id: "shadowRectNode10",
   x: 1932,
-  y: 308.5,
   width: 117,
   height: 36,
   shape: "html",
