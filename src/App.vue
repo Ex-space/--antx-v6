@@ -137,10 +137,16 @@ import {
   bottomNode12,
   bottomNode13,
 } from "./nodes/bottomNode";
-import { 
+import {
   anglevalveNode1,
   anglevalveNode2,
-} from "./nodes/anglevalveNode"
+  anglevalveNodeB1,
+  anglevalveNodeC1,
+  anglevalveNodeB2,
+  anglevalveNodeC2,
+} from "./nodes/anglevalveNode";
+import { dangerEdge } from "./edges/dangerEdge";
+import { safeEdge } from "./edges/safeEdge";
 onMounted(() => {
   //定义画布
   const container = document.getElementById("container");
@@ -153,16 +159,16 @@ onMounted(() => {
         y: 132,
         ...shadowRectNode1,
       },
-      // {
-      //   id: "shadowRectNodeB1",
-      //   y: 462,
-      //   ...shadowRectNode1,
-      // },
-      // {
-      //   id: "shadowRectNodeC1",
-      //   y: 792,
-      //   ...shadowRectNode1,
-      // },
+      {
+        id: "shadowRectNodeB1",
+        y: 462,
+        ...shadowRectNode1,
+      },
+      {
+        id: "shadowRectNodeC1",
+        y: 792,
+        ...shadowRectNode1,
+      },
       /////////////////////////
       // {
       //   id: "shadowRectNodeA2",
@@ -217,16 +223,16 @@ onMounted(() => {
         y: 88.5,
         ...shadowRectNode7,
       },
-      // {
-      //   id: "shadowRectNodeB7",
-      //   y: 418.5,
-      //   ...shadowRectNode7,
-      // },
-      // {
-      //   id: "shadowRectNodeC7",
-      //   y: 748.5,
-      //   ...shadowRectNode7,
-      // },
+      {
+        id: "shadowRectNodeB7",
+        y: 418.5,
+        ...shadowRectNode7,
+      },
+      {
+        id: "shadowRectNodeC7",
+        y: 748.5,
+        ...shadowRectNode7,
+      },
       /////////////////////////
       // {
       //   id: "shadowRectNodeA8",
@@ -265,80 +271,80 @@ onMounted(() => {
         y: 308.5,
         ...shadowRectNode10,
       },
-      // {
-      //   id: "shadowRectNodeB10",
-      //   y: 638.5,
-      //   ...shadowRectNode10,
-      // },
-      // {
-      //   id: "shadowRectNodeC10",
-      //   y: 968.5,
-      //   ...shadowRectNode10,
-      // },
+      {
+        id: "shadowRectNodeB10",
+        y: 638.5,
+        ...shadowRectNode10,
+      },
+      {
+        id: "shadowRectNodeC10",
+        y: 968.5,
+        ...shadowRectNode10,
+      },
       /////////////////////////
       {
         id: "metalNodeA1",
         y: 198,
         ...metalNode1,
       },
-      // {
-      //   id: "metalNodeB1",
-      //   y: 528,
-      //   ...metalNode1,
-      // },
-      // {
-      //   id: "metalNodeC1",
-      //   y: 858,
-      //   ...metalNode1,
-      // },
+      {
+        id: "metalNodeB1",
+        y: 528,
+        ...metalNode1,
+      },
+      {
+        id: "metalNodeC1",
+        y: 858,
+        ...metalNode1,
+      },
       /////////////////////////
       {
         id: "metalNodeA3",
         y: 99,
         ...metalNode3,
       },
-      // {
-      //   id: "metalNodeB3",
-      //   y: 429,
-      //   ...metalNode3,
-      // },
-      // {
-      //   id: "metalNodeC3",
-      //   y: 759,
-      //   ...metalNode3,
-      // },
+      {
+        id: "metalNodeB3",
+        y: 429,
+        ...metalNode3,
+      },
+      {
+        id: "metalNodeC3",
+        y: 759,
+        ...metalNode3,
+      },
       /////////////////////////
       {
         id: "metalNodeA4",
         y: 319,
         ...metalNode4,
       },
-      // {
-      //   id: "metalNodeB4",
-      //   y: 649,
-      //   ...metalNode4,
-      // },
-      // {
-      //   id: "metalNodeC4",
-      //   y: 979,
-      //   ...metalNode4,
-      // },
+      {
+        id: "metalNodeB4",
+        y: 649,
+        ...metalNode4,
+      },
+      {
+        id: "metalNodeC4",
+        y: 979,
+        ...metalNode4,
+      },
       /////////////////////////
       {
         id: "greenNodeA1",
         y: 128,
         ...greenNode1,
       },
-      // {
-      //   id: "greenNodeB1",
-      //   y: 458,
-      //   ...greenNode1,
-      // },
-      // {
-      //   id: "greenNodeC1",
-      //   y: 788,
-      //   ...greenNode1,
-      // },
+      {
+        id: "greenNodeB1",
+        y: 458,
+        ...greenNode1,
+      },
+      {
+        id: "greenNodeC1",
+        y: 788,
+        ...greenNode1,
+      },
       /////////////////////////
       // {
       //   id: "greenNodeA3",
@@ -393,80 +399,80 @@ onMounted(() => {
         y: 304,
         ...greenNode6,
       },
-      // {
-      //   id: "greenNodeB6",
-      //   y: 634,
-      //   ...greenNode6,
-      // },
-      // {
-      //   id: "greenNodeC6",
-      //   y: 964,
-      //   ...greenNode6,
-      // },
+      {
+        id: "greenNodeB6",
+        y: 634,
+        ...greenNode6,
+      },
+      {
+        id: "greenNodeC6",
+        y: 964,
+        ...greenNode6,
+      },
       /////////////////////////
       {
         id: "greenNodeA7",
         y: 327,
         ...greenNode7,
       },
-      // {
-      //   id: "greenNodeB7",
-      //   y: 657,
-      //   ...greenNode7,
-      // },
-      // {
-      //   id: "greenNodeC7",
-      //   y: 987,
-      //   ...greenNode7,
-      // },
+      {
+        id: "greenNodeB7",
+        y: 657,
+        ...greenNode7,
+      },
+      {
+        id: "greenNodeC7",
+        y: 987,
+        ...greenNode7,
+      },
       /////////////////////////
       {
         id: "greenNodeA8",
         y: 261,
         ...greenNode8,
       },
-      // {
-      //   id: "greenNodeB8",
-      //   y: 591,
-      //   ...greenNode8,
-      // },
-      // {
-      //   id: "greenNodeC8",
-      //   y: 921,
-      //   ...greenNode8,
-      // },
+      {
+        id: "greenNodeB8",
+        y: 591,
+        ...greenNode8,
+      },
+      {
+        id: "greenNodeC8",
+        y: 921,
+        ...greenNode8,
+      },
       /////////////////////////
       {
         id: "greenNodeA9",
         y: 350,
         ...greenNode9,
       },
-      // {
-      //   id: "greenNodeB9",
-      //   y: 680,
-      //   ...greenNode9,
-      // },
-      // {
-      //   id: "greenNodeC9",
-      //   y: 1010,
-      //   ...greenNode9,
-      // },
+      {
+        id: "greenNodeB9",
+        y: 680,
+        ...greenNode9,
+      },
+      {
+        id: "greenNodeC9",
+        y: 1010,
+        ...greenNode9,
+      },
       /////////////////////////
       {
         id: "greenNodeA10",
         y: 292,
         ...greenNode10,
       },
-      // {
-      //   id: "greenNodeB10",
-      //   y: 622,
-      //   ...greenNode10,
-      // },
-      // {
-      //   id: "greenNodeC10",
-      //   y: 952,
-      //   ...greenNode10,
-      // },
+      {
+        id: "greenNodeB10",
+        y: 622,
+        ...greenNode10,
+      },
+      {
+        id: "greenNodeC10",
+        y: 952,
+        ...greenNode10,
+      },
       /////////////////////////
       // {
       //   id: "greenNodeA11",
@@ -585,16 +591,16 @@ onMounted(() => {
         y: 309,
         ...transparentNode13,
       },
-      // {
-      //   id: "transparentNodeB13",
-      //   y: 639,
-      //   ...transparentNode13,
-      // },
-      // {
-      //   id: "transparentNodeC13",
-      //   y: 969,
-      //   ...transparentNode13,
-      // },
+      {
+        id: "transparentNodeB13",
+        y: 639,
+        ...transparentNode13,
+      },
+      {
+        id: "transparentNodeC13",
+        y: 969,
+        ...transparentNode13,
+      },
       /////////////////////////
       // {
       //   id: "transparentNodeA14",
@@ -729,16 +735,16 @@ onMounted(() => {
         y: 308.5,
         ...transparentNode22,
       },
-      // {
-      //   id: "transparentNodeB22",
-      //   y: 638.5,
-      //   ...transparentNode22,
-      // },
-      // {
-      //   id: "transparentNodeC22",
-      //   y: 968.5,
-      //   ...transparentNode22,
-      // },
+      {
+        id: "transparentNodeB22",
+        y: 638.5,
+        ...transparentNode22,
+      },
+      {
+        id: "transparentNodeC22",
+        y: 968.5,
+        ...transparentNode22,
+      },
       /////////////////////////
       // {
       //   id: "transparentNodeA23",
@@ -846,48 +852,48 @@ onMounted(() => {
         y: 315,
         ...greenCircleNode3,
       },
-      // {
-      //   id: "greenCircleNodeB3",
-      //   y: 645,
-      //   ...greenCircleNode3,
-      // },
-      // {
-      //   id: "greenCircleNodeC3",
-      //   y: 975,
-      //   ...greenCircleNode3,
-      // },
+      {
+        id: "greenCircleNodeB3",
+        y: 645,
+        ...greenCircleNode3,
+      },
+      {
+        id: "greenCircleNodeC3",
+        y: 975,
+        ...greenCircleNode3,
+      },
       /////////////////////////
       {
         id: "emptyNodeA1",
         y: 316,
         ...emptyNode1,
       },
-      // {
-      //   id: "emptyNodeB1",
-      //   y: 646,
-      //   ...emptyNode1,
-      // },
-      // {
-      //   id: "emptyNodeC1",
-      //   y: 976,
-      //   ...emptyNode1,
-      // },
+      {
+        id: "emptyNodeB1",
+        y: 646,
+        ...emptyNode1,
+      },
+      {
+        id: "emptyNodeC1",
+        y: 976,
+        ...emptyNode1,
+      },
       /////////////////////////
       {
         id: "emptyNodeA2",
         y: 316,
         ...emptyNode2,
       },
-      // {
-      //   id: "emptyNodeB2",
-      //   y: 646,
-      //   ...emptyNode2,
-      // },
-      // {
-      //   id: "emptyNodeC2",
-      //   y: 976,
-      //   ...emptyNode2,
-      // },
+      {
+        id: "emptyNodeB2",
+        y: 646,
+        ...emptyNode2,
+      },
+      {
+        id: "emptyNodeC2",
+        y: 976,
+        ...emptyNode2,
+      },
       /////////////////////////
       // {
       //   id: "littleBlackNodeA1",
@@ -1054,32 +1060,32 @@ onMounted(() => {
         y: 338,
         ...textNode12,
       },
-      // {
-      //   id: "textNodeB12",
-      //   y: 668,
-      //   ...textNode12,
-      // },
-      // {
-      //   id: "textNodeC12",
-      //   y: 998,
-      //   ...textNode12,
-      // },
+      {
+        id: "textNodeB12",
+        y: 668,
+        ...textNode12,
+      },
+      {
+        id: "textNodeC12",
+        y: 998,
+        ...textNode12,
+      },
       /////////////////////////
       {
         id: "textNodeA13",
         y: 338,
         ...textNode13,
       },
-      // {
-      //   id: "textNodeB13",
-      //   y: 668,
-      //   ...textNode13,
-      // },
-      // {
-      //   id: "textNodeC13",
-      //   y: 998,
-      //   ...textNode13,
-      // },
+      {
+        id: "textNodeB13",
+        y: 668,
+        ...textNode13,
+      },
+      {
+        id: "textNodeC13",
+        y: 998,
+        ...textNode13,
+      },
       /////////////////////////
       // {
       //   id: "textNodeA14",
@@ -1541,8 +1547,254 @@ onMounted(() => {
       // bottomNode13,
       anglevalveNode1,
       anglevalveNode2,
+      anglevalveNodeB1,
+      anglevalveNodeC1,
+      anglevalveNodeB2,
+      anglevalveNodeC2,
     ],
     edges: [
+      // //安全线
+      {
+        id: "safeEdge1",
+        source: {
+          cell: "anglevalveNode1",
+          anchor: {
+            name: "top",
+          },
+        },
+        router: "er",
+        target: [510, 280],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge1B",
+        source: {
+          cell: "anglevalveNodeB1",
+          anchor: {
+            name: "top",
+          },
+        },
+        router: "er",
+        target: [510, 610],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge1C",
+        source: {
+          cell: "anglevalveNodeC1",
+          anchor: {
+            name: "top",
+          },
+        },
+        router: "er",
+        target: [510, 940],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge2",
+        source: {
+          cell: "anglevalveNode2",
+          anchor: {
+            name: "top",
+          },
+        },
+        router: "er",
+        target: [610, 280],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge2B",
+        source: {
+          cell: "anglevalveNodeB2",
+          anchor: {
+            name: "top",
+          },
+        },
+        router: "er",
+        target: [610, 610],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge2C",
+        source: {
+          cell: "anglevalveNodeC2",
+          anchor: {
+            name: "top",
+          },
+        },
+        router: "er",
+        target: [610, 940],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge3",
+        source: [847, 316],
+        router: "er",
+        target: [847, 280],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge3B",
+        source: [847, 646],
+        router: "er",
+        target: [847, 610],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge3C",
+        source: [847, 976],
+        router: "er",
+        target: [847, 940],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge4",
+        source: [876, 316],
+        router: "er",
+        target: [876, 280],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge4B",
+        source: [876, 646],
+        router: "er",
+        target: [876, 610],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge4C",
+        source: [876, 976],
+        router: "er",
+        target: [876, 940],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge5",
+        source: [1582.5, 316],
+        router: "er",
+        target: [1582.5, 280],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge5B",
+        source: [1582.5, 646],
+        router: "er",
+        target: [1582.5, 610],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge5C",
+        source: [1582.5, 976],
+        router: "er",
+        target: [1582.5, 940],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge6",
+        source: [1667.5, 316],
+        router: "er",
+        target: [1667.5, 280],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge6B",
+        source: [1667.5, 646],
+        router: "er",
+        target: [1667.5, 610],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge6C",
+        source: [1667.5, 976],
+        router: "er",
+        target: [1667.5, 940],
+        ...safeEdge,
+      },
+      // //危险线
+      {
+        id: "dangerEdge1",
+        source: [943, 316],
+        router: "er",
+        target: [943, 280],
+        ...dangerEdge,
+      },
+      {
+        id: "dangerEdge1B",
+        source: [943, 646],
+        router: "er",
+        target: [943, 610],
+        ...dangerEdge,
+      },
+      {
+        id: "dangerEdge1C",
+        source: [943, 976],
+        router: "er",
+        target: [943, 940],
+        ...dangerEdge,
+      },
+      {
+        id: "dangerEdge2",
+        source: [972, 316],
+        router: "er",
+        target: [972, 280],
+        ...dangerEdge,
+      },
+      {
+        id: "dangerEdge2B",
+        source: [972, 646],
+        router: "er",
+        target: [972, 610],
+        ...dangerEdge,
+      },
+      {
+        id: "dangerEdge2C",
+        source: [972, 976],
+        router: "er",
+        target: [972, 940],
+        ...dangerEdge,
+      },
+      {
+        id: "dangerEdge3",
+        source: [1582.5, 96],
+        router: "er",
+        target: [1582.5, 60],
+        ...dangerEdge,
+      },
+      {
+        id: "dangerEdge3B",
+        source: [1582.5, 426],
+        router: "er",
+        target: [1582.5, 390],
+        ...dangerEdge,
+      },
+      {
+        id: "dangerEdge3C",
+        source: [1582.5, 756],
+        router: "er",
+        target: [1582.5, 720],
+        ...dangerEdge,
+      },
+      {
+        id: "dangerEdge4",
+        source: [1667.5, 96],
+        router: "er",
+        target: [1667.5, 60],
+        ...dangerEdge,
+      },
+      {
+        id: "dangerEdge4B",
+        source: [1667.5, 426],
+        router: "er",
+        target: [1667.5, 390],
+        ...dangerEdge,
+      },
+      {
+        id: "dangerEdge4C",
+        source: [1667.5, 756],
+        router: "er",
+        target: [1667.5, 720],
+        ...dangerEdge,
+      },
       // //黑头黄身箭头组
       // {
       //   id: "yHbBEdge1",
@@ -1571,11 +1823,35 @@ onMounted(() => {
         target: [1311, 273],
         ...allBlackEdge,
       },
+      {
+        id: "allBlackEdge1B",
+        source: [1311, 656.5],
+        target: [1311, 603],
+        ...allBlackEdge,
+      },
+      {
+        id: "allBlackEdge1C",
+        source: [1311, 986.5],
+        target: [1311, 933],
+        ...allBlackEdge,
+      },
       //双向绿色箭头组
       {
         id: "allGreenEdge1",
         source: [1311, 326.5],
         target: [1473, 326.5],
+        ...allGreenEdge,
+      },
+      {
+        id: "allGreenEdge1B",
+        source: [1311, 656.5],
+        target: [1473, 656.5],
+        ...allGreenEdge,
+      },
+      {
+        id: "allGreenEdge1C",
+        source: [1311, 986.5],
+        target: [1473, 986.5],
         ...allGreenEdge,
       },
       //绿色实线箭头组
@@ -1586,9 +1862,33 @@ onMounted(() => {
         ...greenEdge,
       },
       {
+        id: "greenEdge1B",
+        source: "shadowRectNodeB1",
+        target: [255, 480],
+        ...greenEdge,
+      },
+      {
+        id: "greenEdge1C",
+        source: "shadowRectNodeC1",
+        target: [255, 810],
+        ...greenEdge,
+      },
+      {
         id: "greenEdge3",
         source: "transparentNodeA22",
         target: [1311, 326.5],
+        ...greenEdge,
+      },
+      {
+        id: "greenEdge3B",
+        source: "transparentNodeB22",
+        target: [1311, 656.5],
+        ...greenEdge,
+      },
+      {
+        id: "greenEdge3C",
+        source: "transparentNodeC22",
+        target: [1311, 986.5],
         ...greenEdge,
       },
       {
@@ -1597,11 +1897,35 @@ onMounted(() => {
         target: [1473, 326.5],
         ...greenEdge,
       },
+      {
+        id: "greenEdgeB4",
+        source: "metalNodeB4",
+        target: [1473, 656.5],
+        ...greenEdge,
+      },
+      {
+        id: "greenEdgeC4",
+        source: "metalNodeC4",
+        target: [1473, 986.5],
+        ...greenEdge,
+      },
       //黑色实线箭头组
       {
         id: "blackFillEdge1",
         source: "metalNodeA3",
         target: [1311, 273],
+        ...blackFillEdge,
+      },
+      {
+        id: "blackFillEdge1B",
+        source: "metalNodeB3",
+        target: [1311, 603],
+        ...blackFillEdge,
+      },
+      {
+        id: "blackFillEdge1C",
+        source: "metalNodeC3",
+        target: [1311, 933],
         ...blackFillEdge,
       },
       //双向箭头(一绿一黑组)
@@ -1612,6 +1936,21 @@ onMounted(() => {
         vertices: [{ x: 350, y: 150 }],
         ...bidireGreenEdge,
       },
+      {
+        id: "bidireGreenEdge1B",
+        source: "metalNodeB1",
+        target: [255, 480],
+        vertices: [{ x: 350, y: 480 }],
+        ...bidireGreenEdge,
+      },
+      {
+        id: "bidireGreenEdge1C",
+        source: "metalNodeC1",
+        target: [255, 810],
+        vertices: [{ x: 350, y: 810 }],
+        ...bidireGreenEdge,
+      },
+
       // //小黄色实线箭头组
       // {
       //   id: "yellowStrokeEdge1",
@@ -1718,9 +2057,37 @@ onMounted(() => {
         ...naDashEdge,
       },
       {
+        id: "naDashEdge8B",
+        source: [861, 610],
+        target: "emptyNodeB1",
+        router: "er",
+        ...naDashEdge,
+      },
+      {
+        id: "naDashEdge8C",
+        source: [861, 940],
+        target: "emptyNodeC1",
+        router: "er",
+        ...naDashEdge,
+      },
+      {
         id: "naDashEdge9",
         source: [957, 280],
         target: "emptyNodeA2",
+        router: "er",
+        ...naDashEdge,
+      },
+      {
+        id: "naDashEdge9B",
+        source: [957, 610],
+        target: "emptyNodeB2",
+        router: "er",
+        ...naDashEdge,
+      },
+      {
+        id: "naDashEdge9C",
+        source: [957, 940],
+        target: "emptyNodeC2",
         router: "er",
         ...naDashEdge,
       },
@@ -1900,14 +2267,41 @@ onMounted(() => {
       //黑色镂空实线箭头组
       {
         id: "blackEdge1",
-        source: "transparentNodeA13",
+        source: "anglevalveNode1",
         target: [427.5, 327],
+        router: "manhattan",
+        ...blackEdge,
+      },
+      {
+        id: "blackEdge1B",
+        source: "anglevalveNodeB1",
+        target: [427.5, 657],
+        router: "manhattan",
+        ...blackEdge,
+      },
+      {
+        id: "blackEdge1C",
+        source: "anglevalveNodeC1",
+        target: [427.5, 987],
+        router: "manhattan",
         ...blackEdge,
       },
       {
         id: "blackEdge2",
         source: "metalNodeA1",
         target: [427.5, 327],
+        ...blackEdge,
+      },
+      {
+        id: "blackEdge2B",
+        source: "metalNodeB1",
+        target: [427.5, 657],
+        ...blackEdge,
+      },
+      {
+        id: "blackEdge2C",
+        source: "metalNodeC1",
+        target: [427.5, 987],
         ...blackEdge,
       },
       //小黑箭头实线组
@@ -1932,9 +2326,33 @@ onMounted(() => {
         ...smallBlackEdge,
       },
       {
+        id: "smallBlackEdge3B",
+        source: "metalNodeB3",
+        target: "shadowRectNodeB7",
+        ...smallBlackEdge,
+      },
+      {
+        id: "smallBlackEdge3C",
+        source: "metalNodeC3",
+        target: "shadowRectNodeC7",
+        ...smallBlackEdge,
+      },
+      {
         id: "smallBlackEdge4",
         source: "metalNodeA4",
         target: "shadowRectNodeA10",
+        ...smallBlackEdge,
+      },
+      {
+        id: "smallBlackEdge4B",
+        source: "metalNodeB4",
+        target: "shadowRectNodeB10",
+        ...smallBlackEdge,
+      },
+      {
+        id: "smallBlackEdge4C",
+        source: "metalNodeC4",
+        target: "shadowRectNodeC10",
         ...smallBlackEdge,
       },
       //无箭头实线组
@@ -1946,9 +2364,37 @@ onMounted(() => {
         ...naEdge,
       },
       {
+        id: "naEdge1B",
+        source: "emptyNodeB1",
+        target: "transparentNodeB13",
+        router: "er",
+        ...naEdge,
+      },
+      {
+        id: "naEdge1C",
+        source: "emptyNodeC1",
+        target: "transparentNodeC13",
+        router: "er",
+        ...naEdge,
+      },
+      {
         id: "naEdge2",
         source: "emptyNodeA1",
         target: "emptyNodeA2",
+        router: "er",
+        ...naEdge,
+      },
+      {
+        id: "naEdge2B",
+        source: "emptyNodeB1",
+        target: "emptyNodeB2",
+        router: "er",
+        ...naEdge,
+      },
+      {
+        id: "naEdge2C",
+        source: "emptyNodeC1",
+        target: "emptyNodeC2",
         router: "er",
         ...naEdge,
       },
@@ -1957,6 +2403,62 @@ onMounted(() => {
         source: "emptyNodeA2",
         target: "transparentNodeA22",
         router: "er",
+        ...naEdge,
+      },
+      {
+        id: "naEdge3B",
+        source: "emptyNodeB2",
+        target: "transparentNodeB22",
+        router: "er",
+        ...naEdge,
+      },
+      {
+        id: "naEdge3C",
+        source: "emptyNodeC2",
+        target: "transparentNodeC22",
+        router: "er",
+        ...naEdge,
+      },
+      {
+        id: "naEdge4",
+        source: "anglevalveNode2",
+        target: "anglevalveNode1",
+        router: "manhattan",
+        ...naEdge,
+      },
+      {
+        id: "naEdge4B",
+        source: "anglevalveNodeB2",
+        target: "anglevalveNodeB1",
+        router: "manhattan",
+        ...naEdge,
+      },
+      {
+        id: "naEdge4C",
+        source: "anglevalveNodeC2",
+        target: "anglevalveNodeC1",
+        router: "manhattan",
+        ...naEdge,
+      },
+      {
+        id: "naEdge5",
+        source: "anglevalveNode2",
+        target: "transparentNodeA13",
+        router: "manhattan",
+        ...naEdge,
+      },
+      {
+        id: "naEdge5B",
+        source: "anglevalveNodeB2",
+        target: "transparentNodeB13",
+        router: "manhattan",
+        ...naEdge,
+      },
+      {
+        id: "naEdge5C",
+        source: "anglevalveNodeC2",
+        target: "transparentNodeC13",
+        router: "manhattan",
         ...naEdge,
       },
     ],
@@ -2002,8 +2504,6 @@ onMounted(() => {
 //   font-size: 15px;
 //   background: repeating-linear-gradient(45deg,#fff 0px 2px,transparent 2px 4px);
 // }
-
-
 
 .shadowRectNode1 {
   width: 100%;
@@ -2051,7 +2551,11 @@ onMounted(() => {
   align-items: center;
   border-left: 1px solid black;
   border-right: 1px solid black;
-  background: repeating-linear-gradient(45deg,red 0px 1px,transparent 1px 2px);
+  background: repeating-linear-gradient(
+    45deg,
+    red 0px 1px,
+    transparent 1px 2px
+  );
 }
 .metalNode2 {
   width: 78px;
@@ -2571,7 +3075,11 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: repeating-linear-gradient(45deg,red 0px 1px,transparent 1px 2px);
+  background: repeating-linear-gradient(
+    45deg,
+    red 0px 1px,
+    transparent 1px 2px
+  );
 }
 .emptyNodeWarn div {
   width: 24px;
@@ -2582,7 +3090,7 @@ onMounted(() => {
 .anglevalveNode {
   width: 100%;
   height: 100%;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  border-left: 2.5px solid black;
+  border-right: 2.5px solid black;
 }
 </style>
