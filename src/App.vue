@@ -2,10 +2,13 @@
 import { Graph } from "@antv/x6";
 import "@antv/x6-vue-shape";
 import { handleResize } from "./utils/handleResize";
-import { onMounted } from "vue";
+import { onMounted, ref, reactive, getCurrentInstance, nextTick } from "vue";
 import { blackEdge } from "./edges/blackEdge.ts";
 import { yellowStrokeEdge } from "./edges/yellowStrokeEdge.ts";
 import { greenEdge } from "./edges/greenEdge.ts";
+import { ElMessage, ElMessageBox } from "element-plus";
+import { format } from "./utils/timeFormat";
+import { transform } from "echarts-stat";
 import {
   transparentNode1,
   transparentNode3,
@@ -147,6 +150,7 @@ import {
 } from "./nodes/anglevalveNode";
 import { dangerEdge } from "./edges/dangerEdge";
 import { safeEdge } from "./edges/safeEdge";
+import * as echarts from "echarts";
 onMounted(() => {
   //定义画布
   const container = document.getElementById("container");
@@ -2470,10 +2474,191 @@ onMounted(() => {
     handleResize(graph, document.documentElement as HTMLElement);
   });
 });
+const { proxy } = getCurrentInstance();
+let drawer = false;
+const init = (xData: any, yData: any, tipXdata: any, tipYdata: any) => {
+  var myCharts = echarts.init(document.getElementById("charts-container")!);
+  echarts.registerTransform(transform.histogram);
+  var option = {
+    grid: {
+      top: "15%",
+    },
+    title: {
+      text: `设备${deviceId.value}数据推送图`,
+      x: "center",
+
+      y: "top",
+      textStyle: {
+        fontSize: 30,
+        lineHeight: 50,
+      },
+    },
+    tooltip: {
+      trigger: "axis",
+      extraCssText:
+        "width:auto;height:auto;background-color:rgba(0,0,0,0.3);color:#fff",
+      formatter: function (val: any) {
+        return (
+          "时间：" +
+          xData[val[0].dataIndex] +
+          "\r\n" +
+          "报警次数：" +
+          tipYdata[val[0].dataIndex]
+        );
+      },
+    },
+    legend: {
+      data: ["销量"],
+    },
+    xAxis: {
+      type: "category",
+      name: "时间",
+      data: tipXdata,
+      axisLabel: {
+        margin: 5,
+        align: "right",
+      },
+    },
+    yAxis: [
+      {
+        min: 0,
+        max: null,
+        show: true,
+        minInterval: 1,
+        type: "value",
+        name: "是否报警",
+        axisLabel: {
+          margin: 5,
+          align: "right",
+        },
+        axisLine: { show: true },
+      },
+    ],
+    series: [
+      {
+        name: "报警次数",
+        type: "line",
+        data: yData,
+      },
+    ],
+  };
+  myCharts.setOption(option);
+};
+let dialogTableVisible = ref<boolean>(false);
+let startTime = ref();
+let endTime = ref();
+const openSearch = () => {
+  dialogTableVisible.value = true;
+};
+let deviceId = ref();
+const deviceIdList = [1, 2, 3, 4, 5];
+const showPic = async () => {
+  if (startTime.value && endTime.value) {
+    dialogTableVisible.value = false;
+    let st = new Date(startTime.value).getTime();
+    let et = new Date(endTime.value).getTime();
+    let frequencyData: any = [];
+    let timeData: any = [];
+    let simpleTimeData: any = [];
+    let statusData: any = [];
+    drawer = true;
+
+    await proxy.$http
+      .get("/getDeviceDataBetweenTimeByHour", {
+        params: {
+          deviceId: deviceId.value,
+          firstTime: st,
+          secondTime: et,
+        },
+      })
+      .then((res: any) => {
+        res.data.data.forEach((item: any) => {
+          timeData.push(format(item.endTime, true));
+          simpleTimeData.push(format(item.endTime, false));
+        });
+        res.data.data.forEach((item: any) => {
+          if (!item.num) {
+            statusData.push(item.num);
+          } else {
+            statusData.push(1);
+          }
+          frequencyData.push(item.num);
+        });
+
+        nextTick(() => {
+          init(timeData, statusData, simpleTimeData, frequencyData);
+        });
+      })
+      .catch((err: any) => {
+        console.error(err);
+      });
+  } else {
+    ElMessage({
+      message: "请完善查询时间范围！",
+      type: "error",
+    });
+  }
+};
 </script>
 
 <template>
   <div id="container"></div>
+  <button class="btn" @click="openSearch">查询历史记录</button>
+  <el-dialog
+    class="dialog"
+    v-model="dialogTableVisible"
+    title="查询历史记录"
+    center
+    destroy-on-close
+    draggable
+    align-center
+  >
+    <h2>请选择历史记录相关信息</h2>
+    <hr />
+    <div class="group">
+      <div class="opt">
+        <h3>设备号：</h3>
+        <el-select
+          v-model="deviceId"
+          filterable
+          placeholder="请选择要查询的设备号"
+        >
+          <el-option
+            v-for="item in deviceIdList"
+            :key="item"
+            :label="item"
+            :value="item"
+          />
+        </el-select>
+      </div>
+      <div class="opt">
+        <h3>开始时间:</h3>
+        <el-date-picker
+          v-model="startTime"
+          type="datetime"
+          placeholder="请选择开始时间"
+        />
+      </div>
+      <div class="opt">
+        <h3>结束时间:</h3>
+        <el-date-picker
+          v-model="endTime"
+          type="datetime"
+          placeholder="请选择结束时间"
+        />
+      </div>
+      <el-button class="search" type="primary" @click="showPic">查询</el-button>
+    </div>
+  </el-dialog>
+  <el-drawer
+    v-model="drawer"
+    direction="rtl"
+    lock-scroll
+    size="80%"
+    destroy-on-close
+  >
+    <div id="charts-container"></div>
+  </el-drawer>
 </template>
 
 <style lang="less">
@@ -2481,6 +2666,49 @@ onMounted(() => {
   position: absolute;
   left: 0;
   top: 0;
+}
+.group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btn {
+  transition: all .3s;
+  position: absolute;
+  cursor: pointer;
+  padding: 5px 10px;
+  background-color: #efefef;
+  border:2px solid #646464;
+  border-radius: 3px
+}
+.btn:hover{
+  background-color: #ccc;
+}
+.search {
+  margin: 0 auto;
+  width: 200px;
+  margin-top: 30px;
+}
+#charts-container {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+.el-dialog__title {
+  font-size: 30px;
+  font-weight: bold;
+  transform: translateY(10px) !important;
+}
+h2 {
+  margin-bottom: 5px;
+}
+.opt {
+  margin: 20px 0;
+  display: flex;
+  gap: 20px;
+  h3 {
+    vertical-align: middle;
+  }
 }
 .shadowRectNode {
   width: 100%;
