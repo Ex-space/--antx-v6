@@ -151,6 +151,7 @@ import {
 import { dangerEdge } from "./edges/dangerEdge";
 import { safeEdge } from "./edges/safeEdge";
 import * as echarts from "echarts";
+import { Loading } from "element-plus/es/components/loading/src/service.js";
 onMounted(() => {
   //定义画布
   const container = document.getElementById("container");
@@ -2469,17 +2470,22 @@ onMounted(() => {
   };
   (graph as Graph).fromJSON(data as any);
   graph.zoomTo(0.72);
-  handleResize(graph, document.documentElement as HTMLElement); //画布居中
+  handleResize(graph, document.documentElement as HTMLElement);
+  //画布居中
   window.addEventListener("resize", () => {
     handleResize(graph, document.documentElement as HTMLElement);
   });
 });
 const { proxy } = getCurrentInstance();
 let drawer = false;
-const init = (xData: any, yData: any, tipXdata: any, tipYdata: any) => {
+let reListener: any;
+const updateCharts = (charts: any, options: any) => {
+  charts.setOption(options);
+};
+const init = async () => {
   var myCharts = echarts.init(document.getElementById("charts-container")!);
   echarts.registerTransform(transform.histogram);
-  var option = {
+  var option: any = {
     grid: {
       top: "15%",
     },
@@ -2497,15 +2503,6 @@ const init = (xData: any, yData: any, tipXdata: any, tipYdata: any) => {
       trigger: "axis",
       extraCssText:
         "width:auto;height:auto;background-color:rgba(0,0,0,0.3);color:#fff",
-      formatter: function (val: any) {
-        return (
-          "时间：" +
-          xData[val[0].dataIndex] +
-          "\r\n" +
-          "报警次数：" +
-          tipYdata[val[0].dataIndex]
-        );
-      },
     },
     legend: {
       data: ["销量"],
@@ -2513,7 +2510,6 @@ const init = (xData: any, yData: any, tipXdata: any, tipYdata: any) => {
     xAxis: {
       type: "category",
       name: "时间",
-      data: tipXdata,
       axisLabel: {
         margin: 5,
         align: "right",
@@ -2538,11 +2534,126 @@ const init = (xData: any, yData: any, tipXdata: any, tipYdata: any) => {
       {
         name: "报警次数",
         type: "line",
-        data: yData,
       },
     ],
   };
-  myCharts.setOption(option);
+  myCharts.showLoading("default", { text: "努力请求数据中...", fontSize: 15 });
+  updateCharts(myCharts, option);
+  let st = new Date(startTime.value).getTime();
+  let et = new Date(endTime.value).getTime();
+  let frequencyData: any = [];
+  let timeData: any = [];
+  let simpleTimeData: any = [];
+  let statusData: any = [];
+  drawer = true;
+
+  console.log(deviceId.value, st, et);
+
+  await proxy.$http
+    .get("/getDeviceDataBetweenTimeByHour", {
+      params: {
+        deviceId: deviceId.value,
+        firstTime: st,
+        secondTime: et,
+      },
+    })
+    .then((res: any) => {
+      ElMessage({
+        message: "查询成功！",
+        type: "success",
+      });
+      res.data.data.forEach((item: any) => {
+        timeData.push(format(item.endTime, true));
+        simpleTimeData.push(format(item.endTime, false));
+      });
+      res.data.data.forEach((item: any) => {
+        if (!item.num) {
+          statusData.push(item.num);
+        } else {
+          statusData.push(1);
+        }
+        frequencyData.push(item.num);
+      });
+
+      option = {
+        grid: {
+          top: "15%",
+        },
+        title: {
+          text: `设备${deviceId.value}数据推送图`,
+          x: "center",
+
+          y: "top",
+          textStyle: {
+            fontSize: 30,
+            lineHeight: 50,
+          },
+        },
+        tooltip: {
+          trigger: "axis",
+          extraCssText:
+            "width:auto;height:auto;background-color:rgba(0,0,0,0.3);color:#fff",
+          formatter: function (val: any) {
+            return (
+              "时间：" +
+              timeData[val[0].dataIndex] +
+              "\r\n" +
+              "报警次数：" +
+              frequencyData[val[0].dataIndex]
+            );
+          },
+        },
+        legend: {
+          data: ["销量"],
+        },
+        xAxis: {
+          type: "category",
+          name: "时间",
+          data: simpleTimeData,
+          axisLabel: {
+            margin: 5,
+            align: "right",
+          },
+        },
+        yAxis: [
+          {
+            min: 0,
+            max: null,
+            show: true,
+            minInterval: 1,
+            type: "value",
+            name: "是否报警",
+            axisLabel: {
+              margin: 5,
+              align: "right",
+            },
+            axisLine: { show: true },
+          },
+        ],
+        series: [
+          {
+            name: "报警次数",
+            type: "line",
+            data: statusData,
+          },
+        ],
+      };
+      //销毁图表
+      myCharts.dispose();
+      //重新初始化执行动画
+      var loadSuccess = echarts.init(
+        document.getElementById("charts-container")!
+      );
+      updateCharts(loadSuccess, option);
+    })
+    .catch((err: any) => {
+      console.error(err);
+    });
+  if (!reListener) {
+    reListener = window.addEventListener("resize", () => {
+      myCharts.resize();
+    });
+  }
 };
 let dialogTableVisible = ref<boolean>(false);
 let startTime = ref();
@@ -2552,46 +2663,22 @@ const openSearch = () => {
 };
 let deviceId = ref();
 const deviceIdList = [1, 2, 3, 4, 5];
+const handleClose = (done: () => void) => {
+  deviceId.value = "";
+  startTime.value = "";
+  endTime.value = "";
+  done();
+};
 const showPic = async () => {
-  if (startTime.value && endTime.value) {
+  if (startTime.value && endTime.value && deviceId.value) {
     dialogTableVisible.value = false;
-    let st = new Date(startTime.value).getTime();
-    let et = new Date(endTime.value).getTime();
-    let frequencyData: any = [];
-    let timeData: any = [];
-    let simpleTimeData: any = [];
-    let statusData: any = [];
     drawer = true;
-
-    await proxy.$http
-      .get("/getDeviceDataBetweenTimeByHour", {
-        params: {
-          deviceId: deviceId.value,
-          firstTime: st,
-          secondTime: et,
-        },
-      })
-      .then((res: any) => {
-        res.data.data.forEach((item: any) => {
-          timeData.push(format(item.endTime, true));
-          simpleTimeData.push(format(item.endTime, false));
-        });
-        res.data.data.forEach((item: any) => {
-          if (!item.num) {
-            statusData.push(item.num);
-          } else {
-            statusData.push(1);
-          }
-          frequencyData.push(item.num);
-        });
-
-        nextTick(() => {
-          init(timeData, statusData, simpleTimeData, frequencyData);
-        });
-      })
-      .catch((err: any) => {
-        console.error(err);
-      });
+    nextTick(() => {
+      init();
+      deviceId.value = "";
+      startTime.value = "";
+      endTime.value = "";
+    });
   } else {
     ElMessage({
       message: "请完善查询时间范围！",
@@ -2605,12 +2692,14 @@ const showPic = async () => {
   <div id="container"></div>
   <button class="btn" @click="openSearch">查询历史记录</button>
   <el-dialog
+    custom-class="demo"
     class="dialog"
     v-model="dialogTableVisible"
     title="查询历史记录"
     center
-    destroy-on-close
-    draggable
+    :destroy-on-close="true"
+    :before-close="handleClose"
+    :draggable="true"
     align-center
   >
     <h2>请选择历史记录相关信息</h2>
@@ -2673,15 +2762,15 @@ const showPic = async () => {
   align-items: center;
 }
 .btn {
-  transition: all .3s;
+  transition: all 0.3s;
   position: absolute;
   cursor: pointer;
   padding: 5px 10px;
   background-color: #efefef;
-  border:2px solid #646464;
-  border-radius: 3px
+  border: 2px solid #646464;
+  border-radius: 3px;
 }
-.btn:hover{
+.btn:hover {
   background-color: #ccc;
 }
 .search {
