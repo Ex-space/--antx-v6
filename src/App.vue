@@ -2539,6 +2539,7 @@ const init = async () => {
   };
   myCharts.showLoading("default", { text: "努力请求数据中...", fontSize: 15 });
   updateCharts(myCharts, option);
+  let loadSuccess: any;
   let st = new Date(startTime.value).getTime();
   let et = new Date(endTime.value).getTime();
   let frequencyData: any = [];
@@ -2546,8 +2547,7 @@ const init = async () => {
   let simpleTimeData: any = [];
   let statusData: any = [];
   drawer = true;
-
-  console.log(deviceId.value, st, et);
+  let temId = deviceId.value;
 
   await proxy.$http
     .get("/getDeviceDataBetweenTimeByHour", {
@@ -2580,7 +2580,7 @@ const init = async () => {
           top: "15%",
         },
         title: {
-          text: `设备${deviceId.value}数据推送图`,
+          text: `设备${temId}数据推送图`,
           x: "center",
 
           y: "top",
@@ -2641,17 +2641,17 @@ const init = async () => {
       //销毁图表
       myCharts.dispose();
       //重新初始化执行动画
-      var loadSuccess = echarts.init(
-        document.getElementById("charts-container")!
-      );
+      loadSuccess = echarts.init(document.getElementById("charts-container")!);
       updateCharts(loadSuccess, option);
     })
     .catch((err: any) => {
       console.error(err);
     });
   if (!reListener) {
+    console.log(1);
+
     reListener = window.addEventListener("resize", () => {
-      myCharts.resize();
+      loadSuccess.resize();
     });
   }
 };
