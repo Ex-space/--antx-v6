@@ -2681,7 +2681,7 @@ const showPic = async () => {
     });
   } else {
     ElMessage({
-      message: "请完善查询时间范围！",
+      message: "请完善查询信息！",
       type: "error",
     });
   }
@@ -2698,6 +2698,8 @@ const showPic = async () => {
     title="查询历史记录"
     center
     :destroy-on-close="true"
+    :close-on-press-escape="false"
+    :close-on-click-modal="false"
     :before-close="handleClose"
     :draggable="true"
     align-center
@@ -2740,6 +2742,8 @@ const showPic = async () => {
     </div>
   </el-dialog>
   <el-drawer
+    :close-on-press-escape="false"
+    :close-on-click-modal="false"
     v-model="drawer"
     direction="rtl"
     lock-scroll
