@@ -3,11 +3,6 @@ export const metalNode1 = {
   width: 15,
   height: 78,
   shape: 'html',
-  html: `
-            <div class="metalNode">
-              <span>X1701A</span>
-            </div>
-            `,
       attrs: {
         // 一定要给边框宽度加上>0的值,否则节点将不能连线
         body: {
@@ -18,17 +13,10 @@ export const metalNode1 = {
       },
 };
 export const metalNode3 = {
-  x: 1578,
-  width: 94,
-  height: 15,
+  x: 1570,
+  width: 110,
+  height: 20,
   shape: 'html',
-  html: `
-            <div class="outmetalNodeWarn">
-              <div class="metalNode2">
-                <span>X1711A</span>
-              </div>
-            </div>
-            `,
       attrs: {
         // 一定要给边框宽度加上>0的值,否则节点将不能连线
         body: {
@@ -39,17 +27,10 @@ export const metalNode3 = {
       },
 };
 export const metalNode4 = {
-  x: 1578,
-  width: 94,
-  height: 15,
+  x: 1570,
+  width: 110,
+  height: 20,
   shape: 'html',
-  html: `
-            <div class="outmetalNode1">
-              <div class="metalNode2">
-                <span>X1733A</span>
-              </div>
-            </div>
-            `,
       attrs: {
         // 一定要给边框宽度加上>0的值,否则节点将不能连线
         body: {

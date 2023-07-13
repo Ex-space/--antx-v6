@@ -1,7 +1,9 @@
+import { Markup } from "@antv/x6";
+import { reactive, ref } from "vue";
 export const emptyNode1 = {
-  x: 843,
-  width: 36,
-  height: 21,
+  x: 838,
+  width: 46,
+  height: 30,
   shape: 'html',
   html: `
           <div class="emptyNode">
@@ -18,9 +20,9 @@ export const emptyNode1 = {
   },
 };
 export const emptyNode2 = {
-  x: 939,
-  width: 36,
-  height: 21,
+  x: 934,
+  width: 46,
+  height: 30,
   shape: 'html',
   html: `
           <div class="emptyNodeWarn">

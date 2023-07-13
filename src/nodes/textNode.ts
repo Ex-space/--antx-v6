@@ -96,33 +96,18 @@ export const textNode11 = {
   width: 21,
   height: 9,
   shape: 'html',
-  html: `
-          <div class="textNode1">
-          17FV1101
-          </div>  
-          `,
 };
 export const textNode12 = {
   x: 840,
   width: 21,
   height: 9,
   shape: 'html',
-  html: `
-          <div class="textNode1">
-          X1731A
-          </div>  
-          `,
 };
 export const textNode13 = {
   x: 935,
   width: 21,
   height: 9,
   shape: 'html',
-  html: `
-          <div class="textNode1">
-          X1732A
-          </div>  
-          `,
 };
 export const textNode14 = {
   x: 880,
@@ -466,3 +451,25 @@ export const textNode40 = {
           </div>  
           `,
 };
+export const textNode41 = {
+  x: 500,
+  width: 30,
+  height: 30,
+  shape: "html",
+  html: `
+          <div class="textNode6">
+              前
+          </div>
+          `,
+}
+export const textNode42 = {
+  x: 600,
+  width: 30,
+  height: 30,
+  shape: "html",
+  html: `
+          <div class="textNode6">
+              后
+          </div>
+          `,
+}
