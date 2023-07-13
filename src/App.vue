@@ -2,7 +2,16 @@
 import { Graph } from "@antv/x6";
 import "@antv/x6-vue-shape";
 import { handleResize } from "./utils/handleResize";
-import { computed, onMounted, watch, ref, reactive, getCurrentInstance, nextTick } from "vue";
+import {
+  computed,
+  onMounted,
+  watch,
+  ref,
+  reactive,
+  getCurrentInstance,
+  nextTick,
+  watchEffect,
+} from "vue";
 import { blackEdge } from "./edges/blackEdge.ts";
 import { yellowStrokeEdge } from "./edges/yellowStrokeEdge.ts";
 import { greenEdge } from "./edges/greenEdge.ts";
@@ -16,7 +25,6 @@ import {
   transparentNode7,
   transparentNode8,
   transparentNode11,
-  transparentNode13,
   transparentNode14,
   transparentNode15,
   transparentNode16,
@@ -25,7 +33,6 @@ import {
   transparentNode19,
   transparentNode20,
   transparentNode21,
-  transparentNode22,
   transparentNode23,
   transparentNode24,
   transparentNode25,
@@ -651,21 +658,21 @@ onMounted(() => {
       //   ...transparentNode11,
       // },
       /////////////////////////
-      {
-        id: "transparentNodeA13",
-        y: 309,
-        ...transparentNode13,
-      },
-      {
-        id: "transparentNodeB13",
-        y: 639,
-        ...transparentNode13,
-      },
-      {
-        id: "transparentNodeC13",
-        y: 969,
-        ...transparentNode13,
-      },
+      // {
+      //   id: "transparentNodeA13",
+      //   y: 309,
+      //   ...transparentNode13,
+      // },
+      // {
+      //   id: "transparentNodeB13",
+      //   y: 639,
+      //   ...transparentNode13,
+      // },
+      // {
+      //   id: "transparentNodeC13",
+      //   y: 969,
+      //   ...transparentNode13,
+      // },
       /////////////////////////
       // {
       //   id: "transparentNodeA14",
@@ -795,21 +802,21 @@ onMounted(() => {
       //   ...transparentNode21,
       // },
       /////////////////////////
-      {
-        id: "transparentNodeA22",
-        y: 308.5,
-        ...transparentNode22,
-      },
-      {
-        id: "transparentNodeB22",
-        y: 638.5,
-        ...transparentNode22,
-      },
-      {
-        id: "transparentNodeC22",
-        y: 968.5,
-        ...transparentNode22,
-      },
+      // {
+      //   id: "transparentNodeA22",
+      //   y: 308.5,
+      //   ...transparentNode22,
+      // },
+      // {
+      //   id: "transparentNodeB22",
+      //   y: 638.5,
+      //   ...transparentNode22,
+      // },
+      // {
+      //   id: "transparentNodeC22",
+      //   y: 968.5,
+      //   ...transparentNode22,
+      // },
       /////////////////////////
       // {
       //   id: "transparentNodeA23",
@@ -1110,7 +1117,7 @@ onMounted(() => {
         html: `
           <div class="textNode1">
           17FV1101
-          </div>  
+          </div>
           `,
         ...textNode11,
       },
@@ -1120,7 +1127,7 @@ onMounted(() => {
         html: `
           <div class="textNode1">
           17FV1201
-          </div>  
+          </div>
           `,
         ...textNode11,
       },
@@ -1130,7 +1137,7 @@ onMounted(() => {
         html: `
           <div class="textNode1">
           17FV1301
-          </div>  
+          </div>
           `,
         ...textNode11,
       },
@@ -1141,7 +1148,7 @@ onMounted(() => {
         html: `
           <div class="textNode1">
           X1731A
-          </div>  
+          </div>
           `,
         ...textNode12,
       },
@@ -1151,7 +1158,7 @@ onMounted(() => {
         html: `
           <div class="textNode1">
           X1731B
-          </div>  
+          </div>
           `,
         ...textNode12,
       },
@@ -1161,7 +1168,7 @@ onMounted(() => {
         html: `
           <div class="textNode1">
           X1731C
-          </div>  
+          </div>
           `,
         ...textNode12,
       },
@@ -1172,7 +1179,7 @@ onMounted(() => {
         html: `
           <div class="textNode1">
           X1732A
-          </div>  
+          </div>
           `,
         ...textNode13,
       },
@@ -1182,7 +1189,7 @@ onMounted(() => {
         html: `
           <div class="textNode1">
           X1732B
-          </div>  
+          </div>
           `,
         ...textNode13,
       },
@@ -1192,7 +1199,7 @@ onMounted(() => {
         html: `
           <div class="textNode1">
           X1732C
-          </div>  
+          </div>
           `,
         ...textNode13,
       },
@@ -1770,171 +1777,171 @@ onMounted(() => {
       },
       {
         id: "safeEdge3",
-        source: [847, 316],
+        source: [842.5, 316],
         router: "er",
-        target: [847, 280],
+        target: [842.5, 280],
         ...safeEdge,
       },
       {
         id: "safeEdge3B",
-        source: [847, 646],
+        source: [842.5, 646],
         router: "er",
-        target: [847, 610],
+        target: [842.5, 610],
         ...safeEdge,
       },
       {
         id: "safeEdge3C",
-        source: [847, 976],
+        source: [842.5, 976],
         router: "er",
-        target: [847, 940],
+        target: [842.5, 940],
         ...safeEdge,
       },
       {
         id: "safeEdge4",
-        source: [876, 316],
+        source: [880, 316],
         router: "er",
-        target: [876, 280],
+        target: [880, 280],
         ...safeEdge,
       },
       {
         id: "safeEdge4B",
-        source: [876, 646],
+        source: [880, 646],
         router: "er",
-        target: [876, 610],
+        target: [880, 610],
         ...safeEdge,
       },
       {
         id: "safeEdge4C",
-        source: [876, 976],
+        source: [880, 976],
         router: "er",
-        target: [876, 940],
+        target: [880, 940],
         ...safeEdge,
       },
       {
         id: "safeEdge5",
-        source: [1582.5, 316],
+        source: [1578.5, 316],
         router: "er",
-        target: [1582.5, 280],
+        target: [1578.5, 280],
         ...safeEdge,
       },
       {
         id: "safeEdge5B",
-        source: [1582.5, 646],
+        source: [1578.5, 646],
         router: "er",
-        target: [1582.5, 610],
+        target: [1578.5, 610],
         ...safeEdge,
       },
       {
         id: "safeEdge5C",
-        source: [1582.5, 976],
+        source: [1578.5, 976],
         router: "er",
-        target: [1582.5, 940],
+        target: [1578.5, 940],
         ...safeEdge,
       },
       {
         id: "safeEdge6",
-        source: [1667.5, 316],
+        source: [1672.5, 316],
         router: "er",
-        target: [1667.5, 280],
+        target: [1672.5, 280],
         ...safeEdge,
       },
       {
         id: "safeEdge6B",
-        source: [1667.5, 646],
+        source: [1672.5, 646],
         router: "er",
-        target: [1667.5, 610],
+        target: [1672.5, 610],
         ...safeEdge,
       },
       {
         id: "safeEdge6C",
-        source: [1667.5, 976],
+        source: [1672.5, 976],
         router: "er",
-        target: [1667.5, 940],
+        target: [1672.5, 940],
         ...safeEdge,
       },
       // //危险线
       {
         id: "dangerEdge1",
-        source: [943, 316],
+        source: [938.5, 316],
         router: "er",
-        target: [943, 280],
+        target: [938.5, 280],
         ...dangerEdge,
       },
       {
         id: "dangerEdge1B",
-        source: [943, 646],
+        source: [938.5, 646],
         router: "er",
-        target: [943, 610],
+        target: [938.5, 610],
         ...dangerEdge,
       },
       {
         id: "dangerEdge1C",
-        source: [943, 976],
+        source: [938.5, 976],
         router: "er",
-        target: [943, 940],
+        target: [938.5, 940],
         ...dangerEdge,
       },
       {
         id: "dangerEdge2",
-        source: [972, 316],
+        source: [976, 316],
         router: "er",
-        target: [972, 280],
+        target: [976, 280],
         ...dangerEdge,
       },
       {
         id: "dangerEdge2B",
-        source: [972, 646],
+        source: [976, 646],
         router: "er",
-        target: [972, 610],
+        target: [976, 610],
         ...dangerEdge,
       },
       {
         id: "dangerEdge2C",
-        source: [972, 976],
+        source: [976, 976],
         router: "er",
-        target: [972, 940],
+        target: [976, 940],
         ...dangerEdge,
       },
       {
         id: "dangerEdge3",
-        source: [1582.5, 96],
+        source: [1578, 96],
         router: "er",
-        target: [1582.5, 60],
+        target: [1578, 60],
         ...dangerEdge,
       },
       {
         id: "dangerEdge3B",
-        source: [1582.5, 426],
+        source: [1578, 426],
         router: "er",
-        target: [1582.5, 390],
+        target: [1578, 390],
         ...dangerEdge,
       },
       {
         id: "dangerEdge3C",
-        source: [1582.5, 756],
+        source: [1578, 756],
         router: "er",
-        target: [1582.5, 720],
+        target: [1578, 720],
         ...dangerEdge,
       },
       {
         id: "dangerEdge4",
-        source: [1667.5, 96],
+        source: [1672, 96],
         router: "er",
-        target: [1667.5, 60],
+        target: [1672, 60],
         ...dangerEdge,
       },
       {
         id: "dangerEdge4B",
-        source: [1667.5, 426],
+        source: [1672, 426],
         router: "er",
-        target: [1667.5, 390],
+        target: [1672, 390],
         ...dangerEdge,
       },
       {
         id: "dangerEdge4C",
-        source: [1667.5, 756],
+        source: [1672, 756],
         router: "er",
-        target: [1667.5, 720],
+        target: [1672, 720],
         ...dangerEdge,
       },
       // //黑头黄身箭头组
@@ -2017,20 +2024,20 @@ onMounted(() => {
       },
       {
         id: "greenEdge3",
-        source: "transparentNodeA22",
-        target: [1311, 326.5],
+        source: "emptyNodeA2",
+        target: [1311, 327],
         ...greenEdge,
       },
       {
         id: "greenEdge3B",
-        source: "transparentNodeB22",
-        target: [1311, 656.5],
+        source: "emptyNodeB2",
+        target: [1311, 657],
         ...greenEdge,
       },
       {
         id: "greenEdge3C",
-        source: "transparentNodeC22",
-        target: [1311, 986.5],
+        source: "emptyNodeC2",
+        target: [1311, 987],
         ...greenEdge,
       },
       {
@@ -2498,27 +2505,27 @@ onMounted(() => {
         ...smallBlackEdge,
       },
       //无箭头实线组
-      {
-        id: "naEdge1",
-        source: "emptyNodeA1",
-        target: "transparentNodeA13",
-        router: "er",
-        ...naEdge,
-      },
-      {
-        id: "naEdge1B",
-        source: "emptyNodeB1",
-        target: "transparentNodeB13",
-        router: "er",
-        ...naEdge,
-      },
-      {
-        id: "naEdge1C",
-        source: "emptyNodeC1",
-        target: "transparentNodeC13",
-        router: "er",
-        ...naEdge,
-      },
+      // {
+      //   id: "naEdge1",
+      //   source: "emptyNodeA1",
+      //   target: "transparentNodeA13",
+      //   router: "er",
+      //   ...naEdge,
+      // },
+      // {
+      //   id: "naEdge1B",
+      //   source: "emptyNodeB1",
+      //   target: "transparentNodeB13",
+      //   router: "er",
+      //   ...naEdge,
+      // },
+      // {
+      //   id: "naEdge1C",
+      //   source: "emptyNodeC1",
+      //   target: "transparentNodeC13",
+      //   router: "er",
+      //   ...naEdge,
+      // },
       {
         id: "naEdge2",
         source: "emptyNodeA1",
@@ -2540,27 +2547,27 @@ onMounted(() => {
         router: "er",
         ...naEdge,
       },
-      {
-        id: "naEdge3",
-        source: "emptyNodeA2",
-        target: "transparentNodeA22",
-        router: "er",
-        ...naEdge,
-      },
-      {
-        id: "naEdge3B",
-        source: "emptyNodeB2",
-        target: "transparentNodeB22",
-        router: "er",
-        ...naEdge,
-      },
-      {
-        id: "naEdge3C",
-        source: "emptyNodeC2",
-        target: "transparentNodeC22",
-        router: "er",
-        ...naEdge,
-      },
+      // {
+      //   id: "naEdge3",
+      //   source: "emptyNodeA2",
+      //   target: "transparentNodeA22",
+      //   router: "er",
+      //   ...naEdge,
+      // },
+      // {
+      //   id: "naEdge3B",
+      //   source: "emptyNodeB2",
+      //   target: "transparentNodeB22",
+      //   router: "er",
+      //   ...naEdge,
+      // },
+      // {
+      //   id: "naEdge3C",
+      //   source: "emptyNodeC2",
+      //   target: "transparentNodeC22",
+      //   router: "er",
+      //   ...naEdge,
+      // },
       {
         id: "naEdge4",
         source: "anglevalveNode2",
@@ -2585,166 +2592,155 @@ onMounted(() => {
       {
         id: "naEdge5",
         source: "anglevalveNode2",
-        target: "transparentNodeA13",
+        target: "emptyNodeA1",
         router: "manhattan",
         ...naEdge,
       },
       {
         id: "naEdge5B",
         source: "anglevalveNodeB2",
-        target: "transparentNodeB13",
+        target: "emptyNodeB1",
         router: "manhattan",
         ...naEdge,
       },
       {
         id: "naEdge5C",
         source: "anglevalveNodeC2",
-        target: "transparentNodeC13",
+        target: "emptyNodeC1",
         router: "manhattan",
         ...naEdge,
       },
     ],
   };
   (graph as Graph).fromJSON(data as any);
-  const emptyNodeA1 = graph.getCellById('emptyNodeA1')
-  const emptyNodeA2 = graph.getCellById('emptyNodeA2')
-  const metalNodeA3 = graph.getCellById('metalNodeA3')
-  const metalNodeA4 = graph.getCellById('metalNodeA4')
-  const anglevalveNodeFront = graph.getCellById('anglevalveNode1')
-  const anglevalveNodeBehind = graph.getCellById('anglevalveNode2')
-  const safeEdgeFront = graph.getCellById('safeEdge1')
-  const safeEdgeBehind = graph.getCellById('safeEdge2')
-  const safeEdgeForEmptyFone = graph.getCellById('safeEdge3')
-  const safeEdgeForEmptyFtwo = graph.getCellById('safeEdge4')
-  const safeEdgeForEmptySone = graph.getCellById('dangerEdge1')
-  const safeEdgeForEmptyStwo = graph.getCellById('dangerEdge2')
-  const safeEdgeForMetalUpone = graph.getCellById('dangerEdge3')
-  const safeEdgeForMetalUptwo = graph.getCellById('dangerEdge4')
-  const safeEdgeForMetalDownone = graph.getCellById('safeEdge5')
-  const safeEdgeForMetalDowntwo = graph.getCellById('safeEdge6')
-  console.log(safeEdgeFront.getAttrByPath('line/stroke'));
-  safeEdgeForEmptySone.setAttrByPath('line/stroke','red')
-  watch(
-      safetyone,
-      (newVal) => {
-        if (newVal === false) {
-          // 更新emptyNode1的值为布尔值为true时的HTML模板
-          emptyNodeA1.setProp('html', `<div class="emptyNodeWarn">
+  const emptyNodeA1 = graph.getCellById("emptyNodeA1");
+  const emptyNodeA2 = graph.getCellById("emptyNodeA2");
+  const metalNodeA3 = graph.getCellById("metalNodeA3");
+  const metalNodeA4 = graph.getCellById("metalNodeA4");
+  const anglevalveNodeFront = graph.getCellById("anglevalveNode1");
+  const anglevalveNodeBehind = graph.getCellById("anglevalveNode2");
+  const safeEdgeFront = graph.getCellById("safeEdge1");
+  const safeEdgeBehind = graph.getCellById("safeEdge2");
+  const safeEdgeForEmptyFone = graph.getCellById("safeEdge3");
+  const safeEdgeForEmptyFtwo = graph.getCellById("safeEdge4");
+  const safeEdgeForEmptySone = graph.getCellById("dangerEdge1");
+  const safeEdgeForEmptyStwo = graph.getCellById("dangerEdge2");
+  const safeEdgeForMetalUpone = graph.getCellById("dangerEdge3");
+  const safeEdgeForMetalUptwo = graph.getCellById("dangerEdge4");
+  const safeEdgeForMetalDownone = graph.getCellById("safeEdge5");
+  const safeEdgeForMetalDowntwo = graph.getCellById("safeEdge6");
+  safeEdgeForEmptySone.setAttrByPath("line/stroke", "red");
+  watchEffect(() => {
+    if (safeList[0] === false) {
+      // 更新emptyNode1的值为布尔值为true时的HTML模板
+      emptyNodeA1.setProp(
+        "html",
+        `<div class="emptyNodeWarn">
             <div></div>
-          </div>`)
-          safeEdgeForEmptyFone.setAttrByPath('line/stroke','red')
-          safeEdgeForEmptyFtwo.setAttrByPath('line/stroke','red')
-        } else if(newVal === true){
-          // 更新emptyNode1的值为布尔值为false时的HTML模板
-          emptyNodeA1.setProp('html', `<div class="emptyNode">
+          </div>`
+      );
+      safeEdgeForEmptyFone.setAttrByPath("line/stroke", "red");
+      safeEdgeForEmptyFtwo.setAttrByPath("line/stroke", "red");
+    } else if (safeList[0] === true) {
+      // 更新emptyNode1的值为布尔值为false时的HTML模板
+      emptyNodeA1.setProp(
+        "html",
+        `<div class="emptyNode">
             <div></div>
-          </div>`)
-          safeEdgeForEmptyFone.setAttrByPath('line/stroke','#00f800')
-          safeEdgeForEmptyFtwo.setAttrByPath('line/stroke','#00f800')
-        }
-      },
-      { 
-        immediate: true,
-        deep: true
-      } // 立即执行watch回调函数
-    );
-    watch(
-      safetytwo,
-      (newVal) => {
-        if (newVal === false) {
-          // 更新emptyNode1的值为布尔值为true时的HTML模板
-          emptyNodeA2.setProp('html', `<div class="emptyNodeWarn">
+          </div>`
+      );
+      safeEdgeForEmptyFone.setAttrByPath("line/stroke", "#00f800");
+      safeEdgeForEmptyFtwo.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeList[1] === false) {
+      // 更新emptyNode1的值为布尔值为true时的HTML模板
+      emptyNodeA2.setProp(
+        "html",
+        `<div class="emptyNodeWarn">
             <div></div>
-          </div>`)
-          safeEdgeForEmptySone.setAttrByPath('line/stroke','red')
-          safeEdgeForEmptyStwo.setAttrByPath('line/stroke','red')
-        } else if(newVal === true){
-          // 更新emptyNode1的值为布尔值为false时的HTML模板
-          emptyNodeA2.setProp('html', `<div class="emptyNode">
+          </div>`
+      );
+      safeEdgeForEmptySone.setAttrByPath("line/stroke", "red");
+      safeEdgeForEmptyStwo.setAttrByPath("line/stroke", "red");
+    } else if (safeList[1] === true) {
+      // 更新emptyNode1的值为布尔值为false时的HTML模板
+      emptyNodeA2.setProp(
+        "html",
+        `<div class="emptyNode">
             <div></div>
-          </div>`)
-          safeEdgeForEmptySone.setAttrByPath('line/stroke','#00f800')
-          safeEdgeForEmptyStwo.setAttrByPath('line/stroke','#00f800')
-        }
-      },
-      { 
-        immediate: true,
-        deep: true
-      } // 立即执行watch回调函数
-    );
-    watch(
-      safetythree,
-      (newVal) => {
-        if (newVal === false) {
-          metalNodeA3.setProp('html', `<div class="outmetalNodeWarn">
+          </div>`
+      );
+      safeEdgeForEmptySone.setAttrByPath("line/stroke", "#00f800");
+      safeEdgeForEmptyStwo.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeList[2] === false) {
+      metalNodeA3.setProp(
+        "html",
+        `<div class="outmetalNodeWarn">
               <div class="metalNode2">
                 <span>X1711A</span>
               </div>
-            </div>`)
-          safeEdgeForMetalUpone.setAttrByPath('line/stroke','red')
-          safeEdgeForMetalUptwo.setAttrByPath('line/stroke','red')
-        } else if(newVal === true){
-          metalNodeA3.setProp('html', `<div class="outmetalNode1">
+            </div>`
+      );
+      safeEdgeForMetalUpone.setAttrByPath("line/stroke", "red");
+      safeEdgeForMetalUptwo.setAttrByPath("line/stroke", "red");
+    } else if (safeList[2] === true) {
+      metalNodeA3.setProp(
+        "html",
+        `<div class="outmetalNode1">
               <div class="metalNode2">
                 <span>X1711A</span>
               </div>
-            </div>`)
-          safeEdgeForMetalUpone.setAttrByPath('line/stroke','#00f800')
-          safeEdgeForMetalUptwo.setAttrByPath('line/stroke','#00f800')
-        }
-      },
-      { 
-        immediate: true,
-        deep: true
-      } // 立即执行watch回调函数
-    );
-    watch(
-      safetyfour,
-      (newVal) => {
-        if (newVal === false) {
-          metalNodeA4.setProp('html', `<div class="outmetalNodeWarn">
+            </div>`
+      );
+      safeEdgeForMetalUpone.setAttrByPath("line/stroke", "#00f800");
+      safeEdgeForMetalUptwo.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeList[3] === false) {
+      metalNodeA4.setProp(
+        "html",
+        `<div class="outmetalNodeWarn">
               <div class="metalNode2">
                 <span>X1733A</span>
               </div>
-            </div>`)
-          safeEdgeForMetalDownone.setAttrByPath('line/stroke','red')
-          safeEdgeForMetalDowntwo.setAttrByPath('line/stroke','red')
-        } else if(newVal === true){
-          metalNodeA4.setProp('html', `<div class="outmetalNode1">
+            </div>`
+      );
+      safeEdgeForMetalDownone.setAttrByPath("line/stroke", "red");
+      safeEdgeForMetalDowntwo.setAttrByPath("line/stroke", "red");
+    } else if (safeList[3] === true) {
+      metalNodeA4.setProp(
+        "html",
+        `<div class="outmetalNode1">
               <div class="metalNode2">
                 <span>X1733A</span>
               </div>
-            </div>`)
-          safeEdgeForMetalDownone.setAttrByPath('line/stroke','#00f800')
-          safeEdgeForMetalDowntwo.setAttrByPath('line/stroke','#00f800')
-        }
-      },
-      { 
-        immediate: true,
-        deep: true
-      } // 立即执行watch回调函数
-    );
-    watch(
-      safetyfive,
-      (newVal) => {
-        if (newVal === false) {
-          anglevalveNodeFront.setProp('html', `<div class="anglevalveNodeWarn"></div>`)
-          anglevalveNodeBehind.setProp('html', `<div class="anglevalveNodeWarn"></div>`)
-          safeEdgeFront.setAttrByPath('line/stroke','red')
-          safeEdgeBehind.setAttrByPath('line/stroke','red')
-        } else if(newVal === true){
-          anglevalveNodeFront.setProp('html', `<div class="anglevalveNode"></div>`)
-          anglevalveNodeBehind.setProp('html', `<div class="anglevalveNode"></div>`)
-          safeEdgeFront.setAttrByPath('line/stroke','#00f800')
-          safeEdgeBehind.setAttrByPath('line/stroke','#00f800')
-        }
-      },
-      { 
-        immediate: true,
-        deep: true
-      } // 立即执行watch回调函数
-    );
-      
+            </div>`
+      );
+      safeEdgeForMetalDownone.setAttrByPath("line/stroke", "#00f800");
+      safeEdgeForMetalDowntwo.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeList[4] === false) {
+      anglevalveNodeFront.setProp(
+        "html",
+        `<div class="anglevalveNodeWarn"></div>`
+      );
+      anglevalveNodeBehind.setProp(
+        "html",
+        `<div class="anglevalveNodeWarn"></div>`
+      );
+      safeEdgeFront.setAttrByPath("line/stroke", "red");
+      safeEdgeBehind.setAttrByPath("line/stroke", "red");
+    } else if (safeList[4] === true) {
+      anglevalveNodeFront.setProp("html", `<div class="anglevalveNode"></div>`);
+      anglevalveNodeBehind.setProp(
+        "html",
+        `<div class="anglevalveNode"></div>`
+      );
+      safeEdgeFront.setAttrByPath("line/stroke", "#00f800");
+      safeEdgeBehind.setAttrByPath("line/stroke", "#00f800");
+    }
+  });
+
   graph.zoomTo(0.72);
   handleResize(graph, document.documentElement as HTMLElement);
   //画布居中
@@ -2920,12 +2916,8 @@ const init = async () => {
       loadSuccess = echarts.init(document.getElementById("charts-container")!);
       updateCharts(loadSuccess, option);
     })
-    .catch((err: any) => {
-      console.error(err);
-    });
+    .catch((err: any) => {});
   if (!reListener) {
-    console.log(1);
-
     reListener = window.addEventListener("resize", () => {
       loadSuccess.resize();
     });
@@ -2962,100 +2954,30 @@ const showPic = async () => {
     });
   }
 };
-let safetyone = ref()
-let safetytwo = ref()
-let safetythree = ref()
-let safetyfour = ref()
-let safetyfive = ref()
-setInterval(function(){
-  proxy.$http
-    .get("/getDeviceLatestData", {
-      params: {
-        deviceId: 1,
-      },
-    })
-    .then(
-      (res:any)=> {
-        res = res.data.data
-        safetyone.value = res.content
-      }
-    )
-    .catch((err:any)=> {
-      console.log(err);
-      
-    }
-    )
-  proxy.$http
-    .get("/getDeviceLatestData", {
-      params: {
-        deviceId: 2,
-      },
-    })
-    .then(
-      (res:any)=> {
-        res = res.data.data
-        safetytwo.value = res.content
-      }
-    )
-    .catch((err:any)=> {
-      console.log(err);
-      
-    }
-    )
-  proxy.$http
-    .get("/getDeviceLatestData", {
-      params: {
-        deviceId: 3,
-      },
-    })
-    .then(
-      (res:any)=> {
-        res = res.data.data
-        safetythree.value = res.content
-      }
-    )
-    .catch((err:any)=> {
-      console.log(err);
-      
-    }
-    )
-  proxy.$http
-    .get("/getDeviceLatestData", {
-      params: {
-        deviceId: 4,
-      },
-    })
-    .then(
-      (res:any)=> {
-        res = res.data.data
-        safetyfour.value = res.content
-      }
-    )
-    .catch((err:any)=> {
-      console.log(err);
-      
-    }
-    )
-  proxy.$http
-    .get("/getDeviceLatestData", {
-      params: {
-        deviceId: 5,
-      },
-    })
-    .then(
-      (res:any)=> {
-        res = res.data.data
-        safetyfive.value = res.content
-      }
-    )
-    .catch((err:any)=> {
-      console.log(err);
-      
-    }
-    )
-},100)
-
-  
+let safeList = reactive([false, false, false, false, false]);
+const requireDevice = () => {
+  deviceIdList.forEach((item: any, index: number) => {
+    proxy.$http
+      .get("/getDeviceLatestData", {
+        params: {
+          deviceId: item,
+        },
+      })
+      .then((res: any) => {
+        res = res.data.data;
+        safeList[index] = res.content;
+      })
+      .catch();
+  });
+};
+onMounted(() => {
+  requireDevice();
+});
+setInterval(function () {
+  setTimeout(() => {
+    requireDevice();
+  }, 100);
+}, 0);
 </script>
 
 <template>
