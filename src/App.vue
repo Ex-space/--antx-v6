@@ -2754,6 +2754,8 @@ let reListener: any;
 const updateCharts = (charts: any, options: any) => {
   charts.setOption(options);
 };
+const sensorId = ref();
+let sensoList = ref([0, 1, 2, 3, 4, 5, 6, 7]);
 const init = async () => {
   var myCharts = echarts.init(document.getElementById("charts-container")!);
   echarts.registerTransform(transform.histogram);
@@ -2762,7 +2764,7 @@ const init = async () => {
       top: "15%",
     },
     title: {
-      text: `设备${deviceId.value}数据推送图`,
+      text: `设备数据推送图`,
       x: "center",
 
       y: "top",
@@ -2827,6 +2829,7 @@ const init = async () => {
         deviceId: deviceId.value,
         firstTime: st,
         secondTime: et,
+        sensorId: sensorId.value,
       },
     })
     .then((res: any) => {
@@ -2852,7 +2855,7 @@ const init = async () => {
           top: "15%",
         },
         title: {
-          text: `设备${temId}数据推送图`,
+          text: `设备数据推送图`,
           x: "center",
 
           y: "top",
@@ -2932,9 +2935,10 @@ const openSearch = () => {
 let deviceId = ref();
 const deviceIdList = [1, 2, 3, 4, 5];
 const handleClose = (done: () => void) => {
-  deviceId.value = "";
   startTime.value = "";
   endTime.value = "";
+  sensorId.value = "";
+  deviceId.value = "";
   done();
 };
 const showPic = async () => {
@@ -2943,7 +2947,6 @@ const showPic = async () => {
     drawer = true;
     nextTick(() => {
       init();
-      deviceId.value = "";
       startTime.value = "";
       endTime.value = "";
     });
@@ -2970,14 +2973,14 @@ const requireDevice = () => {
       .catch();
   });
 };
-onMounted(() => {
-  requireDevice();
-});
-setInterval(function () {
-  setTimeout(() => {
-    requireDevice();
-  }, 100);
-}, 0);
+// onMounted(() => {
+//   requireDevice();
+// });
+// setInterval(function () {
+//   setTimeout(() => {
+//     requireDevice();
+//   }, 100);
+// }, 0);
 </script>
 
 <template>
@@ -3015,6 +3018,21 @@ setInterval(function () {
         </el-select>
       </div>
       <div class="opt">
+        <h3>光耦号：</h3>
+        <el-select
+          v-model="sensorId"
+          filterable
+          placeholder="请选择要查询的光耦号"
+        >
+          <el-option
+            v-for="item in sensoList"
+            :key="item"
+            :label="item"
+            :value="item"
+          />
+        </el-select>
+      </div>
+      <div class="opt">
         <h3>开始时间:</h3>
         <el-date-picker
           v-model="startTime"
@@ -3034,8 +3052,10 @@ setInterval(function () {
     </div>
   </el-dialog>
   <el-drawer
+    :title="`当前设备号：${deviceId}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp当前光耦号：${sensorId}`"
     :close-on-press-escape="false"
     :close-on-click-modal="false"
+    :before-close="handleClose"
     v-model="drawer"
     direction="rtl"
     lock-scroll
@@ -3075,6 +3095,7 @@ setInterval(function () {
   margin-top: 30px;
 }
 #charts-container {
+  margin-top: 50px;
   margin: auto;
   width: 100%;
   height: 100%;
