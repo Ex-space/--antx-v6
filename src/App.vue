@@ -2,7 +2,7 @@
 import { Graph } from "@antv/x6";
 import "@antv/x6-vue-shape";
 import { handleResize } from "./utils/handleResize";
-import { onMounted, ref, reactive, getCurrentInstance, nextTick } from "vue";
+import { computed, onMounted, watch, ref, reactive, getCurrentInstance, nextTick } from "vue";
 import { blackEdge } from "./edges/blackEdge.ts";
 import { yellowStrokeEdge } from "./edges/yellowStrokeEdge.ts";
 import { greenEdge } from "./edges/greenEdge.ts";
@@ -107,6 +107,8 @@ import {
   textNode38,
   textNode39,
   textNode40,
+  textNode41,
+  textNode42,
 } from "./nodes/textNode";
 import { allGreenEdge } from "./edges/allGreenEdge";
 import { allBlackEdge } from "./edges/allBlackEdge";
@@ -152,10 +154,11 @@ import { dangerEdge } from "./edges/dangerEdge";
 import { safeEdge } from "./edges/safeEdge";
 import * as echarts from "echarts";
 import { Loading } from "element-plus/es/components/loading/src/service.js";
+import { nodeCenter } from "@antv/x6/lib/registry/node-anchor/node-center";
 onMounted(() => {
   //定义画布
   const container = document.getElementById("container");
-  const graph = new Graph(getCanvasOPT(container!));
+  let graph = new Graph(getCanvasOPT(container!));
   //定义渲染数据
   const data = {
     nodes: [
@@ -290,48 +293,105 @@ onMounted(() => {
       {
         id: "metalNodeA1",
         y: 198,
+        html: `
+            <div class="metalNode">
+              <span>X1701A</span>
+            </div>
+            `,
         ...metalNode1,
       },
       {
         id: "metalNodeB1",
         y: 528,
+        html: `
+            <div class="metalNode">
+              <span>X1701B</span>
+            </div>
+            `,
         ...metalNode1,
       },
       {
         id: "metalNodeC1",
         y: 858,
+        html: `
+            <div class="metalNode">
+              <span>X1701C</span>
+            </div>
+            `,
         ...metalNode1,
       },
       /////////////////////////
       {
         id: "metalNodeA3",
-        y: 99,
+        y: 96.5,
+        html: `
+            <div class="outmetalNodeWarn">
+              <div class="metalNode2">
+                <span>X1711A</span>
+              </div>
+            </div>
+            `,
         ...metalNode3,
       },
       {
         id: "metalNodeB3",
-        y: 429,
+        y: 426.5,
+        html: `
+            <div class="outmetalNodeWarn">
+              <div class="metalNode2">
+                <span>X1711B</span>
+              </div>
+            </div>
+            `,
         ...metalNode3,
       },
       {
         id: "metalNodeC3",
-        y: 759,
+        y: 756.5,
+        html: `
+            <div class="outmetalNodeWarn">
+              <div class="metalNode2">
+                <span>X1711C</span>
+              </div>
+            </div>
+            `,
         ...metalNode3,
       },
       /////////////////////////
       {
         id: "metalNodeA4",
-        y: 319,
+        y: 316.5,
+        html: `
+            <div class="outmetalNode1">
+              <div class="metalNode2">
+                <span>X1733A</span>
+              </div>
+            </div>
+            `,
         ...metalNode4,
       },
       {
         id: "metalNodeB4",
-        y: 649,
+        y: 646.5,
+        html: `
+            <div class="outmetalNode1">
+              <div class="metalNode2">
+                <span>X1733B</span>
+              </div>
+            </div>
+            `,
         ...metalNode4,
       },
       {
         id: "metalNodeC4",
-        y: 979,
+        y: 976.5,
+        html: `
+            <div class="outmetalNode1">
+              <div class="metalNode2">
+                <span>X1733C</span>
+              </div>
+            </div>
+            `,
         ...metalNode4,
       },
       /////////////////////////
@@ -870,33 +930,33 @@ onMounted(() => {
       /////////////////////////
       {
         id: "emptyNodeA1",
-        y: 316,
+        y: 312,
         ...emptyNode1,
       },
       {
         id: "emptyNodeB1",
-        y: 646,
+        y: 642,
         ...emptyNode1,
       },
       {
         id: "emptyNodeC1",
-        y: 976,
+        y: 972,
         ...emptyNode1,
       },
       /////////////////////////
       {
         id: "emptyNodeA2",
-        y: 316,
+        y: 312,
         ...emptyNode2,
       },
       {
         id: "emptyNodeB2",
-        y: 646,
+        y: 642,
         ...emptyNode2,
       },
       {
         id: "emptyNodeC2",
-        y: 976,
+        y: 972,
         ...emptyNode2,
       },
       /////////////////////////
@@ -1044,51 +1104,96 @@ onMounted(() => {
       //   ...textNode10,
       // },
       /////////////////////////
-      // {
-      //   id: "textNodeA11",
-      //   y: 334,
-      //   ...textNode11,
-      // },
-      // {
-      //   id: "textNodeB11",
-      //   y: 664,
-      //   ...textNode11,
-      // },
-      // {
-      //   id: "textNodeC11",
-      //   y: 994,
-      //   ...textNode11,
-      // },
+      {
+        id: "textNodeA11",
+        y: 334,
+        html: `
+          <div class="textNode1">
+          17FV1101
+          </div>  
+          `,
+        ...textNode11,
+      },
+      {
+        id: "textNodeB11",
+        y: 664,
+        html: `
+          <div class="textNode1">
+          17FV1201
+          </div>  
+          `,
+        ...textNode11,
+      },
+      {
+        id: "textNodeC11",
+        y: 994,
+        html: `
+          <div class="textNode1">
+          17FV1301
+          </div>  
+          `,
+        ...textNode11,
+      },
       /////////////////////////
       {
         id: "textNodeA12",
-        y: 338,
+        y: 342,
+        html: `
+          <div class="textNode1">
+          X1731A
+          </div>  
+          `,
         ...textNode12,
       },
       {
         id: "textNodeB12",
-        y: 668,
+        y: 672,
+        html: `
+          <div class="textNode1">
+          X1731B
+          </div>  
+          `,
         ...textNode12,
       },
       {
         id: "textNodeC12",
-        y: 998,
+        y: 1002,
+        html: `
+          <div class="textNode1">
+          X1731C
+          </div>  
+          `,
         ...textNode12,
       },
       /////////////////////////
       {
         id: "textNodeA13",
-        y: 338,
+        y: 342,
+        html: `
+          <div class="textNode1">
+          X1732A
+          </div>  
+          `,
         ...textNode13,
       },
       {
         id: "textNodeB13",
-        y: 668,
+        y: 672,
+        html: `
+          <div class="textNode1">
+          X1732B
+          </div>  
+          `,
         ...textNode13,
       },
       {
         id: "textNodeC13",
-        y: 998,
+        y: 1002,
+        html: `
+          <div class="textNode1">
+          X1732C
+          </div>  
+          `,
         ...textNode13,
       },
       /////////////////////////
@@ -1359,6 +1464,38 @@ onMounted(() => {
       // textNode38,
       // textNode39,
       // textNode40,
+      /////////////////////////
+      {
+        id: "textNodeA41",
+        y: 342,
+        ...textNode41,
+      },
+      {
+        id: "textNodeB41",
+        y: 672,
+        ...textNode41,
+      },
+      {
+        id: "textNodeC41",
+        y: 1002,
+        ...textNode41,
+      },
+      /////////////////////////
+      {
+        id: "textNodeA42",
+        y: 342,
+        ...textNode42,
+      },
+      {
+        id: "textNodeB42",
+        y: 672,
+        ...textNode42,
+      },
+      {
+        id: "textNodeC42",
+        y: 1002,
+        ...textNode42,
+      },
       /////////////////////////
       // {
       //   id: "dataNodeA1",
@@ -2469,6 +2606,145 @@ onMounted(() => {
     ],
   };
   (graph as Graph).fromJSON(data as any);
+  const emptyNodeA1 = graph.getCellById('emptyNodeA1')
+  const emptyNodeA2 = graph.getCellById('emptyNodeA2')
+  const metalNodeA3 = graph.getCellById('metalNodeA3')
+  const metalNodeA4 = graph.getCellById('metalNodeA4')
+  const anglevalveNodeFront = graph.getCellById('anglevalveNode1')
+  const anglevalveNodeBehind = graph.getCellById('anglevalveNode2')
+  const safeEdgeFront = graph.getCellById('safeEdge1')
+  const safeEdgeBehind = graph.getCellById('safeEdge2')
+  const safeEdgeForEmptyFone = graph.getCellById('safeEdge3')
+  const safeEdgeForEmptyFtwo = graph.getCellById('safeEdge4')
+  const safeEdgeForEmptySone = graph.getCellById('dangerEdge1')
+  const safeEdgeForEmptyStwo = graph.getCellById('dangerEdge2')
+  const safeEdgeForMetalUpone = graph.getCellById('dangerEdge3')
+  const safeEdgeForMetalUptwo = graph.getCellById('dangerEdge4')
+  const safeEdgeForMetalDownone = graph.getCellById('safeEdge5')
+  const safeEdgeForMetalDowntwo = graph.getCellById('safeEdge6')
+  console.log(safeEdgeFront.getAttrByPath('line/stroke'));
+  safeEdgeForEmptySone.setAttrByPath('line/stroke','red')
+  watch(
+      safetyone,
+      (newVal) => {
+        if (newVal === false) {
+          // 更新emptyNode1的值为布尔值为true时的HTML模板
+          emptyNodeA1.setProp('html', `<div class="emptyNodeWarn">
+            <div></div>
+          </div>`)
+          safeEdgeForEmptyFone.setAttrByPath('line/stroke','red')
+          safeEdgeForEmptyFtwo.setAttrByPath('line/stroke','red')
+        } else if(newVal === true){
+          // 更新emptyNode1的值为布尔值为false时的HTML模板
+          emptyNodeA1.setProp('html', `<div class="emptyNode">
+            <div></div>
+          </div>`)
+          safeEdgeForEmptyFone.setAttrByPath('line/stroke','#00f800')
+          safeEdgeForEmptyFtwo.setAttrByPath('line/stroke','#00f800')
+        }
+      },
+      { 
+        immediate: true,
+        deep: true
+      } // 立即执行watch回调函数
+    );
+    watch(
+      safetytwo,
+      (newVal) => {
+        if (newVal === false) {
+          // 更新emptyNode1的值为布尔值为true时的HTML模板
+          emptyNodeA2.setProp('html', `<div class="emptyNodeWarn">
+            <div></div>
+          </div>`)
+          safeEdgeForEmptySone.setAttrByPath('line/stroke','red')
+          safeEdgeForEmptyStwo.setAttrByPath('line/stroke','red')
+        } else if(newVal === true){
+          // 更新emptyNode1的值为布尔值为false时的HTML模板
+          emptyNodeA2.setProp('html', `<div class="emptyNode">
+            <div></div>
+          </div>`)
+          safeEdgeForEmptySone.setAttrByPath('line/stroke','#00f800')
+          safeEdgeForEmptyStwo.setAttrByPath('line/stroke','#00f800')
+        }
+      },
+      { 
+        immediate: true,
+        deep: true
+      } // 立即执行watch回调函数
+    );
+    watch(
+      safetythree,
+      (newVal) => {
+        if (newVal === false) {
+          metalNodeA3.setProp('html', `<div class="outmetalNodeWarn">
+              <div class="metalNode2">
+                <span>X1711A</span>
+              </div>
+            </div>`)
+          safeEdgeForMetalUpone.setAttrByPath('line/stroke','red')
+          safeEdgeForMetalUptwo.setAttrByPath('line/stroke','red')
+        } else if(newVal === true){
+          metalNodeA3.setProp('html', `<div class="outmetalNode1">
+              <div class="metalNode2">
+                <span>X1711A</span>
+              </div>
+            </div>`)
+          safeEdgeForMetalUpone.setAttrByPath('line/stroke','#00f800')
+          safeEdgeForMetalUptwo.setAttrByPath('line/stroke','#00f800')
+        }
+      },
+      { 
+        immediate: true,
+        deep: true
+      } // 立即执行watch回调函数
+    );
+    watch(
+      safetyfour,
+      (newVal) => {
+        if (newVal === false) {
+          metalNodeA4.setProp('html', `<div class="outmetalNodeWarn">
+              <div class="metalNode2">
+                <span>X1733A</span>
+              </div>
+            </div>`)
+          safeEdgeForMetalDownone.setAttrByPath('line/stroke','red')
+          safeEdgeForMetalDowntwo.setAttrByPath('line/stroke','red')
+        } else if(newVal === true){
+          metalNodeA4.setProp('html', `<div class="outmetalNode1">
+              <div class="metalNode2">
+                <span>X1733A</span>
+              </div>
+            </div>`)
+          safeEdgeForMetalDownone.setAttrByPath('line/stroke','#00f800')
+          safeEdgeForMetalDowntwo.setAttrByPath('line/stroke','#00f800')
+        }
+      },
+      { 
+        immediate: true,
+        deep: true
+      } // 立即执行watch回调函数
+    );
+    watch(
+      safetyfive,
+      (newVal) => {
+        if (newVal === false) {
+          anglevalveNodeFront.setProp('html', `<div class="anglevalveNodeWarn"></div>`)
+          anglevalveNodeBehind.setProp('html', `<div class="anglevalveNodeWarn"></div>`)
+          safeEdgeFront.setAttrByPath('line/stroke','red')
+          safeEdgeBehind.setAttrByPath('line/stroke','red')
+        } else if(newVal === true){
+          anglevalveNodeFront.setProp('html', `<div class="anglevalveNode"></div>`)
+          anglevalveNodeBehind.setProp('html', `<div class="anglevalveNode"></div>`)
+          safeEdgeFront.setAttrByPath('line/stroke','#00f800')
+          safeEdgeBehind.setAttrByPath('line/stroke','#00f800')
+        }
+      },
+      { 
+        immediate: true,
+        deep: true
+      } // 立即执行watch回调函数
+    );
+      
   graph.zoomTo(0.72);
   handleResize(graph, document.documentElement as HTMLElement);
   //画布居中
@@ -2686,6 +2962,100 @@ const showPic = async () => {
     });
   }
 };
+let safetyone = ref()
+let safetytwo = ref()
+let safetythree = ref()
+let safetyfour = ref()
+let safetyfive = ref()
+setInterval(function(){
+  proxy.$http
+    .get("/getDeviceLatestData", {
+      params: {
+        deviceId: 1,
+      },
+    })
+    .then(
+      (res:any)=> {
+        res = res.data.data
+        safetyone.value = res.content
+      }
+    )
+    .catch((err:any)=> {
+      console.log(err);
+      
+    }
+    )
+  proxy.$http
+    .get("/getDeviceLatestData", {
+      params: {
+        deviceId: 2,
+      },
+    })
+    .then(
+      (res:any)=> {
+        res = res.data.data
+        safetytwo.value = res.content
+      }
+    )
+    .catch((err:any)=> {
+      console.log(err);
+      
+    }
+    )
+  proxy.$http
+    .get("/getDeviceLatestData", {
+      params: {
+        deviceId: 3,
+      },
+    })
+    .then(
+      (res:any)=> {
+        res = res.data.data
+        safetythree.value = res.content
+      }
+    )
+    .catch((err:any)=> {
+      console.log(err);
+      
+    }
+    )
+  proxy.$http
+    .get("/getDeviceLatestData", {
+      params: {
+        deviceId: 4,
+      },
+    })
+    .then(
+      (res:any)=> {
+        res = res.data.data
+        safetyfour.value = res.content
+      }
+    )
+    .catch((err:any)=> {
+      console.log(err);
+      
+    }
+    )
+  proxy.$http
+    .get("/getDeviceLatestData", {
+      params: {
+        deviceId: 5,
+      },
+    })
+    .then(
+      (res:any)=> {
+        res = res.data.data
+        safetyfive.value = res.content
+      }
+    )
+    .catch((err:any)=> {
+      console.log(err);
+      
+    }
+    )
+},100)
+
+  
 </script>
 
 <template>
@@ -3127,7 +3497,13 @@ h2 {
   justify-content: space-between;
   font-size: 14px;
 }
-
+.textNode6 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
 .signNode {
   width: 100%;
   height: 100%;
@@ -3384,7 +3760,7 @@ h2 {
   background-color: #c0c0c0;
 }
 .emptyNode div {
-  width: 24px;
+  width: 30px;
   height: 100%;
   border: 1px solid black;
 }
@@ -3403,7 +3779,7 @@ h2 {
   );
 }
 .emptyNodeWarn div {
-  width: 24px;
+  width: 30px;
   height: 100%;
   border: 1px solid black;
   background-color: #c0c0c0;
@@ -3413,5 +3789,16 @@ h2 {
   height: 100%;
   border-left: 2.5px solid black;
   border-right: 2.5px solid black;
+}
+.anglevalveNodeWarn {
+  width: 100%;
+  height: 100%;
+  border-left: 2.5px solid black;
+  border-right: 2.5px solid black;
+  background: repeating-linear-gradient(
+    45deg,
+    red 0px 1px,
+    transparent 1px 2px
+  );
 }
 </style>

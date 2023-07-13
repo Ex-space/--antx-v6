@@ -1,12 +1,12 @@
 export const anglevalveNode1 = {
   id: "anglevalveNode1",
-  x: 500,
-  y: 317,
-  width: 20,
-  height: 20,
+  x: 495,
+  y: 312,
+  width: 30,
+  height: 30,
   shape: "html",
   html: `
-            <div class="anglevalveNode"></div>
+            <div class="anglevalveNodeWarn"></div>
             `,
   attrs: {
     // 一定要给边框宽度加上>0的值,否则节点将不能连线
@@ -19,10 +19,10 @@ export const anglevalveNode1 = {
 };
 export const anglevalveNodeB1 = {
   id: "anglevalveNodeB1",
-  x: 500,
-  y: 647,
-  width: 20,
-  height: 20,
+  x: 495,
+  y: 642,
+  width: 30,
+  height: 30,
   shape: "html",
   html: `
             <div class="anglevalveNode"></div>
@@ -38,10 +38,10 @@ export const anglevalveNodeB1 = {
 };
 export const anglevalveNodeC1 = {
   id: "anglevalveNodeC1",
-  x: 500,
-  y: 977,
-  width: 20,
-  height: 20,
+  x: 495,
+  y: 972,
+  width: 30,
+  height: 30,
   shape: "html",
   html: `
             <div class="anglevalveNode"></div>
@@ -57,10 +57,10 @@ export const anglevalveNodeC1 = {
 };
 export const anglevalveNode2 = {
   id: "anglevalveNode2",
-  x: 600,
-  y: 317,
-  width: 20,
-  height: 20,
+  x: 595,
+  y: 312,
+  width: 30,
+  height: 30,
   shape: "html",
   html: `
             <div class="anglevalveNode"></div>
@@ -76,10 +76,10 @@ export const anglevalveNode2 = {
 };
 export const anglevalveNodeB2 = {
   id: "anglevalveNodeB2",
-  x: 600,
-  y: 647,
-  width: 20,
-  height: 20,
+  x: 595,
+  y: 642,
+  width: 30,
+  height: 30,
   shape: "html",
   html: `
             <div class="anglevalveNode"></div>
@@ -95,10 +95,10 @@ export const anglevalveNodeB2 = {
 };
 export const anglevalveNodeC2 = {
   id: "anglevalveNodeC2",
-  x: 600,
-  y: 977,
-  width: 20,
-  height: 20,
+  x: 595,
+  y: 972,
+  width: 30,
+  height: 30,
   shape: "html",
   html: `
             <div class="anglevalveNode"></div>
