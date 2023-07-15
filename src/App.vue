@@ -2642,10 +2642,7 @@ onMounted(() => {
         `<div class="anglevalveNodeWarn"></div>`
       );
     } else if (safeList[0] === true) {
-      anglevalveNodeFront.setProp(
-        "html",
-       `<div class="anglevalveNode"></div>`
-      );
+      anglevalveNodeFront.setProp("html", `<div class="anglevalveNode"></div>`);
     }
     //后角阀
     if (safeList[1] === false) {
@@ -2656,18 +2653,18 @@ onMounted(() => {
     } else if (safeList[1] === true) {
       anglevalveNodeBehind.setProp(
         "html",
-       `<div class="anglevalveNode"></div>`
+        `<div class="anglevalveNode"></div>`
       );
     }
     // 第一个空节点
-    if ((safeList[2] === true) && (safeList[3] === true)) {
+    if (safeList[2] === true && safeList[3] === true) {
       emptyNodeA1.setProp(
         "html",
         `<div class="emptyNodeSafe">
             <div></div>
           </div>`
       );
-    } else if ((safeList[2] === false) && (safeList[3] === true)) {
+    } else if (safeList[2] === false && safeList[3] === true) {
       emptyNodeA1.setProp(
         "html",
         `<div class="emptyNodeWarnF">
@@ -2676,7 +2673,7 @@ onMounted(() => {
             <div></div>
           </div>`
       );
-    } else if ((safeList[2] === true) && (safeList[3] === false)) {
+    } else if (safeList[2] === true && safeList[3] === false) {
       emptyNodeA1.setProp(
         "html",
         `<div class="emptyNodeWarnB">
@@ -2685,7 +2682,7 @@ onMounted(() => {
             <div></div>
           </div>`
       );
-    } else if ((safeList[2] === false) && (safeList[3] === false)) {
+    } else if (safeList[2] === false && safeList[3] === false) {
       emptyNodeA1.setProp(
         "html",
         `<div class="emptyNodeWarnFB">
@@ -2696,14 +2693,14 @@ onMounted(() => {
       );
     }
     //第二个空节点
-    if ((safeList[4] === true) && (safeList[5] === true)) {
+    if (safeList[4] === true && safeList[5] === true) {
       emptyNodeA2.setProp(
         "html",
         `<div class="emptyNodeSafe">
             <div></div>
           </div>`
       );
-    } else if ((safeList[4] === false) && (safeList[5] === true)) {
+    } else if (safeList[4] === false && safeList[5] === true) {
       emptyNodeA2.setProp(
         "html",
         `<div class="emptyNodeWarnF">
@@ -2712,7 +2709,7 @@ onMounted(() => {
             <div></div>
           </div>`
       );
-    } else if ((safeList[4] === true) && (safeList[5] === false)) {
+    } else if (safeList[4] === true && safeList[5] === false) {
       emptyNodeA2.setProp(
         "html",
         `<div class="emptyNodeWarnB">
@@ -2721,7 +2718,7 @@ onMounted(() => {
             <div></div>
           </div>`
       );
-    } else if ((safeList[4] === false) && (safeList[5] === false)) {
+    } else if (safeList[4] === false && safeList[5] === false) {
       emptyNodeA2.setProp(
         "html",
         `<div class="emptyNodeWarnFB">
@@ -2732,7 +2729,7 @@ onMounted(() => {
       );
     }
     //上方的metalNode
-    if ((safeList[6] === true) && (safeList[7] === true)) {
+    if (safeList[6] === true && safeList[7] === true) {
       metalNodeA3.setProp(
         "html",
         `<div class="outmetalNodeSafe">
@@ -2741,7 +2738,7 @@ onMounted(() => {
               </div>
             </div>`
       );
-    } else if ((safeList[6] === false) && (safeList[7] === true)) {
+    } else if (safeList[6] === false && safeList[7] === true) {
       metalNodeA3.setProp(
         "html",
         `<div class="outmetalNodeWarnF">
@@ -2752,7 +2749,7 @@ onMounted(() => {
               <div></div>
             </div>`
       );
-    } else if ((safeList[6] === true) && (safeList[7] === false)) {
+    } else if (safeList[6] === true && safeList[7] === false) {
       metalNodeA3.setProp(
         "html",
         `<div class="outmetalNodeWarnB">
@@ -2763,7 +2760,7 @@ onMounted(() => {
               <div></div>
             </div>`
       );
-    } else if ((safeList[6] === false) && (safeList[7] === false)) {
+    } else if (safeList[6] === false && safeList[7] === false) {
       metalNodeA3.setProp(
         "html",
         `<div class="outmetalNodeWarnFB">
@@ -2774,7 +2771,7 @@ onMounted(() => {
       );
     }
     //下方的metalNode
-    if ((safeList[8] === true) && (safeList[9] === true)) {
+    if (safeList[8] === true && safeList[9] === true) {
       metalNodeA4.setProp(
         "html",
         `<div class="outmetalNodeSafe">
@@ -2783,7 +2780,7 @@ onMounted(() => {
               </div>
             </div>`
       );
-    } else if ((safeList[8] === false) && (safeList[9] === true)) {
+    } else if (safeList[8] === false && safeList[9] === true) {
       metalNodeA4.setProp(
         "html",
         `<div class="outmetalNodeWarnF">
@@ -2794,7 +2791,7 @@ onMounted(() => {
               <div></div>
             </div>`
       );
-    } else if ((safeList[8] === true) && (safeList[9] === false)) {
+    } else if (safeList[8] === true && safeList[9] === false) {
       metalNodeA4.setProp(
         "html",
         `<div class="outmetalNodeWarnB">
@@ -2805,7 +2802,7 @@ onMounted(() => {
               <div></div>
             </div>`
       );
-    } else if ((safeList[8] === false) && (safeList[9] === false)) {
+    } else if (safeList[8] === false && safeList[9] === false) {
       metalNodeA4.setProp(
         "html",
         `<div class="outmetalNodeWarnFB">
@@ -2818,61 +2815,61 @@ onMounted(() => {
     //前角阀上的线
     if (safeList[10] === false) {
       safeEdgeFront.setAttrByPath("line/stroke", "red");
-    } else if(safeList[10] === true) {
+    } else if (safeList[10] === true) {
       safeEdgeFront.setAttrByPath("line/stroke", "#00f800");
     }
     //后角阀上的线
     if (safeList[11] === false) {
       safeEdgeBehind.setAttrByPath("line/stroke", "red");
-    } else if(safeList[11] === true) {
+    } else if (safeList[11] === true) {
       safeEdgeBehind.setAttrByPath("line/stroke", "#00f800");
     }
     //第一个空节点的第一条线
     if (safeList[12] === false) {
       safeEdgeForEmptyFone.setAttrByPath("line/stroke", "red");
-    } else if(safeList[12] === true) {
+    } else if (safeList[12] === true) {
       safeEdgeForEmptyFone.setAttrByPath("line/stroke", "#00f800");
     }
     //第一个空节点的第二条线
     if (safeList[13] === false) {
       safeEdgeForEmptyFtwo.setAttrByPath("line/stroke", "red");
-    } else if(safeList[13] === true) {
+    } else if (safeList[13] === true) {
       safeEdgeForEmptyFtwo.setAttrByPath("line/stroke", "#00f800");
     }
     //第二个空节点的第一条线
     if (safeList[14] === false) {
       safeEdgeForEmptySone.setAttrByPath("line/stroke", "red");
-    } else if(safeList[14] === true) {
+    } else if (safeList[14] === true) {
       safeEdgeForEmptySone.setAttrByPath("line/stroke", "#00f800");
     }
     //第二个空节点的第二条线
     if (safeList[15] === false) {
       safeEdgeForEmptyStwo.setAttrByPath("line/stroke", "red");
-    } else if(safeList[15] === true) {
+    } else if (safeList[15] === true) {
       safeEdgeForEmptyStwo.setAttrByPath("line/stroke", "#00f800");
     }
     //上面的metalNode的第一条线
-     if (safeList[16] === false) {
+    if (safeList[16] === false) {
       safeEdgeForMetalUpone.setAttrByPath("line/stroke", "red");
-    } else if(safeList[16] === true) {
+    } else if (safeList[16] === true) {
       safeEdgeForMetalUpone.setAttrByPath("line/stroke", "#00f800");
     }
     //上面的metalNode的第二条线
     if (safeList[17] === false) {
       safeEdgeForMetalUptwo.setAttrByPath("line/stroke", "red");
-    } else if(safeList[17] === true) {
+    } else if (safeList[17] === true) {
       safeEdgeForMetalUptwo.setAttrByPath("line/stroke", "#00f800");
     }
     //下面的metalNode的第一条线
     if (safeList[18] === false) {
       safeEdgeForMetalDownone.setAttrByPath("line/stroke", "red");
-    } else if(safeList[18] === true) {
+    } else if (safeList[18] === true) {
       safeEdgeForMetalDownone.setAttrByPath("line/stroke", "#00f800");
     }
     //下面的metalNode的第二条线
     if (safeList[19] === false) {
       safeEdgeForMetalDowntwo.setAttrByPath("line/stroke", "red");
-    } else if(safeList[19] === true) {
+    } else if (safeList[19] === true) {
       safeEdgeForMetalDowntwo.setAttrByPath("line/stroke", "#00f800");
     }
   });
@@ -2957,7 +2954,6 @@ const init = async () => {
   let simpleTimeData: any = [];
   let statusData: any = [];
   drawer = true;
-  let temId = deviceId.value;
 
   await proxy.$http
     .get("/getDeviceDataBetweenTimeByHour", {
@@ -2969,6 +2965,7 @@ const init = async () => {
       },
     })
     .then((res: any) => {
+      console.log(res);
       ElMessage({
         message: "查询成功！",
         type: "success",
@@ -3070,7 +3067,9 @@ const openSearch = () => {
 };
 let deviceId = ref();
 const deviceIdList = [1, 2, 3, 4, 5];
-const deviceOneSensorList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+const deviceOneSensorList = [
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+];
 const handleClose = (done: () => void) => {
   startTime.value = "";
   endTime.value = "";
@@ -3094,7 +3093,28 @@ const showPic = async () => {
     });
   }
 };
-let safeList = reactive([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]);
+let safeList = reactive([
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+]);
 const requireDeviceSensor = () => {
   deviceOneSensorList.forEach((item: any, index: number) => {
     proxy.$http
@@ -3110,28 +3130,23 @@ const requireDeviceSensor = () => {
       })
       .catch();
   });
-  console.log(safeList);
 };
-
-let intervalId:any
+const hanleInvalidDevice = () => {
+  const reg = /[\D]+/g;
+  deviceId.value = deviceId.value.replace(reg, "");
+};
+const hanleInvalidSensor = () => {
+  const reg = /[\D]+/g;
+  sensorId.value = sensorId.value.replace(reg, "");
+};
 onMounted(() => {
   requireDeviceSensor();
 });
-intervalId = setInterval(function () {
-  requireDeviceSensor();
+setInterval(function () {
+  setTimeout(() => {
+    requireDeviceSensor();
+  }, 0);
 }, 100);
-onUnmounted(() => {
-  clearInterval(intervalId);
-});
-
-// onMounted(() => {
-//   requireDeviceSensor();
-// });
-// setInterval(function () {
-//   setTimeout(() => {
-//     requireDeviceSensor();
-//   }, 100);
-// }, 0);
 </script>
 
 <template>
@@ -3153,35 +3168,23 @@ onUnmounted(() => {
     <h2>请选择历史记录相关信息</h2>
     <hr />
     <div class="group">
-      <div class="opt">
+      <div class="ipt">
         <h3>设备号：</h3>
-        <el-select
+        <el-input
+          @input="hanleInvalidDevice"
           v-model="deviceId"
-          filterable
           placeholder="请选择要查询的设备号"
-        >
-          <el-option
-            v-for="item in deviceIdList"
-            :key="item"
-            :label="item"
-            :value="item"
-          />
-        </el-select>
+          maxlength="10"
+        />
       </div>
-      <div class="opt">
+      <div class="ipt">
         <h3>光耦号：</h3>
-        <el-select
+        <el-input
+          @input="hanleInvalidSensor"
           v-model="sensorId"
-          filterable
           placeholder="请选择要查询的光耦号"
-        >
-          <el-option
-            v-for="item in sensoList"
-            :key="item"
-            :label="item"
-            :value="item"
-          />
-        </el-select>
+          maxlength="10"
+        />
       </div>
       <div class="opt">
         <h3>开始时间:</h3>
@@ -3259,11 +3262,41 @@ onUnmounted(() => {
 h2 {
   margin-bottom: 5px;
 }
+.ipt,
 .opt {
+  width: 300px;
+}
+.ipt {
+  white-space: nowrap;
   margin: 20px 0;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .el-input__wrapper {
+    padding: 1.5px 8px;
+    .el-input__inner {
+      padding: 2px;
+    }
+  }
+  gap: 10px;
+  h3 {
+    font-size: 1.2em;
+    vertical-align: middle;
+    margin-left: 0.85em;
+  }
+}
+h3 {
+  transform: translateY(-2px);
+}
+.opt {
+  white-space: nowrap;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 20px;
   h3 {
+    font-size: 1.2em;
     vertical-align: middle;
   }
 }
