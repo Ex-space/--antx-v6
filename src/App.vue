@@ -11,6 +11,7 @@ import {
   getCurrentInstance,
   nextTick,
   watchEffect,
+  onUnmounted,
 } from "vue";
 import { blackEdge } from "./edges/blackEdge.ts";
 import { yellowStrokeEdge } from "./edges/yellowStrokeEdge.ts";
@@ -332,7 +333,7 @@ onMounted(() => {
         id: "metalNodeA3",
         y: 96.5,
         html: `
-            <div class="outmetalNodeWarn">
+            <div class="outmetalNodeWarnFB">
               <div class="metalNode2">
                 <span>X1711A</span>
               </div>
@@ -344,10 +345,12 @@ onMounted(() => {
         id: "metalNodeB3",
         y: 426.5,
         html: `
-            <div class="outmetalNodeWarn">
+            <div class="outmetalNodeWarnF">
+              <div></div>
               <div class="metalNode2">
                 <span>X1711B</span>
               </div>
+              <div></div>
             </div>
             `,
         ...metalNode3,
@@ -356,10 +359,12 @@ onMounted(() => {
         id: "metalNodeC3",
         y: 756.5,
         html: `
-            <div class="outmetalNodeWarn">
+            <div class="outmetalNodeWarnB">
+              <div></div>
               <div class="metalNode2">
                 <span>X1711C</span>
               </div>
+              <div></div>
             </div>
             `,
         ...metalNode3,
@@ -369,7 +374,7 @@ onMounted(() => {
         id: "metalNodeA4",
         y: 316.5,
         html: `
-            <div class="outmetalNode1">
+            <div class="outmetalNodeSafe">
               <div class="metalNode2">
                 <span>X1733A</span>
               </div>
@@ -381,7 +386,7 @@ onMounted(() => {
         id: "metalNodeB4",
         y: 646.5,
         html: `
-            <div class="outmetalNode1">
+            <div class="outmetalNodeSafe">
               <div class="metalNode2">
                 <span>X1733B</span>
               </div>
@@ -393,7 +398,7 @@ onMounted(() => {
         id: "metalNodeC4",
         y: 976.5,
         html: `
-            <div class="outmetalNode1">
+            <div class="outmetalNodeSafe">
               <div class="metalNode2">
                 <span>X1733C</span>
               </div>
@@ -1113,7 +1118,7 @@ onMounted(() => {
       /////////////////////////
       {
         id: "textNodeA11",
-        y: 334,
+        y: 336,
         html: `
           <div class="textNode1">
           17FV1101
@@ -1123,7 +1128,7 @@ onMounted(() => {
       },
       {
         id: "textNodeB11",
-        y: 664,
+        y: 666,
         html: `
           <div class="textNode1">
           17FV1201
@@ -1133,7 +1138,7 @@ onMounted(() => {
       },
       {
         id: "textNodeC11",
-        y: 994,
+        y: 996,
         html: `
           <div class="textNode1">
           17FV1301
@@ -1144,7 +1149,7 @@ onMounted(() => {
       /////////////////////////
       {
         id: "textNodeA12",
-        y: 342,
+        y: 344,
         html: `
           <div class="textNode1">
           X1731A
@@ -1154,7 +1159,7 @@ onMounted(() => {
       },
       {
         id: "textNodeB12",
-        y: 672,
+        y: 674,
         html: `
           <div class="textNode1">
           X1731B
@@ -1164,7 +1169,7 @@ onMounted(() => {
       },
       {
         id: "textNodeC12",
-        y: 1002,
+        y: 1004,
         html: `
           <div class="textNode1">
           X1731C
@@ -1175,7 +1180,7 @@ onMounted(() => {
       /////////////////////////
       {
         id: "textNodeA13",
-        y: 342,
+        y: 344,
         html: `
           <div class="textNode1">
           X1732A
@@ -1185,7 +1190,7 @@ onMounted(() => {
       },
       {
         id: "textNodeB13",
-        y: 672,
+        y: 674,
         html: `
           <div class="textNode1">
           X1732B
@@ -1195,7 +1200,7 @@ onMounted(() => {
       },
       {
         id: "textNodeC13",
-        y: 1002,
+        y: 1004,
         html: `
           <div class="textNode1">
           X1732C
@@ -2629,115 +2634,246 @@ onMounted(() => {
   const safeEdgeForMetalUptwo = graph.getCellById("dangerEdge4");
   const safeEdgeForMetalDownone = graph.getCellById("safeEdge5");
   const safeEdgeForMetalDowntwo = graph.getCellById("safeEdge6");
-  safeEdgeForEmptySone.setAttrByPath("line/stroke", "red");
   watchEffect(() => {
+    //前角阀
     if (safeList[0] === false) {
-      // 更新emptyNode1的值为布尔值为true时的HTML模板
-      emptyNodeA1.setProp(
-        "html",
-        `<div class="emptyNodeWarn">
-            <div></div>
-          </div>`
-      );
-      safeEdgeForEmptyFone.setAttrByPath("line/stroke", "red");
-      safeEdgeForEmptyFtwo.setAttrByPath("line/stroke", "red");
-    } else if (safeList[0] === true) {
-      // 更新emptyNode1的值为布尔值为false时的HTML模板
-      emptyNodeA1.setProp(
-        "html",
-        `<div class="emptyNode">
-            <div></div>
-          </div>`
-      );
-      safeEdgeForEmptyFone.setAttrByPath("line/stroke", "#00f800");
-      safeEdgeForEmptyFtwo.setAttrByPath("line/stroke", "#00f800");
-    }
-    if (safeList[1] === false) {
-      // 更新emptyNode1的值为布尔值为true时的HTML模板
-      emptyNodeA2.setProp(
-        "html",
-        `<div class="emptyNodeWarn">
-            <div></div>
-          </div>`
-      );
-      safeEdgeForEmptySone.setAttrByPath("line/stroke", "red");
-      safeEdgeForEmptyStwo.setAttrByPath("line/stroke", "red");
-    } else if (safeList[1] === true) {
-      // 更新emptyNode1的值为布尔值为false时的HTML模板
-      emptyNodeA2.setProp(
-        "html",
-        `<div class="emptyNode">
-            <div></div>
-          </div>`
-      );
-      safeEdgeForEmptySone.setAttrByPath("line/stroke", "#00f800");
-      safeEdgeForEmptyStwo.setAttrByPath("line/stroke", "#00f800");
-    }
-    if (safeList[2] === false) {
-      metalNodeA3.setProp(
-        "html",
-        `<div class="outmetalNodeWarn">
-              <div class="metalNode2">
-                <span>X1711A</span>
-              </div>
-            </div>`
-      );
-      safeEdgeForMetalUpone.setAttrByPath("line/stroke", "red");
-      safeEdgeForMetalUptwo.setAttrByPath("line/stroke", "red");
-    } else if (safeList[2] === true) {
-      metalNodeA3.setProp(
-        "html",
-        `<div class="outmetalNode1">
-              <div class="metalNode2">
-                <span>X1711A</span>
-              </div>
-            </div>`
-      );
-      safeEdgeForMetalUpone.setAttrByPath("line/stroke", "#00f800");
-      safeEdgeForMetalUptwo.setAttrByPath("line/stroke", "#00f800");
-    }
-    if (safeList[3] === false) {
-      metalNodeA4.setProp(
-        "html",
-        `<div class="outmetalNodeWarn">
-              <div class="metalNode2">
-                <span>X1733A</span>
-              </div>
-            </div>`
-      );
-      safeEdgeForMetalDownone.setAttrByPath("line/stroke", "red");
-      safeEdgeForMetalDowntwo.setAttrByPath("line/stroke", "red");
-    } else if (safeList[3] === true) {
-      metalNodeA4.setProp(
-        "html",
-        `<div class="outmetalNode1">
-              <div class="metalNode2">
-                <span>X1733A</span>
-              </div>
-            </div>`
-      );
-      safeEdgeForMetalDownone.setAttrByPath("line/stroke", "#00f800");
-      safeEdgeForMetalDowntwo.setAttrByPath("line/stroke", "#00f800");
-    }
-    if (safeList[4] === false) {
       anglevalveNodeFront.setProp(
         "html",
         `<div class="anglevalveNodeWarn"></div>`
       );
+    } else if (safeList[0] === true) {
+      anglevalveNodeFront.setProp(
+        "html",
+       `<div class="anglevalveNode"></div>`
+      );
+    }
+    //后角阀
+    if (safeList[1] === false) {
       anglevalveNodeBehind.setProp(
         "html",
         `<div class="anglevalveNodeWarn"></div>`
       );
-      safeEdgeFront.setAttrByPath("line/stroke", "red");
-      safeEdgeBehind.setAttrByPath("line/stroke", "red");
-    } else if (safeList[4] === true) {
-      anglevalveNodeFront.setProp("html", `<div class="anglevalveNode"></div>`);
+    } else if (safeList[1] === true) {
       anglevalveNodeBehind.setProp(
         "html",
-        `<div class="anglevalveNode"></div>`
+       `<div class="anglevalveNode"></div>`
       );
+    }
+    // 第一个空节点
+    if ((safeList[2] === true) && (safeList[3] === true)) {
+      emptyNodeA1.setProp(
+        "html",
+        `<div class="emptyNodeSafe">
+            <div></div>
+          </div>`
+      );
+    } else if ((safeList[2] === false) && (safeList[3] === true)) {
+      emptyNodeA1.setProp(
+        "html",
+        `<div class="emptyNodeWarnF">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>`
+      );
+    } else if ((safeList[2] === true) && (safeList[3] === false)) {
+      emptyNodeA1.setProp(
+        "html",
+        `<div class="emptyNodeWarnB">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>`
+      );
+    } else if ((safeList[2] === false) && (safeList[3] === false)) {
+      emptyNodeA1.setProp(
+        "html",
+        `<div class="emptyNodeWarnFB">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>`
+      );
+    }
+    //第二个空节点
+    if ((safeList[4] === true) && (safeList[5] === true)) {
+      emptyNodeA2.setProp(
+        "html",
+        `<div class="emptyNodeSafe">
+            <div></div>
+          </div>`
+      );
+    } else if ((safeList[4] === false) && (safeList[5] === true)) {
+      emptyNodeA2.setProp(
+        "html",
+        `<div class="emptyNodeWarnF">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>`
+      );
+    } else if ((safeList[4] === true) && (safeList[5] === false)) {
+      emptyNodeA2.setProp(
+        "html",
+        `<div class="emptyNodeWarnB">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>`
+      );
+    } else if ((safeList[4] === false) && (safeList[5] === false)) {
+      emptyNodeA2.setProp(
+        "html",
+        `<div class="emptyNodeWarnFB">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>`
+      );
+    }
+    //上方的metalNode
+    if ((safeList[6] === true) && (safeList[7] === true)) {
+      metalNodeA3.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
+              <div class="metalNode2">
+                <span>X1711A</span>
+              </div>
+            </div>`
+      );
+    } else if ((safeList[6] === false) && (safeList[7] === true)) {
+      metalNodeA3.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
+              <div></div>
+              <div class="metalNode2">
+                <span>X1711A</span>
+              </div>
+              <div></div>
+            </div>`
+      );
+    } else if ((safeList[6] === true) && (safeList[7] === false)) {
+      metalNodeA3.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+              <div></div>
+              <div class="metalNode2">
+                <span>X1711A</span>
+              </div>
+              <div></div>
+            </div>`
+      );
+    } else if ((safeList[6] === false) && (safeList[7] === false)) {
+      metalNodeA3.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
+              <div class="metalNode2">
+                <span>X1711A</span>
+              </div>
+            </div>`
+      );
+    }
+    //下方的metalNode
+    if ((safeList[8] === true) && (safeList[9] === true)) {
+      metalNodeA4.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
+              <div class="metalNode2">
+                <span>X1733A</span>
+              </div>
+            </div>`
+      );
+    } else if ((safeList[8] === false) && (safeList[9] === true)) {
+      metalNodeA4.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
+              <div></div>
+              <div class="metalNode2">
+                <span>X1733A</span>
+              </div>
+              <div></div>
+            </div>`
+      );
+    } else if ((safeList[8] === true) && (safeList[9] === false)) {
+      metalNodeA4.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+              <div></div>
+              <div class="metalNode2">
+                <span>X1733A</span>
+              </div>
+              <div></div>
+            </div>`
+      );
+    } else if ((safeList[8] === false) && (safeList[9] === false)) {
+      metalNodeA4.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
+              <div class="metalNode2">
+                <span>X1733A</span>
+              </div>
+            </div>`
+      );
+    }
+    //前角阀上的线
+    if (safeList[10] === false) {
+      safeEdgeFront.setAttrByPath("line/stroke", "red");
+    } else if(safeList[10] === true) {
       safeEdgeFront.setAttrByPath("line/stroke", "#00f800");
+    }
+    //后角阀上的线
+    if (safeList[11] === false) {
+      safeEdgeBehind.setAttrByPath("line/stroke", "red");
+    } else if(safeList[11] === true) {
       safeEdgeBehind.setAttrByPath("line/stroke", "#00f800");
+    }
+    //第一个空节点的第一条线
+    if (safeList[12] === false) {
+      safeEdgeForEmptyFone.setAttrByPath("line/stroke", "red");
+    } else if(safeList[12] === true) {
+      safeEdgeForEmptyFone.setAttrByPath("line/stroke", "#00f800");
+    }
+    //第一个空节点的第二条线
+    if (safeList[13] === false) {
+      safeEdgeForEmptyFtwo.setAttrByPath("line/stroke", "red");
+    } else if(safeList[13] === true) {
+      safeEdgeForEmptyFtwo.setAttrByPath("line/stroke", "#00f800");
+    }
+    //第二个空节点的第一条线
+    if (safeList[14] === false) {
+      safeEdgeForEmptySone.setAttrByPath("line/stroke", "red");
+    } else if(safeList[14] === true) {
+      safeEdgeForEmptySone.setAttrByPath("line/stroke", "#00f800");
+    }
+    //第二个空节点的第二条线
+    if (safeList[15] === false) {
+      safeEdgeForEmptyStwo.setAttrByPath("line/stroke", "red");
+    } else if(safeList[15] === true) {
+      safeEdgeForEmptyStwo.setAttrByPath("line/stroke", "#00f800");
+    }
+    //上面的metalNode的第一条线
+     if (safeList[16] === false) {
+      safeEdgeForMetalUpone.setAttrByPath("line/stroke", "red");
+    } else if(safeList[16] === true) {
+      safeEdgeForMetalUpone.setAttrByPath("line/stroke", "#00f800");
+    }
+    //上面的metalNode的第二条线
+    if (safeList[17] === false) {
+      safeEdgeForMetalUptwo.setAttrByPath("line/stroke", "red");
+    } else if(safeList[17] === true) {
+      safeEdgeForMetalUptwo.setAttrByPath("line/stroke", "#00f800");
+    }
+    //下面的metalNode的第一条线
+    if (safeList[18] === false) {
+      safeEdgeForMetalDownone.setAttrByPath("line/stroke", "red");
+    } else if(safeList[18] === true) {
+      safeEdgeForMetalDownone.setAttrByPath("line/stroke", "#00f800");
+    }
+    //下面的metalNode的第二条线
+    if (safeList[19] === false) {
+      safeEdgeForMetalDowntwo.setAttrByPath("line/stroke", "red");
+    } else if(safeList[19] === true) {
+      safeEdgeForMetalDowntwo.setAttrByPath("line/stroke", "#00f800");
     }
   });
 
@@ -2934,6 +3070,7 @@ const openSearch = () => {
 };
 let deviceId = ref();
 const deviceIdList = [1, 2, 3, 4, 5];
+const deviceOneSensorList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 const handleClose = (done: () => void) => {
   startTime.value = "";
   endTime.value = "";
@@ -2957,13 +3094,14 @@ const showPic = async () => {
     });
   }
 };
-let safeList = reactive([false, false, false, false, false]);
-const requireDevice = () => {
-  deviceIdList.forEach((item: any, index: number) => {
+let safeList = reactive([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]);
+const requireDeviceSensor = () => {
+  deviceOneSensorList.forEach((item: any, index: number) => {
     proxy.$http
       .get("/getDeviceLatestData", {
         params: {
-          deviceId: item,
+          deviceId: 1,
+          sensorId: item,
         },
       })
       .then((res: any) => {
@@ -2972,13 +3110,26 @@ const requireDevice = () => {
       })
       .catch();
   });
+  console.log(safeList);
 };
+
+let intervalId:any
+onMounted(() => {
+  requireDeviceSensor();
+});
+intervalId = setInterval(function () {
+  requireDeviceSensor();
+}, 100);
+onUnmounted(() => {
+  clearInterval(intervalId);
+});
+
 // onMounted(() => {
-//   requireDevice();
+//   requireDeviceSensor();
 // });
 // setInterval(function () {
 //   setTimeout(() => {
-//     requireDevice();
+//     requireDeviceSensor();
 //   }, 100);
 // }, 0);
 </script>
@@ -3168,7 +3319,7 @@ h2 {
   -webkit-transform: rotate(270deg); /* Safari or Chrome */
   -o-transform: rotate(270deg); /* Opera */
 }
-.outmetalNode1 {
+.outmetalNodeSafe {
   width: 100%;
   height: 100%;
   display: flex;
@@ -3177,7 +3328,53 @@ h2 {
   border-left: 1px solid black;
   border-right: 1px solid black;
 }
-.outmetalNodeWarn {
+.outmetalNodeWarnF {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.outmetalNodeWarnF div:nth-child(1) {
+  width: 16px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    red 0px 1px,
+    transparent 1px 2px
+  );
+  border-left: 1px solid black;
+}
+.outmetalNodeWarnF div:nth-child(3) {
+  width: 16px;
+  height: 100%;
+  background-color: #c0c0c0;
+  border-right: 1px solid black;
+}
+.outmetalNodeWarnB {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.outmetalNodeWarnB div:nth-child(1) {
+  width: 16px;
+  height: 100%;
+  background-color: #c0c0c0;
+  border-left: 1px solid black;
+}
+.outmetalNodeWarnB div:nth-child(3) {
+  width: 16px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    red 0px 1px,
+    transparent 1px 2px
+  );
+  border-right: 1px solid black;
+}
+.outmetalNodeWarnFB {
   width: 100%;
   height: 100%;
   display: flex;
@@ -3204,7 +3401,7 @@ h2 {
 .textNode1 {
   width: 100%;
   height: 100%;
-  font-size: 12px;
+  font-size: 20px;
 }
 .greencircle {
   width: 100%;
@@ -3692,7 +3889,7 @@ h2 {
   justify-content: center;
   align-items: center;
 }
-.emptyNode {
+.emptyNodeSafe {
   width: 100%;
   height: 100%;
   border-left: 1px solid black;
@@ -3702,30 +3899,101 @@ h2 {
   align-items: center;
   background-color: #c0c0c0;
 }
-.emptyNode div {
+.emptyNodeSafe div {
   width: 30px;
   height: 100%;
   border: 1px solid black;
 }
-.emptyNodeWarn {
+.emptyNodeWarnF {
   width: 100%;
   height: 100%;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.emptyNodeWarnF div:nth-child(1) {
+  width: 8px;
+  height: 100%;
   background: repeating-linear-gradient(
     45deg,
     red 0px 1px,
     transparent 1px 2px
   );
+  border-left: 1px solid black;
 }
-.emptyNodeWarn div {
+.emptyNodeWarnF div:nth-child(2) {
   width: 30px;
   height: 100%;
-  border: 1px solid black;
   background-color: #c0c0c0;
+  border: 1px solid black;
+}
+.emptyNodeWarnF div:nth-child(3) {
+  width: 8px;
+  height: 100%;
+  background-color: #c0c0c0;
+  border-right: 1px solid black;
+}
+.emptyNodeWarnB {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.emptyNodeWarnB div:nth-child(1) {
+  width: 8px;
+  height: 100%;
+  background-color: #c0c0c0;
+  border-left: 1px solid black;
+}
+.emptyNodeWarnB div:nth-child(2) {
+  width: 30px;
+  height: 100%;
+  background-color: #c0c0c0;
+  border: 1px solid black;
+}
+.emptyNodeWarnB div:nth-child(3) {
+  width: 8px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    red 0px 1px,
+    transparent 1px 2px
+  );
+  border-right: 1px solid black;
+}
+.emptyNodeWarnFB {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.emptyNodeWarnFB div:nth-child(1) {
+  width: 8px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    red 0px 1px,
+    transparent 1px 2px
+  );
+  border-left: 1px solid black;
+}
+.emptyNodeWarnFB div:nth-child(2) {
+  width: 30px;
+  height: 100%;
+  background-color: #c0c0c0;
+  border: 1px solid black;
+}
+.emptyNodeWarnFB div:nth-child(3) {
+  width: 8px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    red 0px 1px,
+    transparent 1px 2px
+  );
+  border-right: 1px solid black;
 }
 .anglevalveNode {
   width: 100%;

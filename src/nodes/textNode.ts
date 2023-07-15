@@ -92,19 +92,19 @@ export const textNode10 = {
           `,
 };
 export const textNode11 = {
-  x: 435,
+  x: 400,
   width: 21,
   height: 9,
   shape: 'html',
 };
 export const textNode12 = {
-  x: 840,
+  x: 824,
   width: 21,
   height: 9,
   shape: 'html',
 };
 export const textNode13 = {
-  x: 935,
+  x: 920,
   width: 21,
   height: 9,
   shape: 'html',

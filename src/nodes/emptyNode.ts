@@ -6,7 +6,7 @@ export const emptyNode1 = {
   height: 30,
   shape: 'html',
   html: `
-          <div class="emptyNode">
+          <div class="emptyNodeSafe">
             <div></div>
           </div>
           `,
@@ -25,7 +25,9 @@ export const emptyNode2 = {
   height: 30,
   shape: 'html',
   html: `
-          <div class="emptyNodeWarn">
+          <div class="emptyNodeWarnFB">
+            <div></div>
+            <div></div>
             <div></div>
           </div>
           `,
