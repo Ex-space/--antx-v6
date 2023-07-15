@@ -25,5 +25,9 @@ export const getCanvasOPT = (container: HTMLElement) => {
         enabled: true, // 支持滚动放大缩小
       },
     },
+    interacting: {
+      nodeMovable: false,
+      edgeMovable: true,
+    },
   };
 };
