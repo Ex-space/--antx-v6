@@ -452,24 +452,13 @@ export const textNode40 = {
           `,
 };
 export const textNode41 = {
-  x: 500,
-  width: 30,
+  x: 542,
+  width: 60,
   height: 30,
   shape: "html",
   html: `
           <div class="textNode6">
-              前
-          </div>
-          `,
-}
-export const textNode42 = {
-  x: 600,
-  width: 30,
-  height: 30,
-  shape: "html",
-  html: `
-          <div class="textNode6">
-              后
+              短接
           </div>
           `,
 }

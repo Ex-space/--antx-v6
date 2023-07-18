@@ -116,7 +116,6 @@ import {
   textNode39,
   textNode40,
   textNode41,
-  textNode42,
 } from "./nodes/textNode";
 import { allGreenEdge } from "./edges/allGreenEdge";
 import { allBlackEdge } from "./edges/allBlackEdge";
@@ -236,17 +235,17 @@ onMounted(() => {
       /////////////////////////
       {
         id: "shadowRectNodeA7",
-        y: 88.5,
+        y: 132,
         ...shadowRectNode7,
       },
       {
         id: "shadowRectNodeB7",
-        y: 418.5,
+        y: 462,
         ...shadowRectNode7,
       },
       {
         id: "shadowRectNodeC7",
-        y: 748.5,
+        y: 792,
         ...shadowRectNode7,
       },
       /////////////////////////
@@ -331,7 +330,7 @@ onMounted(() => {
       /////////////////////////
       {
         id: "metalNodeA3",
-        y: 96.5,
+        y: 140,
         html: `
             <div class="outmetalNodeWarnFB">
               <div class="metalNode2">
@@ -343,7 +342,7 @@ onMounted(() => {
       },
       {
         id: "metalNodeB3",
-        y: 426.5,
+        y: 470,
         html: `
             <div class="outmetalNodeWarnF">
               <div></div>
@@ -357,7 +356,7 @@ onMounted(() => {
       },
       {
         id: "metalNodeC3",
-        y: 756.5,
+        y: 800,
         html: `
             <div class="outmetalNodeWarnB">
               <div></div>
@@ -942,33 +941,75 @@ onMounted(() => {
       /////////////////////////
       {
         id: "emptyNodeA1",
-        y: 312,
+        y: 317,
+        html: `
+            <div class="outmetalNodeWarnFB">
+              <div class="metalNode2">
+                <span>X1731A</span>
+              </div>
+            </div>
+            `,
         ...emptyNode1,
       },
       {
         id: "emptyNodeB1",
-        y: 642,
+        y: 647,
+        html: `
+            <div class="outmetalNodeWarnFB">
+              <div class="metalNode2">
+                <span>X1731B</span>
+              </div>
+            </div>
+            `,
         ...emptyNode1,
       },
       {
         id: "emptyNodeC1",
-        y: 972,
+        y: 977,
+        html: `
+            <div class="outmetalNodeWarnFB">
+              <div class="metalNode2">
+                <span>X1731C</span>
+              </div>
+            </div>
+            `,
         ...emptyNode1,
       },
       /////////////////////////
       {
         id: "emptyNodeA2",
-        y: 312,
+        y: 317,
+        html: `
+            <div class="outmetalNodeWarnFB">
+              <div class="metalNode2">
+                <span>X1732A</span>
+              </div>
+            </div>
+            `,
         ...emptyNode2,
       },
       {
         id: "emptyNodeB2",
-        y: 642,
+        y: 647,
+        html: `
+            <div class="outmetalNodeWarnFB">
+              <div class="metalNode2">
+                <span>X1732B</span>
+              </div>
+            </div>
+            `,
         ...emptyNode2,
       },
       {
         id: "emptyNodeC2",
-        y: 972,
+        y: 977,
+        html: `
+            <div class="outmetalNodeWarnFB">
+              <div class="metalNode2">
+                <span>X1732C</span>
+              </div>
+            </div>
+            `,
         ...emptyNode2,
       },
       /////////////////////////
@@ -1147,67 +1188,67 @@ onMounted(() => {
         ...textNode11,
       },
       /////////////////////////
-      {
-        id: "textNodeA12",
-        y: 344,
-        html: `
-          <div class="textNode1">
-          X1731A
-          </div>
-          `,
-        ...textNode12,
-      },
-      {
-        id: "textNodeB12",
-        y: 674,
-        html: `
-          <div class="textNode1">
-          X1731B
-          </div>
-          `,
-        ...textNode12,
-      },
-      {
-        id: "textNodeC12",
-        y: 1004,
-        html: `
-          <div class="textNode1">
-          X1731C
-          </div>
-          `,
-        ...textNode12,
-      },
-      /////////////////////////
-      {
-        id: "textNodeA13",
-        y: 344,
-        html: `
-          <div class="textNode1">
-          X1732A
-          </div>
-          `,
-        ...textNode13,
-      },
-      {
-        id: "textNodeB13",
-        y: 674,
-        html: `
-          <div class="textNode1">
-          X1732B
-          </div>
-          `,
-        ...textNode13,
-      },
-      {
-        id: "textNodeC13",
-        y: 1004,
-        html: `
-          <div class="textNode1">
-          X1732C
-          </div>
-          `,
-        ...textNode13,
-      },
+      // {
+      //   id: "textNodeA12",
+      //   y: 344,
+      //   html: `
+      //     <div class="textNode1">
+      //     X1731A
+      //     </div>
+      //     `,
+      //   ...textNode12,
+      // },
+      // {
+      //   id: "textNodeB12",
+      //   y: 674,
+      //   html: `
+      //     <div class="textNode1">
+      //     X1731B
+      //     </div>
+      //     `,
+      //   ...textNode12,
+      // },
+      // {
+      //   id: "textNodeC12",
+      //   y: 1004,
+      //   html: `
+      //     <div class="textNode1">
+      //     X1731C
+      //     </div>
+      //     `,
+      //   ...textNode12,
+      // },
+      // /////////////////////////
+      // {
+      //   id: "textNodeA13",
+      //   y: 344,
+      //   html: `
+      //     <div class="textNode1">
+      //     X1732A
+      //     </div>
+      //     `,
+      //   ...textNode13,
+      // },
+      // {
+      //   id: "textNodeB13",
+      //   y: 674,
+      //   html: `
+      //     <div class="textNode1">
+      //     X1732B
+      //     </div>
+      //     `,
+      //   ...textNode13,
+      // },
+      // {
+      //   id: "textNodeC13",
+      //   y: 1004,
+      //   html: `
+      //     <div class="textNode1">
+      //     X1732C
+      //     </div>
+      //     `,
+      //   ...textNode13,
+      // },
       /////////////////////////
       // {
       //   id: "textNodeA14",
@@ -1493,22 +1534,6 @@ onMounted(() => {
         ...textNode41,
       },
       /////////////////////////
-      {
-        id: "textNodeA42",
-        y: 342,
-        ...textNode42,
-      },
-      {
-        id: "textNodeB42",
-        y: 672,
-        ...textNode42,
-      },
-      {
-        id: "textNodeC42",
-        y: 1002,
-        ...textNode42,
-      },
-      /////////////////////////
       // {
       //   id: "dataNodeA1",
       //   y: 254,
@@ -1782,44 +1807,44 @@ onMounted(() => {
       },
       {
         id: "safeEdge3",
-        source: [842.5, 316],
+        source: [818, 316],
         router: "er",
-        target: [842.5, 280],
+        target: [818, 280],
         ...safeEdge,
       },
       {
         id: "safeEdge3B",
-        source: [842.5, 646],
+        source: [818, 646],
         router: "er",
-        target: [842.5, 610],
+        target: [818, 610],
         ...safeEdge,
       },
       {
         id: "safeEdge3C",
-        source: [842.5, 976],
+        source: [818, 976],
         router: "er",
-        target: [842.5, 940],
+        target: [818, 940],
         ...safeEdge,
       },
       {
         id: "safeEdge4",
-        source: [880, 316],
+        source: [912, 316],
         router: "er",
-        target: [880, 280],
+        target: [912, 280],
         ...safeEdge,
       },
       {
         id: "safeEdge4B",
-        source: [880, 646],
+        source: [912, 646],
         router: "er",
-        target: [880, 610],
+        target: [912, 610],
         ...safeEdge,
       },
       {
         id: "safeEdge4C",
-        source: [880, 976],
+        source: [912, 976],
         router: "er",
-        target: [880, 940],
+        target: [912, 940],
         ...safeEdge,
       },
       {
@@ -1867,86 +1892,86 @@ onMounted(() => {
       // //危险线
       {
         id: "dangerEdge1",
-        source: [938.5, 316],
+        source: [958, 316],
         router: "er",
-        target: [938.5, 280],
+        target: [958, 280],
         ...dangerEdge,
       },
       {
         id: "dangerEdge1B",
-        source: [938.5, 646],
+        source: [958, 646],
         router: "er",
-        target: [938.5, 610],
+        target: [958, 610],
         ...dangerEdge,
       },
       {
         id: "dangerEdge1C",
-        source: [938.5, 976],
+        source: [958, 976],
         router: "er",
-        target: [938.5, 940],
+        target: [958, 940],
         ...dangerEdge,
       },
       {
         id: "dangerEdge2",
-        source: [976, 316],
+        source: [1052, 316],
         router: "er",
-        target: [976, 280],
+        target: [1052, 280],
         ...dangerEdge,
       },
       {
         id: "dangerEdge2B",
-        source: [976, 646],
+        source: [1052, 646],
         router: "er",
-        target: [976, 610],
+        target: [1052, 610],
         ...dangerEdge,
       },
       {
         id: "dangerEdge2C",
-        source: [976, 976],
+        source: [1052, 976],
         router: "er",
-        target: [976, 940],
+        target: [1052, 940],
         ...dangerEdge,
       },
       {
         id: "dangerEdge3",
-        source: [1578, 96],
+        source: [1578, 138],
         router: "er",
-        target: [1578, 60],
+        target: [1578, 102],
         ...dangerEdge,
       },
       {
         id: "dangerEdge3B",
-        source: [1578, 426],
+        source: [1578, 468],
         router: "er",
-        target: [1578, 390],
+        target: [1578, 432],
         ...dangerEdge,
       },
       {
         id: "dangerEdge3C",
-        source: [1578, 756],
+        source: [1578, 798],
         router: "er",
-        target: [1578, 720],
+        target: [1578, 762],
         ...dangerEdge,
       },
       {
         id: "dangerEdge4",
-        source: [1672, 96],
+        source: [1672, 138],
         router: "er",
-        target: [1672, 60],
+        target: [1672, 102],
         ...dangerEdge,
       },
       {
         id: "dangerEdge4B",
-        source: [1672, 426],
+        source: [1672, 468],
         router: "er",
-        target: [1672, 390],
+        target: [1672, 432],
         ...dangerEdge,
       },
       {
         id: "dangerEdge4C",
-        source: [1672, 756],
+        source: [1672, 798],
         router: "er",
-        target: [1672, 720],
+        target: [1672, 762],
         ...dangerEdge,
       },
       // //黑头黄身箭头组
@@ -2205,42 +2230,42 @@ onMounted(() => {
       // },
       {
         id: "naDashEdge8",
-        source: [861, 280],
+        source: [865, 280],
         target: "emptyNodeA1",
         router: "er",
         ...naDashEdge,
       },
       {
         id: "naDashEdge8B",
-        source: [861, 610],
+        source: [865, 610],
         target: "emptyNodeB1",
         router: "er",
         ...naDashEdge,
       },
       {
         id: "naDashEdge8C",
-        source: [861, 940],
+        source: [865, 940],
         target: "emptyNodeC1",
         router: "er",
         ...naDashEdge,
       },
       {
         id: "naDashEdge9",
-        source: [957, 280],
+        source: [1005, 280],
         target: "emptyNodeA2",
         router: "er",
         ...naDashEdge,
       },
       {
         id: "naDashEdge9B",
-        source: [957, 610],
+        source: [1005, 610],
         target: "emptyNodeB2",
         router: "er",
         ...naDashEdge,
       },
       {
         id: "naDashEdge9C",
-        source: [957, 940],
+        source: [1005, 940],
         target: "emptyNodeC2",
         router: "er",
         ...naDashEdge,
@@ -2660,72 +2685,84 @@ onMounted(() => {
     if (safeDeviceSensorList[0][2].value === true && safeDeviceSensorList[0][3].value === true) {
       emptyNodeA1.setProp(
         "html",
-        `<div class="emptyNodeSafe">
-            <div></div>
-          </div>`
+        `<div class="outmetalNodeSafe">
+              <div class="metalNode2">
+                <span>X1731A</span>
+              </div>
+            </div>`
       );
     } else if (safeDeviceSensorList[0][2].value === false && safeDeviceSensorList[0][3].value === true) {
       emptyNodeA1.setProp(
         "html",
-        `<div class="emptyNodeWarnF">
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>`
+        `<div class="outmetalNodeWarnF">
+              <div></div>
+              <div class="metalNode2">
+                <span>X1731A</span>
+              </div>
+              <div></div>
+            </div>`
       );
     } else if (safeDeviceSensorList[0][2].value === true && safeDeviceSensorList[0][3].value === false) {
       emptyNodeA1.setProp(
         "html",
-        `<div class="emptyNodeWarnB">
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>`
+        `<div class="outmetalNodeWarnB">
+              <div></div>
+              <div class="metalNode2">
+                <span>X1731A</span>
+              </div>
+              <div></div>
+            </div>`
       );
     } else if (safeDeviceSensorList[0][2].value === false && safeDeviceSensorList[0][3].value === false) {
       emptyNodeA1.setProp(
         "html",
-        `<div class="emptyNodeWarnFB">
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>`
+        `<div class="outmetalNodeWarnFB">
+              <div class="metalNode2">
+                <span>X1731A</span>
+              </div>
+            </div>`
       );
     }
     //第二个空节点
     if (safeDeviceSensorList[0][4].value === true && safeDeviceSensorList[0][5].value === true) {
       emptyNodeA2.setProp(
         "html",
-        `<div class="emptyNodeSafe">
-            <div></div>
-          </div>`
+        `<div class="outmetalNodeSafe">
+              <div class="metalNode2">
+                <span>X1732A</span>
+              </div>
+            </div>`
       );
     } else if (safeDeviceSensorList[0][4].value === false && safeDeviceSensorList[0][5].value === true) {
       emptyNodeA2.setProp(
         "html",
-        `<div class="emptyNodeWarnF">
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>`
+        `<div class="outmetalNodeWarnF">
+              <div></div>
+              <div class="metalNode2">
+                <span>X1732A</span>
+              </div>
+              <div></div>
+            </div>`
       );
     } else if (safeDeviceSensorList[0][4].value === true && safeDeviceSensorList[0][5].value === false) {
       emptyNodeA2.setProp(
         "html",
-        `<div class="emptyNodeWarnB">
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>`
+        `<div class="outmetalNodeWarnB">
+              <div></div>
+              <div class="metalNode2">
+                <span>X1732A</span>
+              </div>
+              <div></div>
+            </div>`
       );
     } else if (safeDeviceSensorList[0][4].value === false && safeDeviceSensorList[0][5].value === false) {
       emptyNodeA2.setProp(
         "html",
-        `<div class="emptyNodeWarnFB">
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>`
+        `<div class="outmetalNodeWarnFB">
+              <div class="metalNode2">
+                <span>X1732A</span>
+              </div>
+            </div>`
       );
     }
     //上方的metalNode
