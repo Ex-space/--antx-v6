@@ -154,8 +154,14 @@ import {
   anglevalveNode2,
   anglevalveNodeB1,
   anglevalveNodeC1,
+  anglevalveNodeD1,
+  anglevalveNodeE1,
+  anglevalveNodeF1,
   anglevalveNodeB2,
   anglevalveNodeC2,
+  anglevalveNodeD2,
+  anglevalveNodeE2,
+  anglevalveNodeF2,
 } from "./nodes/anglevalveNode";
 import { dangerEdge } from "./edges/dangerEdge";
 import { safeEdge } from "./edges/safeEdge";
@@ -182,6 +188,21 @@ onMounted(() => {
       {
         id: "shadowRectNodeC1",
         y: 792,
+        ...shadowRectNode1,
+      },
+      {
+        id: "shadowRectNodeD1",
+        y: 1122,
+        ...shadowRectNode1,
+      },
+      {
+        id: "shadowRectNodeE1",
+        y: 1452,
+        ...shadowRectNode1,
+      },
+      {
+        id: "shadowRectNodeF1",
+        y: 1782,
         ...shadowRectNode1,
       },
       /////////////////////////
@@ -248,6 +269,21 @@ onMounted(() => {
         y: 792,
         ...shadowRectNode7,
       },
+      {
+        id: "shadowRectNodeD7",
+        y: 1122,
+        ...shadowRectNode7,
+      },
+      {
+        id: "shadowRectNodeE7",
+        y: 1452,
+        ...shadowRectNode7,
+      },
+      {
+        id: "shadowRectNodeF7",
+        y: 1782,
+        ...shadowRectNode7,
+      },
       /////////////////////////
       // {
       //   id: "shadowRectNodeA8",
@@ -296,6 +332,21 @@ onMounted(() => {
         y: 968.5,
         ...shadowRectNode10,
       },
+      {
+        id: "shadowRectNodeD10",
+        y: 1298.5,
+        ...shadowRectNode10,
+      },
+      {
+        id: "shadowRectNodeE10",
+        y: 1628.5,
+        ...shadowRectNode10,
+      },
+      {
+        id: "shadowRectNodeF10",
+        y: 1958.5,
+        ...shadowRectNode10,
+      },
       /////////////////////////
       {
         id: "metalNodeA1",
@@ -320,6 +371,36 @@ onMounted(() => {
       {
         id: "metalNodeC1",
         y: 858,
+        html: `
+            <div class="metalNode">
+              <span>X1701C</span>
+            </div>
+            `,
+        ...metalNode1,
+      },
+      {
+        id: "metalNodeD1",
+        y: 1188,
+        html: `
+            <div class="metalNode">
+              <span>X1701C</span>
+            </div>
+            `,
+        ...metalNode1,
+      },
+      {
+        id: "metalNodeE1",
+        y: 1518,
+        html: `
+            <div class="metalNode">
+              <span>X1701C</span>
+            </div>
+            `,
+        ...metalNode1,
+      },
+      {
+        id: "metalNodeF1",
+        y: 1848,
         html: `
             <div class="metalNode">
               <span>X1701C</span>
@@ -368,6 +449,48 @@ onMounted(() => {
             `,
         ...metalNode3,
       },
+      {
+        id: "metalNodeD3",
+        y: 1130,
+        html: `
+            <div class="outmetalNodeWarnB">
+              <div></div>
+              <div class="metalNode2">
+                <span>X1711C</span>
+              </div>
+              <div></div>
+            </div>
+            `,
+        ...metalNode3,
+      },
+      {
+        id: "metalNodeE3",
+        y: 1460,
+        html: `
+            <div class="outmetalNodeWarnB">
+              <div></div>
+              <div class="metalNode2">
+                <span>X1711C</span>
+              </div>
+              <div></div>
+            </div>
+            `,
+        ...metalNode3,
+      },
+      {
+        id: "metalNodeF3",
+        y: 1790,
+        html: `
+            <div class="outmetalNodeWarnB">
+              <div></div>
+              <div class="metalNode2">
+                <span>X1711C</span>
+              </div>
+              <div></div>
+            </div>
+            `,
+        ...metalNode3,
+      },
       /////////////////////////
       {
         id: "metalNodeA4",
@@ -405,6 +528,42 @@ onMounted(() => {
             `,
         ...metalNode4,
       },
+      {
+        id: "metalNodeD4",
+        y: 1306.5,
+        html: `
+            <div class="outmetalNodeSafe">
+              <div class="metalNode2">
+                <span>X1733C</span>
+              </div>
+            </div>
+            `,
+        ...metalNode4,
+      },
+      {
+        id: "metalNodeE4",
+        y: 1636.5,
+        html: `
+            <div class="outmetalNodeSafe">
+              <div class="metalNode2">
+                <span>X1733C</span>
+              </div>
+            </div>
+            `,
+        ...metalNode4,
+      },
+      {
+        id: "metalNodeF4",
+        y: 1966.5,
+        html: `
+            <div class="outmetalNodeSafe">
+              <div class="metalNode2">
+                <span>X1733C</span>
+              </div>
+            </div>
+            `,
+        ...metalNode4,
+      },
       /////////////////////////
       {
         id: "greenNodeA1",
@@ -419,6 +578,21 @@ onMounted(() => {
       {
         id: "greenNodeC1",
         y: 788,
+        ...greenNode1,
+      },
+      {
+        id: "greenNodeD1",
+        y: 1118,
+        ...greenNode1,
+      },
+      {
+        id: "greenNodeE1",
+        y: 1448,
+        ...greenNode1,
+      },
+      {
+        id: "greenNodeF1",
+        y: 1778,
         ...greenNode1,
       },
       /////////////////////////
@@ -485,6 +659,21 @@ onMounted(() => {
         y: 964,
         ...greenNode6,
       },
+      {
+        id: "greenNodeD6",
+        y: 1294,
+        ...greenNode6,
+      },
+      {
+        id: "greenNodeE6",
+        y: 1624,
+        ...greenNode6,
+      },
+      {
+        id: "greenNodeF6",
+        y: 1954,
+        ...greenNode6,
+      },
       /////////////////////////
       {
         id: "greenNodeA7",
@@ -499,6 +688,21 @@ onMounted(() => {
       {
         id: "greenNodeC7",
         y: 987,
+        ...greenNode7,
+      },
+      {
+        id: "greenNodeD7",
+        y: 1317,
+        ...greenNode7,
+      },
+      {
+        id: "greenNodeE7",
+        y: 1647,
+        ...greenNode7,
+      },
+      {
+        id: "greenNodeF7",
+        y: 1977,
         ...greenNode7,
       },
       /////////////////////////
@@ -517,6 +721,21 @@ onMounted(() => {
         y: 921,
         ...greenNode8,
       },
+      {
+        id: "greenNodeD8",
+        y: 1251,
+        ...greenNode8,
+      },
+      {
+        id: "greenNodeE8",
+        y: 1581,
+        ...greenNode8,
+      },
+      {
+        id: "greenNodeF8",
+        y: 1911,
+        ...greenNode8,
+      },
       /////////////////////////
       {
         id: "greenNodeA9",
@@ -533,6 +752,21 @@ onMounted(() => {
         y: 1010,
         ...greenNode9,
       },
+      {
+        id: "greenNodeD9",
+        y: 1340,
+        ...greenNode9,
+      },
+      {
+        id: "greenNodeE9",
+        y: 1670,
+        ...greenNode9,
+      },
+      {
+        id: "greenNodeF9",
+        y: 2000,
+        ...greenNode9,
+      },
       /////////////////////////
       {
         id: "greenNodeA10",
@@ -547,6 +781,21 @@ onMounted(() => {
       {
         id: "greenNodeC10",
         y: 952,
+        ...greenNode10,
+      },
+      {
+        id: "greenNodeD10",
+        y: 1282,
+        ...greenNode10,
+      },
+      {
+        id: "greenNodeE10",
+        y: 1612,
+        ...greenNode10,
+      },
+      {
+        id: "greenNodeF10",
+        y: 1942,
         ...greenNode10,
       },
       /////////////////////////
@@ -938,6 +1187,21 @@ onMounted(() => {
         y: 975,
         ...greenCircleNode3,
       },
+      {
+        id: "greenCircleNodeD3",
+        y: 1305,
+        ...greenCircleNode3,
+      },
+      {
+        id: "greenCircleNodeE3",
+        y: 1635,
+        ...greenCircleNode3,
+      },
+      {
+        id: "greenCircleNodeF3",
+        y: 1965,
+        ...greenCircleNode3,
+      },
       /////////////////////////
       {
         id: "emptyNodeA1",
@@ -975,6 +1239,42 @@ onMounted(() => {
             `,
         ...emptyNode1,
       },
+      {
+        id: "emptyNodeD1",
+        y: 1307,
+        html: `
+            <div class="outmetalNodeWarnFB">
+              <div class="metalNode2">
+                <span>X1731C</span>
+              </div>
+            </div>
+            `,
+        ...emptyNode1,
+      },
+      {
+        id: "emptyNodeE1",
+        y: 1637,
+        html: `
+            <div class="outmetalNodeWarnFB">
+              <div class="metalNode2">
+                <span>X1731C</span>
+              </div>
+            </div>
+            `,
+        ...emptyNode1,
+      },
+      {
+        id: "emptyNodeF1",
+        y: 1967,
+        html: `
+            <div class="outmetalNodeWarnFB">
+              <div class="metalNode2">
+                <span>X1731C</span>
+              </div>
+            </div>
+            `,
+        ...emptyNode1,
+      },
       /////////////////////////
       {
         id: "emptyNodeA2",
@@ -1003,6 +1303,42 @@ onMounted(() => {
       {
         id: "emptyNodeC2",
         y: 977,
+        html: `
+            <div class="outmetalNodeWarnFB">
+              <div class="metalNode2">
+                <span>X1732C</span>
+              </div>
+            </div>
+            `,
+        ...emptyNode2,
+      },
+      {
+        id: "emptyNodeD2",
+        y: 1307,
+        html: `
+            <div class="outmetalNodeWarnFB">
+              <div class="metalNode2">
+                <span>X1732C</span>
+              </div>
+            </div>
+            `,
+        ...emptyNode2,
+      },
+      {
+        id: "emptyNodeE2",
+        y: 1637,
+        html: `
+            <div class="outmetalNodeWarnFB">
+              <div class="metalNode2">
+                <span>X1732C</span>
+              </div>
+            </div>
+            `,
+        ...emptyNode2,
+      },
+      {
+        id: "emptyNodeF2",
+        y: 1967,
         html: `
             <div class="outmetalNodeWarnFB">
               <div class="metalNode2">
@@ -1180,6 +1516,36 @@ onMounted(() => {
       {
         id: "textNodeC11",
         y: 996,
+        html: `
+          <div class="textNode1">
+          17FV1301
+          </div>
+          `,
+        ...textNode11,
+      },
+      {
+        id: "textNodeD11",
+        y: 1326,
+        html: `
+          <div class="textNode1">
+          17FV1301
+          </div>
+          `,
+        ...textNode11,
+      },
+      {
+        id: "textNodeE11",
+        y: 1656,
+        html: `
+          <div class="textNode1">
+          17FV1301
+          </div>
+          `,
+        ...textNode11,
+      },
+      {
+        id: "textNodeF11",
+        y: 1986,
         html: `
           <div class="textNode1">
           17FV1301
@@ -1533,6 +1899,21 @@ onMounted(() => {
         y: 1002,
         ...textNode41,
       },
+      {
+        id: "textNodeD41",
+        y: 1332,
+        ...textNode41,
+      },
+      {
+        id: "textNodeE41",
+        y: 1662,
+        ...textNode41,
+      },
+      {
+        id: "textNodeF41",
+        y: 1992,
+        ...textNode41,
+      },
       /////////////////////////
       // {
       //   id: "dataNodeA1",
@@ -1730,6 +2111,12 @@ onMounted(() => {
       anglevalveNodeC1,
       anglevalveNodeB2,
       anglevalveNodeC2,
+      anglevalveNodeD1,
+      anglevalveNodeD2,
+      anglevalveNodeE1,
+      anglevalveNodeE2,
+      anglevalveNodeF1,
+      anglevalveNodeF2,
     ],
     edges: [
       // //安全线
@@ -1770,6 +2157,42 @@ onMounted(() => {
         ...safeEdge,
       },
       {
+        id: "safeEdge1D",
+        source: {
+          cell: "anglevalveNodeD1",
+          anchor: {
+            name: "top",
+          },
+        },
+        router: "er",
+        target: [510, 1270],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge1E",
+        source: {
+          cell: "anglevalveNodeE1",
+          anchor: {
+            name: "top",
+          },
+        },
+        router: "er",
+        target: [510, 1600],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge1F",
+        source: {
+          cell: "anglevalveNodeF1",
+          anchor: {
+            name: "top",
+          },
+        },
+        router: "er",
+        target: [510, 1930],
+        ...safeEdge,
+      },
+      {
         id: "safeEdge2",
         source: {
           cell: "anglevalveNode2",
@@ -1806,6 +2229,42 @@ onMounted(() => {
         ...safeEdge,
       },
       {
+        id: "safeEdge2D",
+        source: {
+          cell: "anglevalveNodeD2",
+          anchor: {
+            name: "top",
+          },
+        },
+        router: "er",
+        target: [610, 1270],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge2E",
+        source: {
+          cell: "anglevalveNodeE2",
+          anchor: {
+            name: "top",
+          },
+        },
+        router: "er",
+        target: [610, 1600],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge2F",
+        source: {
+          cell: "anglevalveNodeF2",
+          anchor: {
+            name: "top",
+          },
+        },
+        router: "er",
+        target: [610, 1930],
+        ...safeEdge,
+      },
+      {
         id: "safeEdge3",
         source: [818, 316],
         router: "er",
@@ -1824,6 +2283,27 @@ onMounted(() => {
         source: [818, 976],
         router: "er",
         target: [818, 940],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge3D",
+        source: [818, 1306],
+        router: "er",
+        target: [818, 1270],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge3E",
+        source: [818, 1636],
+        router: "er",
+        target: [818, 1600],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge3F",
+        source: [818, 1966],
+        router: "er",
+        target: [818, 1930],
         ...safeEdge,
       },
       {
@@ -1848,6 +2328,27 @@ onMounted(() => {
         ...safeEdge,
       },
       {
+        id: "safeEdge4D",
+        source: [912, 1306],
+        router: "er",
+        target: [912, 1270],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge4E",
+        source: [912, 1636],
+        router: "er",
+        target: [912, 1600],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge4F",
+        source: [912, 1966],
+        router: "er",
+        target: [912, 1930],
+        ...safeEdge,
+      },
+      {
         id: "safeEdge5",
         source: [1578.5, 316],
         router: "er",
@@ -1869,6 +2370,27 @@ onMounted(() => {
         ...safeEdge,
       },
       {
+        id: "safeEdge5D",
+        source: [1578.5, 1306],
+        router: "er",
+        target: [1578.5, 1270],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge5E",
+        source: [1578.5, 1636],
+        router: "er",
+        target: [1578.5, 1600],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge5F",
+        source: [1578.5, 1966],
+        router: "er",
+        target: [1578.5, 1930],
+        ...safeEdge,
+      },
+      {
         id: "safeEdge6",
         source: [1672.5, 316],
         router: "er",
@@ -1887,6 +2409,27 @@ onMounted(() => {
         source: [1672.5, 976],
         router: "er",
         target: [1672.5, 940],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge6D",
+        source: [1672.5, 1306],
+        router: "er",
+        target: [1672.5, 1270],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge6E",
+        source: [1672.5, 1636],
+        router: "er",
+        target: [1672.5, 1600],
+        ...safeEdge,
+      },
+      {
+        id: "safeEdge6F",
+        source: [1672.5, 1966],
+        router: "er",
+        target: [1672.5, 1930],
         ...safeEdge,
       },
       // //危险线
@@ -1912,6 +2455,27 @@ onMounted(() => {
         ...dangerEdge,
       },
       {
+        id: "dangerEdge1D",
+        source: [958, 1306],
+        router: "er",
+        target: [958, 1270],
+        ...dangerEdge,
+      },
+      {
+        id: "dangerEdge1E",
+        source: [958, 1636],
+        router: "er",
+        target: [958, 1600],
+        ...dangerEdge,
+      },
+      {
+        id: "dangerEdge1F",
+        source: [958, 1966],
+        router: "er",
+        target: [958, 1930],
+        ...dangerEdge,
+      },
+      {
         id: "dangerEdge2",
         source: [1052, 316],
         router: "er",
@@ -1930,6 +2494,27 @@ onMounted(() => {
         source: [1052, 976],
         router: "er",
         target: [1052, 940],
+        ...dangerEdge,
+      },
+      {
+        id: "dangerEdge2D",
+        source: [1052, 1306],
+        router: "er",
+        target: [1052, 1270],
+        ...dangerEdge,
+      },
+      {
+        id: "dangerEdge2E",
+        source: [1052, 1636],
+        router: "er",
+        target: [1052, 1600],
+        ...dangerEdge,
+      },
+      {
+        id: "dangerEdge2F",
+        source: [1052, 1966],
+        router: "er",
+        target: [1052, 1930],
         ...dangerEdge,
       },
       {
@@ -1954,6 +2539,27 @@ onMounted(() => {
         ...dangerEdge,
       },
       {
+        id: "dangerEdge3D",
+        source: [1578, 1128],
+        router: "er",
+        target: [1578, 1092],
+        ...dangerEdge,
+      },
+      {
+        id: "dangerEdge3E",
+        source: [1578, 1458],
+        router: "er",
+        target: [1578, 1422],
+        ...dangerEdge,
+      },
+      {
+        id: "dangerEdge3F",
+        source: [1578, 1788],
+        router: "er",
+        target: [1578, 1752],
+        ...dangerEdge,
+      },
+      {
         id: "dangerEdge4",
         source: [1672, 138],
         router: "er",
@@ -1972,6 +2578,27 @@ onMounted(() => {
         source: [1672, 798],
         router: "er",
         target: [1672, 762],
+        ...dangerEdge,
+      },
+      {
+        id: "dangerEdge4D",
+        source: [1672, 1128],
+        router: "er",
+        target: [1672, 1092],
+        ...dangerEdge,
+      },
+      {
+        id: "dangerEdge4E",
+        source: [1672, 1458],
+        router: "er",
+        target: [1672, 1422],
+        ...dangerEdge,
+      },
+      {
+        id: "dangerEdge4F",
+        source: [1672, 1788],
+        router: "er",
+        target: [1672, 1752],
         ...dangerEdge,
       },
       // //黑头黄身箭头组
@@ -2014,6 +2641,24 @@ onMounted(() => {
         target: [1311, 933],
         ...allBlackEdge,
       },
+      {
+        id: "allBlackEdge1D",
+        source: [1311, 1316.5],
+        target: [1311, 1263],
+        ...allBlackEdge,
+      },
+      {
+        id: "allBlackEdge1E",
+        source: [1311, 1646.5],
+        target: [1311, 1593],
+        ...allBlackEdge,
+      },
+      {
+        id: "allBlackEdge1F",
+        source: [1311, 1976.5],
+        target: [1311, 1923],
+        ...allBlackEdge,
+      },
       //双向绿色箭头组
       {
         id: "allGreenEdge1",
@@ -2031,6 +2676,24 @@ onMounted(() => {
         id: "allGreenEdge1C",
         source: [1311, 986.5],
         target: [1473, 986.5],
+        ...allGreenEdge,
+      },
+      {
+        id: "allGreenEdge1D",
+        source: [1311, 1316.5],
+        target: [1473, 1316.5],
+        ...allGreenEdge,
+      },
+      {
+        id: "allGreenEdge1E",
+        source: [1311, 1646.5],
+        target: [1473, 1646.5],
+        ...allGreenEdge,
+      },
+      {
+        id: "allGreenEdge1F",
+        source: [1311, 1976.5],
+        target: [1473, 1976.5],
         ...allGreenEdge,
       },
       //绿色实线箭头组
@@ -2053,6 +2716,24 @@ onMounted(() => {
         ...greenEdge,
       },
       {
+        id: "greenEdge1D",
+        source: "shadowRectNodeD1",
+        target: [255, 1140],
+        ...greenEdge,
+      },
+      {
+        id: "greenEdge1E",
+        source: "shadowRectNodeE1",
+        target: [255, 1470],
+        ...greenEdge,
+      },
+      {
+        id: "greenEdge1F",
+        source: "shadowRectNodeF1",
+        target: [255, 1800],
+        ...greenEdge,
+      },
+      {
         id: "greenEdge3",
         source: "emptyNodeA2",
         target: [1311, 327],
@@ -2068,6 +2749,24 @@ onMounted(() => {
         id: "greenEdge3C",
         source: "emptyNodeC2",
         target: [1311, 987],
+        ...greenEdge,
+      },
+      {
+        id: "greenEdge3D",
+        source: "emptyNodeD2",
+        target: [1311, 1317],
+        ...greenEdge,
+      },
+      {
+        id: "greenEdge3E",
+        source: "emptyNodeE2",
+        target: [1311, 1647],
+        ...greenEdge,
+      },
+      {
+        id: "greenEdge3F",
+        source: "emptyNodeF2",
+        target: [1311, 1977],
         ...greenEdge,
       },
       {
@@ -2088,6 +2787,24 @@ onMounted(() => {
         target: [1473, 986.5],
         ...greenEdge,
       },
+      {
+        id: "greenEdgeD4",
+        source: "metalNodeD4",
+        target: [1473, 1316.5],
+        ...greenEdge,
+      },
+      {
+        id: "greenEdgeE4",
+        source: "metalNodeE4",
+        target: [1473, 1646.5],
+        ...greenEdge,
+      },
+      {
+        id: "greenEdgeF4",
+        source: "metalNodeF4",
+        target: [1473, 1976.5],
+        ...greenEdge,
+      },
       //黑色实线箭头组
       {
         id: "blackFillEdge1",
@@ -2105,6 +2822,24 @@ onMounted(() => {
         id: "blackFillEdge1C",
         source: "metalNodeC3",
         target: [1311, 933],
+        ...blackFillEdge,
+      },
+      {
+        id: "blackFillEdge1D",
+        source: "metalNodeD3",
+        target: [1311, 1263],
+        ...blackFillEdge,
+      },
+      {
+        id: "blackFillEdge1E",
+        source: "metalNodeE3",
+        target: [1311, 1593],
+        ...blackFillEdge,
+      },
+      {
+        id: "blackFillEdge1F",
+        source: "metalNodeF3",
+        target: [1311, 1923],
         ...blackFillEdge,
       },
       //双向箭头(一绿一黑组)
@@ -2129,7 +2864,27 @@ onMounted(() => {
         vertices: [{ x: 350, y: 810 }],
         ...bidireGreenEdge,
       },
-
+      {
+        id: "bidireGreenEdge1D",
+        source: "metalNodeD1",
+        target: [255, 1140],
+        vertices: [{ x: 350, y: 1140 }],
+        ...bidireGreenEdge,
+      },
+      {
+        id: "bidireGreenEdge1E",
+        source: "metalNodeE1",
+        target: [255, 1470],
+        vertices: [{ x: 350, y: 1470 }],
+        ...bidireGreenEdge,
+      },
+      {
+        id: "bidireGreenEdge1F",
+        source: "metalNodeF1",
+        target: [255, 1800],
+        vertices: [{ x: 350, y: 1800 }],
+        ...bidireGreenEdge,
+      },
       // //小黄色实线箭头组
       // {
       //   id: "yellowStrokeEdge1",
@@ -2250,6 +3005,27 @@ onMounted(() => {
         ...naDashEdge,
       },
       {
+        id: "naDashEdge8D",
+        source: [865, 1270],
+        target: "emptyNodeD1",
+        router: "er",
+        ...naDashEdge,
+      },
+      {
+        id: "naDashEdge8E",
+        source: [865, 1600],
+        target: "emptyNodeE1",
+        router: "er",
+        ...naDashEdge,
+      },
+      {
+        id: "naDashEdge8F",
+        source: [865, 1930],
+        target: "emptyNodeF1",
+        router: "er",
+        ...naDashEdge,
+      },
+      {
         id: "naDashEdge9",
         source: [1005, 280],
         target: "emptyNodeA2",
@@ -2267,6 +3043,27 @@ onMounted(() => {
         id: "naDashEdge9C",
         source: [1005, 940],
         target: "emptyNodeC2",
+        router: "er",
+        ...naDashEdge,
+      },
+      {
+        id: "naDashEdge9D",
+        source: [1005, 1270],
+        target: "emptyNodeD2",
+        router: "er",
+        ...naDashEdge,
+      },
+      {
+        id: "naDashEdge9E",
+        source: [1005, 1600],
+        target: "emptyNodeE2",
+        router: "er",
+        ...naDashEdge,
+      },
+      {
+        id: "naDashEdge9F",
+        source: [1005, 1930],
+        target: "emptyNodeF2",
         router: "er",
         ...naDashEdge,
       },
@@ -2466,6 +3263,27 @@ onMounted(() => {
         ...blackEdge,
       },
       {
+        id: "blackEdge1D",
+        source: "anglevalveNodeD1",
+        target: [427.5, 1317],
+        router: "manhattan",
+        ...blackEdge,
+      },
+      {
+        id: "blackEdge1E",
+        source: "anglevalveNodeE1",
+        target: [427.5, 1647],
+        router: "manhattan",
+        ...blackEdge,
+      },
+      {
+        id: "blackEdge1F",
+        source: "anglevalveNodeF1",
+        target: [427.5, 1977],
+        router: "manhattan",
+        ...blackEdge,
+      },
+      {
         id: "blackEdge2",
         source: "metalNodeA1",
         target: [427.5, 327],
@@ -2481,6 +3299,24 @@ onMounted(() => {
         id: "blackEdge2C",
         source: "metalNodeC1",
         target: [427.5, 987],
+        ...blackEdge,
+      },
+      {
+        id: "blackEdge2D",
+        source: "metalNodeD1",
+        target: [427.5, 1317],
+        ...blackEdge,
+      },
+      {
+        id: "blackEdge2E",
+        source: "metalNodeE1",
+        target: [427.5, 1647],
+        ...blackEdge,
+      },
+      {
+        id: "blackEdge2F",
+        source: "metalNodeF1",
+        target: [427.5, 1977],
         ...blackEdge,
       },
       //小黑箭头实线组
@@ -2517,6 +3353,24 @@ onMounted(() => {
         ...smallBlackEdge,
       },
       {
+        id: "smallBlackEdge3D",
+        source: "metalNodeD3",
+        target: "shadowRectNodeD7",
+        ...smallBlackEdge,
+      },
+      {
+        id: "smallBlackEdge3E",
+        source: "metalNodeE3",
+        target: "shadowRectNodeE7",
+        ...smallBlackEdge,
+      },
+      {
+        id: "smallBlackEdge3F",
+        source: "metalNodeF3",
+        target: "shadowRectNodeF7",
+        ...smallBlackEdge,
+      },
+      {
         id: "smallBlackEdge4",
         source: "metalNodeA4",
         target: "shadowRectNodeA10",
@@ -2532,6 +3386,24 @@ onMounted(() => {
         id: "smallBlackEdge4C",
         source: "metalNodeC4",
         target: "shadowRectNodeC10",
+        ...smallBlackEdge,
+      },
+      {
+        id: "smallBlackEdge4D",
+        source: "metalNodeD4",
+        target: "shadowRectNodeD10",
+        ...smallBlackEdge,
+      },
+      {
+        id: "smallBlackEdge4E",
+        source: "metalNodeE4",
+        target: "shadowRectNodeE10",
+        ...smallBlackEdge,
+      },
+      {
+        id: "smallBlackEdge4F",
+        source: "metalNodeF4",
+        target: "shadowRectNodeF10",
         ...smallBlackEdge,
       },
       //无箭头实线组
@@ -2574,6 +3446,27 @@ onMounted(() => {
         id: "naEdge2C",
         source: "emptyNodeC1",
         target: "emptyNodeC2",
+        router: "er",
+        ...naEdge,
+      },
+      {
+        id: "naEdge2D",
+        source: "emptyNodeD1",
+        target: "emptyNodeD2",
+        router: "er",
+        ...naEdge,
+      },
+      {
+        id: "naEdge2E",
+        source: "emptyNodeE1",
+        target: "emptyNodeE2",
+        router: "er",
+        ...naEdge,
+      },
+      {
+        id: "naEdge2F",
+        source: "emptyNodeF1",
+        target: "emptyNodeF2",
         router: "er",
         ...naEdge,
       },
@@ -2620,6 +3513,27 @@ onMounted(() => {
         ...naEdge,
       },
       {
+        id: "naEdge4D",
+        source: "anglevalveNodeD2",
+        target: "anglevalveNodeD1",
+        router: "manhattan",
+        ...naEdge,
+      },
+      {
+        id: "naEdge4E",
+        source: "anglevalveNodeE2",
+        target: "anglevalveNodeE1",
+        router: "manhattan",
+        ...naEdge,
+      },
+      {
+        id: "naEdge4F",
+        source: "anglevalveNodeF2",
+        target: "anglevalveNodeF1",
+        router: "manhattan",
+        ...naEdge,
+      },
+      {
         id: "naEdge5",
         source: "anglevalveNode2",
         target: "emptyNodeA1",
@@ -2637,6 +3551,27 @@ onMounted(() => {
         id: "naEdge5C",
         source: "anglevalveNodeC2",
         target: "emptyNodeC1",
+        router: "manhattan",
+        ...naEdge,
+      },
+      {
+        id: "naEdge5D",
+        source: "anglevalveNodeD2",
+        target: "emptyNodeD1",
+        router: "manhattan",
+        ...naEdge,
+      },
+      {
+        id: "naEdge5E",
+        source: "anglevalveNodeE2",
+        target: "emptyNodeE1",
+        router: "manhattan",
+        ...naEdge,
+      },
+      {
+        id: "naEdge5F",
+        source: "anglevalveNodeF2",
+        target: "emptyNodeF1",
         router: "manhattan",
         ...naEdge,
       },
@@ -2682,7 +3617,10 @@ onMounted(() => {
       );
     }
     // 第一个空节点
-    if (safeDeviceSensorList[0][2].value === true && safeDeviceSensorList[0][3].value === true) {
+    if (
+      safeDeviceSensorList[0][2].value === true &&
+      safeDeviceSensorList[0][3].value === true
+    ) {
       emptyNodeA1.setProp(
         "html",
         `<div class="outmetalNodeSafe">
@@ -2691,7 +3629,10 @@ onMounted(() => {
               </div>
             </div>`
       );
-    } else if (safeDeviceSensorList[0][2].value === false && safeDeviceSensorList[0][3].value === true) {
+    } else if (
+      safeDeviceSensorList[0][2].value === false &&
+      safeDeviceSensorList[0][3].value === true
+    ) {
       emptyNodeA1.setProp(
         "html",
         `<div class="outmetalNodeWarnF">
@@ -2702,7 +3643,10 @@ onMounted(() => {
               <div></div>
             </div>`
       );
-    } else if (safeDeviceSensorList[0][2].value === true && safeDeviceSensorList[0][3].value === false) {
+    } else if (
+      safeDeviceSensorList[0][2].value === true &&
+      safeDeviceSensorList[0][3].value === false
+    ) {
       emptyNodeA1.setProp(
         "html",
         `<div class="outmetalNodeWarnB">
@@ -2713,7 +3657,10 @@ onMounted(() => {
               <div></div>
             </div>`
       );
-    } else if (safeDeviceSensorList[0][2].value === false && safeDeviceSensorList[0][3].value === false) {
+    } else if (
+      safeDeviceSensorList[0][2].value === false &&
+      safeDeviceSensorList[0][3].value === false
+    ) {
       emptyNodeA1.setProp(
         "html",
         `<div class="outmetalNodeWarnFB">
@@ -2724,7 +3671,10 @@ onMounted(() => {
       );
     }
     //第二个空节点
-    if (safeDeviceSensorList[0][4].value === true && safeDeviceSensorList[0][5].value === true) {
+    if (
+      safeDeviceSensorList[0][4].value === true &&
+      safeDeviceSensorList[0][5].value === true
+    ) {
       emptyNodeA2.setProp(
         "html",
         `<div class="outmetalNodeSafe">
@@ -2733,7 +3683,10 @@ onMounted(() => {
               </div>
             </div>`
       );
-    } else if (safeDeviceSensorList[0][4].value === false && safeDeviceSensorList[0][5].value === true) {
+    } else if (
+      safeDeviceSensorList[0][4].value === false &&
+      safeDeviceSensorList[0][5].value === true
+    ) {
       emptyNodeA2.setProp(
         "html",
         `<div class="outmetalNodeWarnF">
@@ -2744,7 +3697,10 @@ onMounted(() => {
               <div></div>
             </div>`
       );
-    } else if (safeDeviceSensorList[0][4].value === true && safeDeviceSensorList[0][5].value === false) {
+    } else if (
+      safeDeviceSensorList[0][4].value === true &&
+      safeDeviceSensorList[0][5].value === false
+    ) {
       emptyNodeA2.setProp(
         "html",
         `<div class="outmetalNodeWarnB">
@@ -2755,7 +3711,10 @@ onMounted(() => {
               <div></div>
             </div>`
       );
-    } else if (safeDeviceSensorList[0][4].value === false && safeDeviceSensorList[0][5].value === false) {
+    } else if (
+      safeDeviceSensorList[0][4].value === false &&
+      safeDeviceSensorList[0][5].value === false
+    ) {
       emptyNodeA2.setProp(
         "html",
         `<div class="outmetalNodeWarnFB">
@@ -2766,7 +3725,10 @@ onMounted(() => {
       );
     }
     //上方的metalNode
-    if (safeDeviceSensorList[0][6].value === true && safeDeviceSensorList[0][7].value === true) {
+    if (
+      safeDeviceSensorList[0][6].value === true &&
+      safeDeviceSensorList[0][7].value === true
+    ) {
       metalNodeA3.setProp(
         "html",
         `<div class="outmetalNodeSafe">
@@ -2775,7 +3737,10 @@ onMounted(() => {
               </div>
             </div>`
       );
-    } else if (safeDeviceSensorList[0][6].value === false && safeDeviceSensorList[0][7].value === true) {
+    } else if (
+      safeDeviceSensorList[0][6].value === false &&
+      safeDeviceSensorList[0][7].value === true
+    ) {
       metalNodeA3.setProp(
         "html",
         `<div class="outmetalNodeWarnF">
@@ -2786,7 +3751,10 @@ onMounted(() => {
               <div></div>
             </div>`
       );
-    } else if (safeDeviceSensorList[0][6].value === true && safeDeviceSensorList[0][7].value === false) {
+    } else if (
+      safeDeviceSensorList[0][6].value === true &&
+      safeDeviceSensorList[0][7].value === false
+    ) {
       metalNodeA3.setProp(
         "html",
         `<div class="outmetalNodeWarnB">
@@ -2797,7 +3765,10 @@ onMounted(() => {
               <div></div>
             </div>`
       );
-    } else if (safeDeviceSensorList[0][6].value === false && safeDeviceSensorList[0][7].value === false) {
+    } else if (
+      safeDeviceSensorList[0][6].value === false &&
+      safeDeviceSensorList[0][7].value === false
+    ) {
       metalNodeA3.setProp(
         "html",
         `<div class="outmetalNodeWarnFB">
@@ -2808,7 +3779,10 @@ onMounted(() => {
       );
     }
     //下方的metalNode
-    if (safeDeviceSensorList[0][8].value === true && safeDeviceSensorList[0][9].value === true) {
+    if (
+      safeDeviceSensorList[0][8].value === true &&
+      safeDeviceSensorList[0][9].value === true
+    ) {
       metalNodeA4.setProp(
         "html",
         `<div class="outmetalNodeSafe">
@@ -2817,7 +3791,10 @@ onMounted(() => {
               </div>
             </div>`
       );
-    } else if (safeDeviceSensorList[0][8].value === false && safeDeviceSensorList[0][9].value === true) {
+    } else if (
+      safeDeviceSensorList[0][8].value === false &&
+      safeDeviceSensorList[0][9].value === true
+    ) {
       metalNodeA4.setProp(
         "html",
         `<div class="outmetalNodeWarnF">
@@ -2828,7 +3805,10 @@ onMounted(() => {
               <div></div>
             </div>`
       );
-    } else if (safeDeviceSensorList[0][8].value === true && safeDeviceSensorList[0][9].value === false) {
+    } else if (
+      safeDeviceSensorList[0][8].value === true &&
+      safeDeviceSensorList[0][9].value === false
+    ) {
       metalNodeA4.setProp(
         "html",
         `<div class="outmetalNodeWarnB">
@@ -2839,7 +3819,10 @@ onMounted(() => {
               <div></div>
             </div>`
       );
-    } else if (safeDeviceSensorList[0][8].value === false && safeDeviceSensorList[0][9].value === false) {
+    } else if (
+      safeDeviceSensorList[0][8].value === false &&
+      safeDeviceSensorList[0][9].value === false
+    ) {
       metalNodeA4.setProp(
         "html",
         `<div class="outmetalNodeWarnFB">
@@ -2911,7 +3894,7 @@ onMounted(() => {
     }
   });
 
-  graph.zoomTo(0.72);
+  graph.zoomTo(0.365);
   handleResize(graph, document.documentElement as HTMLElement);
   //画布居中
   window.addEventListener("resize", () => {
@@ -3131,22 +4114,24 @@ interface ArrayItem {
   value: boolean;
 }
 let safeDeviceSensorList: ArrayItem[][] = reactive(
-  Array.from({ length: 5 }, () => Array.from({ length: 24 }, () => ({ value: false })))
+  Array.from({ length: 5 }, () =>
+    Array.from({ length: 24 }, () => ({ value: false }))
+  )
 );
 const requireDeviceSensor = () => {
-  var index = 0
+  var index = 0;
   proxy.$http
-  .get("/getAllDeviceSensorLatestData")
-  .then((res:any)=> {
-    res = res.data.data;    
-      for (var i = 0; i< safeDeviceSensorList.length; i++) {
-        for(var j = 0; j< safeDeviceSensorList[i].length; j++) {
-          safeDeviceSensorList[i][j].value = res[index].content
-          index++
+    .get("/getAllDeviceSensorLatestData")
+    .then((res: any) => {
+      res = res.data.data;
+      for (var i = 0; i < safeDeviceSensorList.length; i++) {
+        for (var j = 0; j < safeDeviceSensorList[i].length; j++) {
+          safeDeviceSensorList[i][j].value = res[index].content;
+          index++;
         }
-    }
-  })
-  .catch();
+      }
+    })
+    .catch();
 };
 const hanleInvalidDevice = () => {
   const reg = /[\D]+/g;

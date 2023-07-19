@@ -8,7 +8,7 @@ export const dataNode1 = {
                 OP:MAX<span>23.1</span>%
             </div>  
             `,
-  };
+};
 export const dataNode2 = {
     x: 576,
     width: 21,
