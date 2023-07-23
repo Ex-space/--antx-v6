@@ -3,55 +3,51 @@ import { Graph } from "@antv/x6";
 import "@antv/x6-vue-shape";
 import { handleResize } from "./utils/handleResize";
 import {
-  computed,
   onMounted,
-  watch,
   ref,
   reactive,
   getCurrentInstance,
   nextTick,
   watchEffect,
-  onUnmounted,
+  ComponentInternalInstance,
 } from "vue";
 import { blackEdge } from "./edges/blackEdge.ts";
-import { yellowStrokeEdge } from "./edges/yellowStrokeEdge.ts";
 import { greenEdge } from "./edges/greenEdge.ts";
-import { ElMessage, ElMessageBox } from "element-plus";
+import { ElMessage } from "element-plus";
 import { format } from "./utils/timeFormat";
-import { transform } from "echarts-stat";
-import {
-  transparentNode1,
-  transparentNode3,
-  transparentNode5,
-  transparentNode7,
-  transparentNode8,
-  transparentNode11,
-  transparentNode14,
-  transparentNode15,
-  transparentNode16,
-  transparentNode17,
-  transparentNode18,
-  transparentNode19,
-  transparentNode20,
-  transparentNode21,
-  transparentNode23,
-  transparentNode24,
-  transparentNode25,
-  transparentNode26,
-  transparentNode27,
-  transparentNode28,
-  transparentNode29,
-  transparentNode30,
-  transparentNode31,
-} from "./nodes/transparentNode";
+// import {
+//   transparentNode1,
+//   transparentNode3,
+//   transparentNode5,
+//   transparentNode7,
+//   transparentNode8,
+//   transparentNode11,
+//   transparentNode14,
+//   transparentNode15,
+//   transparentNode16,
+//   transparentNode17,
+//   transparentNode18,
+//   transparentNode19,
+//   transparentNode20,
+//   transparentNode21,
+//   transparentNode23,
+//   transparentNode24,
+//   transparentNode25,
+//   transparentNode26,
+//   transparentNode27,
+//   transparentNode28,
+//   transparentNode29,
+//   transparentNode30,
+//   transparentNode31,
+// } from "./nodes/transparentNode";
 import {
   shadowRectNode1,
-  shadowRectNode2,
-  shadowRectNode5,
-  shadowRectNode6,
+  // shadowRectNode2,
+  // shadowRectNode5,
+  // shadowRectNode6,
   shadowRectNode7,
-  shadowRectNode8,
-  shadowRectNode9,
+  // shadowRectNode8,
+  // shadowRectNode9,
   shadowRectNode10,
 } from "./nodes/shadowRectNode";
 import { emptyNode1, emptyNode2 } from "./nodes/emptyNode";
@@ -59,96 +55,96 @@ import { getCanvasOPT } from "./canvas/canvas.ts";
 import { metalNode1, metalNode3, metalNode4 } from "./nodes/metalNode";
 import {
   greenNode1,
-  greenNode3,
-  greenNode4,
-  greenNode5,
+  // greenNode3,
+  // greenNode4,
+  // greenNode5,
   greenNode6,
   greenNode7,
   greenNode8,
   greenNode9,
   greenNode10,
-  greenNode11,
+  // greenNode11,
 } from "./nodes/greenNode";
 import { naEdge } from "./edges/naEdge";
-import { smallDashEdge } from "./edges/smallDashEdge";
+// import { smallDashEdge } from "./edges/smallDashEdge";
 import { naDashEdge } from "./edges/naDashEdge";
-import { bidirectionalEdge } from "./edges/bidirectionalEdge";
+// import { bidirectionalEdge } from "./edges/bidirectionalEdge";
 import { smallBlackEdge } from "./edges/smallBlackEdge";
 import { bidireGreenEdge } from "./edges/bidireGreenEdge";
-import { littleBlackNode1 } from "./nodes/littleBlackNode";
+// import { littleBlackNode1 } from "./nodes/littleBlackNode";
 import {
-  textNode1,
-  textNode3,
-  textNode5,
-  textNode6,
-  textNode7,
-  textNode8,
-  textNode9,
-  textNode10,
+  // textNode1,
+  // textNode3,
+  // textNode5,
+  // textNode6,
+  // textNode7,
+  // textNode8,
+  // textNode9,
+  // textNode10,
   textNode11,
-  textNode12,
-  textNode13,
-  textNode14,
-  textNode15,
-  textNode16,
-  textNode17,
-  textNode18,
-  textNode19,
-  textNode20,
-  textNode21,
-  textNode22,
-  textNode23,
-  textNode24,
-  textNode25,
-  textNode26,
-  textNode27,
-  textNode28,
-  textNode29,
-  textNode30,
-  textNode31,
-  textNode32,
-  textNode33,
-  textNode34,
-  textNode35,
-  textNode36,
-  textNode37,
-  textNode38,
-  textNode39,
-  textNode40,
+  // textNode12,
+  // textNode13,
+  // textNode14,
+  // textNode15,
+  // textNode16,
+  // textNode17,
+  // textNode18,
+  // textNode19,
+  // textNode20,
+  // textNode21,
+  // textNode22,
+  // textNode23,
+  // textNode24,
+  // textNode25,
+  // textNode26,
+  // textNode27,
+  // textNode28,
+  // textNode29,
+  // textNode30,
+  // textNode31,
+  // textNode32,
+  // textNode33,
+  // textNode34,
+  // textNode35,
+  // textNode36,
+  // textNode37,
+  // textNode38,
+  // textNode39,
+  // textNode40,
   textNode41,
 } from "./nodes/textNode";
 import { allGreenEdge } from "./edges/allGreenEdge";
 import { allBlackEdge } from "./edges/allBlackEdge";
 import { blackFillEdge } from "./edges/blackFillEdge";
-import { yHbBEdge } from "./edges/yHbBEdge";
-import { YABEdge } from "./edges/YABEdge";
-import { greenCircleNode1, greenCircleNode3 } from "./nodes/greenCircleNode";
-import { dataNode1, dataNode2, dataNode3, dataNode4 } from "./nodes/dataNode";
-import {
-  signNode1,
-  signNode2,
-  signNode3,
-  signNode4,
-  signNode5,
-  signNode6,
-  signNode7,
-} from "./nodes/signNode";
-import {
-  bottomNode,
-  bottomNode1,
-  bottomNode2,
-  bottomNode3,
-  bottomNode4,
-  bottomNode5,
-  bottomNode6,
-  bottomNode7,
-  bottomNode8,
-  bottomNode9,
-  bottomNode10,
-  bottomNode11,
-  bottomNode12,
-  bottomNode13,
-} from "./nodes/bottomNode";
+// import { yHbBEdge } from "./edges/yHbBEdge";
+// import { YABEdge } from "./edges/YABEdge";
+import { greenCircleNode3 } from "./nodes/greenCircleNode";
+// import { dataNode1, dataNode2, dataNode3, dataNode4 } from "./nodes/dataNode";
+// import {
+//   signNode1,
+//   signNode2,
+//   signNode3,
+//   signNode4,
+//   signNode5,
+//   signNode6,
+//   signNode7,
+// } from "./nodes/signNode";
+// import {
+//   bottomNode,
+//   bottomNode1,
+//   bottomNode2,
+//   bottomNode3,
+//   bottomNode4,
+//   bottomNode5,
+//   bottomNode6,
+//   bottomNode7,
+//   bottomNode8,
+//   bottomNode9,
+//   bottomNode10,
+//   bottomNode11,
+//   bottomNode12,
+//   bottomNode13,
+// } from "./nodes/bottomNode";
 import {
   anglevalveNode1,
   anglevalveNode2,
@@ -166,8 +162,8 @@ import {
 import { dangerEdge } from "./edges/dangerEdge";
 import { safeEdge } from "./edges/safeEdge";
 import * as echarts from "echarts";
-import { Loading } from "element-plus/es/components/loading/src/service.js";
-import { nodeCenter } from "@antv/x6/lib/registry/node-anchor/node-center";
+// import { Loading } from "element-plus/es/components/loading/src/service.js";
+// import { nodeCenter } from "@antv/x6/lib/registry/node-anchor/node-center";
 onMounted(() => {
   //定义画布
   const container = document.getElementById("container");
@@ -5105,17 +5101,15 @@ watchEffect(() => {
     handleResize(graph, document.documentElement as HTMLElement);
   });
 });
-const { proxy } = getCurrentInstance();
+const { proxy } = getCurrentInstance() as ComponentInternalInstance;
 let drawer = false;
 let reListener: any;
 const updateCharts = (charts: any, options: any) => {
   charts.setOption(options);
 };
 const sensorId = ref();
-let sensoList = ref([0, 1, 2, 3, 4, 5, 6, 7]);
 const init = async () => {
   var myCharts = echarts.init(document.getElementById("charts-container")!);
-  echarts.registerTransform(transform.histogram);
   var option: any = {
     grid: {
       top: "15%",
@@ -5179,7 +5173,7 @@ const init = async () => {
   let statusData: any = [];
   drawer = true;
 
-  await proxy.$http
+  await proxy?.$http
     .get("/getDeviceDataBetweenTimeByHour", {
       params: {
         deviceId: deviceId.value,
@@ -5276,7 +5270,8 @@ const init = async () => {
       loadSuccess = echarts.init(document.getElementById("charts-container")!);
       updateCharts(loadSuccess, option);
     })
-    .catch((err: any) => {});
+    .catch((err: any) => {console.log(err);
+    });
   if (!reListener) {
     reListener = window.addEventListener("resize", () => {
       loadSuccess.resize();
@@ -5324,7 +5319,7 @@ let safeDeviceSensorList: ArrayItem[][] = reactive(
 );
 const requireDeviceSensor = () => {
   var index = 0;
-  proxy.$http
+  proxy?.$http
     .get("/getAllDeviceSensorLatestData")
     .then((res: any) => {
       res = res.data.data;
