@@ -3719,12 +3719,12 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][0].value === true) {
     anglevalveNodeFrontE.setProp("html", `<div class="anglevalveNode"></div>`);
   }
-  if (safeDeviceSensorList[4][0].value === false) {
+  if (safeDeviceSensorList[5][0].value === false) {
     anglevalveNodeFrontF.setProp(
       "html",
       `<div class="anglevalveNodeWarn"></div>`
     );
-  } else if (safeDeviceSensorList[4][0].value === true) {
+  } else if (safeDeviceSensorList[5][0].value === true) {
     anglevalveNodeFrontF.setProp("html", `<div class="anglevalveNode"></div>`);
   }
   //后角阀
@@ -3783,12 +3783,12 @@ watchEffect(() => {
       `<div class="anglevalveNode"></div>`
     );
   }
-  if (safeDeviceSensorList[4][1].value === false) {
+  if (safeDeviceSensorList[5][1].value === false) {
     anglevalveNodeBehindF.setProp(
       "html",
       `<div class="anglevalveNodeWarn"></div>`
     );
-  } else if (safeDeviceSensorList[4][1].value === true) {
+  } else if (safeDeviceSensorList[5][1].value === true) {
     anglevalveNodeBehindF.setProp(
       "html",
       `<div class="anglevalveNode"></div>`
@@ -4000,7 +4000,7 @@ watchEffect(() => {
           </div>`
     );
   }
-  if (safeDeviceSensorList[4][2].value === true && safeDeviceSensorList[4][3].value === true) {
+  if (safeDeviceSensorList[5][2].value === true && safeDeviceSensorList[5][3].value === true) {
     emptyNodeF1.setProp(
       "html",
       `<div class="outmetalNodeSafe">
@@ -4009,7 +4009,7 @@ watchEffect(() => {
             </div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][2].value === false && safeDeviceSensorList[4][3].value === true) {
+  } else if (safeDeviceSensorList[5][2].value === false && safeDeviceSensorList[5][3].value === true) {
     emptyNodeF1.setProp(
       "html",
       `<div class="outmetalNodeWarnF">
@@ -4020,7 +4020,7 @@ watchEffect(() => {
             <div></div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][2].value === true && safeDeviceSensorList[4][3].value === false) {
+  } else if (safeDeviceSensorList[5][2].value === true && safeDeviceSensorList[5][3].value === false) {
     emptyNodeF1.setProp(
       "html",
       `<div class="outmetalNodeWarnB">
@@ -4031,7 +4031,7 @@ watchEffect(() => {
             <div></div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][2].value === false && safeDeviceSensorList[4][3].value === false) {
+  } else if (safeDeviceSensorList[5][2].value === false && safeDeviceSensorList[5][3].value === false) {
     emptyNodeF1.setProp(
       "html",
       `<div class="outmetalNodeWarnFB">
@@ -4247,7 +4247,7 @@ watchEffect(() => {
           </div>`
     );
   }
-  if (safeDeviceSensorList[4][4].value === true && safeDeviceSensorList[4][5].value === true) {
+  if (safeDeviceSensorList[5][4].value === true && safeDeviceSensorList[5][5].value === true) {
     emptyNodeF2.setProp(
       "html",
       `<div class="outmetalNodeSafe">
@@ -4256,7 +4256,7 @@ watchEffect(() => {
             </div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][4].value === false && safeDeviceSensorList[4][5].value === true) {
+  } else if (safeDeviceSensorList[5][4].value === false && safeDeviceSensorList[5][5].value === true) {
     emptyNodeF2.setProp(
       "html",
       `<div class="outmetalNodeWarnF">
@@ -4267,7 +4267,7 @@ watchEffect(() => {
             <div></div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][4].value === true && safeDeviceSensorList[4][5].value === false) {
+  } else if (safeDeviceSensorList[5][4].value === true && safeDeviceSensorList[5][5].value === false) {
     emptyNodeF2.setProp(
       "html",
       `<div class="outmetalNodeWarnB">
@@ -4278,7 +4278,7 @@ watchEffect(() => {
             <div></div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][4].value === false && safeDeviceSensorList[4][5].value === false) {
+  } else if (safeDeviceSensorList[5][4].value === false && safeDeviceSensorList[5][5].value === false) {
     emptyNodeF2.setProp(
       "html",
       `<div class="outmetalNodeWarnFB">
@@ -4494,7 +4494,7 @@ watchEffect(() => {
           </div>`
     );
   }
-  if (safeDeviceSensorList[4][6].value === true && safeDeviceSensorList[4][7].value === true) {
+  if (safeDeviceSensorList[5][6].value === true && safeDeviceSensorList[5][7].value === true) {
     metalNodeF3.setProp(
       "html",
       `<div class="outmetalNodeSafe">
@@ -4503,7 +4503,7 @@ watchEffect(() => {
             </div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][6].value === false && safeDeviceSensorList[4][7].value === true) {
+  } else if (safeDeviceSensorList[5][6].value === false && safeDeviceSensorList[5][7].value === true) {
     metalNodeF3.setProp(
       "html",
       `<div class="outmetalNodeWarnF">
@@ -4514,7 +4514,7 @@ watchEffect(() => {
             <div></div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][6].value === true && safeDeviceSensorList[4][7].value === false) {
+  } else if (safeDeviceSensorList[5][6].value === true && safeDeviceSensorList[5][7].value === false) {
     metalNodeF3.setProp(
       "html",
       `<div class="outmetalNodeWarnB">
@@ -4525,7 +4525,7 @@ watchEffect(() => {
             <div></div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][6].value === false && safeDeviceSensorList[4][7].value === false) {
+  } else if (safeDeviceSensorList[5][6].value === false && safeDeviceSensorList[5][7].value === false) {
     metalNodeF3.setProp(
       "html",
       `<div class="outmetalNodeWarnFB">
@@ -4741,7 +4741,7 @@ watchEffect(() => {
           </div>`
     );
   }
-  if (safeDeviceSensorList[4][8].value === true && safeDeviceSensorList[4][9].value === true) {
+  if (safeDeviceSensorList[5][8].value === true && safeDeviceSensorList[5][9].value === true) {
     metalNodeF4.setProp(
       "html",
       `<div class="outmetalNodeSafe">
@@ -4750,7 +4750,7 @@ watchEffect(() => {
             </div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][8].value === false && safeDeviceSensorList[4][9].value === true) {
+  } else if (safeDeviceSensorList[5][8].value === false && safeDeviceSensorList[5][9].value === true) {
     metalNodeF4.setProp(
       "html",
       `<div class="outmetalNodeWarnF">
@@ -4761,7 +4761,7 @@ watchEffect(() => {
             <div></div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][8].value === true && safeDeviceSensorList[4][9].value === false) {
+  } else if (safeDeviceSensorList[5][8].value === true && safeDeviceSensorList[5][9].value === false) {
     metalNodeF4.setProp(
       "html",
       `<div class="outmetalNodeWarnB">
@@ -4772,7 +4772,7 @@ watchEffect(() => {
             <div></div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][8].value === false && safeDeviceSensorList[4][9].value === false) {
+  } else if (safeDeviceSensorList[5][8].value === false && safeDeviceSensorList[5][9].value === false) {
     metalNodeF4.setProp(
       "html",
       `<div class="outmetalNodeWarnFB">
@@ -4808,9 +4808,9 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][10].value === true) {
     safeEdgeFrontE.setAttrByPath("line/stroke", "#00f800");
   }
-  if (safeDeviceSensorList[4][10].value === false) {
+  if (safeDeviceSensorList[5][10].value === false) {
     safeEdgeFrontF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][10].value === true) {
+  } else if (safeDeviceSensorList[5][10].value === true) {
     safeEdgeFrontF.setAttrByPath("line/stroke", "#00f800");
   }
   //后角阀上的线
@@ -4839,9 +4839,9 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][11].value === true) {
     safeEdgeBehindE.setAttrByPath("line/stroke", "#00f800");
   }
-  if (safeDeviceSensorList[4][11].value === false) {
+  if (safeDeviceSensorList[5][11].value === false) {
     safeEdgeBehindF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][11].value === true) {
+  } else if (safeDeviceSensorList[5][11].value === true) {
     safeEdgeBehindF.setAttrByPath("line/stroke", "#00f800");
   }
   //第一个空节点的第一条线
@@ -4870,9 +4870,9 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][12].value === true) {
     safeEdgeForEmptyFoneE.setAttrByPath("line/stroke", "#00f800");
   }
-  if (safeDeviceSensorList[4][12].value === false) {
+  if (safeDeviceSensorList[5][12].value === false) {
     safeEdgeForEmptyFoneF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][12].value === true) {
+  } else if (safeDeviceSensorList[5][12].value === true) {
     safeEdgeForEmptyFoneF.setAttrByPath("line/stroke", "#00f800");
   }
   //第一个空节点的第二条线
@@ -4901,9 +4901,9 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][13].value === true) {
     safeEdgeForEmptyFtwoE.setAttrByPath("line/stroke", "#00f800");
   }
-  if (safeDeviceSensorList[4][13].value === false) {
+  if (safeDeviceSensorList[5][13].value === false) {
     safeEdgeForEmptyFtwoF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][13].value === true) {
+  } else if (safeDeviceSensorList[5][13].value === true) {
     safeEdgeForEmptyFtwoF.setAttrByPath("line/stroke", "#00f800");
   }
   //第二个空节点的第一条线
@@ -4932,9 +4932,9 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][14].value === true) {
     safeEdgeForEmptySoneE.setAttrByPath("line/stroke", "#00f800");
   }
-  if (safeDeviceSensorList[4][14].value === false) {
+  if (safeDeviceSensorList[5][14].value === false) {
     safeEdgeForEmptySoneF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][14].value === true) {
+  } else if (safeDeviceSensorList[5][14].value === true) {
     safeEdgeForEmptySoneF.setAttrByPath("line/stroke", "#00f800");
   }
   //第二个空节点的第二条线
@@ -4963,9 +4963,9 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][15].value === true) {
     safeEdgeForEmptyStwoE.setAttrByPath("line/stroke", "#00f800");
   }
-  if (safeDeviceSensorList[4][15].value === false) {
+  if (safeDeviceSensorList[5][15].value === false) {
     safeEdgeForEmptyStwoF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][15].value === true) {
+  } else if (safeDeviceSensorList[5][15].value === true) {
     safeEdgeForEmptyStwoF.setAttrByPath("line/stroke", "#00f800");
   }
   //上面的metalNode的第一条线
@@ -4994,9 +4994,9 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][16].value === true) {
     safeEdgeForMetalUponeE.setAttrByPath("line/stroke", "#00f800");
   }
-  if (safeDeviceSensorList[4][16].value === false) {
+  if (safeDeviceSensorList[5][16].value === false) {
     safeEdgeForMetalUponeF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][16].value === true) {
+  } else if (safeDeviceSensorList[5][16].value === true) {
     safeEdgeForMetalUponeF.setAttrByPath("line/stroke", "#00f800");
   }
   //上面的metalNode的第二条线
@@ -5025,9 +5025,9 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][17].value === true) {
     safeEdgeForMetalUptwoE.setAttrByPath("line/stroke", "#00f800");
   }
-  if (safeDeviceSensorList[4][17].value === false) {
+  if (safeDeviceSensorList[5][17].value === false) {
     safeEdgeForMetalUptwoF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][17].value === true) {
+  } else if (safeDeviceSensorList[5][17].value === true) {
     safeEdgeForMetalUptwoF.setAttrByPath("line/stroke", "#00f800");
   }
   //下面的metalNode的第一条线
@@ -5056,9 +5056,9 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][18].value === true) {
     safeEdgeForMetalDownoneE.setAttrByPath("line/stroke", "#00f800");
   }
-  if (safeDeviceSensorList[4][18].value === false) {
+  if (safeDeviceSensorList[5][18].value === false) {
     safeEdgeForMetalDownoneF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][18].value === true) {
+  } else if (safeDeviceSensorList[5][18].value === true) {
     safeEdgeForMetalDownoneF.setAttrByPath("line/stroke", "#00f800");
   }
   //下面的metalNode的第二条线
@@ -5087,9 +5087,9 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][19].value === true) {
     safeEdgeForMetalDowntwoE.setAttrByPath("line/stroke", "#00f800");
   }
-  if (safeDeviceSensorList[4][19].value === false) {
+  if (safeDeviceSensorList[5][19].value === false) {
     safeEdgeForMetalDowntwoF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][19].value === true) {
+  } else if (safeDeviceSensorList[5][19].value === true) {
     safeEdgeForMetalDowntwoF.setAttrByPath("line/stroke", "#00f800");
   }
 });
@@ -5313,7 +5313,7 @@ interface ArrayItem {
   value: boolean;
 }
 let safeDeviceSensorList: ArrayItem[][] = reactive(
-  Array.from({ length: 5 }, () =>
+  Array.from({ length: 6 }, () =>
     Array.from({ length: 24 }, () => ({ value: false }))
   )
 );
