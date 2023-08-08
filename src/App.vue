@@ -3,55 +3,51 @@ import { Graph } from "@antv/x6";
 import "@antv/x6-vue-shape";
 import { handleResize } from "./utils/handleResize";
 import {
-  computed,
   onMounted,
-  watch,
   ref,
   reactive,
   getCurrentInstance,
   nextTick,
   watchEffect,
-  onUnmounted,
+  ComponentInternalInstance,
 } from "vue";
 import { blackEdge } from "./edges/blackEdge.ts";
-import { yellowStrokeEdge } from "./edges/yellowStrokeEdge.ts";
 import { greenEdge } from "./edges/greenEdge.ts";
-import { ElMessage, ElMessageBox } from "element-plus";
+import { ElMessage } from "element-plus";
 import { format } from "./utils/timeFormat";
-import { transform } from "echarts-stat";
-import {
-  transparentNode1,
-  transparentNode3,
-  transparentNode5,
-  transparentNode7,
-  transparentNode8,
-  transparentNode11,
-  transparentNode14,
-  transparentNode15,
-  transparentNode16,
-  transparentNode17,
-  transparentNode18,
-  transparentNode19,
-  transparentNode20,
-  transparentNode21,
-  transparentNode23,
-  transparentNode24,
-  transparentNode25,
-  transparentNode26,
-  transparentNode27,
-  transparentNode28,
-  transparentNode29,
-  transparentNode30,
-  transparentNode31,
-} from "./nodes/transparentNode";
+// import {
+//   transparentNode1,
+//   transparentNode3,
+//   transparentNode5,
+//   transparentNode7,
+//   transparentNode8,
+//   transparentNode11,
+//   transparentNode14,
+//   transparentNode15,
+//   transparentNode16,
+//   transparentNode17,
+//   transparentNode18,
+//   transparentNode19,
+//   transparentNode20,
+//   transparentNode21,
+//   transparentNode23,
+//   transparentNode24,
+//   transparentNode25,
+//   transparentNode26,
+//   transparentNode27,
+//   transparentNode28,
+//   transparentNode29,
+//   transparentNode30,
+//   transparentNode31,
+// } from "./nodes/transparentNode";
 import {
   shadowRectNode1,
-  shadowRectNode2,
-  shadowRectNode5,
-  shadowRectNode6,
+  // shadowRectNode2,
+  // shadowRectNode5,
+  // shadowRectNode6,
   shadowRectNode7,
-  shadowRectNode8,
-  shadowRectNode9,
+  // shadowRectNode8,
+  // shadowRectNode9,
   shadowRectNode10,
 } from "./nodes/shadowRectNode";
 import { emptyNode1, emptyNode2 } from "./nodes/emptyNode";
@@ -59,96 +55,96 @@ import { getCanvasOPT } from "./canvas/canvas.ts";
 import { metalNode1, metalNode3, metalNode4 } from "./nodes/metalNode";
 import {
   greenNode1,
-  greenNode3,
-  greenNode4,
-  greenNode5,
+  // greenNode3,
+  // greenNode4,
+  // greenNode5,
   greenNode6,
   greenNode7,
   greenNode8,
   greenNode9,
   greenNode10,
-  greenNode11,
+  // greenNode11,
 } from "./nodes/greenNode";
 import { naEdge } from "./edges/naEdge";
-import { smallDashEdge } from "./edges/smallDashEdge";
+// import { smallDashEdge } from "./edges/smallDashEdge";
 import { naDashEdge } from "./edges/naDashEdge";
-import { bidirectionalEdge } from "./edges/bidirectionalEdge";
+// import { bidirectionalEdge } from "./edges/bidirectionalEdge";
 import { smallBlackEdge } from "./edges/smallBlackEdge";
 import { bidireGreenEdge } from "./edges/bidireGreenEdge";
-import { littleBlackNode1 } from "./nodes/littleBlackNode";
+// import { littleBlackNode1 } from "./nodes/littleBlackNode";
 import {
-  textNode1,
-  textNode3,
-  textNode5,
-  textNode6,
-  textNode7,
-  textNode8,
-  textNode9,
-  textNode10,
+  // textNode1,
+  // textNode3,
+  // textNode5,
+  // textNode6,
+  // textNode7,
+  // textNode8,
+  // textNode9,
+  // textNode10,
   textNode11,
-  textNode12,
-  textNode13,
-  textNode14,
-  textNode15,
-  textNode16,
-  textNode17,
-  textNode18,
-  textNode19,
-  textNode20,
-  textNode21,
-  textNode22,
-  textNode23,
-  textNode24,
-  textNode25,
-  textNode26,
-  textNode27,
-  textNode28,
-  textNode29,
-  textNode30,
-  textNode31,
-  textNode32,
-  textNode33,
-  textNode34,
-  textNode35,
-  textNode36,
-  textNode37,
-  textNode38,
-  textNode39,
-  textNode40,
+  // textNode12,
+  // textNode13,
+  // textNode14,
+  // textNode15,
+  // textNode16,
+  // textNode17,
+  // textNode18,
+  // textNode19,
+  // textNode20,
+  // textNode21,
+  // textNode22,
+  // textNode23,
+  // textNode24,
+  // textNode25,
+  // textNode26,
+  // textNode27,
+  // textNode28,
+  // textNode29,
+  // textNode30,
+  // textNode31,
+  // textNode32,
+  // textNode33,
+  // textNode34,
+  // textNode35,
+  // textNode36,
+  // textNode37,
+  // textNode38,
+  // textNode39,
+  // textNode40,
   textNode41,
 } from "./nodes/textNode";
 import { allGreenEdge } from "./edges/allGreenEdge";
 import { allBlackEdge } from "./edges/allBlackEdge";
 import { blackFillEdge } from "./edges/blackFillEdge";
-import { yHbBEdge } from "./edges/yHbBEdge";
-import { YABEdge } from "./edges/YABEdge";
-import { greenCircleNode1, greenCircleNode3 } from "./nodes/greenCircleNode";
-import { dataNode1, dataNode2, dataNode3, dataNode4 } from "./nodes/dataNode";
-import {
-  signNode1,
-  signNode2,
-  signNode3,
-  signNode4,
-  signNode5,
-  signNode6,
-  signNode7,
-} from "./nodes/signNode";
-import {
-  bottomNode,
-  bottomNode1,
-  bottomNode2,
-  bottomNode3,
-  bottomNode4,
-  bottomNode5,
-  bottomNode6,
-  bottomNode7,
-  bottomNode8,
-  bottomNode9,
-  bottomNode10,
-  bottomNode11,
-  bottomNode12,
-  bottomNode13,
-} from "./nodes/bottomNode";
+// import { yHbBEdge } from "./edges/yHbBEdge";
+// import { YABEdge } from "./edges/YABEdge";
+import { greenCircleNode3 } from "./nodes/greenCircleNode";
+// import { dataNode1, dataNode2, dataNode3, dataNode4 } from "./nodes/dataNode";
+// import {
+//   signNode1,
+//   signNode2,
+//   signNode3,
+//   signNode4,
+//   signNode5,
+//   signNode6,
+//   signNode7,
+// } from "./nodes/signNode";
+// import {
+//   bottomNode,
+//   bottomNode1,
+//   bottomNode2,
+//   bottomNode3,
+//   bottomNode4,
+//   bottomNode5,
+//   bottomNode6,
+//   bottomNode7,
+//   bottomNode8,
+//   bottomNode9,
+//   bottomNode10,
+//   bottomNode11,
+//   bottomNode12,
+//   bottomNode13,
+// } from "./nodes/bottomNode";
 import {
   anglevalveNode1,
   anglevalveNode2,
@@ -166,8 +162,8 @@ import {
 import { dangerEdge } from "./edges/dangerEdge";
 import { safeEdge } from "./edges/safeEdge";
 import * as echarts from "echarts";
-import { Loading } from "element-plus/es/components/loading/src/service.js";
-import { nodeCenter } from "@antv/x6/lib/registry/node-anchor/node-center";
+// import { Loading } from "element-plus/es/components/loading/src/service.js";
+// import { nodeCenter } from "@antv/x6/lib/registry/node-anchor/node-center";
 onMounted(() => {
   //定义画布
   const container = document.getElementById("container");
@@ -3723,12 +3719,12 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][0].value === true) {
     anglevalveNodeFrontE.setProp("html", `<div class="anglevalveNode"></div>`);
   }
-  if (safeDeviceSensorList[4][0].value === false) {
+  if (safeDeviceSensorList[5][0].value === false) {
     anglevalveNodeFrontF.setProp(
       "html",
       `<div class="anglevalveNodeWarn"></div>`
     );
-  } else if (safeDeviceSensorList[4][0].value === true) {
+  } else if (safeDeviceSensorList[5][0].value === true) {
     anglevalveNodeFrontF.setProp("html", `<div class="anglevalveNode"></div>`);
   }
   //后角阀
@@ -3787,12 +3783,12 @@ watchEffect(() => {
       `<div class="anglevalveNode"></div>`
     );
   }
-  if (safeDeviceSensorList[4][1].value === false) {
+  if (safeDeviceSensorList[5][1].value === false) {
     anglevalveNodeBehindF.setProp(
       "html",
       `<div class="anglevalveNodeWarn"></div>`
     );
-  } else if (safeDeviceSensorList[4][1].value === true) {
+  } else if (safeDeviceSensorList[5][1].value === true) {
     anglevalveNodeBehindF.setProp(
       "html",
       `<div class="anglevalveNode"></div>`
@@ -4004,7 +4000,7 @@ watchEffect(() => {
           </div>`
     );
   }
-  if (safeDeviceSensorList[4][2].value === true && safeDeviceSensorList[4][3].value === true) {
+  if (safeDeviceSensorList[5][2].value === true && safeDeviceSensorList[5][3].value === true) {
     emptyNodeF1.setProp(
       "html",
       `<div class="outmetalNodeSafe">
@@ -4013,7 +4009,7 @@ watchEffect(() => {
             </div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][2].value === false && safeDeviceSensorList[4][3].value === true) {
+  } else if (safeDeviceSensorList[5][2].value === false && safeDeviceSensorList[5][3].value === true) {
     emptyNodeF1.setProp(
       "html",
       `<div class="outmetalNodeWarnF">
@@ -4024,7 +4020,7 @@ watchEffect(() => {
             <div></div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][2].value === true && safeDeviceSensorList[4][3].value === false) {
+  } else if (safeDeviceSensorList[5][2].value === true && safeDeviceSensorList[5][3].value === false) {
     emptyNodeF1.setProp(
       "html",
       `<div class="outmetalNodeWarnB">
@@ -4035,7 +4031,7 @@ watchEffect(() => {
             <div></div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][2].value === false && safeDeviceSensorList[4][3].value === false) {
+  } else if (safeDeviceSensorList[5][2].value === false && safeDeviceSensorList[5][3].value === false) {
     emptyNodeF1.setProp(
       "html",
       `<div class="outmetalNodeWarnFB">
@@ -4251,7 +4247,7 @@ watchEffect(() => {
           </div>`
     );
   }
-  if (safeDeviceSensorList[4][4].value === true && safeDeviceSensorList[4][5].value === true) {
+  if (safeDeviceSensorList[5][4].value === true && safeDeviceSensorList[5][5].value === true) {
     emptyNodeF2.setProp(
       "html",
       `<div class="outmetalNodeSafe">
@@ -4260,7 +4256,7 @@ watchEffect(() => {
             </div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][4].value === false && safeDeviceSensorList[4][5].value === true) {
+  } else if (safeDeviceSensorList[5][4].value === false && safeDeviceSensorList[5][5].value === true) {
     emptyNodeF2.setProp(
       "html",
       `<div class="outmetalNodeWarnF">
@@ -4271,7 +4267,7 @@ watchEffect(() => {
             <div></div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][4].value === true && safeDeviceSensorList[4][5].value === false) {
+  } else if (safeDeviceSensorList[5][4].value === true && safeDeviceSensorList[5][5].value === false) {
     emptyNodeF2.setProp(
       "html",
       `<div class="outmetalNodeWarnB">
@@ -4282,7 +4278,7 @@ watchEffect(() => {
             <div></div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][4].value === false && safeDeviceSensorList[4][5].value === false) {
+  } else if (safeDeviceSensorList[5][4].value === false && safeDeviceSensorList[5][5].value === false) {
     emptyNodeF2.setProp(
       "html",
       `<div class="outmetalNodeWarnFB">
@@ -4498,7 +4494,7 @@ watchEffect(() => {
           </div>`
     );
   }
-  if (safeDeviceSensorList[4][6].value === true && safeDeviceSensorList[4][7].value === true) {
+  if (safeDeviceSensorList[5][6].value === true && safeDeviceSensorList[5][7].value === true) {
     metalNodeF3.setProp(
       "html",
       `<div class="outmetalNodeSafe">
@@ -4507,7 +4503,7 @@ watchEffect(() => {
             </div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][6].value === false && safeDeviceSensorList[4][7].value === true) {
+  } else if (safeDeviceSensorList[5][6].value === false && safeDeviceSensorList[5][7].value === true) {
     metalNodeF3.setProp(
       "html",
       `<div class="outmetalNodeWarnF">
@@ -4518,7 +4514,7 @@ watchEffect(() => {
             <div></div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][6].value === true && safeDeviceSensorList[4][7].value === false) {
+  } else if (safeDeviceSensorList[5][6].value === true && safeDeviceSensorList[5][7].value === false) {
     metalNodeF3.setProp(
       "html",
       `<div class="outmetalNodeWarnB">
@@ -4529,7 +4525,7 @@ watchEffect(() => {
             <div></div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][6].value === false && safeDeviceSensorList[4][7].value === false) {
+  } else if (safeDeviceSensorList[5][6].value === false && safeDeviceSensorList[5][7].value === false) {
     metalNodeF3.setProp(
       "html",
       `<div class="outmetalNodeWarnFB">
@@ -4745,7 +4741,7 @@ watchEffect(() => {
           </div>`
     );
   }
-  if (safeDeviceSensorList[4][8].value === true && safeDeviceSensorList[4][9].value === true) {
+  if (safeDeviceSensorList[5][8].value === true && safeDeviceSensorList[5][9].value === true) {
     metalNodeF4.setProp(
       "html",
       `<div class="outmetalNodeSafe">
@@ -4754,7 +4750,7 @@ watchEffect(() => {
             </div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][8].value === false && safeDeviceSensorList[4][9].value === true) {
+  } else if (safeDeviceSensorList[5][8].value === false && safeDeviceSensorList[5][9].value === true) {
     metalNodeF4.setProp(
       "html",
       `<div class="outmetalNodeWarnF">
@@ -4765,7 +4761,7 @@ watchEffect(() => {
             <div></div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][8].value === true && safeDeviceSensorList[4][9].value === false) {
+  } else if (safeDeviceSensorList[5][8].value === true && safeDeviceSensorList[5][9].value === false) {
     metalNodeF4.setProp(
       "html",
       `<div class="outmetalNodeWarnB">
@@ -4776,7 +4772,7 @@ watchEffect(() => {
             <div></div>
           </div>`
     );
-  } else if (safeDeviceSensorList[4][8].value === false && safeDeviceSensorList[4][9].value === false) {
+  } else if (safeDeviceSensorList[5][8].value === false && safeDeviceSensorList[5][9].value === false) {
     metalNodeF4.setProp(
       "html",
       `<div class="outmetalNodeWarnFB">
@@ -4812,9 +4808,9 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][10].value === true) {
     safeEdgeFrontE.setAttrByPath("line/stroke", "#00f800");
   }
-  if (safeDeviceSensorList[4][10].value === false) {
+  if (safeDeviceSensorList[5][10].value === false) {
     safeEdgeFrontF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][10].value === true) {
+  } else if (safeDeviceSensorList[5][10].value === true) {
     safeEdgeFrontF.setAttrByPath("line/stroke", "#00f800");
   }
   //后角阀上的线
@@ -4843,9 +4839,9 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][11].value === true) {
     safeEdgeBehindE.setAttrByPath("line/stroke", "#00f800");
   }
-  if (safeDeviceSensorList[4][11].value === false) {
+  if (safeDeviceSensorList[5][11].value === false) {
     safeEdgeBehindF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][11].value === true) {
+  } else if (safeDeviceSensorList[5][11].value === true) {
     safeEdgeBehindF.setAttrByPath("line/stroke", "#00f800");
   }
   //第一个空节点的第一条线
@@ -4874,9 +4870,9 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][12].value === true) {
     safeEdgeForEmptyFoneE.setAttrByPath("line/stroke", "#00f800");
   }
-  if (safeDeviceSensorList[4][12].value === false) {
+  if (safeDeviceSensorList[5][12].value === false) {
     safeEdgeForEmptyFoneF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][12].value === true) {
+  } else if (safeDeviceSensorList[5][12].value === true) {
     safeEdgeForEmptyFoneF.setAttrByPath("line/stroke", "#00f800");
   }
   //第一个空节点的第二条线
@@ -4905,9 +4901,9 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][13].value === true) {
     safeEdgeForEmptyFtwoE.setAttrByPath("line/stroke", "#00f800");
   }
-  if (safeDeviceSensorList[4][13].value === false) {
+  if (safeDeviceSensorList[5][13].value === false) {
     safeEdgeForEmptyFtwoF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][13].value === true) {
+  } else if (safeDeviceSensorList[5][13].value === true) {
     safeEdgeForEmptyFtwoF.setAttrByPath("line/stroke", "#00f800");
   }
   //第二个空节点的第一条线
@@ -4936,9 +4932,9 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][14].value === true) {
     safeEdgeForEmptySoneE.setAttrByPath("line/stroke", "#00f800");
   }
-  if (safeDeviceSensorList[4][14].value === false) {
+  if (safeDeviceSensorList[5][14].value === false) {
     safeEdgeForEmptySoneF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][14].value === true) {
+  } else if (safeDeviceSensorList[5][14].value === true) {
     safeEdgeForEmptySoneF.setAttrByPath("line/stroke", "#00f800");
   }
   //第二个空节点的第二条线
@@ -4967,9 +4963,9 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][15].value === true) {
     safeEdgeForEmptyStwoE.setAttrByPath("line/stroke", "#00f800");
   }
-  if (safeDeviceSensorList[4][15].value === false) {
+  if (safeDeviceSensorList[5][15].value === false) {
     safeEdgeForEmptyStwoF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][15].value === true) {
+  } else if (safeDeviceSensorList[5][15].value === true) {
     safeEdgeForEmptyStwoF.setAttrByPath("line/stroke", "#00f800");
   }
   //上面的metalNode的第一条线
@@ -4998,9 +4994,9 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][16].value === true) {
     safeEdgeForMetalUponeE.setAttrByPath("line/stroke", "#00f800");
   }
-  if (safeDeviceSensorList[4][16].value === false) {
+  if (safeDeviceSensorList[5][16].value === false) {
     safeEdgeForMetalUponeF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][16].value === true) {
+  } else if (safeDeviceSensorList[5][16].value === true) {
     safeEdgeForMetalUponeF.setAttrByPath("line/stroke", "#00f800");
   }
   //上面的metalNode的第二条线
@@ -5029,9 +5025,9 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][17].value === true) {
     safeEdgeForMetalUptwoE.setAttrByPath("line/stroke", "#00f800");
   }
-  if (safeDeviceSensorList[4][17].value === false) {
+  if (safeDeviceSensorList[5][17].value === false) {
     safeEdgeForMetalUptwoF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][17].value === true) {
+  } else if (safeDeviceSensorList[5][17].value === true) {
     safeEdgeForMetalUptwoF.setAttrByPath("line/stroke", "#00f800");
   }
   //下面的metalNode的第一条线
@@ -5060,9 +5056,9 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][18].value === true) {
     safeEdgeForMetalDownoneE.setAttrByPath("line/stroke", "#00f800");
   }
-  if (safeDeviceSensorList[4][18].value === false) {
+  if (safeDeviceSensorList[5][18].value === false) {
     safeEdgeForMetalDownoneF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][18].value === true) {
+  } else if (safeDeviceSensorList[5][18].value === true) {
     safeEdgeForMetalDownoneF.setAttrByPath("line/stroke", "#00f800");
   }
   //下面的metalNode的第二条线
@@ -5091,9 +5087,9 @@ watchEffect(() => {
   } else if (safeDeviceSensorList[4][19].value === true) {
     safeEdgeForMetalDowntwoE.setAttrByPath("line/stroke", "#00f800");
   }
-  if (safeDeviceSensorList[4][19].value === false) {
+  if (safeDeviceSensorList[5][19].value === false) {
     safeEdgeForMetalDowntwoF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][19].value === true) {
+  } else if (safeDeviceSensorList[5][19].value === true) {
     safeEdgeForMetalDowntwoF.setAttrByPath("line/stroke", "#00f800");
   }
 });
@@ -5105,17 +5101,15 @@ watchEffect(() => {
     handleResize(graph, document.documentElement as HTMLElement);
   });
 });
-const { proxy } = getCurrentInstance();
+const { proxy } = getCurrentInstance() as ComponentInternalInstance;
 let drawer = false;
 let reListener: any;
 const updateCharts = (charts: any, options: any) => {
   charts.setOption(options);
 };
 const sensorId = ref();
-let sensoList = ref([0, 1, 2, 3, 4, 5, 6, 7]);
 const init = async () => {
   var myCharts = echarts.init(document.getElementById("charts-container")!);
-  echarts.registerTransform(transform.histogram);
   var option: any = {
     grid: {
       top: "15%",
@@ -5179,7 +5173,7 @@ const init = async () => {
   let statusData: any = [];
   drawer = true;
 
-  await proxy.$http
+  await proxy?.$http
     .get("/getDeviceDataBetweenTimeByHour", {
       params: {
         deviceId: deviceId.value,
@@ -5276,7 +5270,8 @@ const init = async () => {
       loadSuccess = echarts.init(document.getElementById("charts-container")!);
       updateCharts(loadSuccess, option);
     })
-    .catch((err: any) => {});
+    .catch((err: any) => {console.log(err);
+    });
   if (!reListener) {
     reListener = window.addEventListener("resize", () => {
       loadSuccess.resize();
@@ -5318,13 +5313,13 @@ interface ArrayItem {
   value: boolean;
 }
 let safeDeviceSensorList: ArrayItem[][] = reactive(
-  Array.from({ length: 5 }, () =>
+  Array.from({ length: 6 }, () =>
     Array.from({ length: 24 }, () => ({ value: false }))
   )
 );
 const requireDeviceSensor = () => {
   var index = 0;
-  proxy.$http
+  proxy?.$http
     .get("/getAllDeviceSensorLatestData")
     .then((res: any) => {
       res = res.data.data;
