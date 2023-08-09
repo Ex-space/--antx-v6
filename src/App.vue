@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import { Graph } from "@antv/x6";
 import "@antv/x6-vue-shape";
 import { handleResize } from "./utils/handleResize";
@@ -3574,1525 +3574,1828 @@ onMounted(() => {
     ],
   };
   (graph as Graph).fromJSON(data as any);
-//角阀
-const anglevalveNodeFront = graph.getCellById("anglevalveNode1");
-const anglevalveNodeBehind = graph.getCellById("anglevalveNode2");
-const anglevalveNodeFrontB = graph.getCellById("anglevalveNodeB1");
-const anglevalveNodeBehindB = graph.getCellById("anglevalveNodeB2");
-const anglevalveNodeFrontC = graph.getCellById("anglevalveNodeC1");
-const anglevalveNodeBehindC = graph.getCellById("anglevalveNodeC2");
-const anglevalveNodeFrontD = graph.getCellById("anglevalveNodeD1");
-const anglevalveNodeBehindD = graph.getCellById("anglevalveNodeD2");
-const anglevalveNodeFrontE = graph.getCellById("anglevalveNodeE1");
-const anglevalveNodeBehindE = graph.getCellById("anglevalveNodeE2");
-const anglevalveNodeFrontF = graph.getCellById("anglevalveNodeF1");
-const anglevalveNodeBehindF = graph.getCellById("anglevalveNodeF2");
-//中间两个
-const emptyNodeA1 = graph.getCellById("emptyNodeA1");
-const emptyNodeA2 = graph.getCellById("emptyNodeA2");
-const emptyNodeB1 = graph.getCellById("emptyNodeB1");
-const emptyNodeB2 = graph.getCellById("emptyNodeB2");
-const emptyNodeC1 = graph.getCellById("emptyNodeC1");
-const emptyNodeC2 = graph.getCellById("emptyNodeC2");
-const emptyNodeD1 = graph.getCellById("emptyNodeD1");
-const emptyNodeD2 = graph.getCellById("emptyNodeD2");
-const emptyNodeE1 = graph.getCellById("emptyNodeE1");
-const emptyNodeE2 = graph.getCellById("emptyNodeE2");
-const emptyNodeF1 = graph.getCellById("emptyNodeF1");
-const emptyNodeF2 = graph.getCellById("emptyNodeF2");
-//后面两个
-const metalNodeA3 = graph.getCellById("metalNodeA3");
-const metalNodeA4 = graph.getCellById("metalNodeA4");
-const metalNodeB3 = graph.getCellById("metalNodeB3");
-const metalNodeB4 = graph.getCellById("metalNodeB4");
-const metalNodeC3 = graph.getCellById("metalNodeC3");
-const metalNodeC4 = graph.getCellById("metalNodeC4");
-const metalNodeD3 = graph.getCellById("metalNodeD3");
-const metalNodeD4 = graph.getCellById("metalNodeD4");
-const metalNodeE3 = graph.getCellById("metalNodeE3");
-const metalNodeE4 = graph.getCellById("metalNodeE4");
-const metalNodeF3 = graph.getCellById("metalNodeF3");
-const metalNodeF4 = graph.getCellById("metalNodeF4");
-//角阀上的线
-const safeEdgeFront = graph.getCellById("safeEdge1");
-const safeEdgeBehind = graph.getCellById("safeEdge2");
-const safeEdgeFrontB = graph.getCellById("safeEdge1B");
-const safeEdgeBehindB = graph.getCellById("safeEdge2B");
-const safeEdgeFrontC = graph.getCellById("safeEdge1C");
-const safeEdgeBehindC = graph.getCellById("safeEdge2C");
-const safeEdgeFrontD = graph.getCellById("safeEdge1D");
-const safeEdgeBehindD = graph.getCellById("safeEdge2D");
-const safeEdgeFrontE = graph.getCellById("safeEdge1E");
-const safeEdgeBehindE = graph.getCellById("safeEdge2E");
-const safeEdgeFrontF = graph.getCellById("safeEdge1F");
-const safeEdgeBehindF = graph.getCellById("safeEdge2F");
-//中间四条线
-const safeEdgeForEmptyFone = graph.getCellById("safeEdge3");
-const safeEdgeForEmptyFtwo = graph.getCellById("safeEdge4");
-const safeEdgeForEmptySone = graph.getCellById("dangerEdge1");
-const safeEdgeForEmptyStwo = graph.getCellById("dangerEdge2");
-const safeEdgeForEmptyFoneB = graph.getCellById("safeEdge3B");
-const safeEdgeForEmptyFtwoB = graph.getCellById("safeEdge4B");
-const safeEdgeForEmptySoneB = graph.getCellById("dangerEdge1B");
-const safeEdgeForEmptyStwoB = graph.getCellById("dangerEdge2B");
-const safeEdgeForEmptyFoneC = graph.getCellById("safeEdge3C");
-const safeEdgeForEmptyFtwoC = graph.getCellById("safeEdge4C");
-const safeEdgeForEmptySoneC = graph.getCellById("dangerEdge1C");
-const safeEdgeForEmptyStwoC = graph.getCellById("dangerEdge2C");
-const safeEdgeForEmptyFoneD = graph.getCellById("safeEdge3D");
-const safeEdgeForEmptyFtwoD = graph.getCellById("safeEdge4D");
-const safeEdgeForEmptySoneD = graph.getCellById("dangerEdge1D");
-const safeEdgeForEmptyStwoD = graph.getCellById("dangerEdge2D");
-const safeEdgeForEmptyFoneE = graph.getCellById("safeEdge3E");
-const safeEdgeForEmptyFtwoE = graph.getCellById("safeEdge4E");
-const safeEdgeForEmptySoneE = graph.getCellById("dangerEdge1E");
-const safeEdgeForEmptyStwoE = graph.getCellById("dangerEdge2E");
-const safeEdgeForEmptyFoneF = graph.getCellById("safeEdge3F");
-const safeEdgeForEmptyFtwoF = graph.getCellById("safeEdge4F");
-const safeEdgeForEmptySoneF = graph.getCellById("dangerEdge1F");
-const safeEdgeForEmptyStwoF = graph.getCellById("dangerEdge2F");
-//后面四条线
-const safeEdgeForMetalUpone = graph.getCellById("dangerEdge3");
-const safeEdgeForMetalUptwo = graph.getCellById("dangerEdge4");
-const safeEdgeForMetalDownone = graph.getCellById("safeEdge5");
-const safeEdgeForMetalDowntwo = graph.getCellById("safeEdge6");
-const safeEdgeForMetalUponeB = graph.getCellById("dangerEdge3B");
-const safeEdgeForMetalUptwoB = graph.getCellById("dangerEdge4B");
-const safeEdgeForMetalDownoneB = graph.getCellById("safeEdge5B");
-const safeEdgeForMetalDowntwoB = graph.getCellById("safeEdge6B");
-const safeEdgeForMetalUponeC = graph.getCellById("dangerEdge3C");
-const safeEdgeForMetalUptwoC = graph.getCellById("dangerEdge4C");
-const safeEdgeForMetalDownoneC = graph.getCellById("safeEdge5C");
-const safeEdgeForMetalDowntwoC = graph.getCellById("safeEdge6C");
-const safeEdgeForMetalUponeD = graph.getCellById("dangerEdge3D");
-const safeEdgeForMetalUptwoD = graph.getCellById("dangerEdge4D");
-const safeEdgeForMetalDownoneD = graph.getCellById("safeEdge5D");
-const safeEdgeForMetalDowntwoD = graph.getCellById("safeEdge6D");
-const safeEdgeForMetalUponeE = graph.getCellById("dangerEdge3E");
-const safeEdgeForMetalUptwoE = graph.getCellById("dangerEdge4E");
-const safeEdgeForMetalDownoneE = graph.getCellById("safeEdge5E");
-const safeEdgeForMetalDowntwoE = graph.getCellById("safeEdge6E");
-const safeEdgeForMetalUponeF = graph.getCellById("dangerEdge3F");
-const safeEdgeForMetalUptwoF = graph.getCellById("dangerEdge4F");
-const safeEdgeForMetalDownoneF = graph.getCellById("safeEdge5F");
-const safeEdgeForMetalDowntwoF = graph.getCellById("safeEdge6F");
+  //角阀
+  const anglevalveNodeFront = graph.getCellById("anglevalveNode1");
+  const anglevalveNodeBehind = graph.getCellById("anglevalveNode2");
+  const anglevalveNodeFrontB = graph.getCellById("anglevalveNodeB1");
+  const anglevalveNodeBehindB = graph.getCellById("anglevalveNodeB2");
+  const anglevalveNodeFrontC = graph.getCellById("anglevalveNodeC1");
+  const anglevalveNodeBehindC = graph.getCellById("anglevalveNodeC2");
+  const anglevalveNodeFrontD = graph.getCellById("anglevalveNodeD1");
+  const anglevalveNodeBehindD = graph.getCellById("anglevalveNodeD2");
+  const anglevalveNodeFrontE = graph.getCellById("anglevalveNodeE1");
+  const anglevalveNodeBehindE = graph.getCellById("anglevalveNodeE2");
+  const anglevalveNodeFrontF = graph.getCellById("anglevalveNodeF1");
+  const anglevalveNodeBehindF = graph.getCellById("anglevalveNodeF2");
+  //中间两个
+  const emptyNodeA1 = graph.getCellById("emptyNodeA1");
+  const emptyNodeA2 = graph.getCellById("emptyNodeA2");
+  const emptyNodeB1 = graph.getCellById("emptyNodeB1");
+  const emptyNodeB2 = graph.getCellById("emptyNodeB2");
+  const emptyNodeC1 = graph.getCellById("emptyNodeC1");
+  const emptyNodeC2 = graph.getCellById("emptyNodeC2");
+  const emptyNodeD1 = graph.getCellById("emptyNodeD1");
+  const emptyNodeD2 = graph.getCellById("emptyNodeD2");
+  const emptyNodeE1 = graph.getCellById("emptyNodeE1");
+  const emptyNodeE2 = graph.getCellById("emptyNodeE2");
+  const emptyNodeF1 = graph.getCellById("emptyNodeF1");
+  const emptyNodeF2 = graph.getCellById("emptyNodeF2");
+  //后面两个
+  const metalNodeA3 = graph.getCellById("metalNodeA3");
+  const metalNodeA4 = graph.getCellById("metalNodeA4");
+  const metalNodeB3 = graph.getCellById("metalNodeB3");
+  const metalNodeB4 = graph.getCellById("metalNodeB4");
+  const metalNodeC3 = graph.getCellById("metalNodeC3");
+  const metalNodeC4 = graph.getCellById("metalNodeC4");
+  const metalNodeD3 = graph.getCellById("metalNodeD3");
+  const metalNodeD4 = graph.getCellById("metalNodeD4");
+  const metalNodeE3 = graph.getCellById("metalNodeE3");
+  const metalNodeE4 = graph.getCellById("metalNodeE4");
+  const metalNodeF3 = graph.getCellById("metalNodeF3");
+  const metalNodeF4 = graph.getCellById("metalNodeF4");
+  //角阀上的线
+  const safeEdgeFront = graph.getCellById("safeEdge1");
+  const safeEdgeBehind = graph.getCellById("safeEdge2");
+  const safeEdgeFrontB = graph.getCellById("safeEdge1B");
+  const safeEdgeBehindB = graph.getCellById("safeEdge2B");
+  const safeEdgeFrontC = graph.getCellById("safeEdge1C");
+  const safeEdgeBehindC = graph.getCellById("safeEdge2C");
+  const safeEdgeFrontD = graph.getCellById("safeEdge1D");
+  const safeEdgeBehindD = graph.getCellById("safeEdge2D");
+  const safeEdgeFrontE = graph.getCellById("safeEdge1E");
+  const safeEdgeBehindE = graph.getCellById("safeEdge2E");
+  const safeEdgeFrontF = graph.getCellById("safeEdge1F");
+  const safeEdgeBehindF = graph.getCellById("safeEdge2F");
+  //中间四条线
+  const safeEdgeForEmptyFone = graph.getCellById("safeEdge3");
+  const safeEdgeForEmptyFtwo = graph.getCellById("safeEdge4");
+  const safeEdgeForEmptySone = graph.getCellById("dangerEdge1");
+  const safeEdgeForEmptyStwo = graph.getCellById("dangerEdge2");
+  const safeEdgeForEmptyFoneB = graph.getCellById("safeEdge3B");
+  const safeEdgeForEmptyFtwoB = graph.getCellById("safeEdge4B");
+  const safeEdgeForEmptySoneB = graph.getCellById("dangerEdge1B");
+  const safeEdgeForEmptyStwoB = graph.getCellById("dangerEdge2B");
+  const safeEdgeForEmptyFoneC = graph.getCellById("safeEdge3C");
+  const safeEdgeForEmptyFtwoC = graph.getCellById("safeEdge4C");
+  const safeEdgeForEmptySoneC = graph.getCellById("dangerEdge1C");
+  const safeEdgeForEmptyStwoC = graph.getCellById("dangerEdge2C");
+  const safeEdgeForEmptyFoneD = graph.getCellById("safeEdge3D");
+  const safeEdgeForEmptyFtwoD = graph.getCellById("safeEdge4D");
+  const safeEdgeForEmptySoneD = graph.getCellById("dangerEdge1D");
+  const safeEdgeForEmptyStwoD = graph.getCellById("dangerEdge2D");
+  const safeEdgeForEmptyFoneE = graph.getCellById("safeEdge3E");
+  const safeEdgeForEmptyFtwoE = graph.getCellById("safeEdge4E");
+  const safeEdgeForEmptySoneE = graph.getCellById("dangerEdge1E");
+  const safeEdgeForEmptyStwoE = graph.getCellById("dangerEdge2E");
+  const safeEdgeForEmptyFoneF = graph.getCellById("safeEdge3F");
+  const safeEdgeForEmptyFtwoF = graph.getCellById("safeEdge4F");
+  const safeEdgeForEmptySoneF = graph.getCellById("dangerEdge1F");
+  const safeEdgeForEmptyStwoF = graph.getCellById("dangerEdge2F");
+  //后面四条线
+  const safeEdgeForMetalUpone = graph.getCellById("dangerEdge3");
+  const safeEdgeForMetalUptwo = graph.getCellById("dangerEdge4");
+  const safeEdgeForMetalDownone = graph.getCellById("safeEdge5");
+  const safeEdgeForMetalDowntwo = graph.getCellById("safeEdge6");
+  const safeEdgeForMetalUponeB = graph.getCellById("dangerEdge3B");
+  const safeEdgeForMetalUptwoB = graph.getCellById("dangerEdge4B");
+  const safeEdgeForMetalDownoneB = graph.getCellById("safeEdge5B");
+  const safeEdgeForMetalDowntwoB = graph.getCellById("safeEdge6B");
+  const safeEdgeForMetalUponeC = graph.getCellById("dangerEdge3C");
+  const safeEdgeForMetalUptwoC = graph.getCellById("dangerEdge4C");
+  const safeEdgeForMetalDownoneC = graph.getCellById("safeEdge5C");
+  const safeEdgeForMetalDowntwoC = graph.getCellById("safeEdge6C");
+  const safeEdgeForMetalUponeD = graph.getCellById("dangerEdge3D");
+  const safeEdgeForMetalUptwoD = graph.getCellById("dangerEdge4D");
+  const safeEdgeForMetalDownoneD = graph.getCellById("safeEdge5D");
+  const safeEdgeForMetalDowntwoD = graph.getCellById("safeEdge6D");
+  const safeEdgeForMetalUponeE = graph.getCellById("dangerEdge3E");
+  const safeEdgeForMetalUptwoE = graph.getCellById("dangerEdge4E");
+  const safeEdgeForMetalDownoneE = graph.getCellById("safeEdge5E");
+  const safeEdgeForMetalDowntwoE = graph.getCellById("safeEdge6E");
+  const safeEdgeForMetalUponeF = graph.getCellById("dangerEdge3F");
+  const safeEdgeForMetalUptwoF = graph.getCellById("dangerEdge4F");
+  const safeEdgeForMetalDownoneF = graph.getCellById("safeEdge5F");
+  const safeEdgeForMetalDowntwoF = graph.getCellById("safeEdge6F");
 
-watchEffect(() => {
-  //前角阀
-  if (safeDeviceSensorList[0][0].value === false) {
-    anglevalveNodeFront.setProp(
-      "html",
-      `<div class="anglevalveNodeWarn"></div>`
-    );
-  } else if (safeDeviceSensorList[0][0].value === true) {
-    anglevalveNodeFront.setProp("html", `<div class="anglevalveNode"></div>`);
-  }
-  if (safeDeviceSensorList[1][0].value === false) {
-    anglevalveNodeFrontB.setProp(
-      "html",
-      `<div class="anglevalveNodeWarn"></div>`
-    );
-  } else if (safeDeviceSensorList[1][0].value === true) {
-    anglevalveNodeFrontB.setProp("html", `<div class="anglevalveNode"></div>`);
-  }
-  if (safeDeviceSensorList[2][0].value === false) {
-    anglevalveNodeFrontC.setProp(
-      "html",
-      `<div class="anglevalveNodeWarn"></div>`
-    );
-  } else if (safeDeviceSensorList[2][0].value === true) {
-    anglevalveNodeFrontC.setProp("html", `<div class="anglevalveNode"></div>`);
-  }
-  if (safeDeviceSensorList[3][0].value === false) {
-    anglevalveNodeFrontD.setProp(
-      "html",
-      `<div class="anglevalveNodeWarn"></div>`
-    );
-  } else if (safeDeviceSensorList[3][0].value === true) {
-    anglevalveNodeFrontD.setProp("html", `<div class="anglevalveNode"></div>`);
-  }
-  if (safeDeviceSensorList[4][0].value === false) {
-    anglevalveNodeFrontE.setProp(
-      "html",
-      `<div class="anglevalveNodeWarn"></div>`
-    );
-  } else if (safeDeviceSensorList[4][0].value === true) {
-    anglevalveNodeFrontE.setProp("html", `<div class="anglevalveNode"></div>`);
-  }
-  if (safeDeviceSensorList[5][0].value === false) {
-    anglevalveNodeFrontF.setProp(
-      "html",
-      `<div class="anglevalveNodeWarn"></div>`
-    );
-  } else if (safeDeviceSensorList[5][0].value === true) {
-    anglevalveNodeFrontF.setProp("html", `<div class="anglevalveNode"></div>`);
-  }
-  //后角阀
-  if (safeDeviceSensorList[0][1].value === false) {
-    anglevalveNodeBehind.setProp(
-      "html",
-      `<div class="anglevalveNodeWarn"></div>`
-    );
-  } else if (safeDeviceSensorList[0][1].value === true) {
-    anglevalveNodeBehind.setProp(
-      "html",
-      `<div class="anglevalveNode"></div>`
-    );
-  }
-  if (safeDeviceSensorList[1][1].value === false) {
-    anglevalveNodeBehindB.setProp(
-      "html",
-      `<div class="anglevalveNodeWarn"></div>`
-    );
-  } else if (safeDeviceSensorList[1][1].value === true) {
-    anglevalveNodeBehindB.setProp(
-      "html",
-      `<div class="anglevalveNode"></div>`
-    );
-  }
-  if (safeDeviceSensorList[2][1].value === false) {
-    anglevalveNodeBehindC.setProp(
-      "html",
-      `<div class="anglevalveNodeWarn"></div>`
-    );
-  } else if (safeDeviceSensorList[2][1].value === true) {
-    anglevalveNodeBehindC.setProp(
-      "html",
-      `<div class="anglevalveNode"></div>`
-    );
-  }
-  if (safeDeviceSensorList[3][1].value === false) {
-    anglevalveNodeBehindD.setProp(
-      "html",
-      `<div class="anglevalveNodeWarn"></div>`
-    );
-  } else if (safeDeviceSensorList[3][1].value === true) {
-    anglevalveNodeBehindD.setProp(
-      "html",
-      `<div class="anglevalveNode"></div>`
-    );
-  }
-  if (safeDeviceSensorList[4][1].value === false) {
-    anglevalveNodeBehindE.setProp(
-      "html",
-      `<div class="anglevalveNodeWarn"></div>`
-    );
-  } else if (safeDeviceSensorList[4][1].value === true) {
-    anglevalveNodeBehindE.setProp(
-      "html",
-      `<div class="anglevalveNode"></div>`
-    );
-  }
-  if (safeDeviceSensorList[5][1].value === false) {
-    anglevalveNodeBehindF.setProp(
-      "html",
-      `<div class="anglevalveNodeWarn"></div>`
-    );
-  } else if (safeDeviceSensorList[5][1].value === true) {
-    anglevalveNodeBehindF.setProp(
-      "html",
-      `<div class="anglevalveNode"></div>`
-    );
-  }
-  // 第一个空节点
-  if (safeDeviceSensorList[0][2].value === true && safeDeviceSensorList[0][3].value === true) {
-    emptyNodeA1.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+  watchEffect(() => {
+    //前角阀
+    if (safeDeviceSensorList[0][0].value === false) {
+      anglevalveNodeFront.setProp(
+        "html",
+        `<div class="anglevalveNodeWarn"></div>`
+      );
+    } else if (safeDeviceSensorList[0][0].value === true) {
+      anglevalveNodeFront.setProp("html", `<div class="anglevalveNode"></div>`);
+    }
+    if (safeDeviceSensorList[1][0].value === false) {
+      anglevalveNodeFrontB.setProp(
+        "html",
+        `<div class="anglevalveNodeWarn"></div>`
+      );
+    } else if (safeDeviceSensorList[1][0].value === true) {
+      anglevalveNodeFrontB.setProp(
+        "html",
+        `<div class="anglevalveNode"></div>`
+      );
+    }
+    if (safeDeviceSensorList[2][0].value === false) {
+      anglevalveNodeFrontC.setProp(
+        "html",
+        `<div class="anglevalveNodeWarn"></div>`
+      );
+    } else if (safeDeviceSensorList[2][0].value === true) {
+      anglevalveNodeFrontC.setProp(
+        "html",
+        `<div class="anglevalveNode"></div>`
+      );
+    }
+    if (safeDeviceSensorList[3][0].value === false) {
+      anglevalveNodeFrontD.setProp(
+        "html",
+        `<div class="anglevalveNodeWarn"></div>`
+      );
+    } else if (safeDeviceSensorList[3][0].value === true) {
+      anglevalveNodeFrontD.setProp(
+        "html",
+        `<div class="anglevalveNode"></div>`
+      );
+    }
+    if (safeDeviceSensorList[4][0].value === false) {
+      anglevalveNodeFrontE.setProp(
+        "html",
+        `<div class="anglevalveNodeWarn"></div>`
+      );
+    } else if (safeDeviceSensorList[4][0].value === true) {
+      anglevalveNodeFrontE.setProp(
+        "html",
+        `<div class="anglevalveNode"></div>`
+      );
+    }
+    if (safeDeviceSensorList[5][0].value === false) {
+      anglevalveNodeFrontF.setProp(
+        "html",
+        `<div class="anglevalveNodeWarn"></div>`
+      );
+    } else if (safeDeviceSensorList[5][0].value === true) {
+      anglevalveNodeFrontF.setProp(
+        "html",
+        `<div class="anglevalveNode"></div>`
+      );
+    }
+    //后角阀
+    if (safeDeviceSensorList[0][1].value === false) {
+      anglevalveNodeBehind.setProp(
+        "html",
+        `<div class="anglevalveNodeWarn"></div>`
+      );
+    } else if (safeDeviceSensorList[0][1].value === true) {
+      anglevalveNodeBehind.setProp(
+        "html",
+        `<div class="anglevalveNode"></div>`
+      );
+    }
+    if (safeDeviceSensorList[1][1].value === false) {
+      anglevalveNodeBehindB.setProp(
+        "html",
+        `<div class="anglevalveNodeWarn"></div>`
+      );
+    } else if (safeDeviceSensorList[1][1].value === true) {
+      anglevalveNodeBehindB.setProp(
+        "html",
+        `<div class="anglevalveNode"></div>`
+      );
+    }
+    if (safeDeviceSensorList[2][1].value === false) {
+      anglevalveNodeBehindC.setProp(
+        "html",
+        `<div class="anglevalveNodeWarn"></div>`
+      );
+    } else if (safeDeviceSensorList[2][1].value === true) {
+      anglevalveNodeBehindC.setProp(
+        "html",
+        `<div class="anglevalveNode"></div>`
+      );
+    }
+    if (safeDeviceSensorList[3][1].value === false) {
+      anglevalveNodeBehindD.setProp(
+        "html",
+        `<div class="anglevalveNodeWarn"></div>`
+      );
+    } else if (safeDeviceSensorList[3][1].value === true) {
+      anglevalveNodeBehindD.setProp(
+        "html",
+        `<div class="anglevalveNode"></div>`
+      );
+    }
+    if (safeDeviceSensorList[4][1].value === false) {
+      anglevalveNodeBehindE.setProp(
+        "html",
+        `<div class="anglevalveNodeWarn"></div>`
+      );
+    } else if (safeDeviceSensorList[4][1].value === true) {
+      anglevalveNodeBehindE.setProp(
+        "html",
+        `<div class="anglevalveNode"></div>`
+      );
+    }
+    if (safeDeviceSensorList[5][1].value === false) {
+      anglevalveNodeBehindF.setProp(
+        "html",
+        `<div class="anglevalveNodeWarn"></div>`
+      );
+    } else if (safeDeviceSensorList[5][1].value === true) {
+      anglevalveNodeBehindF.setProp(
+        "html",
+        `<div class="anglevalveNode"></div>`
+      );
+    }
+    // 第一个空节点
+    if (
+      safeDeviceSensorList[0][2].value === true &&
+      safeDeviceSensorList[0][3].value === true
+    ) {
+      emptyNodeA1.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1731A</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[0][2].value === false && safeDeviceSensorList[0][3].value === true) {
-    emptyNodeA1.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
+      );
+    } else if (
+      safeDeviceSensorList[0][2].value === false &&
+      safeDeviceSensorList[0][3].value === true
+    ) {
+      emptyNodeA1.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1731A</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[0][2].value === true && safeDeviceSensorList[0][3].value === false) {
-    emptyNodeA1.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[0][2].value === true &&
+      safeDeviceSensorList[0][3].value === false
+    ) {
+      emptyNodeA1.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
             <div></div>
             <div class="metalNode2">
               <span>X1731A</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[0][2].value === false && safeDeviceSensorList[0][3].value === false) {
-    emptyNodeA1.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[0][2].value === false &&
+      safeDeviceSensorList[0][3].value === false
+    ) {
+      emptyNodeA1.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1731A</span>
             </div>
           </div>`
-    );
-  }
-  if (safeDeviceSensorList[1][2].value === true && safeDeviceSensorList[1][3].value === true) {
-    emptyNodeB1.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    if (
+      safeDeviceSensorList[1][2].value === true &&
+      safeDeviceSensorList[1][3].value === true
+    ) {
+      emptyNodeB1.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1731B</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[1][2].value === false && safeDeviceSensorList[1][3].value === true) {
-    emptyNodeB1.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1731B</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[1][2].value === true && safeDeviceSensorList[1][3].value === false) {
-    emptyNodeB1.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[1][2].value === false &&
+      safeDeviceSensorList[1][3].value === true
+    ) {
+      emptyNodeB1.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1731B</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[1][2].value === false && safeDeviceSensorList[1][3].value === false) {
-    emptyNodeB1.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[1][2].value === true &&
+      safeDeviceSensorList[1][3].value === false
+    ) {
+      emptyNodeB1.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1731B</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[1][2].value === false &&
+      safeDeviceSensorList[1][3].value === false
+    ) {
+      emptyNodeB1.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1731B</span>
             </div>
           </div>`
-    );
-  }
-  if (safeDeviceSensorList[2][2].value === true && safeDeviceSensorList[2][3].value === true) {
-    emptyNodeC1.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    if (
+      safeDeviceSensorList[2][2].value === true &&
+      safeDeviceSensorList[2][3].value === true
+    ) {
+      emptyNodeC1.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1731C</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[2][2].value === false && safeDeviceSensorList[2][3].value === true) {
-    emptyNodeC1.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1731C</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[2][2].value === true && safeDeviceSensorList[2][3].value === false) {
-    emptyNodeC1.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[2][2].value === false &&
+      safeDeviceSensorList[2][3].value === true
+    ) {
+      emptyNodeC1.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1731C</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[2][2].value === false && safeDeviceSensorList[2][3].value === false) {
-    emptyNodeC1.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[2][2].value === true &&
+      safeDeviceSensorList[2][3].value === false
+    ) {
+      emptyNodeC1.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1731C</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[2][2].value === false &&
+      safeDeviceSensorList[2][3].value === false
+    ) {
+      emptyNodeC1.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1731C</span>
             </div>
           </div>`
-    );
-  }
-  if (safeDeviceSensorList[3][2].value === true && safeDeviceSensorList[3][3].value === true) {
-    emptyNodeD1.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    if (
+      safeDeviceSensorList[3][2].value === true &&
+      safeDeviceSensorList[3][3].value === true
+    ) {
+      emptyNodeD1.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1731D</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[3][2].value === false && safeDeviceSensorList[3][3].value === true) {
-    emptyNodeD1.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1731D</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[3][2].value === true && safeDeviceSensorList[3][3].value === false) {
-    emptyNodeD1.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[3][2].value === false &&
+      safeDeviceSensorList[3][3].value === true
+    ) {
+      emptyNodeD1.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1731D</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[3][2].value === false && safeDeviceSensorList[3][3].value === false) {
-    emptyNodeD1.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[3][2].value === true &&
+      safeDeviceSensorList[3][3].value === false
+    ) {
+      emptyNodeD1.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1731D</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[3][2].value === false &&
+      safeDeviceSensorList[3][3].value === false
+    ) {
+      emptyNodeD1.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1731D</span>
             </div>
           </div>`
-    );
-  }
-  if (safeDeviceSensorList[4][2].value === true && safeDeviceSensorList[4][3].value === true) {
-    emptyNodeE1.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    if (
+      safeDeviceSensorList[4][2].value === true &&
+      safeDeviceSensorList[4][3].value === true
+    ) {
+      emptyNodeE1.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1731E</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[4][2].value === false && safeDeviceSensorList[4][3].value === true) {
-    emptyNodeE1.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1731E</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[4][2].value === true && safeDeviceSensorList[4][3].value === false) {
-    emptyNodeE1.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[4][2].value === false &&
+      safeDeviceSensorList[4][3].value === true
+    ) {
+      emptyNodeE1.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1731E</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[4][2].value === false && safeDeviceSensorList[4][3].value === false) {
-    emptyNodeE1.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[4][2].value === true &&
+      safeDeviceSensorList[4][3].value === false
+    ) {
+      emptyNodeE1.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1731E</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[4][2].value === false &&
+      safeDeviceSensorList[4][3].value === false
+    ) {
+      emptyNodeE1.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1731E</span>
             </div>
           </div>`
-    );
-  }
-  if (safeDeviceSensorList[5][2].value === true && safeDeviceSensorList[5][3].value === true) {
-    emptyNodeF1.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    if (
+      safeDeviceSensorList[5][2].value === true &&
+      safeDeviceSensorList[5][3].value === true
+    ) {
+      emptyNodeF1.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1731F</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[5][2].value === false && safeDeviceSensorList[5][3].value === true) {
-    emptyNodeF1.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1731F</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[5][2].value === true && safeDeviceSensorList[5][3].value === false) {
-    emptyNodeF1.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[5][2].value === false &&
+      safeDeviceSensorList[5][3].value === true
+    ) {
+      emptyNodeF1.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1731F</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[5][2].value === false && safeDeviceSensorList[5][3].value === false) {
-    emptyNodeF1.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[5][2].value === true &&
+      safeDeviceSensorList[5][3].value === false
+    ) {
+      emptyNodeF1.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1731F</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[5][2].value === false &&
+      safeDeviceSensorList[5][3].value === false
+    ) {
+      emptyNodeF1.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1731F</span>
             </div>
           </div>`
-    );
-  }
-  //第二个空节点
-  if (safeDeviceSensorList[0][4].value === true && safeDeviceSensorList[0][5].value === true) {
-    emptyNodeA2.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    //第二个空节点
+    if (
+      safeDeviceSensorList[0][4].value === true &&
+      safeDeviceSensorList[0][5].value === true
+    ) {
+      emptyNodeA2.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1732A</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[0][4].value === false && safeDeviceSensorList[0][5].value === true) {
-    emptyNodeA2.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1732A</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[0][4].value === true && safeDeviceSensorList[0][5].value === false) {
-    emptyNodeA2.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[0][4].value === false &&
+      safeDeviceSensorList[0][5].value === true
+    ) {
+      emptyNodeA2.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1732A</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[0][4].value === false && safeDeviceSensorList[0][5].value === false) {
-    emptyNodeA2.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[0][4].value === true &&
+      safeDeviceSensorList[0][5].value === false
+    ) {
+      emptyNodeA2.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1732A</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[0][4].value === false &&
+      safeDeviceSensorList[0][5].value === false
+    ) {
+      emptyNodeA2.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1732A</span>
             </div>
           </div>`
-    );
-  }
-  if (safeDeviceSensorList[1][4].value === true && safeDeviceSensorList[1][5].value === true) {
-    emptyNodeB2.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    if (
+      safeDeviceSensorList[1][4].value === true &&
+      safeDeviceSensorList[1][5].value === true
+    ) {
+      emptyNodeB2.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1732B</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[1][4].value === false && safeDeviceSensorList[1][5].value === true) {
-    emptyNodeB2.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1732B</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[1][4].value === true && safeDeviceSensorList[1][5].value === false) {
-    emptyNodeB2.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[1][4].value === false &&
+      safeDeviceSensorList[1][5].value === true
+    ) {
+      emptyNodeB2.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1732B</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[1][4].value === false && safeDeviceSensorList[1][5].value === false) {
-    emptyNodeB2.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[1][4].value === true &&
+      safeDeviceSensorList[1][5].value === false
+    ) {
+      emptyNodeB2.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1732B</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[1][4].value === false &&
+      safeDeviceSensorList[1][5].value === false
+    ) {
+      emptyNodeB2.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1732B</span>
             </div>
           </div>`
-    );
-  }
-  if (safeDeviceSensorList[2][4].value === true && safeDeviceSensorList[2][5].value === true) {
-    emptyNodeC2.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    if (
+      safeDeviceSensorList[2][4].value === true &&
+      safeDeviceSensorList[2][5].value === true
+    ) {
+      emptyNodeC2.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1732C</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[2][4].value === false && safeDeviceSensorList[2][5].value === true) {
-    emptyNodeC2.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1732C</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[2][4].value === true && safeDeviceSensorList[2][5].value === false) {
-    emptyNodeC2.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[2][4].value === false &&
+      safeDeviceSensorList[2][5].value === true
+    ) {
+      emptyNodeC2.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1732C</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[2][4].value === false && safeDeviceSensorList[2][5].value === false) {
-    emptyNodeC2.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[2][4].value === true &&
+      safeDeviceSensorList[2][5].value === false
+    ) {
+      emptyNodeC2.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1732C</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[2][4].value === false &&
+      safeDeviceSensorList[2][5].value === false
+    ) {
+      emptyNodeC2.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1732C</span>
             </div>
           </div>`
-    );
-  }
-  if (safeDeviceSensorList[3][4].value === true && safeDeviceSensorList[3][5].value === true) {
-    emptyNodeD2.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    if (
+      safeDeviceSensorList[3][4].value === true &&
+      safeDeviceSensorList[3][5].value === true
+    ) {
+      emptyNodeD2.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1732D</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[3][4].value === false && safeDeviceSensorList[3][5].value === true) {
-    emptyNodeD2.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1732D</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[3][4].value === true && safeDeviceSensorList[3][5].value === false) {
-    emptyNodeD2.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[3][4].value === false &&
+      safeDeviceSensorList[3][5].value === true
+    ) {
+      emptyNodeD2.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1732D</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[3][4].value === false && safeDeviceSensorList[3][5].value === false) {
-    emptyNodeD2.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[3][4].value === true &&
+      safeDeviceSensorList[3][5].value === false
+    ) {
+      emptyNodeD2.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1732D</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[3][4].value === false &&
+      safeDeviceSensorList[3][5].value === false
+    ) {
+      emptyNodeD2.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1732D</span>
             </div>
           </div>`
-    );
-  }
-  if (safeDeviceSensorList[4][4].value === true && safeDeviceSensorList[4][5].value === true) {
-    emptyNodeE2.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    if (
+      safeDeviceSensorList[4][4].value === true &&
+      safeDeviceSensorList[4][5].value === true
+    ) {
+      emptyNodeE2.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1732E</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[4][4].value === false && safeDeviceSensorList[4][5].value === true) {
-    emptyNodeE2.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1732E</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[4][4].value === true && safeDeviceSensorList[4][5].value === false) {
-    emptyNodeE2.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[4][4].value === false &&
+      safeDeviceSensorList[4][5].value === true
+    ) {
+      emptyNodeE2.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1732E</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[4][4].value === false && safeDeviceSensorList[4][5].value === false) {
-    emptyNodeE2.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[4][4].value === true &&
+      safeDeviceSensorList[4][5].value === false
+    ) {
+      emptyNodeE2.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1732E</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[4][4].value === false &&
+      safeDeviceSensorList[4][5].value === false
+    ) {
+      emptyNodeE2.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1732E</span>
             </div>
           </div>`
-    );
-  }
-  if (safeDeviceSensorList[5][4].value === true && safeDeviceSensorList[5][5].value === true) {
-    emptyNodeF2.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    if (
+      safeDeviceSensorList[5][4].value === true &&
+      safeDeviceSensorList[5][5].value === true
+    ) {
+      emptyNodeF2.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1732F</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[5][4].value === false && safeDeviceSensorList[5][5].value === true) {
-    emptyNodeF2.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1732F</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[5][4].value === true && safeDeviceSensorList[5][5].value === false) {
-    emptyNodeF2.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[5][4].value === false &&
+      safeDeviceSensorList[5][5].value === true
+    ) {
+      emptyNodeF2.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1732F</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[5][4].value === false && safeDeviceSensorList[5][5].value === false) {
-    emptyNodeF2.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[5][4].value === true &&
+      safeDeviceSensorList[5][5].value === false
+    ) {
+      emptyNodeF2.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1732F</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[5][4].value === false &&
+      safeDeviceSensorList[5][5].value === false
+    ) {
+      emptyNodeF2.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1732F</span>
             </div>
           </div>`
-    );
-  }
-  //上方的metalNode
-  if (safeDeviceSensorList[0][6].value === true && safeDeviceSensorList[0][7].value === true) {
-    metalNodeA3.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    //上方的metalNode
+    if (
+      safeDeviceSensorList[0][6].value === true &&
+      safeDeviceSensorList[0][7].value === true
+    ) {
+      metalNodeA3.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1711A</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[0][6].value === false && safeDeviceSensorList[0][7].value === true) {
-    metalNodeA3.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1711A</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[0][6].value === true && safeDeviceSensorList[0][7].value === false) {
-    metalNodeA3.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[0][6].value === false &&
+      safeDeviceSensorList[0][7].value === true
+    ) {
+      metalNodeA3.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1711A</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[0][6].value === false && safeDeviceSensorList[0][7].value === false) {
-    metalNodeA3.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[0][6].value === true &&
+      safeDeviceSensorList[0][7].value === false
+    ) {
+      metalNodeA3.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1711A</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[0][6].value === false &&
+      safeDeviceSensorList[0][7].value === false
+    ) {
+      metalNodeA3.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1711A</span>
             </div>
           </div>`
-    );
-  }
-  if (safeDeviceSensorList[1][6].value === true && safeDeviceSensorList[1][7].value === true) {
-    metalNodeB3.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    if (
+      safeDeviceSensorList[1][6].value === true &&
+      safeDeviceSensorList[1][7].value === true
+    ) {
+      metalNodeB3.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1711B</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[1][6].value === false && safeDeviceSensorList[1][7].value === true) {
-    metalNodeB3.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1711B</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[1][6].value === true && safeDeviceSensorList[1][7].value === false) {
-    metalNodeB3.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[1][6].value === false &&
+      safeDeviceSensorList[1][7].value === true
+    ) {
+      metalNodeB3.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1711B</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[1][6].value === false && safeDeviceSensorList[1][7].value === false) {
-    metalNodeB3.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[1][6].value === true &&
+      safeDeviceSensorList[1][7].value === false
+    ) {
+      metalNodeB3.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1711B</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[1][6].value === false &&
+      safeDeviceSensorList[1][7].value === false
+    ) {
+      metalNodeB3.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1711B</span>
             </div>
           </div>`
-    );
-  }
-  if (safeDeviceSensorList[2][6].value === true && safeDeviceSensorList[2][7].value === true) {
-    metalNodeC3.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    if (
+      safeDeviceSensorList[2][6].value === true &&
+      safeDeviceSensorList[2][7].value === true
+    ) {
+      metalNodeC3.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1711C</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[2][6].value === false && safeDeviceSensorList[2][7].value === true) {
-    metalNodeC3.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1711C</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[2][6].value === true && safeDeviceSensorList[2][7].value === false) {
-    metalNodeC3.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[2][6].value === false &&
+      safeDeviceSensorList[2][7].value === true
+    ) {
+      metalNodeC3.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1711C</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[2][6].value === false && safeDeviceSensorList[2][7].value === false) {
-    metalNodeC3.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[2][6].value === true &&
+      safeDeviceSensorList[2][7].value === false
+    ) {
+      metalNodeC3.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1711C</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[2][6].value === false &&
+      safeDeviceSensorList[2][7].value === false
+    ) {
+      metalNodeC3.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1711C</span>
             </div>
           </div>`
-    );
-  }
-  if (safeDeviceSensorList[3][6].value === true && safeDeviceSensorList[3][7].value === true) {
-    metalNodeD3.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    if (
+      safeDeviceSensorList[3][6].value === true &&
+      safeDeviceSensorList[3][7].value === true
+    ) {
+      metalNodeD3.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1711D</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[3][6].value === false && safeDeviceSensorList[3][7].value === true) {
-    metalNodeD3.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1711D</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[3][6].value === true && safeDeviceSensorList[3][7].value === false) {
-    metalNodeD3.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[3][6].value === false &&
+      safeDeviceSensorList[3][7].value === true
+    ) {
+      metalNodeD3.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1711D</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[3][6].value === false && safeDeviceSensorList[3][7].value === false) {
-    metalNodeD3.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[3][6].value === true &&
+      safeDeviceSensorList[3][7].value === false
+    ) {
+      metalNodeD3.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1711D</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[3][6].value === false &&
+      safeDeviceSensorList[3][7].value === false
+    ) {
+      metalNodeD3.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1711D</span>
             </div>
           </div>`
-    );
-  }
-  if (safeDeviceSensorList[4][6].value === true && safeDeviceSensorList[4][7].value === true) {
-    metalNodeE3.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    if (
+      safeDeviceSensorList[4][6].value === true &&
+      safeDeviceSensorList[4][7].value === true
+    ) {
+      metalNodeE3.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1711E</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[4][6].value === false && safeDeviceSensorList[4][7].value === true) {
-    metalNodeE3.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1711E</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[4][6].value === true && safeDeviceSensorList[4][7].value === false) {
-    metalNodeE3.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[4][6].value === false &&
+      safeDeviceSensorList[4][7].value === true
+    ) {
+      metalNodeE3.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1711E</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[4][6].value === false && safeDeviceSensorList[4][7].value === false) {
-    metalNodeE3.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[4][6].value === true &&
+      safeDeviceSensorList[4][7].value === false
+    ) {
+      metalNodeE3.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1711E</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[4][6].value === false &&
+      safeDeviceSensorList[4][7].value === false
+    ) {
+      metalNodeE3.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1711E</span>
             </div>
           </div>`
-    );
-  }
-  if (safeDeviceSensorList[5][6].value === true && safeDeviceSensorList[5][7].value === true) {
-    metalNodeF3.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    if (
+      safeDeviceSensorList[5][6].value === true &&
+      safeDeviceSensorList[5][7].value === true
+    ) {
+      metalNodeF3.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1711F</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[5][6].value === false && safeDeviceSensorList[5][7].value === true) {
-    metalNodeF3.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1711F</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[5][6].value === true && safeDeviceSensorList[5][7].value === false) {
-    metalNodeF3.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[5][6].value === false &&
+      safeDeviceSensorList[5][7].value === true
+    ) {
+      metalNodeF3.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1711F</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[5][6].value === false && safeDeviceSensorList[5][7].value === false) {
-    metalNodeF3.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[5][6].value === true &&
+      safeDeviceSensorList[5][7].value === false
+    ) {
+      metalNodeF3.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1711F</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[5][6].value === false &&
+      safeDeviceSensorList[5][7].value === false
+    ) {
+      metalNodeF3.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1711F</span>
             </div>
           </div>`
-    );
-  }
-  //下方的metalNode
-  if (safeDeviceSensorList[0][8].value === true && safeDeviceSensorList[0][9].value === true) {
-    metalNodeA4.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    //下方的metalNode
+    if (
+      safeDeviceSensorList[0][8].value === true &&
+      safeDeviceSensorList[0][9].value === true
+    ) {
+      metalNodeA4.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1733A</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[0][8].value === false && safeDeviceSensorList[0][9].value === true) {
-    metalNodeA4.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1733A</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[0][8].value === true && safeDeviceSensorList[0][9].value === false) {
-    metalNodeA4.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[0][8].value === false &&
+      safeDeviceSensorList[0][9].value === true
+    ) {
+      metalNodeA4.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1733A</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[0][8].value === false && safeDeviceSensorList[0][9].value === false) {
-    metalNodeA4.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[0][8].value === true &&
+      safeDeviceSensorList[0][9].value === false
+    ) {
+      metalNodeA4.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1733A</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[0][8].value === false &&
+      safeDeviceSensorList[0][9].value === false
+    ) {
+      metalNodeA4.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1733A</span>
             </div>
           </div>`
-    );
-  }
-  if (safeDeviceSensorList[1][8].value === true && safeDeviceSensorList[1][9].value === true) {
-    metalNodeB4.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    if (
+      safeDeviceSensorList[1][8].value === true &&
+      safeDeviceSensorList[1][9].value === true
+    ) {
+      metalNodeB4.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1733B</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[1][8].value === false && safeDeviceSensorList[1][9].value === true) {
-    metalNodeB4.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1733B</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[1][8].value === true && safeDeviceSensorList[1][9].value === false) {
-    metalNodeB4.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[1][8].value === false &&
+      safeDeviceSensorList[1][9].value === true
+    ) {
+      metalNodeB4.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1733B</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[1][8].value === false && safeDeviceSensorList[1][9].value === false) {
-    metalNodeB4.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[1][8].value === true &&
+      safeDeviceSensorList[1][9].value === false
+    ) {
+      metalNodeB4.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1733B</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[1][8].value === false &&
+      safeDeviceSensorList[1][9].value === false
+    ) {
+      metalNodeB4.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1733B</span>
             </div>
           </div>`
-    );
-  }
-  if (safeDeviceSensorList[2][8].value === true && safeDeviceSensorList[2][9].value === true) {
-    metalNodeC4.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    if (
+      safeDeviceSensorList[2][8].value === true &&
+      safeDeviceSensorList[2][9].value === true
+    ) {
+      metalNodeC4.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1733C</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[2][8].value === false && safeDeviceSensorList[2][9].value === true) {
-    metalNodeC4.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1733C</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[2][8].value === true && safeDeviceSensorList[2][9].value === false) {
-    metalNodeC4.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[2][8].value === false &&
+      safeDeviceSensorList[2][9].value === true
+    ) {
+      metalNodeC4.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1733C</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[2][8].value === false && safeDeviceSensorList[2][9].value === false) {
-    metalNodeC4.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[2][8].value === true &&
+      safeDeviceSensorList[2][9].value === false
+    ) {
+      metalNodeC4.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1733C</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[2][8].value === false &&
+      safeDeviceSensorList[2][9].value === false
+    ) {
+      metalNodeC4.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1733C</span>
             </div>
           </div>`
-    );
-  }
-  if (safeDeviceSensorList[3][8].value === true && safeDeviceSensorList[3][9].value === true) {
-    metalNodeD4.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    if (
+      safeDeviceSensorList[3][8].value === true &&
+      safeDeviceSensorList[3][9].value === true
+    ) {
+      metalNodeD4.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1733D</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[3][8].value === false && safeDeviceSensorList[3][9].value === true) {
-    metalNodeD4.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1733D</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[3][8].value === true && safeDeviceSensorList[3][9].value === false) {
-    metalNodeD4.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[3][8].value === false &&
+      safeDeviceSensorList[3][9].value === true
+    ) {
+      metalNodeD4.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1733D</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[3][8].value === false && safeDeviceSensorList[3][9].value === false) {
-    metalNodeD4.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[3][8].value === true &&
+      safeDeviceSensorList[3][9].value === false
+    ) {
+      metalNodeD4.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1733D</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[3][8].value === false &&
+      safeDeviceSensorList[3][9].value === false
+    ) {
+      metalNodeD4.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1733D</span>
             </div>
           </div>`
-    );
-  }
-  if (safeDeviceSensorList[4][8].value === true && safeDeviceSensorList[4][9].value === true) {
-    metalNodeE4.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    if (
+      safeDeviceSensorList[4][8].value === true &&
+      safeDeviceSensorList[4][9].value === true
+    ) {
+      metalNodeE4.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1733E</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[4][8].value === false && safeDeviceSensorList[4][9].value === true) {
-    metalNodeE4.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
-            <div></div>
-            <div class="metalNode2">
-              <span>X1733E</span>
-            </div>
-            <div></div>
-          </div>`
-    );
-  } else if (safeDeviceSensorList[4][8].value === true && safeDeviceSensorList[4][9].value === false) {
-    metalNodeE4.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[4][8].value === false &&
+      safeDeviceSensorList[4][9].value === true
+    ) {
+      metalNodeE4.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1733E</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[4][8].value === false && safeDeviceSensorList[4][9].value === false) {
-    metalNodeE4.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[4][8].value === true &&
+      safeDeviceSensorList[4][9].value === false
+    ) {
+      metalNodeE4.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
+            <div></div>
+            <div class="metalNode2">
+              <span>X1733E</span>
+            </div>
+            <div></div>
+          </div>`
+      );
+    } else if (
+      safeDeviceSensorList[4][8].value === false &&
+      safeDeviceSensorList[4][9].value === false
+    ) {
+      metalNodeE4.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1733E</span>
             </div>
           </div>`
-    );
-  }
-  if (safeDeviceSensorList[5][8].value === true && safeDeviceSensorList[5][9].value === true) {
-    metalNodeF4.setProp(
-      "html",
-      `<div class="outmetalNodeSafe">
+      );
+    }
+    if (
+      safeDeviceSensorList[5][8].value === true &&
+      safeDeviceSensorList[5][9].value === true
+    ) {
+      metalNodeF4.setProp(
+        "html",
+        `<div class="outmetalNodeSafe">
             <div class="metalNode2">
               <span>X1733F</span>
             </div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[5][8].value === false && safeDeviceSensorList[5][9].value === true) {
-    metalNodeF4.setProp(
-      "html",
-      `<div class="outmetalNodeWarnF">
+      );
+    } else if (
+      safeDeviceSensorList[5][8].value === false &&
+      safeDeviceSensorList[5][9].value === true
+    ) {
+      metalNodeF4.setProp(
+        "html",
+        `<div class="outmetalNodeWarnF">
             <div></div>
             <div class="metalNode2">
               <span>X1733F</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[5][8].value === true && safeDeviceSensorList[5][9].value === false) {
-    metalNodeF4.setProp(
-      "html",
-      `<div class="outmetalNodeWarnB">
+      );
+    } else if (
+      safeDeviceSensorList[5][8].value === true &&
+      safeDeviceSensorList[5][9].value === false
+    ) {
+      metalNodeF4.setProp(
+        "html",
+        `<div class="outmetalNodeWarnB">
             <div></div>
             <div class="metalNode2">
               <span>X1733F</span>
             </div>
             <div></div>
           </div>`
-    );
-  } else if (safeDeviceSensorList[5][8].value === false && safeDeviceSensorList[5][9].value === false) {
-    metalNodeF4.setProp(
-      "html",
-      `<div class="outmetalNodeWarnFB">
+      );
+    } else if (
+      safeDeviceSensorList[5][8].value === false &&
+      safeDeviceSensorList[5][9].value === false
+    ) {
+      metalNodeF4.setProp(
+        "html",
+        `<div class="outmetalNodeWarnFB">
             <div class="metalNode2">
               <span>X1733F</span>
             </div>
           </div>`
-    );
-  }
-  //前角阀上的线
-  if (safeDeviceSensorList[0][10].value === false) {
-    safeEdgeFront.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[0][10].value === true) {
-    safeEdgeFront.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[1][10].value === false) {
-    safeEdgeFrontB.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[1][10].value === true) {
-    safeEdgeFrontB.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[2][10].value === false) {
-    safeEdgeFrontC.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[2][10].value === true) {
-    safeEdgeFrontC.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[3][10].value === false) {
-    safeEdgeFrontD.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[3][10].value === true) {
-    safeEdgeFrontD.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[4][10].value === false) {
-    safeEdgeFrontE.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][10].value === true) {
-    safeEdgeFrontE.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[5][10].value === false) {
-    safeEdgeFrontF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[5][10].value === true) {
-    safeEdgeFrontF.setAttrByPath("line/stroke", "#00f800");
-  }
-  //后角阀上的线
-  if (safeDeviceSensorList[0][11].value === false) {
-    safeEdgeBehind.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[0][11].value === true) {
-    safeEdgeBehind.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[1][11].value === false) {
-    safeEdgeBehindB.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[1][11].value === true) {
-    safeEdgeBehindB.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[2][11].value === false) {
-    safeEdgeBehindC.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[2][11].value === true) {
-    safeEdgeBehindC.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[3][11].value === false) {
-    safeEdgeBehindD.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[3][11].value === true) {
-    safeEdgeBehindD.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[4][11].value === false) {
-    safeEdgeBehindE.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][11].value === true) {
-    safeEdgeBehindE.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[5][11].value === false) {
-    safeEdgeBehindF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[5][11].value === true) {
-    safeEdgeBehindF.setAttrByPath("line/stroke", "#00f800");
-  }
-  //第一个空节点的第一条线
-  if (safeDeviceSensorList[0][12].value === false) {
-    safeEdgeForEmptyFone.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[0][12].value === true) {
-    safeEdgeForEmptyFone.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[1][12].value === false) {
-    safeEdgeForEmptyFoneB.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[1][12].value === true) {
-    safeEdgeForEmptyFoneB.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[2][12].value === false) {
-    safeEdgeForEmptyFoneC.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[2][12].value === true) {
-    safeEdgeForEmptyFoneC.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[3][12].value === false) {
-    safeEdgeForEmptyFoneD.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[3][12].value === true) {
-    safeEdgeForEmptyFoneD.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[4][12].value === false) {
-    safeEdgeForEmptyFoneE.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][12].value === true) {
-    safeEdgeForEmptyFoneE.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[5][12].value === false) {
-    safeEdgeForEmptyFoneF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[5][12].value === true) {
-    safeEdgeForEmptyFoneF.setAttrByPath("line/stroke", "#00f800");
-  }
-  //第一个空节点的第二条线
-  if (safeDeviceSensorList[0][13].value === false) {
-    safeEdgeForEmptyFtwo.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[0][13].value === true) {
-    safeEdgeForEmptyFtwo.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[1][13].value === false) {
-    safeEdgeForEmptyFtwoB.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[1][13].value === true) {
-    safeEdgeForEmptyFtwoB.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[2][13].value === false) {
-    safeEdgeForEmptyFtwoC.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[2][13].value === true) {
-    safeEdgeForEmptyFtwoC.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[3][13].value === false) {
-    safeEdgeForEmptyFtwoD.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[3][13].value === true) {
-    safeEdgeForEmptyFtwoD.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[4][13].value === false) {
-    safeEdgeForEmptyFtwoE.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][13].value === true) {
-    safeEdgeForEmptyFtwoE.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[5][13].value === false) {
-    safeEdgeForEmptyFtwoF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[5][13].value === true) {
-    safeEdgeForEmptyFtwoF.setAttrByPath("line/stroke", "#00f800");
-  }
-  //第二个空节点的第一条线
-  if (safeDeviceSensorList[0][14].value === false) {
-    safeEdgeForEmptySone.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[0][14].value === true) {
-    safeEdgeForEmptySone.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[1][14].value === false) {
-    safeEdgeForEmptySoneB.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[1][14].value === true) {
-    safeEdgeForEmptySoneB.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[2][14].value === false) {
-    safeEdgeForEmptySoneC.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[2][14].value === true) {
-    safeEdgeForEmptySoneC.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[3][14].value === false) {
-    safeEdgeForEmptySoneD.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[3][14].value === true) {
-    safeEdgeForEmptySoneD.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[4][14].value === false) {
-    safeEdgeForEmptySoneE.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][14].value === true) {
-    safeEdgeForEmptySoneE.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[5][14].value === false) {
-    safeEdgeForEmptySoneF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[5][14].value === true) {
-    safeEdgeForEmptySoneF.setAttrByPath("line/stroke", "#00f800");
-  }
-  //第二个空节点的第二条线
-  if (safeDeviceSensorList[0][15].value === false) {
-    safeEdgeForEmptyStwo.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[0][15].value === true) {
-    safeEdgeForEmptyStwo.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[1][15].value === false) {
-    safeEdgeForEmptyStwoB.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[1][15].value === true) {
-    safeEdgeForEmptyStwoB.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[2][15].value === false) {
-    safeEdgeForEmptyStwoC.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[2][15].value === true) {
-    safeEdgeForEmptyStwoC.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[3][15].value === false) {
-    safeEdgeForEmptyStwoD.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[3][15].value === true) {
-    safeEdgeForEmptyStwoD.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[4][15].value === false) {
-    safeEdgeForEmptyStwoE.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][15].value === true) {
-    safeEdgeForEmptyStwoE.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[5][15].value === false) {
-    safeEdgeForEmptyStwoF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[5][15].value === true) {
-    safeEdgeForEmptyStwoF.setAttrByPath("line/stroke", "#00f800");
-  }
-  //上面的metalNode的第一条线
-  if (safeDeviceSensorList[0][16].value === false) {
-    safeEdgeForMetalUpone.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[0][16].value === true) {
-    safeEdgeForMetalUpone.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[1][16].value === false) {
-    safeEdgeForMetalUponeB.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[1][16].value === true) {
-    safeEdgeForMetalUponeB.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[2][16].value === false) {
-    safeEdgeForMetalUponeC.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[2][16].value === true) {
-    safeEdgeForMetalUponeC.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[3][16].value === false) {
-    safeEdgeForMetalUponeD.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[3][16].value === true) {
-    safeEdgeForMetalUponeD.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[4][16].value === false) {
-    safeEdgeForMetalUponeE.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][16].value === true) {
-    safeEdgeForMetalUponeE.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[5][16].value === false) {
-    safeEdgeForMetalUponeF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[5][16].value === true) {
-    safeEdgeForMetalUponeF.setAttrByPath("line/stroke", "#00f800");
-  }
-  //上面的metalNode的第二条线
-  if (safeDeviceSensorList[0][17].value === false) {
-    safeEdgeForMetalUptwo.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[0][17].value === true) {
-    safeEdgeForMetalUptwo.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[1][17].value === false) {
-    safeEdgeForMetalUptwoB.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[1][17].value === true) {
-    safeEdgeForMetalUptwoB.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[2][17].value === false) {
-    safeEdgeForMetalUptwoC.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[2][17].value === true) {
-    safeEdgeForMetalUptwoC.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[3][17].value === false) {
-    safeEdgeForMetalUptwoD.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[3][17].value === true) {
-    safeEdgeForMetalUptwoD.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[4][17].value === false) {
-    safeEdgeForMetalUptwoE.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][17].value === true) {
-    safeEdgeForMetalUptwoE.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[5][17].value === false) {
-    safeEdgeForMetalUptwoF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[5][17].value === true) {
-    safeEdgeForMetalUptwoF.setAttrByPath("line/stroke", "#00f800");
-  }
-  //下面的metalNode的第一条线
-  if (safeDeviceSensorList[0][18].value === false) {
-    safeEdgeForMetalDownone.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[0][18].value === true) {
-    safeEdgeForMetalDownone.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[1][18].value === false) {
-    safeEdgeForMetalDownoneB.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[1][18].value === true) {
-    safeEdgeForMetalDownoneB.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[2][18].value === false) {
-    safeEdgeForMetalDownoneC.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[2][18].value === true) {
-    safeEdgeForMetalDownoneC.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[3][18].value === false) {
-    safeEdgeForMetalDownoneD.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[3][18].value === true) {
-    safeEdgeForMetalDownoneD.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[4][18].value === false) {
-    safeEdgeForMetalDownoneE.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][18].value === true) {
-    safeEdgeForMetalDownoneE.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[5][18].value === false) {
-    safeEdgeForMetalDownoneF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[5][18].value === true) {
-    safeEdgeForMetalDownoneF.setAttrByPath("line/stroke", "#00f800");
-  }
-  //下面的metalNode的第二条线
-  if (safeDeviceSensorList[0][19].value === false) {
-    safeEdgeForMetalDowntwo.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[0][19].value === true) {
-    safeEdgeForMetalDowntwo.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[1][19].value === false) {
-    safeEdgeForMetalDowntwoB.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[1][19].value === true) {
-    safeEdgeForMetalDowntwoB.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[2][19].value === false) {
-    safeEdgeForMetalDowntwoC.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[2][19].value === true) {
-    safeEdgeForMetalDowntwoC.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[3][19].value === false) {
-    safeEdgeForMetalDowntwoD.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[3][19].value === true) {
-    safeEdgeForMetalDowntwoD.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[4][19].value === false) {
-    safeEdgeForMetalDowntwoE.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[4][19].value === true) {
-    safeEdgeForMetalDowntwoE.setAttrByPath("line/stroke", "#00f800");
-  }
-  if (safeDeviceSensorList[5][19].value === false) {
-    safeEdgeForMetalDowntwoF.setAttrByPath("line/stroke", "red");
-  } else if (safeDeviceSensorList[5][19].value === true) {
-    safeEdgeForMetalDowntwoF.setAttrByPath("line/stroke", "#00f800");
-  }
-});
+      );
+    }
+    //前角阀上的线
+    if (safeDeviceSensorList[0][10].value === false) {
+      safeEdgeFront.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[0][10].value === true) {
+      safeEdgeFront.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[1][10].value === false) {
+      safeEdgeFrontB.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[1][10].value === true) {
+      safeEdgeFrontB.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[2][10].value === false) {
+      safeEdgeFrontC.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[2][10].value === true) {
+      safeEdgeFrontC.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[3][10].value === false) {
+      safeEdgeFrontD.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[3][10].value === true) {
+      safeEdgeFrontD.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[4][10].value === false) {
+      safeEdgeFrontE.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[4][10].value === true) {
+      safeEdgeFrontE.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[5][10].value === false) {
+      safeEdgeFrontF.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[5][10].value === true) {
+      safeEdgeFrontF.setAttrByPath("line/stroke", "#00f800");
+    }
+    //后角阀上的线
+    if (safeDeviceSensorList[0][11].value === false) {
+      safeEdgeBehind.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[0][11].value === true) {
+      safeEdgeBehind.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[1][11].value === false) {
+      safeEdgeBehindB.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[1][11].value === true) {
+      safeEdgeBehindB.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[2][11].value === false) {
+      safeEdgeBehindC.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[2][11].value === true) {
+      safeEdgeBehindC.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[3][11].value === false) {
+      safeEdgeBehindD.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[3][11].value === true) {
+      safeEdgeBehindD.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[4][11].value === false) {
+      safeEdgeBehindE.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[4][11].value === true) {
+      safeEdgeBehindE.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[5][11].value === false) {
+      safeEdgeBehindF.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[5][11].value === true) {
+      safeEdgeBehindF.setAttrByPath("line/stroke", "#00f800");
+    }
+    //第一个空节点的第一条线
+    if (safeDeviceSensorList[0][12].value === false) {
+      safeEdgeForEmptyFone.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[0][12].value === true) {
+      safeEdgeForEmptyFone.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[1][12].value === false) {
+      safeEdgeForEmptyFoneB.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[1][12].value === true) {
+      safeEdgeForEmptyFoneB.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[2][12].value === false) {
+      safeEdgeForEmptyFoneC.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[2][12].value === true) {
+      safeEdgeForEmptyFoneC.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[3][12].value === false) {
+      safeEdgeForEmptyFoneD.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[3][12].value === true) {
+      safeEdgeForEmptyFoneD.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[4][12].value === false) {
+      safeEdgeForEmptyFoneE.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[4][12].value === true) {
+      safeEdgeForEmptyFoneE.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[5][12].value === false) {
+      safeEdgeForEmptyFoneF.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[5][12].value === true) {
+      safeEdgeForEmptyFoneF.setAttrByPath("line/stroke", "#00f800");
+    }
+    //第一个空节点的第二条线
+    if (safeDeviceSensorList[0][13].value === false) {
+      safeEdgeForEmptyFtwo.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[0][13].value === true) {
+      safeEdgeForEmptyFtwo.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[1][13].value === false) {
+      safeEdgeForEmptyFtwoB.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[1][13].value === true) {
+      safeEdgeForEmptyFtwoB.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[2][13].value === false) {
+      safeEdgeForEmptyFtwoC.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[2][13].value === true) {
+      safeEdgeForEmptyFtwoC.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[3][13].value === false) {
+      safeEdgeForEmptyFtwoD.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[3][13].value === true) {
+      safeEdgeForEmptyFtwoD.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[4][13].value === false) {
+      safeEdgeForEmptyFtwoE.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[4][13].value === true) {
+      safeEdgeForEmptyFtwoE.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[5][13].value === false) {
+      safeEdgeForEmptyFtwoF.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[5][13].value === true) {
+      safeEdgeForEmptyFtwoF.setAttrByPath("line/stroke", "#00f800");
+    }
+    //第二个空节点的第一条线
+    if (safeDeviceSensorList[0][14].value === false) {
+      safeEdgeForEmptySone.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[0][14].value === true) {
+      safeEdgeForEmptySone.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[1][14].value === false) {
+      safeEdgeForEmptySoneB.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[1][14].value === true) {
+      safeEdgeForEmptySoneB.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[2][14].value === false) {
+      safeEdgeForEmptySoneC.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[2][14].value === true) {
+      safeEdgeForEmptySoneC.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[3][14].value === false) {
+      safeEdgeForEmptySoneD.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[3][14].value === true) {
+      safeEdgeForEmptySoneD.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[4][14].value === false) {
+      safeEdgeForEmptySoneE.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[4][14].value === true) {
+      safeEdgeForEmptySoneE.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[5][14].value === false) {
+      safeEdgeForEmptySoneF.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[5][14].value === true) {
+      safeEdgeForEmptySoneF.setAttrByPath("line/stroke", "#00f800");
+    }
+    //第二个空节点的第二条线
+    if (safeDeviceSensorList[0][15].value === false) {
+      safeEdgeForEmptyStwo.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[0][15].value === true) {
+      safeEdgeForEmptyStwo.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[1][15].value === false) {
+      safeEdgeForEmptyStwoB.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[1][15].value === true) {
+      safeEdgeForEmptyStwoB.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[2][15].value === false) {
+      safeEdgeForEmptyStwoC.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[2][15].value === true) {
+      safeEdgeForEmptyStwoC.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[3][15].value === false) {
+      safeEdgeForEmptyStwoD.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[3][15].value === true) {
+      safeEdgeForEmptyStwoD.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[4][15].value === false) {
+      safeEdgeForEmptyStwoE.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[4][15].value === true) {
+      safeEdgeForEmptyStwoE.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[5][15].value === false) {
+      safeEdgeForEmptyStwoF.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[5][15].value === true) {
+      safeEdgeForEmptyStwoF.setAttrByPath("line/stroke", "#00f800");
+    }
+    //上面的metalNode的第一条线
+    if (safeDeviceSensorList[0][16].value === false) {
+      safeEdgeForMetalUpone.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[0][16].value === true) {
+      safeEdgeForMetalUpone.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[1][16].value === false) {
+      safeEdgeForMetalUponeB.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[1][16].value === true) {
+      safeEdgeForMetalUponeB.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[2][16].value === false) {
+      safeEdgeForMetalUponeC.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[2][16].value === true) {
+      safeEdgeForMetalUponeC.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[3][16].value === false) {
+      safeEdgeForMetalUponeD.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[3][16].value === true) {
+      safeEdgeForMetalUponeD.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[4][16].value === false) {
+      safeEdgeForMetalUponeE.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[4][16].value === true) {
+      safeEdgeForMetalUponeE.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[5][16].value === false) {
+      safeEdgeForMetalUponeF.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[5][16].value === true) {
+      safeEdgeForMetalUponeF.setAttrByPath("line/stroke", "#00f800");
+    }
+    //上面的metalNode的第二条线
+    if (safeDeviceSensorList[0][17].value === false) {
+      safeEdgeForMetalUptwo.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[0][17].value === true) {
+      safeEdgeForMetalUptwo.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[1][17].value === false) {
+      safeEdgeForMetalUptwoB.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[1][17].value === true) {
+      safeEdgeForMetalUptwoB.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[2][17].value === false) {
+      safeEdgeForMetalUptwoC.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[2][17].value === true) {
+      safeEdgeForMetalUptwoC.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[3][17].value === false) {
+      safeEdgeForMetalUptwoD.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[3][17].value === true) {
+      safeEdgeForMetalUptwoD.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[4][17].value === false) {
+      safeEdgeForMetalUptwoE.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[4][17].value === true) {
+      safeEdgeForMetalUptwoE.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[5][17].value === false) {
+      safeEdgeForMetalUptwoF.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[5][17].value === true) {
+      safeEdgeForMetalUptwoF.setAttrByPath("line/stroke", "#00f800");
+    }
+    //下面的metalNode的第一条线
+    if (safeDeviceSensorList[0][18].value === false) {
+      safeEdgeForMetalDownone.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[0][18].value === true) {
+      safeEdgeForMetalDownone.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[1][18].value === false) {
+      safeEdgeForMetalDownoneB.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[1][18].value === true) {
+      safeEdgeForMetalDownoneB.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[2][18].value === false) {
+      safeEdgeForMetalDownoneC.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[2][18].value === true) {
+      safeEdgeForMetalDownoneC.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[3][18].value === false) {
+      safeEdgeForMetalDownoneD.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[3][18].value === true) {
+      safeEdgeForMetalDownoneD.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[4][18].value === false) {
+      safeEdgeForMetalDownoneE.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[4][18].value === true) {
+      safeEdgeForMetalDownoneE.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[5][18].value === false) {
+      safeEdgeForMetalDownoneF.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[5][18].value === true) {
+      safeEdgeForMetalDownoneF.setAttrByPath("line/stroke", "#00f800");
+    }
+    //下面的metalNode的第二条线
+    if (safeDeviceSensorList[0][19].value === false) {
+      safeEdgeForMetalDowntwo.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[0][19].value === true) {
+      safeEdgeForMetalDowntwo.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[1][19].value === false) {
+      safeEdgeForMetalDowntwoB.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[1][19].value === true) {
+      safeEdgeForMetalDowntwoB.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[2][19].value === false) {
+      safeEdgeForMetalDowntwoC.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[2][19].value === true) {
+      safeEdgeForMetalDowntwoC.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[3][19].value === false) {
+      safeEdgeForMetalDowntwoD.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[3][19].value === true) {
+      safeEdgeForMetalDowntwoD.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[4][19].value === false) {
+      safeEdgeForMetalDowntwoE.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[4][19].value === true) {
+      safeEdgeForMetalDowntwoE.setAttrByPath("line/stroke", "#00f800");
+    }
+    if (safeDeviceSensorList[5][19].value === false) {
+      safeEdgeForMetalDowntwoF.setAttrByPath("line/stroke", "red");
+    } else if (safeDeviceSensorList[5][19].value === true) {
+      safeEdgeForMetalDowntwoF.setAttrByPath("line/stroke", "#00f800");
+    }
+  });
 
   graph.zoomTo(0.365);
   handleResize(graph, document.documentElement as HTMLElement);
@@ -5270,7 +5573,8 @@ const init = async () => {
       loadSuccess = echarts.init(document.getElementById("charts-container")!);
       updateCharts(loadSuccess, option);
     })
-    .catch((err: any) => {console.log(err);
+    .catch((err: any) => {
+      console.log(err);
     });
   if (!reListener) {
     reListener = window.addEventListener("resize", () => {
@@ -6246,4 +6550,14 @@ h3 {
     transparent 1px 2px
   );
 }
-</style>
+</style> -->
+<template>
+  <div>
+    <router-view key="rt"></router-view>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { ref } from "vue";
+</script>
+<style lang="less" scoped></style>

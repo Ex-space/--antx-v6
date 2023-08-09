@@ -5,9 +5,10 @@ import { createPinia } from "pinia";
 import "element-plus/dist/index.css";
 import axios from "axios";
 import App from "./App.vue";
+import router from './router'
 axios.defaults.baseURL = "http://localhost:8089/jydam";
 // http://localhost:8089/jydam/getDeviceDataBetweenTimeByHour
 const app = createApp(App);
 const pinia = createPinia();
 app.config.globalProperties.$http = axios;
-app.use(ElementPlus).use(pinia).mount("#app");
+app.use(ElementPlus).use(pinia).use(router).mount("#app");
