@@ -11,10 +11,14 @@ const routes = [
     path: "/musicList",
     component: () => import("../views/home.vue"),
   },
+  {
+    path: "/diagram",
+    component: () => import("../views/wiringDiagram.vue"),
+  }
 ];
 const routerHistory = createWebHistory();
-const routers = createRouter({
+const router = createRouter({
   history: routerHistory,
   routes: routes,
 });
-export default routers;
+export default router;
