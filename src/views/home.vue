@@ -19,7 +19,7 @@
             :class="[index % 2 ? 'shallow' : 'dark', 'cell']"
             v-for="(item, index) in deviceList"
           >
-            <div class="device">
+            <div class="device" @click="GraphStore.handleGenerate(index+1, index+1)">
               <span>{{ item.before.beforeId }}</span>
               <div
                 class="status safe"
@@ -34,7 +34,7 @@
                 v-if="item.before.beforeStatus === 'warning'"
               ></div>
             </div>
-            <div class="device">
+            <div class="device" @click="GraphStore.handleGenerate(index+1, index+31)">
               <span> {{ item.after.afterId }}</span>
               <div
                 class="status safe"
@@ -85,307 +85,312 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref, onMounted, getCurrentInstance, ComponentInternalInstance} from "vue";
+import { useGraphStore } from '../store';
+import { useRouter } from 'vue-router'
+const { proxy } = getCurrentInstance() as ComponentInternalInstance;
+const $router = useRouter()
+const GraphStore = useGraphStore();
 const rowList = ["13层", "11层", "9层", "3层", "1层", ""];
-const deviceList = [
+let deviceList = [
   {
     before: {
       beforeStatus: "safe",
-      beforeId: "X-1711A",
+      beforeId: "X-1711A 后",
     },
     after: {
       afterStatus: "error",
-      afterId: "X-1711A",
+      afterId: "X-1711A 前",
     },
   },
   {
     before: {
       beforeStatus: "warning",
-      beforeId: "X-1711B",
+      beforeId: "X-1711B 后",
     },
     after: {
       afterStatus: "safe",
-      afterId: "X-1711B",
+      afterId: "X-1711B 前",
     },
   },
   {
     before: {
       beforeStatus: "safe",
-      beforeId: "X-1711A",
+      beforeId: "X-1711C 后",
     },
     after: {
       afterStatus: "error",
-      afterId: "X-1711A",
+      afterId: "X-1711C 前",
     },
   },
   {
     before: {
       beforeStatus: "warning",
-      beforeId: "X-1711B",
+      beforeId: "X-1711D 后",
     },
     after: {
       afterStatus: "safe",
-      afterId: "X-1711B",
+      afterId: "X-1711D 前",
     },
   },
   {
     before: {
       beforeStatus: "safe",
-      beforeId: "X-1711A",
+      beforeId: "X-1711E 后",
     },
     after: {
       afterStatus: "error",
-      afterId: "X-1711A",
+      afterId: "X-1711E 前",
     },
   },
   {
     before: {
       beforeStatus: "warning",
-      beforeId: "X-1711B",
+      beforeId: "X-1711F 后",
     },
     after: {
       afterStatus: "safe",
-      afterId: "X-1711B",
+      afterId: "X-1711F 前",
     },
   },
   {
     before: {
       beforeStatus: "safe",
-      beforeId: "X-1711A",
+      beforeId: "X-1733A 后",
     },
     after: {
       afterStatus: "error",
-      afterId: "X-1711A",
+      afterId: "X-1733A 前",
     },
   },
   {
     before: {
       beforeStatus: "warning",
-      beforeId: "X-1711B",
+      beforeId: "X-1733B 后",
     },
     after: {
       afterStatus: "safe",
-      afterId: "X-1711B",
+      afterId: "X-1733B 前",
     },
   },
   {
     before: {
       beforeStatus: "safe",
-      beforeId: "X-1711A",
+      beforeId: "X-1733C 后",
     },
     after: {
       afterStatus: "error",
-      afterId: "X-1711A",
+      afterId: "X-1733C 前",
     },
   },
   {
     before: {
       beforeStatus: "warning",
-      beforeId: "X-1711B",
+      beforeId: "X-1733D 后",
     },
     after: {
       afterStatus: "safe",
-      afterId: "X-1711B",
+      afterId: "X-1733D 前",
     },
   },
   {
     before: {
       beforeStatus: "safe",
-      beforeId: "X-1711A",
+      beforeId: "X-1733E 后",
     },
     after: {
       afterStatus: "error",
-      afterId: "X-1711A",
+      afterId: "X-1733E 前",
     },
   },
   {
     before: {
       beforeStatus: "warning",
-      beforeId: "X-1711B",
+      beforeId: "X-1733F 后",
     },
     after: {
       afterStatus: "safe",
-      afterId: "X-1711B",
+      afterId: "X-1733F 前",
     },
   },
   {
     before: {
       beforeStatus: "safe",
-      beforeId: "X-1711A",
+      beforeId: "X-1732A 后",
     },
     after: {
       afterStatus: "error",
-      afterId: "X-1711A",
+      afterId: "X-1732A 前",
     },
   },
   {
     before: {
       beforeStatus: "warning",
-      beforeId: "X-1711B",
+      beforeId: "X-1732B 后",
     },
     after: {
       afterStatus: "safe",
-      afterId: "X-1711B",
+      afterId: "X-1732B 前",
     },
   },
   {
     before: {
       beforeStatus: "safe",
-      beforeId: "X-1711A",
+      beforeId: "X-1732C 后",
     },
     after: {
       afterStatus: "error",
-      afterId: "X-1711A",
+      afterId: "X-1732C 前",
     },
   },
   {
     before: {
       beforeStatus: "warning",
-      beforeId: "X-1711B",
+      beforeId: "X-1732D 后",
     },
     after: {
       afterStatus: "safe",
-      afterId: "X-1711B",
+      afterId: "X-1732D 前",
     },
   },
   {
     before: {
       beforeStatus: "safe",
-      beforeId: "X-1711A",
+      beforeId: "X-1732E 后",
     },
     after: {
       afterStatus: "error",
-      afterId: "X-1711A",
+      afterId: "X-1732E 前",
     },
   },
   {
     before: {
       beforeStatus: "warning",
-      beforeId: "X-1711B",
+      beforeId: "X-1732F 后",
     },
     after: {
       afterStatus: "safe",
-      afterId: "X-1711B",
+      afterId: "X-1732F 前",
     },
   },
   {
     before: {
       beforeStatus: "safe",
-      beforeId: "X-1711A",
+      beforeId: "X-1731A 后",
     },
     after: {
       afterStatus: "error",
-      afterId: "X-1711A",
+      afterId: "X-1731A 前",
     },
   },
   {
     before: {
       beforeStatus: "warning",
-      beforeId: "X-1711B",
+      beforeId: "X-1731B 后",
     },
     after: {
       afterStatus: "safe",
-      afterId: "X-1711B",
+      afterId: "X-1731B 前",
     },
   },
   {
     before: {
       beforeStatus: "safe",
-      beforeId: "X-1711A",
+      beforeId: "X-1731C 后",
     },
     after: {
       afterStatus: "error",
-      afterId: "X-1711A",
+      afterId: "X-1731C 前",
     },
   },
   {
     before: {
       beforeStatus: "warning",
-      beforeId: "X-1711B",
+      beforeId: "X-1731D 后",
     },
     after: {
       afterStatus: "safe",
-      afterId: "X-1711B",
+      afterId: "X-1731D 前",
     },
   },
   {
     before: {
       beforeStatus: "safe",
-      beforeId: "X-1711A",
+      beforeId: "X-1731E 后",
     },
     after: {
       afterStatus: "error",
-      afterId: "X-1711A",
+      afterId: "X-1731E 前",
     },
   },
   {
     before: {
       beforeStatus: "warning",
-      beforeId: "X-1711B",
+      beforeId: "X-1731F 后",
     },
     after: {
       afterStatus: "safe",
-      afterId: "X-1711B",
+      afterId: "X-1731F 前",
+    },
+  },
+  {
+    before: {
+      // beforeStatus: "safe",
+      // beforeId: "角阀短接 后",
+    },
+    after: {
+      // afterStatus: "error",
+      // afterId: "角阀短接 前",
+    },
+  },
+  {
+    before: {
+      beforeStatus: "warning",
+      beforeId: "角阀短接 后",
+    },
+    after: {
+      // afterStatus: "safe",
+      // afterId: "角阀短接 前",
+    },
+  },
+  {
+    before: {
+      // beforeStatus: "safe",
+      // beforeId: "角阀短接 后",
+    },
+    after: {
+      // afterStatus: "error",
+      // afterId: "角阀短接 前",
+    },
+  },
+  {
+    before: {
+      beforeStatus: "warning",
+      beforeId: "角阀短接 后",
+    },
+    after: {
+      afterStatus: "safe",
+      afterId: "角阀短接 前",
     },
   },
   {
     before: {
       beforeStatus: "safe",
-      beforeId: "X-1711A",
+      beforeId: "角阀短接 后",
     },
     after: {
       afterStatus: "error",
-      afterId: "X-1711A",
+      afterId: "角阀短接 前",
     },
   },
   {
     before: {
       beforeStatus: "warning",
-      beforeId: "X-1711B",
+      beforeId: "角阀短接 后",
     },
     after: {
       afterStatus: "safe",
-      afterId: "X-1711B",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "safe",
-      beforeId: "X-1711A",
-    },
-    after: {
-      afterStatus: "error",
-      afterId: "X-1711A",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "warning",
-      beforeId: "X-1711B",
-    },
-    after: {
-      afterStatus: "safe",
-      afterId: "X-1711B",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "safe",
-      beforeId: "X-1711A",
-    },
-    after: {
-      afterStatus: "error",
-      afterId: "X-1711A",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "warning",
-      beforeId: "X-1711B",
-    },
-    after: {
-      afterStatus: "safe",
-      afterId: "X-1711B",
+      afterId: "角阀短接 前",
     },
   },
 ];
@@ -396,25 +401,48 @@ const threadList = [
   },
   {
     device: "A气化炉",
-    thread: "1#线",
+    thread: "2#线",
   },
   {
     device: "A气化炉",
+    thread: "3#线",
+  },
+  {
+    device: "B气化炉",
     thread: "1#线",
   },
   {
-    device: "A气化炉",
-    thread: "1#线",
+    device: "B气化炉",
+    thread: "2#线",
   },
   {
-    device: "A气化炉",
-    thread: "1#线",
-  },
-  {
-    device: "A气化炉",
-    thread: "1#线",
+    device: "B气化炉",
+    thread: "3#线",
   },
 ];
+const InitDeviceList = ()=> {
+  deviceList[0].after.afterStatus = "safe"
+}
+
+
+const requireSensorDataHomepage = () => {
+  proxy?.$http
+    .get("/getSensorDataHomepage")
+    .then((res: any) => {
+      res = res.data.data;
+      console.log(res);
+      
+    })
+    .catch();
+};
+onMounted(() => {
+  requireSensorDataHomepage();
+});
+// setInterval(function () {
+//   setTimeout(() => {
+//     requireSensorDataHomepage();
+//   }, 0);
+// }, 10000);
 </script>
 <style lang="less" scoped>
 #sight-container {
@@ -502,6 +530,7 @@ const threadList = [
           border-top: none;
           border-left: none;
           .device {
+            cursor: pointer;
             display: flex;
             gap: 10px;
           }
