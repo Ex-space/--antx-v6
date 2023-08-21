@@ -1,82 +1,79 @@
 <template>
-    <div id="container"></div>
-    <div class="test1">
+  <div id="container"></div>
+  <div class="test1"></div>
+  <div class="test2"></div>
+  <button class="btn" @click="openSearch">查询历史记录</button>
+  <button class="return" @click="GraphStore.removeAndReturn">返回</button>
+  <el-dialog
+    custom-class="demo"
+    class="dialog"
+    v-model="dialogTableVisible"
+    title="查询历史记录"
+    center
+    :destroy-on-close="true"
+    :close-on-press-escape="false"
+    :close-on-click-modal="false"
+    :before-close="handleClose"
+    :draggable="true"
+    align-center
+  >
+    <h2>请选择历史记录相关信息</h2>
+    <hr />
+    <div class="group">
+      <div class="ipt">
+        <h3>设备号：</h3>
+        <el-input
+          @input="hanleInvalidDevice"
+          v-model="deviceId"
+          placeholder="请选择要查询的设备号"
+          maxlength="10"
+        />
+      </div>
+      <div class="ipt">
+        <h3>光耦号：</h3>
+        <el-input
+          @input="hanleInvalidSensor"
+          v-model="sensorId"
+          placeholder="请选择要查询的光耦号"
+          maxlength="10"
+        />
+      </div>
+      <div class="opt">
+        <h3>开始时间:</h3>
+        <el-date-picker
+          v-model="startTime"
+          type="datetime"
+          placeholder="请选择开始时间"
+        />
+      </div>
+      <div class="opt">
+        <h3>结束时间:</h3>
+        <el-date-picker
+          v-model="endTime"
+          type="datetime"
+          placeholder="请选择结束时间"
+        />
+      </div>
+      <el-button class="search" type="primary" @click="showPic">查询</el-button>
     </div>
-    <div class="test2">
-    </div>
-    <button class="btn" @click="openSearch">查询历史记录</button>
-    <button class="return" @click="GraphStore.removeAndReturn">返回</button>
-    <el-dialog
-        custom-class="demo"
-        class="dialog"
-        v-model="dialogTableVisible"
-        title="查询历史记录"
-        center
-        :destroy-on-close="true"
-        :close-on-press-escape="false"
-        :close-on-click-modal="false"
-        :before-close="handleClose"
-        :draggable="true"
-        align-center
-    >
-        <h2>请选择历史记录相关信息</h2>
-        <hr />
-        <div class="group">
-        <div class="ipt">
-            <h3>设备号：</h3>
-            <el-input
-            @input="hanleInvalidDevice"
-            v-model="deviceId"
-            placeholder="请选择要查询的设备号"
-            maxlength="10"
-            />
-        </div>
-        <div class="ipt">
-            <h3>光耦号：</h3>
-            <el-input
-            @input="hanleInvalidSensor"
-            v-model="sensorId"
-            placeholder="请选择要查询的光耦号"
-            maxlength="10"
-            />
-        </div>
-        <div class="opt">
-            <h3>开始时间:</h3>
-            <el-date-picker
-            v-model="startTime"
-            type="datetime"
-            placeholder="请选择开始时间"
-            />
-        </div>
-        <div class="opt">
-            <h3>结束时间:</h3>
-            <el-date-picker
-            v-model="endTime"
-            type="datetime"
-            placeholder="请选择结束时间"
-            />
-        </div>
-        <el-button class="search" type="primary" @click="showPic">查询</el-button>
-        </div>
-    </el-dialog>
-    <el-drawer
-        :title="`当前设备号：${deviceId}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp当前光耦号：${sensorId}`"
-        :close-on-press-escape="false"
-        :close-on-click-modal="false"
-        :before-close="handleClose"
-        v-model="drawer"
-        direction="rtl"
-        lock-scroll
-        size="80%"
-        destroy-on-close
-    >
-        <div id="charts-container"></div>
-    </el-drawer>
+  </el-dialog>
+  <el-drawer
+    :title="`当前设备号：${deviceId}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp当前光耦号：${sensorId}`"
+    :close-on-press-escape="false"
+    :close-on-click-modal="false"
+    :before-close="handleClose"
+    v-model="drawer"
+    direction="rtl"
+    lock-scroll
+    size="80%"
+    destroy-on-close
+  >
+    <div id="charts-container"></div>
+  </el-drawer>
 </template>
 
-
 <script setup lang="ts">
-import { Cell, Graph } from "@antv/x6";
+import { Graph } from "@antv/x6";
 import "@antv/x6-vue-shape";
 import { handleResize } from "../utils/handleResize";
 import {
@@ -241,8 +238,7 @@ import { safeEdge } from "../edges/safeEdge";
 import * as echarts from "echarts";
 // import { Loading } from "element-plus/es/components/loading/src/service.js";
 // import { nodeCenter } from "@antv/x6/lib/registry/node-anchor/node-center";
-import { IdentificationProcessor } from '../identification/identificationBox'
-import { useGraphStore } from '../store';
+import { useGraphStore } from "../store";
 const GraphStore = useGraphStore();
 // let graph:Graph;
 onMounted(() => {
@@ -3656,18 +3652,30 @@ onMounted(() => {
   };
   (GraphStore.graph as Graph).fromJSON(data as any);
   //角阀
-  GraphStore.anglevalveNodeFront = GraphStore.graph.getCellById("anglevalveNode1");
-  GraphStore.anglevalveNodeBehind = GraphStore.graph.getCellById("anglevalveNode2");
-  GraphStore.anglevalveNodeFrontB = GraphStore.graph.getCellById("anglevalveNodeB1");
-  GraphStore.anglevalveNodeBehindB = GraphStore.graph.getCellById("anglevalveNodeB2");
-  GraphStore.anglevalveNodeFrontC = GraphStore.graph.getCellById("anglevalveNodeC1");
-  GraphStore.anglevalveNodeBehindC = GraphStore.graph.getCellById("anglevalveNodeC2");
-  GraphStore.anglevalveNodeFrontD = GraphStore.graph.getCellById("anglevalveNodeD1");
-  GraphStore.anglevalveNodeBehindD = GraphStore.graph.getCellById("anglevalveNodeD2");
-  GraphStore.anglevalveNodeFrontE = GraphStore.graph.getCellById("anglevalveNodeE1");
-  GraphStore.anglevalveNodeBehindE = GraphStore.graph.getCellById("anglevalveNodeE2");
-  GraphStore.anglevalveNodeFrontF = GraphStore.graph.getCellById("anglevalveNodeF1");
-  GraphStore.anglevalveNodeBehindF = GraphStore.graph.getCellById("anglevalveNodeF2");
+  GraphStore.anglevalveNodeFront =
+    GraphStore.graph.getCellById("anglevalveNode1");
+  GraphStore.anglevalveNodeBehind =
+    GraphStore.graph.getCellById("anglevalveNode2");
+  GraphStore.anglevalveNodeFrontB =
+    GraphStore.graph.getCellById("anglevalveNodeB1");
+  GraphStore.anglevalveNodeBehindB =
+    GraphStore.graph.getCellById("anglevalveNodeB2");
+  GraphStore.anglevalveNodeFrontC =
+    GraphStore.graph.getCellById("anglevalveNodeC1");
+  GraphStore.anglevalveNodeBehindC =
+    GraphStore.graph.getCellById("anglevalveNodeC2");
+  GraphStore.anglevalveNodeFrontD =
+    GraphStore.graph.getCellById("anglevalveNodeD1");
+  GraphStore.anglevalveNodeBehindD =
+    GraphStore.graph.getCellById("anglevalveNodeD2");
+  GraphStore.anglevalveNodeFrontE =
+    GraphStore.graph.getCellById("anglevalveNodeE1");
+  GraphStore.anglevalveNodeBehindE =
+    GraphStore.graph.getCellById("anglevalveNodeE2");
+  GraphStore.anglevalveNodeFrontF =
+    GraphStore.graph.getCellById("anglevalveNodeF1");
+  GraphStore.anglevalveNodeBehindF =
+    GraphStore.graph.getCellById("anglevalveNodeF2");
   //中间两个
   GraphStore.emptyNodeA1 = GraphStore.graph.getCellById("emptyNodeA1");
   GraphStore.emptyNodeA2 = GraphStore.graph.getCellById("emptyNodeA2");
@@ -3766,7 +3774,10 @@ onMounted(() => {
         `<div class="anglevalveNodeWarn"></div>`
       );
     } else if (safeDeviceSensorList[0][0].value === true) {
-      GraphStore.anglevalveNodeFront!.setProp("html", `<div class="anglevalveNode"></div>`);
+      GraphStore.anglevalveNodeFront!.setProp(
+        "html",
+        `<div class="anglevalveNode"></div>`
+      );
     }
     if (safeDeviceSensorList[1][0].value === false) {
       GraphStore.anglevalveNodeFrontB!.setProp(
@@ -5479,10 +5490,16 @@ onMounted(() => {
   });
 
   GraphStore.graph.zoomTo(0.365);
-  handleResize(GraphStore.graph as Graph, document.documentElement as HTMLElement);
+  handleResize(
+    GraphStore.graph as Graph,
+    document.documentElement as HTMLElement
+  );
   //画布居中
   window.addEventListener("resize", () => {
-    handleResize(GraphStore.graph as Graph, document.documentElement as HTMLElement);
+    handleResize(
+      GraphStore.graph as Graph,
+      document.documentElement as HTMLElement
+    );
   });
 });
 const { proxy } = getCurrentInstance() as ComponentInternalInstance;
@@ -5556,7 +5573,7 @@ const init = async () => {
   let simpleTimeData: any = [];
   let statusData: any = [];
   drawer = true;
-
+  console.log(deviceId.value);
   await proxy?.$http
     .get("/getDeviceDataBetweenTimeByHour", {
       params: {
@@ -5726,20 +5743,17 @@ const hanleInvalidSensor = () => {
   sensorId.value = sensorId.value.replace(reg, "");
 };
 onMounted(() => {
-  GraphStore.mounted = true
-  GraphStore.handleGenerate(GraphStore.nodeNumber, GraphStore.nodeNumber)
+  GraphStore.mounted = true;
+  GraphStore.handleGenerate(GraphStore.nodeNumber, GraphStore.nodeNumber);
 });
-// GraphStore.handleMarkBox()
-// onMounted(() => {
-//   requireDeviceSensor();
-// });
-// setInterval(function () {
-//   setTimeout(() => {
-//     requireDeviceSensor();
-//   }, 0);
-// }, 100);
-
-
+onMounted(() => {
+  requireDeviceSensor();
+});
+setInterval(function () {
+  setTimeout(() => {
+    requireDeviceSensor();
+  }, 0);
+}, 100);
 </script>
 
 <style lang="less">
@@ -5749,22 +5763,22 @@ onMounted(() => {
   top: 0;
 }
 .test1 {
-  width: 1706px;
-  height: 270px;
+  width: 100%;
+  height: 20%;
   position: absolute;
   top: 0;
-  background-color: #C0C0C0;
+  background-color: #c0c0c0;
   display: flex;
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(15px);
 }
 .test2 {
-  width: 1706px;
-  height: 415px;
+  width: 100%;
+  height: 40%;
   position: absolute;
   bottom: 0;
-  background-color: #C0C0C0;
+  background-color: #c0c0c0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -5777,7 +5791,7 @@ onMounted(() => {
 }
 .btn {
   transition: all 0.3s;
-  position: absolute;
+  position: fixed;
   cursor: pointer;
   padding: 5px 10px;
   background-color: #efefef;
@@ -5789,7 +5803,7 @@ onMounted(() => {
 }
 .return {
   transition: all 0.3s;
-  position: absolute;
+  position: fixed;
   cursor: pointer;
   right: 0px;
   top: 0px;

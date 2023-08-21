@@ -15,11 +15,15 @@
       </div>
       <div class="allTable">
         <div id="deviceList">
+          {{}}
           <div
             :class="[index % 2 ? 'shallow' : 'dark', 'cell']"
             v-for="(item, index) in deviceList"
           >
-            <div class="device" @click="GraphStore.handleGenerate(index+1, index+1)">
+            <div
+              class="device"
+              @click="GraphStore.handleGenerate(index + 1, index + 1)"
+            >
               <span>{{ item.before.beforeId }}</span>
               <div
                 class="status safe"
@@ -34,7 +38,10 @@
                 v-if="item.before.beforeStatus === 'warning'"
               ></div>
             </div>
-            <div class="device" @click="GraphStore.handleGenerate(index+1, index+31)">
+            <div
+              class="device"
+              @click="GraphStore.handleGenerate(index + 1, index + 31)"
+            >
               <span> {{ item.after.afterId }}</span>
               <div
                 class="status safe"
@@ -68,15 +75,24 @@
       <div class="intro">
         <h3>图例</h3>
         <div class="single">
-          <div class="introCircle safe"></div>
+          <div
+            class="introCircle"
+            style="background-color: rgb(2, 199, 90)"
+          ></div>
           <span>正常 </span>
         </div>
         <div class="single">
-          <div class="introCircle error"></div>
+          <div
+            class="introCircle"
+            style="background-color: rgb(255, 2, 1)"
+          ></div>
           <span>异常</span>
         </div>
         <div class="single">
-          <div class="introCircle warning"></div>
+          <div
+            class="introCircle"
+            style="background-color: rgb(250, 255, 4)"
+          ></div>
           <span>线路故障</span>
         </div>
       </div>
@@ -85,315 +101,17 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, getCurrentInstance, ComponentInternalInstance} from "vue";
-import { useGraphStore } from '../store';
-import { useRouter } from 'vue-router'
+import {
+  onMounted,
+  getCurrentInstance,
+  ComponentInternalInstance,
+  reactive,
+} from "vue";
+import { useGraphStore } from "../store";
 const { proxy } = getCurrentInstance() as ComponentInternalInstance;
-const $router = useRouter()
 const GraphStore = useGraphStore();
 const rowList = ["13层", "11层", "9层", "3层", "1层", ""];
-let deviceList = [
-  {
-    before: {
-      beforeStatus: "safe",
-      beforeId: "X-1711A 后",
-    },
-    after: {
-      afterStatus: "error",
-      afterId: "X-1711A 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "warning",
-      beforeId: "X-1711B 后",
-    },
-    after: {
-      afterStatus: "safe",
-      afterId: "X-1711B 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "safe",
-      beforeId: "X-1711C 后",
-    },
-    after: {
-      afterStatus: "error",
-      afterId: "X-1711C 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "warning",
-      beforeId: "X-1711D 后",
-    },
-    after: {
-      afterStatus: "safe",
-      afterId: "X-1711D 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "safe",
-      beforeId: "X-1711E 后",
-    },
-    after: {
-      afterStatus: "error",
-      afterId: "X-1711E 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "warning",
-      beforeId: "X-1711F 后",
-    },
-    after: {
-      afterStatus: "safe",
-      afterId: "X-1711F 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "safe",
-      beforeId: "X-1733A 后",
-    },
-    after: {
-      afterStatus: "error",
-      afterId: "X-1733A 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "warning",
-      beforeId: "X-1733B 后",
-    },
-    after: {
-      afterStatus: "safe",
-      afterId: "X-1733B 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "safe",
-      beforeId: "X-1733C 后",
-    },
-    after: {
-      afterStatus: "error",
-      afterId: "X-1733C 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "warning",
-      beforeId: "X-1733D 后",
-    },
-    after: {
-      afterStatus: "safe",
-      afterId: "X-1733D 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "safe",
-      beforeId: "X-1733E 后",
-    },
-    after: {
-      afterStatus: "error",
-      afterId: "X-1733E 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "warning",
-      beforeId: "X-1733F 后",
-    },
-    after: {
-      afterStatus: "safe",
-      afterId: "X-1733F 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "safe",
-      beforeId: "X-1732A 后",
-    },
-    after: {
-      afterStatus: "error",
-      afterId: "X-1732A 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "warning",
-      beforeId: "X-1732B 后",
-    },
-    after: {
-      afterStatus: "safe",
-      afterId: "X-1732B 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "safe",
-      beforeId: "X-1732C 后",
-    },
-    after: {
-      afterStatus: "error",
-      afterId: "X-1732C 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "warning",
-      beforeId: "X-1732D 后",
-    },
-    after: {
-      afterStatus: "safe",
-      afterId: "X-1732D 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "safe",
-      beforeId: "X-1732E 后",
-    },
-    after: {
-      afterStatus: "error",
-      afterId: "X-1732E 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "warning",
-      beforeId: "X-1732F 后",
-    },
-    after: {
-      afterStatus: "safe",
-      afterId: "X-1732F 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "safe",
-      beforeId: "X-1731A 后",
-    },
-    after: {
-      afterStatus: "error",
-      afterId: "X-1731A 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "warning",
-      beforeId: "X-1731B 后",
-    },
-    after: {
-      afterStatus: "safe",
-      afterId: "X-1731B 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "safe",
-      beforeId: "X-1731C 后",
-    },
-    after: {
-      afterStatus: "error",
-      afterId: "X-1731C 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "warning",
-      beforeId: "X-1731D 后",
-    },
-    after: {
-      afterStatus: "safe",
-      afterId: "X-1731D 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "safe",
-      beforeId: "X-1731E 后",
-    },
-    after: {
-      afterStatus: "error",
-      afterId: "X-1731E 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "warning",
-      beforeId: "X-1731F 后",
-    },
-    after: {
-      afterStatus: "safe",
-      afterId: "X-1731F 前",
-    },
-  },
-  {
-    before: {
-      // beforeStatus: "safe",
-      // beforeId: "角阀短接 后",
-    },
-    after: {
-      // afterStatus: "error",
-      // afterId: "角阀短接 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "warning",
-      beforeId: "角阀短接 后",
-    },
-    after: {
-      // afterStatus: "safe",
-      // afterId: "角阀短接 前",
-    },
-  },
-  {
-    before: {
-      // beforeStatus: "safe",
-      // beforeId: "角阀短接 后",
-    },
-    after: {
-      // afterStatus: "error",
-      // afterId: "角阀短接 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "warning",
-      beforeId: "角阀短接 后",
-    },
-    after: {
-      afterStatus: "safe",
-      afterId: "角阀短接 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "safe",
-      beforeId: "角阀短接 后",
-    },
-    after: {
-      afterStatus: "error",
-      afterId: "角阀短接 前",
-    },
-  },
-  {
-    before: {
-      beforeStatus: "warning",
-      beforeId: "角阀短接 后",
-    },
-    after: {
-      afterStatus: "safe",
-      afterId: "角阀短接 前",
-    },
-  },
-];
+let deviceList: any[] = reactive([]);
 const threadList = [
   {
     device: "A气化炉",
@@ -420,43 +138,79 @@ const threadList = [
     thread: "3#线",
   },
 ];
-const InitDeviceList = ()=> {
-  deviceList[0].after.afterStatus = "safe"
-}
-
-
-const requireSensorDataHomepage = () => {
-  proxy?.$http
+const requireSensorDataHomepage = async () => {
+  // deviceList = reactive([]);
+  await proxy?.$http
     .get("/getSensorDataHomepage")
     .then((res: any) => {
+      // deviceList = reactive([]);
       res = res.data.data;
-      console.log(res);
-      
+      for (let i = 0; i < 60; i++){
+        deviceList.shift()
+      }
+      res.forEach((item: any) => {
+        item = item.reverse();
+        item.forEach((i: any) => {
+          deviceList.unshift(i);
+        });
+      });
+      console.log(deviceList);
     })
-    .catch();
+    .catch((err: any) => {
+      console.error(err);
+    });
 };
+requireSensorDataHomepage();
 onMounted(() => {
   requireSensorDataHomepage();
 });
-// setInterval(function () {
-//   setTimeout(() => {
-//     requireSensorDataHomepage();
-//   }, 0);
-// }, 10000);
+
+setInterval(function () {
+  setTimeout(() => {
+    requireSensorDataHomepage();
+  }, 0);
+}, 3000);
 </script>
 <style lang="less" scoped>
 #sight-container {
   width: 100vw;
   height: 100vh;
   display: grid;
+  @keyframes flashSafe {
+    0% {
+      background-color: rgb(0, 144, 65);
+    }
+    100% {
+      background-color: rgb(2, 199, 90);
+    }
+  }
+  @keyframes flashError {
+    0% {
+      background-color: rgb(182, 2, 2);
+    }
+    100% {
+      background-color: rgb(255, 2, 1);
+    }
+  }
+  @keyframes flashWarning {
+    0% {
+      background-color: rgb(227, 231, 2);
+    }
+    100% {
+      background-color: rgb(250, 255, 4);
+    }
+  }
   .safe {
     background-color: rgb(4, 174, 80);
+    animation: flashSafe 0.2s alternate infinite ease-in-out;
   }
   .error {
     background-color: rgb(255, 2, 1);
+    animation: flashError 0.2s alternate infinite ease-in-out;
   }
   .warning {
     background-color: rgb(250, 255, 4);
+    animation: flashWarning 0.2s alternate infinite ease-in-out;
   }
   .shallow {
     background-color: rgb(216, 216, 216);
@@ -523,18 +277,20 @@ onMounted(() => {
           font-weight: 540;
           font-size: 18px;
           display: grid;
-          place-content: center;
+          justify-content: center;
           vertical-align: middle;
-          gap: 20px;
+          // gap: 20px;
           border: 2px solid #333;
           border-top: none;
           border-left: none;
           .device {
+            margin-top: 8%;
             cursor: pointer;
             display: flex;
             gap: 10px;
           }
           .status {
+            transition: all 0.5s;
             width: 28px;
             height: 28px;
             border-radius: 50%;
